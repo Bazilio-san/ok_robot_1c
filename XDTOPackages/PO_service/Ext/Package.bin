@@ -1,0 +1,236 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://service.insurance.lois.ru/">
+	<import namespace="http://dictionary.policy.ie.lois.ru/"/>
+	<import namespace="http://policy.ie.lois.ru/"/>
+	<import namespace="http://dissolution.ie.lois.ru/"/>
+	<import namespace="http://error.ie.lois.ru/"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="CalcInsPremRequest" type="d2p1:CalcInsPremRequest"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="CalcInsPremResponse" type="d2p1:CalcInsPremResponse"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="annulPolicy" type="d2p1:AnnulPolicyRequest" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="annulPolicyResponse" type="d2p1:AnnulPolicyResponse" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="calcByProductType" type="d2p1:CalcInsPremRequest" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="calcByProductTypeResponse" type="d2p1:CalcInsPremResponse" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="calcPolicyResult" type="d2p1:CalcPolicyResult"/>
+	<property xmlns:d2p1="http://dissolution.ie.lois.ru/" name="dissolutionPolicy" type="d2p1:DissolutionPolicyRequest" nillable="true"/>
+	<property xmlns:d2p1="http://dissolution.ie.lois.ru/" name="dissolutionPolicyResponse" type="d2p1:DissolutionPolicyResponse" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getAllDictionariesExcel" type="d2p1:getAllDictionariesExcel"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getAllDictionariesExcelResponse" type="d2p1:getAllDictionariesExcelResponse"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getDictionaries" type="d2p1:getDictionaries"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getDictionariesResponse" type="d2p1:getDictionariesResponse"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getDictionaryAttributeValueByCode" type="d2p1:getDictionaryAttributeValueByCode"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getDictionaryAttributeValueByCodeResponse" type="d2p1:getDictionaryAttributeValueByCodeResponse"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getDictionaryByCode" type="d2p1:getDictionaryByCode"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getDictionaryByCodeResponse" type="d2p1:getDictionaryByCodeResponse"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getDictionaryValueCodesByAttribute" type="d2p1:getDictionaryValueCodesByAttribute"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getDictionaryValueCodesByAttributeResponse" type="d2p1:getDictionaryValueCodesByAttributeResponse"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getPolicy" type="d2p1:GetPolicyRequest" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="getPolicyResponse" type="d2p1:GetPolicyResponse" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="hideLogin" type="d2p1:HideLoginRequest" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="hideLoginResponse" type="d2p1:HideLoginResponse" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="importPolicy" type="d2p1:ImportPolicyRequest" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="importPolicyResponse" type="d2p1:ImportPolicyResponse"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="issuePolicy" type="d2p1:IssuePolicyRequest" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="issuePolicyResponse" type="d2p1:IssuePolicyResponse" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="logIn" type="d2p1:LoginRequest" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="logInResponse" type="d2p1:LoginResponse" nillable="true"/>
+	<property name="logOut" type="xs:string" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="logOutResponse" type="d2p1:LogOutResponse" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="printPolicy" type="d2p1:PrintPolicyRequest" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="printPolicyResponse" type="d2p1:PrintPolicyResponse" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="searchPolicies" type="d2p1:SearchPoliciesRequest" nillable="true"/>
+	<property xmlns:d2p1="http://service.insurance.lois.ru/" name="searchPoliciesResponse" type="d2p1:SearchPoliciesResponse" nillable="true"/>
+	<objectType name="AnnulPolicyRequest">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property name="calcID" type="xs:string" lowerBound="0"/>
+		<property name="reason" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="AnnulPolicyResponse">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property name="calcID" type="xs:string" lowerBound="0"/>
+		<property name="ok" type="xs:boolean" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="CalcInsPremRequest">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property name="productType" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="policyCalc" type="d3p1:Policy" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="paramDefaultList" type="d3p1:ParamDefaultList" lowerBound="0"/>
+	</objectType>
+	<objectType name="CalcInsPremResponse">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="calcPolicyResult" type="d3p1:CalcPolicyResultList" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="CalcPolicyResult">
+		<property name="url" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="policy" type="d3p1:Policy" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="paramDefaultValues" type="d3p1:ParamDefaultValuesList" lowerBound="0"/>
+	</objectType>
+	<objectType name="CalcPolicyResultList">
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="calcResult" type="d3p1:CalcPolicyResult" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Error">
+		<property name="message" type="xs:string" lowerBound="0"/>
+		<property name="type" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ErrorList">
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="error" type="d3p1:Error" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ExternalSysUser">
+		<property name="login" type="xs:string" lowerBound="0"/>
+		<property name="fio" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="GetPolicyRequest">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property name="calcID" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="GetPolicyResponse">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="policy" type="d3p1:Policy" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="HideLoginRequest">
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="loginInfo" type="d3p1:LoginRequest" lowerBound="0"/>
+		<property name="startWorkWithProduct" type="xs:boolean" lowerBound="0"/>
+		<property name="product" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="HideLoginResponse" abstract="true" mixed="false">
+		<property name="url" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ImportPolicyRequest">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="extUser" type="d3p1:ExternalSysUser" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="policy" type="d3p1:Policy" lowerBound="0"/>
+	</objectType>
+	<objectType name="ImportPolicyResponse">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="policy" type="d3p1:Policy" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="IssuePolicyRequest">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property name="policyID" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="IssuePolicyResponse">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property name="policyID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="LogOutResponse">
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="LoginRequest">
+		<property name="login" type="xs:string" lowerBound="0"/>
+		<property name="password" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="LoginResponse">
+		<property name="accID" type="xs:string" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://error.ie.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0" nillable="true" fixed="false"/>
+	</objectType>
+	<objectType name="ParamDefaultList">
+		<property name="param" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ParamDefaultValuesList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="parameter" type="d3p1:ParametrInfo" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="PolicyShortInfo">
+		<property name="internalID" type="xs:long" lowerBound="0"/>
+		<property name="calcID" type="xs:string" lowerBound="0"/>
+		<property name="number" type="xs:string" lowerBound="0"/>
+		<property name="produkt" type="xs:string" lowerBound="0"/>
+		<property name="insurant" type="xs:string" lowerBound="0"/>
+		<property name="insObjectSummary" type="xs:string" lowerBound="0"/>
+		<property name="pointOfSale" type="xs:string" lowerBound="0"/>
+		<property name="user" type="xs:string" lowerBound="0"/>
+		<property name="premium" type="xs:string" lowerBound="0"/>
+		<property name="premiumRur" type="xs:string" lowerBound="0"/>
+		<property name="state" type="xs:string" lowerBound="0"/>
+		<property name="date" type="xs:dateTime" lowerBound="0"/>
+		<property name="dateBeg" type="xs:dateTime" lowerBound="0"/>
+		<property name="dateEnd" type="xs:dateTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="PolicyShortInfoList">
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="record" type="d3p1:PolicyShortInfo" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="PrintPolicyRequest">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property name="calcID" type="xs:string" lowerBound="0"/>
+		<property name="type" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="PrintPolicyResponse">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property name="number" type="xs:string" lowerBound="0"/>
+		<property name="url" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="SearchPoliciesRequest">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property name="calcID" type="xs:string" lowerBound="0"/>
+		<property name="number" type="xs:string" lowerBound="0"/>
+		<property name="produkt" type="xs:string" lowerBound="0"/>
+		<property name="insurant" type="xs:string" lowerBound="0"/>
+		<property name="insObject" type="xs:string" lowerBound="0"/>
+		<property name="pointOfSale" type="xs:string" lowerBound="0"/>
+		<property name="user" type="xs:string" lowerBound="0"/>
+		<property name="userCreated" type="xs:string" lowerBound="0"/>
+		<property name="searchForContracts" type="xs:boolean" lowerBound="0"/>
+		<property name="searchForCalculations" type="xs:boolean" lowerBound="0"/>
+		<property name="searchForIssued" type="xs:boolean" lowerBound="0"/>
+		<property name="searchForProjects" type="xs:boolean" lowerBound="0"/>
+		<property name="searchForAnnuled" type="xs:boolean" lowerBound="0"/>
+		<property name="searchForAnnuledByReplacement" type="xs:boolean" lowerBound="0"/>
+		<property name="searchForDeleted" type="xs:boolean" lowerBound="0"/>
+		<property name="dateFrom" type="xs:dateTime" lowerBound="0"/>
+		<property name="dateTo" type="xs:dateTime" lowerBound="0"/>
+		<property name="validityFrom" type="xs:dateTime" lowerBound="0"/>
+		<property name="validityTo" type="xs:dateTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="SearchPoliciesResponse">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="policyShortInfoList" type="d3p1:PolicyShortInfoList" lowerBound="0"/>
+		<property xmlns:d3p1="http://service.insurance.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="getAllDictionariesExcel">
+		<property name="AccId" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Parameters" type="d3p1:ExcelDictionaryParameter" lowerBound="0"/>
+	</objectType>
+	<objectType name="getAllDictionariesExcelResponse">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="AllDictionariesExcelResponse" type="d3p1:ExcelDictionaryResult" lowerBound="0"/>
+	</objectType>
+	<objectType name="getDictionaries">
+		<property name="AccId" type="xs:string" lowerBound="0"/>
+		<property name="product" type="xs:string" lowerBound="0"/>
+		<property name="dictionaryCode" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="dictionaryConstraint" type="d3p1:DictionaryConstraint" lowerBound="0"/>
+	</objectType>
+	<objectType name="getDictionariesResponse">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="ListDictionaryResponse" type="d3p1:DictionaryList" lowerBound="0"/>
+	</objectType>
+	<objectType name="getDictionaryAttributeValueByCode">
+		<property name="AccId" type="xs:string" lowerBound="0"/>
+		<property name="DictionaryCode" type="xs:string" lowerBound="0"/>
+		<property name="CodeValue" type="xs:string" lowerBound="0"/>
+		<property name="AttributeCode" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="getDictionaryAttributeValueByCodeResponse">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="DictionaryAttributeValueByCode" type="d3p1:DictionaryAttributeValue" lowerBound="0"/>
+	</objectType>
+	<objectType name="getDictionaryByCode">
+		<property name="AccId" type="xs:string" lowerBound="0"/>
+		<property name="DictionaryCode" type="xs:string" lowerBound="0"/>
+		<property name="ValueCode" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="getDictionaryByCodeResponse">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="ListDictionaryResponse" type="d3p1:DictionaryList" lowerBound="0"/>
+	</objectType>
+	<objectType name="getDictionaryValueCodesByAttribute">
+		<property name="AccId" type="xs:string" lowerBound="0"/>
+		<property name="DictionaryCode" type="xs:string" lowerBound="0"/>
+		<property name="AttributeCode" type="xs:string" lowerBound="0"/>
+		<property name="AttributeValue" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="getDictionaryValueCodesByAttributeResponse">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="ListDictionaryValueCodesByAttribute" type="d3p1:DictionaryAttributeValueList" lowerBound="0"/>
+	</objectType>
+</package>

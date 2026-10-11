@@ -1,0 +1,91 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://dictionary.policy.ie.lois.ru/">
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="CalcListCodes" type="d2p1:CalcListCodes"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="Dictionary" type="d2p1:Dictionary"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="DictionaryAttributeValue" type="d2p1:DictionaryAttributeValue"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="DictionaryAttributeValueList" type="d2p1:DictionaryAttributeValueList"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="DictionaryList" type="d2p1:DictionaryList"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="DictionaryType" type="d2p1:DictionaryType"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="DictionaryTypeList" type="d2p1:DictionaryTypeList"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="DictionaryValue" type="d2p1:DictionaryValue"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="ExcelDictionaryParameter" type="d2p1:ExcelDictionaryParameter"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="ExcelDictionaryResult" type="d2p1:ExcelDictionaryResult"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="ParameterDictionaryInfo" type="d2p1:ParameterDictionaryInfo"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="ParameterDictionaryTypeInfo" type="d2p1:ParameterDictionaryTypeInfo"/>
+	<property xmlns:d2p1="http://dictionary.policy.ie.lois.ru/" name="ParameterDictionaryTypeList" type="d2p1:ParameterDictionaryTypeList"/>
+	<objectType name="CalcListCodes">
+		<property name="CalcCode" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Constraint">
+		<property name="Code" type="xs:string" lowerBound="0"/>
+		<property name="Value" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="Dictionary">
+		<property name="Code" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Value" type="d3p1:DictionaryValue" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="DictionaryAttributeValue">
+		<property name="DictionaryValueCode" type="xs:string" lowerBound="0"/>
+		<property name="AttributeCode" type="xs:string" lowerBound="0"/>
+		<property name="AttributeValue" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="DictionaryAttributeValueList">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Items" type="d3p1:DictionaryAttributeValue" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="DictionaryConstraint">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Constraint" type="d3p1:Constraint" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="DictionaryList">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Types" type="d3p1:DictionaryTypeList" lowerBound="0"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" ref="d3p1:Dictionary" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Errors" type="d3p1:ErrorList" lowerBound="0"/>
+	</objectType>
+	<objectType name="DictionaryType">
+		<property name="Code" type="xs:string" lowerBound="0"/>
+		<property name="Name" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Parameters" type="d3p1:ParameterDictionaryTypeList" lowerBound="0"/>
+	</objectType>
+	<objectType name="DictionaryTypeList">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" ref="d3p1:DictionaryType" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="DictionaryValue">
+		<property name="ValueCode" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="Parameter" type="d3p1:ParameterDictionaryInfo" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Error">
+		<property name="message" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ErrorList">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="error" type="d3p1:Error" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ExcelDictionaryCodes">
+		<property name="Code" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ExcelDictionaryParameter">
+		<property name="ZipExcel" type="xs:boolean"/>
+		<property name="UseBase64" type="xs:boolean"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="DictionaryCodes" type="d3p1:ExcelDictionaryCodes" lowerBound="0"/>
+	</objectType>
+	<objectType name="ExcelDictionaryResult">
+		<property name="ExcelUrl" type="xs:string" lowerBound="0"/>
+		<property name="StreamBase64" type="xs:string" lowerBound="0"/>
+		<property name="ErrorMessage" type="xs:string" lowerBound="0"/>
+		<property name="Zip" type="xs:boolean"/>
+	</objectType>
+	<objectType name="ParameterDictionaryInfo">
+		<property name="DictionaryCode" type="xs:string" lowerBound="0"/>
+		<property name="ParameterCode" type="xs:string" lowerBound="0"/>
+		<property name="Value" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ParameterDictionaryTypeInfo">
+		<property name="DictionaryTypeCode" type="xs:string" lowerBound="0"/>
+		<property name="Code" type="xs:string" lowerBound="0"/>
+		<property name="Name" type="xs:string" lowerBound="0"/>
+		<property name="Type" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="CalcCodes" type="d3p1:CalcListCodes" lowerBound="0"/>
+	</objectType>
+	<objectType name="ParameterDictionaryTypeList">
+		<property xmlns:d3p1="http://dictionary.policy.ie.lois.ru/" name="ParameterType" type="d3p1:ParameterDictionaryTypeInfo" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

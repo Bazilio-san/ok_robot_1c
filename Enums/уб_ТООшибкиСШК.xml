@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="269d6676-87c3-4882-803a-3cd84988aa31">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_ТООшибкиСШК" category="Ref">
+				<xr:TypeId>e08c7351-6fd8-40f2-8a02-dc5bfa7eb312</xr:TypeId>
+				<xr:ValueId>e278024d-69a3-46cd-b827-cc25d194acd5</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_ТООшибкиСШК" category="Manager">
+				<xr:TypeId>74410e06-add5-4c71-8f42-1ed583b03db0</xr:TypeId>
+				<xr:ValueId>9d96d8d9-85cc-4efc-bb56-0948231e8e0b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_ТООшибкиСШК" category="List">
+				<xr:TypeId>b1631fc2-9acc-45ab-9f8b-7b81cbc68ab5</xr:TypeId>
+				<xr:ValueId>f8302125-b489-495f-88de-02f036ece296</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_ТООшибкиСШК</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уб ТООшибки СШК</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="a7868743-2172-46ad-95a5-f480f65d63ef">
+				<Properties>
+					<Name>ОшибкаНеизвестныйШтрихкод</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Считанный штрихкод не может быть обработан</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Необходимо убедиться, что данный штрихкод зарегистрирован в информационной базе и может быть обработан в данной форме.</Comment>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

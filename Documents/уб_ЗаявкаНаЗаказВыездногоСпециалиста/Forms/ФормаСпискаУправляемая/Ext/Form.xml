@@ -1,0 +1,1533 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<CommandBarLocation>Top</CommandBarLocation>
+	<ScalingMode>Compact</ScalingMode>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>CancelSearch</ExcludedCommand>
+		<ExcludedCommand>Change</ExcludedCommand>
+		<ExcludedCommand>ChangeHistory</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+		<ExcludedCommand>Find</ExcludedCommand>
+		<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>Post</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+		<ExcludedCommand>UndoPosting</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОбновить" id="209">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Item.Список.StandardCommand.Refresh</CommandName>
+				<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаОбновитьРасширеннаяПодсказка" id="210"/>
+			</Button>
+			<Button name="ФормаСтараяФорма" id="207">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СтараяФорма</CommandName>
+				<ExtendedTooltip name="ФормаСтараяФормаРасширеннаяПодсказка" id="208"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>Top</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СписокВыбор</Event>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+				<Event name="OnGetDataAtServer">СписокПриПолученииДанныхНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="Утверждено" id="22">
+					<DataPath>Список.Утверждено</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Утв.</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УтвержденоКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="УтвержденоРасширеннаяПодсказка" id="24"/>
+				</CheckBoxField>
+				<LabelField name="Дата" id="16">
+					<DataPath>Список.Дата</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='dd.MM.yy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="Номер" id="19">
+					<DataPath>Список.Номер</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Sys №</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НомерКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<CheckBoxField name="Самовыезд" id="73">
+					<DataPath>Список.Самовыезд</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сам.</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СамовыездКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="СамовыездРасширеннаяПодсказка" id="75"/>
+				</CheckBoxField>
+				<LabelField name="НомерЗаявки" id="40">
+					<DataPath>Список.НомерЗаявки</DataPath>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<Width>1</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="НомерЗаявкиКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="НомерЗаявкиРасширеннаяПодсказка" id="42"/>
+				</LabelField>
+				<LabelField name="ВремяНачало" id="76">
+					<DataPath>Список.ВремяНачало</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нач.</v8:content>
+						</v8:item>
+					</Title>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.ЕстьОповещение</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>6</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=HH:mm</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ВремяНачалоКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="ВремяНачалоРасширеннаяПодсказка" id="78"/>
+				</LabelField>
+				<LabelField name="ВремяВстречи" id="82">
+					<DataPath>Список.ВремяВстречи</DataPath>
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.уб_Рукопожатие</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>5</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВремяВстречиКонтекстноеМеню" id="83"/>
+					<ExtendedTooltip name="ВремяВстречиРасширеннаяПодсказка" id="84"/>
+				</LabelField>
+				<LabelField name="ВремяОкончания" id="79">
+					<DataPath>Список.ВремяОкончания</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кон.</v8:content>
+						</v8:item>
+					</Title>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.ЕстьОповещение</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>6</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=HH:mm</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ВремяОкончанияКонтекстноеМеню" id="80"/>
+					<ExtendedTooltip name="ВремяОкончанияРасширеннаяПодсказка" id="81"/>
+				</LabelField>
+				<LabelField name="Менеджер" id="85">
+					<DataPath>Список.Менеджер</DataPath>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="МенеджерКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="87"/>
+				</LabelField>
+				<LabelField name="Курьер" id="88">
+					<DataPath>Список.Курьер</DataPath>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КурьерКонтекстноеМеню" id="89"/>
+					<ExtendedTooltip name="КурьерРасширеннаяПодсказка" id="90"/>
+				</LabelField>
+				<LabelField name="Оператор" id="91">
+					<DataPath>Список.Оператор</DataPath>
+					<Width>11</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ОператорКонтекстноеМеню" id="92"/>
+					<ExtendedTooltip name="ОператорРасширеннаяПодсказка" id="93"/>
+				</LabelField>
+				<LabelField name="Страхователь" id="43">
+					<DataPath>Список.Страхователь</DataPath>
+					<Width>16</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="СтраховательКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="СтраховательРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="СК" id="94">
+					<DataPath>Список.СК</DataPath>
+					<ContextMenu name="СККонтекстноеМеню" id="95"/>
+					<ExtendedTooltip name="СКРасширеннаяПодсказка" id="96"/>
+				</LabelField>
+				<LabelField name="СтатусЗаявки" id="140">
+					<DataPath>Список.СтатусЗаявки</DataPath>
+					<ContextMenu name="СтатусЗаявкиКонтекстноеМеню" id="141"/>
+					<ExtendedTooltip name="СтатусЗаявкиРасширеннаяПодсказка" id="142"/>
+				</LabelField>
+				<LabelField name="ВидыСП" id="97">
+					<DataPath>Список.Город</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Виды СП</v8:content>
+						</v8:item>
+					</Title>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВидыСПКонтекстноеМеню" id="98"/>
+					<ExtendedTooltip name="ВидыСПРасширеннаяПодсказка" id="99"/>
+				</LabelField>
+				<LabelField name="Состояния" id="100">
+					<DataPath>Список.Состояния</DataPath>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="СостоянияКонтекстноеМеню" id="101"/>
+					<ExtendedTooltip name="СостоянияРасширеннаяПодсказка" id="102"/>
+				</LabelField>
+				<LabelField name="ТипВыезда" id="103">
+					<DataPath>Список.ТипВыезда</DataPath>
+					<ContextMenu name="ТипВыездаКонтекстноеМеню" id="104"/>
+					<ExtendedTooltip name="ТипВыездаРасширеннаяПодсказка" id="105"/>
+				</LabelField>
+				<LabelField name="ФормаОплаты" id="106">
+					<DataPath>Список.ФормаОплаты</DataPath>
+					<ContextMenu name="ФормаОплатыКонтекстноеМеню" id="107"/>
+					<ExtendedTooltip name="ФормаОплатыРасширеннаяПодсказка" id="108"/>
+				</LabelField>
+				<LabelField name="НеобходимостьОсмотра" id="109">
+					<DataPath>Список.НеобходимостьОсмотра</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Осмотр</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НеобходимостьОсмотраКонтекстноеМеню" id="110"/>
+					<ExtendedTooltip name="НеобходимостьОсмотраРасширеннаяПодсказка" id="111"/>
+				</LabelField>
+				<LabelField name="Комментарий" id="25">
+					<DataPath>Список.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="УтвердилАндеррайтер" id="49">
+					<DataPath>Список.УтвердилАндеррайтер</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="УтвердилАндеррайтерКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="УтвердилАндеррайтерРасширеннаяПодсказка" id="51"/>
+				</LabelField>
+				<LabelField name="МестоВстречи" id="37">
+					<DataPath>Список.МестоВстречи</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="МестоВстречиКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="МестоВстречиРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<LabelField name="Тип" id="46">
+					<DataPath>Список.Тип</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ТипКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ТипРасширеннаяПодсказка" id="48"/>
+				</LabelField>
+				<LabelField name="КонтактноеЛицо" id="28">
+					<DataPath>Список.КонтактноеЛицо</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="КонтактноеЛицоКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="КонтактноеЛицоРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<CheckBoxField name="Срочная" id="52">
+					<DataPath>Список.Срочная</DataPath>
+					<Visible>false</Visible>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СрочнаяКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="СрочнаяРасширеннаяПодсказка" id="54"/>
+				</CheckBoxField>
+				<LabelField name="Источник" id="58">
+					<DataPath>Список.Источник</DataPath>
+					<ContextMenu name="ИсточникКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="ИсточникРасширеннаяПодсказка" id="60"/>
+				</LabelField>
+				<LabelField name="Автор" id="61">
+					<DataPath>Список.Автор</DataPath>
+					<ContextMenu name="АвторКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="63"/>
+				</LabelField>
+				<LabelField name="ДатаСоздания" id="64">
+					<DataPath>Список.ДатаСоздания</DataPath>
+					<ContextMenu name="ДатаСозданияКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="ДатаСозданияРасширеннаяПодсказка" id="66"/>
+				</LabelField>
+				<LabelField name="Модификатор" id="67">
+					<DataPath>Список.Модификатор</DataPath>
+					<ContextMenu name="МодификаторКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="МодификаторРасширеннаяПодсказка" id="69"/>
+				</LabelField>
+				<LabelField name="ДатаИзменения" id="70">
+					<DataPath>Список.ДатаИзменения</DataPath>
+					<ContextMenu name="ДатаИзмененияКонтекстноеМеню" id="71"/>
+					<ExtendedTooltip name="ДатаИзмененияРасширеннаяПодсказка" id="72"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ФильтрыКолонки" id="112">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтры колонки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтры колонки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ФильтрыКолонкиРасширеннаяПодсказка" id="113"/>
+			<ChildItems>
+				<UsualGroup name="Фильтры1" id="114">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>24</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Half</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>Use</ThroughAlign>
+					<ExtendedTooltip name="Фильтры1РасширеннаяПодсказка" id="115"/>
+					<ChildItems>
+						<UsualGroup name="Группа1" id="127">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="128"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация1" id="129">
+									<Width>8</Width>
+									<MaxWidth>20</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>№ заявки</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="130"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="131"/>
+								</LabelDecoration>
+								<InputField name="эуПоискНомер" id="124">
+									<DataPath>эуПоискНомер</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ContextMenu name="эуПоискНомерКонтекстноеМеню" id="125"/>
+									<ExtendedTooltip name="эуПоискНомерРасширеннаяПодсказка" id="126"/>
+									<Events>
+										<Event name="OnChange">ПриИзмененииФильтра</Event>
+										<Event name="AutoComplete">эуПоискНомерАвтоПодбор</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа2" id="132">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="133"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация2" id="134">
+									<Width>8</Width>
+									<MaxWidth>20</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>№ АМО</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация2КонтекстноеМеню" id="135"/>
+									<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="136"/>
+								</LabelDecoration>
+								<InputField name="эуПоискНомерЗаявки" id="137">
+									<DataPath>эуПоискНомерЗаявки</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ContextMenu name="эуПоискНомерЗаявкиКонтекстноеМеню" id="138"/>
+									<ExtendedTooltip name="эуПоискНомерЗаявкиРасширеннаяПодсказка" id="139"/>
+									<Events>
+										<Event name="OnChange">ПриИзмененииФильтра</Event>
+										<Event name="AutoComplete">эуПоискНомерЗаявкиАвтоПодбор</Event>
+										<Event name="Clearing">эуПоискНомерЗаявкиОчистка</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Фильтры2" id="116">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>24</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Half</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Фильтры2РасширеннаяПодсказка" id="117"/>
+					<ChildItems>
+						<UsualGroup name="Группа3" id="143">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="144"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация3" id="145">
+									<Width>8</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>50</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Менеджер</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация3КонтекстноеМеню" id="146"/>
+									<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="147"/>
+								</LabelDecoration>
+								<InputField name="эуПоискМенеджер" id="148">
+									<DataPath>эуПоискМенеджер</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<DropListButton>true</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="эуПоискМенеджерКонтекстноеМеню" id="149"/>
+									<ExtendedTooltip name="эуПоискМенеджерРасширеннаяПодсказка" id="150"/>
+									<Events>
+										<Event name="OnChange">ПриИзмененииФильтра</Event>
+										<Event name="StartChoice">эуПоискМенеджерНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа4" id="151">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="152"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация4" id="153">
+									<Width>8</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>50</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Курьер</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация4КонтекстноеМеню" id="154"/>
+									<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="155"/>
+								</LabelDecoration>
+								<InputField name="эуПоискКурьер" id="156">
+									<DataPath>эуПоискКурьер</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<DropListButton>true</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="эуПоискКурьерКонтекстноеМеню" id="157"/>
+									<ExtendedTooltip name="эуПоискКурьерРасширеннаяПодсказка" id="158"/>
+									<Events>
+										<Event name="OnChange">ПриИзмененииФильтра</Event>
+										<Event name="StartChoice">эуПоискКурьерНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Фильтры3" id="118">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>24</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Half</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Фильтры3РасширеннаяПодсказка" id="119"/>
+					<ChildItems>
+						<UsualGroup name="Группа5" id="159">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="160"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация5" id="161">
+									<Width>9</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>50</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Клиент/ИНН</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация5КонтекстноеМеню" id="162"/>
+									<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="163"/>
+								</LabelDecoration>
+								<InputField name="эуПоискСтрахователь" id="164">
+									<DataPath>эуПоискСтрахователь</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ClearButton>true</ClearButton>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ContextMenu name="эуПоискСтраховательКонтекстноеМеню" id="165"/>
+									<ExtendedTooltip name="эуПоискСтраховательРасширеннаяПодсказка" id="166"/>
+									<Events>
+										<Event name="OnChange">ПриИзмененииФильтра</Event>
+										<Event name="EditTextChange">эуПоискСтраховательИзменениеТекстаРедактирования</Event>
+										<Event name="AutoComplete">эуПоискСтраховательАвтоПодбор</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа7" id="175">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="176"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация7" id="177">
+									<Width>9</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>50</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип выезда</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация7КонтекстноеМеню" id="178"/>
+									<ExtendedTooltip name="Декорация7РасширеннаяПодсказка" id="179"/>
+								</LabelDecoration>
+								<InputField name="эуПоискТипВыезда" id="180">
+									<DataPath>эуПоискТипВыезда</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<QuickChoice>true</QuickChoice>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ContextMenu name="эуПоискТипВыездаКонтекстноеМеню" id="181"/>
+									<ExtendedTooltip name="эуПоискТипВыездаРасширеннаяПодсказка" id="182"/>
+									<Events>
+										<Event name="OnChange">ПриИзмененииФильтра</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Фильтры4" id="120">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>24</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Фильтры4РасширеннаяПодсказка" id="121"/>
+					<ChildItems>
+						<UsualGroup name="Группа6" id="167">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="168"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация6" id="169">
+									<Width>8</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>50</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>СК</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация6КонтекстноеМеню" id="170"/>
+									<ExtendedTooltip name="Декорация6РасширеннаяПодсказка" id="171"/>
+								</LabelDecoration>
+								<InputField name="эуСК" id="172">
+									<DataPath>эуСК</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>СК</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<DropListButton>true</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="эуСККонтекстноеМеню" id="173"/>
+									<ExtendedTooltip name="эуСКРасширеннаяПодсказка" id="174"/>
+									<Events>
+										<Event name="OnChange">ПриИзмененииФильтра</Event>
+										<Event name="StartChoice">эуСКНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа8" id="183">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="184"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация8" id="185">
+									<Width>8</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>50</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплата</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация8КонтекстноеМеню" id="186"/>
+									<ExtendedTooltip name="Декорация8РасширеннаяПодсказка" id="187"/>
+								</LabelDecoration>
+								<InputField name="эуФормаОплаты" id="188">
+									<DataPath>эуФормаОплаты</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<QuickChoice>true</QuickChoice>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ContextMenu name="эуФормаОплатыКонтекстноеМеню" id="189"/>
+									<ExtendedTooltip name="эуФормаОплатыРасширеннаяПодсказка" id="190"/>
+									<Events>
+										<Event name="OnChange">ПриИзмененииФильтра</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Фильтры5" id="122">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>24</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Фильтры5РасширеннаяПодсказка" id="123"/>
+					<ChildItems>
+						<UsualGroup name="Группа9" id="191">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа9РасширеннаяПодсказка" id="192"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация9" id="193">
+									<Width>8</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>50</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вид СП</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация9КонтекстноеМеню" id="194"/>
+									<ExtendedTooltip name="Декорация9РасширеннаяПодсказка" id="195"/>
+								</LabelDecoration>
+								<InputField name="эуПоискВидСП" id="196">
+									<DataPath>эуПоискВидСП</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ChoiceButton>true</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<QuickChoice>true</QuickChoice>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ContextMenu name="эуПоискВидСПКонтекстноеМеню" id="197"/>
+									<ExtendedTooltip name="эуПоискВидСПРасширеннаяПодсказка" id="198"/>
+									<Events>
+										<Event name="OnChange">ПриИзмененииФильтра</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа10" id="199">
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа10РасширеннаяПодсказка" id="200"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация10" id="201">
+									<Visible>false</Visible>
+									<Width>12</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>50</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>№ заявки</v8:content>
+										</v8:item>
+									</Title>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="Декорация10КонтекстноеМеню" id="202"/>
+									<ExtendedTooltip name="Декорация10РасширеннаяПодсказка" id="203"/>
+								</LabelDecoration>
+								<InputField name="эуПоискНомер4" id="204">
+									<DataPath>эуПоискНомер</DataPath>
+									<Visible>false</Visible>
+									<TitleLocation>None</TitleLocation>
+									<Width>6</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<VerticalStretch>false</VerticalStretch>
+									<BackColor>style:ФонНезаполненногоФильтра</BackColor>
+									<ContextMenu name="эуПоискНомер4КонтекстноеМеню" id="205"/>
+									<ExtendedTooltip name="эуПоискНомер4РасширеннаяПодсказка" id="206"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Ссылка КАК Ссылка,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ПометкаУдаления КАК ПометкаУдаления,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Номер КАК Номер,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Дата КАК Дата,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Проведен КАК Проведен,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Утверждено КАК Утверждено,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Адрес КАК Адрес,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Банк КАК Банк,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Блокиратор КАК Блокиратор,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВремяВстречи КАК ВремяВстречи,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВремяНачало КАК ВремяНачало,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВремяОкончания КАК ВремяОкончания,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Город КАК Город,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ИсточникФинансирования КАК ИсточникФинансирования,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ИтогПредоставленнаяСкидка КАК ИтогПредоставленнаяСкидка,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ИтогСтраховаяПремия КАК ИтогСтраховаяПремия,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Комментарий КАК Комментарий,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.КонтактноеЛицо КАК КонтактноеЛицо,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Контакты КАК Контакты,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Курьер КАК Курьер,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.МаркаТС КАК МаркаТС,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Менеджер КАК Менеджер,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.МестоВстречи КАК МестоВстречи,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.МодельТС КАК МодельТС,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.НетБСО КАК НетБСО,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.НетДокументов КАК НетДокументов,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.НомерДоговора КАК НомерДоговора,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.НомерЗаявки КАК НомерЗаявки,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.НомерЗаявкиСК КАК НомерЗаявкиСК,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.НомерКартыСтрахователя КАК НомерКартыСтрахователя,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВознаграждениеКурьера КАК ВознаграждениеКурьера,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ОплатитьВКассуЗаВыездКурьера КАК ОплатитьВКассуЗаВыездКурьера,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ПредставлениеЗаявки КАК ПредставлениеЗаявки,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ПредставлениеСтроки КАК ПредставлениеСтроки,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ПриоритетЗадачи КАК ПриоритетЗадачи,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.РассрочкаПлатежа КАК РассрочкаПлатежа,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Самовыезд КАК Самовыезд,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.СК КАК СК,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.СтанцияМетро КАК СтанцияМетро,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Статус КАК Статус,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Страхователь КАК Страхователь,
+	Выбор когда Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Страхователь = Неопределено Тогда ""
+	Иначе
+		Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Страхователь.Наименование
+		Конец КАК СтраховательНаименование,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.СуммаПоКарте КАК СуммаПоКарте,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Тип КАК Тип,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ТребуетсяПроверкаРуководителем КАК ТребуетсяПроверкаРуководителем,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ЦельВыезда КАК ЦельВыезда,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ИтогСуммаВзноса КАК ИтогСуммаВзноса,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.СозданНаОсновании КАК СозданНаОсновании,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.КомментарийСлужебный КАК КомментарийСлужебный,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ТребуетсяУтверждениеАндеррайтера КАК ТребуетсяУтверждениеАндеррайтера,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.УтвердилАндеррайтер КАК УтвердилАндеррайтер,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.УтвердилРуководитель КАК УтвердилРуководитель,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВознаграждениеЧастьКлиента КАК ВознаграждениеЧастьКлиента,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВознаграждениеЧастьБрокера КАК ВознаграждениеЧастьБрокера,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.За10КмОтМКАД КАК За10КмОтМКАД,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ЗаблокироватьАвторасчет КАК ЗаблокироватьАвторасчет,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ОбъектСтрахования КАК ОбъектСтрахования,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.УтвержденоДата КАК УтвержденоДата,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Срочная КАК Срочная,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Оператор КАК Оператор,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВремяВстречиКлиент КАК ВремяВстречиКлиент,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВремяОкончанияКлиент КАК ВремяОкончанияКлиент,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ФормаОплаты КАК ФормаОплаты,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.НеобходимостьОсмотра КАК НеобходимостьОсмотра,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Куратор КАК Куратор,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ТипВыезда КАК ТипВыезда,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Каско КАК Каско,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Осаго КАК Осаго,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.НС КАК НС,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ДМС КАК ДМС,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ДК КАК ДК,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ОплачиваемыйОсмотр КАК ОплачиваемыйОсмотр,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.СВС КАК СВС,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Состояния КАК Состояния,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Источник КАК Источник,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ПроцентГотовности КАК ПроцентГотовности,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.НеВерный КАК НеВерный,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ЕОСАГО КАК ЕОСАГО,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.РезультатПроверки КАК РезультатПроверки,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ПодТип1 КАК ПодТип1,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Отзыв КАК Отзыв,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.СтаршийОператор КАК СтаршийОператор,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ФайловМенеджер КАК ФайловМенеджер,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ФайловКурьер КАК ФайловКурьер,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ИндексРекомендации КАК ИндексРекомендации,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ИндексЦепочкиРекомендаций КАК ИндексЦепочкиРекомендаций,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ФайловБланкиПлан КАК ФайловБланкиПлан,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ФайловБланкиФакт КАК ФайловБланкиФакт,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Срочность КАК Срочность,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВознаграждениеОтКлиента КАК ВознаграждениеОтКлиента,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВознаграждениеОтМенеджера КАК ВознаграждениеОтМенеджера,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.email КАК email,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ВидОплаты КАК ВидОплаты,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Техосмотр_ДатаВремя КАК Техосмотр_ДатаВремя,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Техосмотр_Наименование КАК Техосмотр_Наименование,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Техосмотр_АдресТелефон КАК Техосмотр_АдресТелефон,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.СрокОформления КАК СрокОформления,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Кошелек КАК Кошелек,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Автор КАК Автор,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ДатаСоздания КАК ДатаСоздания,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Модификатор КАК Модификатор,
+	Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.ДатаИзменения КАК ДатаИзменения,
+	уб_ИсторияСтатусовЗаявокСрезПоследних.Статус КАК СтатусЗаявки
+ИЗ
+	Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста КАК Документуб_ЗаявкаНаЗаказВыездногоСпециалиста
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ИсторияСтатусовЗаявок.СрезПоследних КАК уб_ИсторияСтатусовЗаявокСрезПоследних
+		ПО уб_ИсторияСтатусовЗаявокСрезПоследних.Заявка = Документуб_ЗаявкаНаЗаказВыездногоСпециалиста.Ссылка</QueryText>
+				<MainTable>Document.уб_ЗаявкаНаЗаказВыездногоСпециалиста</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="эуПоискНомер" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>№ заявки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="эуПоискНомерЗаявки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эу поиск номер заявки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.уб_ВидыЗаявок</v8:Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="эуПоискВидСП" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид СП</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.уб_ВидыСтраховыхПродуктов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="эуПоискМенеджер" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="эуПоискКурьер" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Курьер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="эуПоискСтрахователь" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страхователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="эуСК" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СК</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="эуПоискТипВыезда" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип выезда</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.уб_ТипВыезда</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="эуФормаОплаты" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эу форма оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.уб_ФормыОплаты</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>эуПоискНомер</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">эуПоискНомер</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонЗаполненногоФильтра</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>эуПоискНомерЗаявки</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">эуПоискНомерЗаявки</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонЗаполненногоФильтра</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>эуПоискВидСП</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">эуПоискВидСП</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонЗаполненногоФильтра</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>эуПоискМенеджер</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">эуПоискМенеджер</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонЗаполненногоФильтра</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>эуПоискКурьер</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">эуПоискКурьер</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонЗаполненногоФильтра</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>эуПоискСтрахователь</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">эуПоискСтрахователь</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонЗаполненногоФильтра</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>эуСК</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">эуСК</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонЗаполненногоФильтра</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>эуПоискТипВыезда</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">эуПоискТипВыезда</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонЗаполненногоФильтра</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>эуФормаОплаты</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">эуФормаОплаты</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонЗаполненногоФильтра</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Список</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.Тип</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.уб_ТипВыезда.Административный</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#C8E1C8</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Список</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.Утверждено</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ТребуетсяУтверждениеАндеррайтера</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.РезультатПроверки</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.уб_РезультатПроверкиЗаявки.ПринятоВРаботу</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#96FF96</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Список</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.Утверждено</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ТребуетсяУтверждениеАндеррайтера</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.РезультатПроверки</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.уб_РезультатПроверкиЗаявки.ПринятоСДоработкой</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFFF96</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Список</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.Утверждено</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ТребуетсяУтверждениеАндеррайтера</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.РезультатПроверки</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.уб_РезультатПроверкиЗаявки.Отклонено</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF9696</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="СтараяФорма" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Старая форма</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Старая форма</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СтараяФорма</Action>
+		</Command>
+	</Commands>
+</Form>

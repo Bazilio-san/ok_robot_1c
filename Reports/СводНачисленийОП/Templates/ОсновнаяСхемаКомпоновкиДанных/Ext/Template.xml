@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>выплачено</dataPath>
+			<field>выплачено</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаЛички</dataPath>
+			<field>ЗаЛички</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>План</dataPath>
+			<field>План</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ</dataPath>
+			<field>СКВ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВЛички</dataPath>
+			<field>СКВЛички</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВыплаченоРОП</dataPath>
+			<field>ВыплаченоРОП</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗарплатныйПериод</dataPath>
+			<field>ЗарплатныйПериод</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрочиеНачисления</dataPath>
+			<field>ПрочиеНачисления</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	НачисленияВсе.Сотрудник,
+	СУММА(НачисленияВсе.Результат) КАК Результат,
+	НачисленияВсе.Дата
+	Поместить ПрочиеНачисления
+ИЗ
+	(ВЫБРАТЬ
+		уб_НачислениеЗПНачисления.Сотрудник КАК Сотрудник,
+		уб_НачислениеЗПНачисления.Результат КАК Результат,
+		уб_НачислениеЗПНачисления.Ссылка.Дата КАК Дата
+	ИЗ
+		Документ.уб_НачислениеЗП.Начисления КАК уб_НачислениеЗПНачисления
+	ГДЕ
+		уб_НачислениеЗПНачисления.Ссылка.Дата &gt;= &amp;ДатаНачала
+		И уб_НачислениеЗПНачисления.Ссылка.Дата &lt;= &amp;ДатаОкончания
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		уб_НачислениеЗПНачисления.Сотрудник,
+		уб_НачислениеЗПНачисления.Результат,
+		уб_НачислениеЗПНачисления.Ссылка.Дата
+	ИЗ
+		Документ.уб_НачислениеЗП.НачисленияРазовые КАК уб_НачислениеЗПНачисления
+	ГДЕ
+		уб_НачислениеЗПНачисления.Ссылка.Дата &gt;= &amp;ДатаНачала
+		И уб_НачислениеЗПНачисления.Ссылка.Дата &lt;= &amp;ДатаОкончания) КАК НачисленияВсе
+
+СГРУППИРОВАТЬ ПО
+	НачисленияВсе.Дата,
+	НачисленияВсе.Сотрудник
+;	
+ВЫБРАТЬ
+	уб_ПараметрыРасчетаЗарплатыСотрудников.Период,
+	уб_ПараметрыРасчетаЗарплатыСотрудников.Сотрудник,
+	уб_ПараметрыРасчетаЗарплатыСотрудников.ТипПараметра,
+	уб_ПараметрыРасчетаЗарплатыСотрудников.ЗначениеПараметра
+ПОМЕСТИТЬ Исходные
+ИЗ
+	РегистрСведений.уб_ПараметрыРасчетаЗарплатыСотрудников КАК уб_ПараметрыРасчетаЗарплатыСотрудников
+ГДЕ
+	(уб_ПараметрыРасчетаЗарплатыСотрудников.ТипПараметра В ("""План по СКВ""", "План", "По АВ", "Без расчета", "СКВ", "СуммаВознаграждения_РОП")
+			ИЛИ уб_ПараметрыРасчетаЗарплатыСотрудников.ЗначениеПараметра = 3.1)
+	И уб_ПараметрыРасчетаЗарплатыСотрудников.ЗначениеПараметра &lt;&gt; 0
+	и уб_ПараметрыРасчетаЗарплатыСотрудников.Период&gt;=&amp;ДатаНачала
+	и уб_ПараметрыРасчетаЗарплатыСотрудников.Период&lt;=&amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	Исходные.Сотрудник КАК Менеджер,
+	Исходные.Период как ЗарплатныйПериод,
+	Подразделения.ТипПараметра КАК Подразделение,
+	ЕСТЬNULL(Планы.ЗначениеПараметра, 0) КАК План,
+	ЕСТЬNULL(Сборы.ЗначениеПараметра, 0) КАК СКВ, 0 Как СКВЛички,
+	ЕСТЬNULL(ЗА_СКВ.ЗначениеПараметра, 0) КАК выплачено,
+	ЕСТЬNULL(ЗА_АВ.ЗначениеПараметра, 0) КАК ЗаЛички,
+	ЕСТЬNULL(ЗА_РОП.ЗначениеПараметра, 0) КАК ВыплаченоРОП,
+	ЕСТЬNULL(ПрочиеНачисления.Результат, 0) КАК ПрочиеНачисления
+ИЗ
+	Исходные КАК Исходные
+		ЛЕВОЕ СОЕДИНЕНИЕ Исходные КАК Подразделения
+		ПО Исходные.Сотрудник = Подразделения.Сотрудник
+			И Исходные.Период = Подразделения.Период
+			И (Подразделения.ЗначениеПараметра = 3.1)
+		ЛЕВОЕ СОЕДИНЕНИЕ Исходные КАК Планы
+		ПО Исходные.Сотрудник = Планы.Сотрудник
+			И Исходные.Период = Планы.Период
+			И (Планы.ТипПараметра = "План")
+		ЛЕВОЕ СОЕДИНЕНИЕ Исходные КАК Сборы
+		ПО Исходные.Сотрудник = Сборы.Сотрудник
+			И Исходные.Период = Сборы.Период
+			И (Сборы.ТипПараметра = "СКВ")
+		ЛЕВОЕ СОЕДИНЕНИЕ Исходные КАК ЗА_СКВ
+		ПО (ЗА_СКВ.Сотрудник = Исходные.Сотрудник)
+			И (ЗА_СКВ.Период = Исходные.Период)
+			И (ЗА_СКВ.ТипПараметра = """План по СКВ""")
+		ЛЕВОЕ СОЕДИНЕНИЕ Исходные КАК ЗА_АВ
+		ПО (ЗА_АВ.Сотрудник = Исходные.Сотрудник)
+			И (ЗА_АВ.Период = Исходные.Период)
+			И (ЗА_АВ.ТипПараметра = "По АВ")	
+		ЛЕВОЕ СОЕДИНЕНИЕ Исходные КАК ЗА_РОП
+		ПО (ЗА_РОП.Сотрудник = Исходные.Сотрудник)
+			И (ЗА_РОП.Период = Исходные.Период)
+			И (ЗА_РОП.ТипПараметра = "СуммаВознаграждения_РОП")	
+		ЛЕВОЕ СОЕДИНЕНИЕ ПрочиеНачисления КАК ПрочиеНачисления
+		ПО (ПрочиеНачисления.Сотрудник = Исходные.Сотрудник)
+			И (ПрочиеНачисления.Дата = Исходные.Период)
+			
+			
+ГДЕ
+	Исходные.Сотрудник &lt;&gt; ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустаяСсылка)
+
+</query>
+	</dataSet>
+	<totalField>
+		<dataPath>выплачено</dataPath>
+		<expression>Сумма(выплачено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаЛички</dataPath>
+		<expression>Сумма(ЗаЛички)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>План</dataPath>
+		<expression>Сумма(План)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВыплаченоРОП</dataPath>
+		<expression>Сумма(ВыплаченоРОП)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СКВЛички</dataPath>
+		<expression>Сумма(СКВЛички)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СКВ</dataPath>
+		<expression>Сумма(СКВ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПрочиеНачисления</dataPath>
+		<expression>Сумма(ПрочиеНачисления)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подразделение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>План</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СКВ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>СКВЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>выплачено</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>выплаченоРОП</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПрочиеНачисления</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Подразделение</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ЗарплатныйПериод</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ЗарплатныйПериод</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Подразделение</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Менеджер</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

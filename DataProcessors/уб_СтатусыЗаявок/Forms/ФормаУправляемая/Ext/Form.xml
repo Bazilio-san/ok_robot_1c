@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<ScalingMode>Compact</ScalingMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="ОбластьМенеджер" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заявки в работе</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Область менеджер</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ОбластьМенеджерРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<UsualGroup name="КолонкиМенеджер" id="53">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Колонки менеджер</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Колонки менеджер</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="КолонкиМенеджерРасширеннаяПодсказка" id="54"/>
+							<ChildItems>
+								<UsualGroup name="Группа3" id="77">
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="78"/>
+									<ChildItems>
+										<Table name="ТаблицаМенеджер" id="5">
+											<UseAlternationRowColor>true</UseAlternationRowColor>
+											<EnableStartDrag>true</EnableStartDrag>
+											<DataPath>ТаблицаМенеджер</DataPath>
+											<RowPictureDataPath>ТаблицаМенеджер.DefaultPicture</RowPictureDataPath>
+											<AutoRefresh>false</AutoRefresh>
+											<AutoRefreshPeriod>60</AutoRefreshPeriod>
+											<Period>
+												<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+												<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+												<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+											</Period>
+											<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+											<RestoreCurrentRow>false</RestoreCurrentRow>
+											<TopLevelParent xsi:nil="true"/>
+											<ShowRoot>true</ShowRoot>
+											<AllowRootChoice>false</AllowRootChoice>
+											<UpdateOnDataChange>Auto</UpdateOnDataChange>
+											<ContextMenu name="ТаблицаМенеджерКонтекстноеМеню" id="6"/>
+											<AutoCommandBar name="ТаблицаМенеджерКоманднаяПанель" id="7">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ТаблицаМенеджерРасширеннаяПодсказка" id="8"/>
+											<SearchStringAddition name="ТаблицаМенеджерСтрокаПоиска" id="9">
+												<AdditionSource>
+													<Item>ТаблицаМенеджер</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ТаблицаМенеджерСтрокаПоискаКонтекстноеМеню" id="10"/>
+												<ExtendedTooltip name="ТаблицаМенеджерСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ТаблицаМенеджерСостояниеПросмотра" id="12">
+												<AdditionSource>
+													<Item>ТаблицаМенеджер</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ТаблицаМенеджерСостояниеПросмотраКонтекстноеМеню" id="13"/>
+												<ExtendedTooltip name="ТаблицаМенеджерСостояниеПросмотраРасширеннаяПодсказка" id="14"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ТаблицаМенеджерУправлениеПоиском" id="15">
+												<AdditionSource>
+													<Item>ТаблицаМенеджер</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ТаблицаМенеджерУправлениеПоискомКонтекстноеМеню" id="16"/>
+												<ExtendedTooltip name="ТаблицаМенеджерУправлениеПоискомРасширеннаяПодсказка" id="17"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ТаблицаМенеджерВыбор</Event>
+												<Event name="OnActivateRow">ТаблицаМенеджерПриАктивизацииСтроки</Event>
+											</Events>
+											<ChildItems>
+												<LabelField name="ТаблицаМенеджерЗаявкаНомер" id="18">
+													<DataPath>ТаблицаМенеджер.Заявка.Number</DataPath>
+													<Width>6</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ТаблицаМенеджерЗаявкаНомерКонтекстноеМеню" id="19"/>
+													<ExtendedTooltip name="ТаблицаМенеджерЗаявкаНомерРасширеннаяПодсказка" id="20"/>
+												</LabelField>
+												<LabelField name="ТаблицаМенеджерЗаявкаНомерЗаявки" id="21">
+													<DataPath>ТаблицаМенеджер.Заявка.НомерЗаявки</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>АМО</v8:content>
+														</v8:item>
+													</Title>
+													<Width>9</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ТаблицаМенеджерЗаявкаНомерЗаявкиКонтекстноеМеню" id="22"/>
+													<ExtendedTooltip name="ТаблицаМенеджерЗаявкаНомерЗаявкиРасширеннаяПодсказка" id="23"/>
+												</LabelField>
+												<LabelField name="ТаблицаМенеджерЗаявкаДата" id="24">
+													<DataPath>ТаблицаМенеджер.Дата</DataPath>
+													<Width>11</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<Format>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ДФ=dd.MM.yyyy</v8:content>
+														</v8:item>
+													</Format>
+													<ContextMenu name="ТаблицаМенеджерЗаявкаДатаКонтекстноеМеню" id="25"/>
+													<ExtendedTooltip name="ТаблицаМенеджерЗаявкаДатаРасширеннаяПодсказка" id="26"/>
+												</LabelField>
+												<LabelField name="ТаблицаМенеджерЗаявкаДата1" id="27">
+													<DataPath>ТаблицаМенеджер.Дата</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Время</v8:content>
+														</v8:item>
+													</Title>
+													<Width>7</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<Format>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ДФ=HH:mm</v8:content>
+														</v8:item>
+													</Format>
+													<ContextMenu name="ТаблицаМенеджерЗаявкаДата1КонтекстноеМеню" id="28"/>
+													<ExtendedTooltip name="ТаблицаМенеджерЗаявкаДата1РасширеннаяПодсказка" id="29"/>
+												</LabelField>
+												<PictureField name="ТаблицаМенеджерГорящая" id="50">
+													<DataPath>ТаблицаМенеджер.Горящая</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Гор.</v8:content>
+														</v8:item>
+													</Title>
+													<ValuesPicture>
+														<xr:Ref>CommonPicture.Пламя1</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</ValuesPicture>
+													<ContextMenu name="ТаблицаМенеджерГорящаяКонтекстноеМеню" id="51"/>
+													<ExtendedTooltip name="ТаблицаМенеджерГорящаяРасширеннаяПодсказка" id="52"/>
+												</PictureField>
+												<LabelField name="ТаблицаМенеджерМенеджер" id="38">
+													<DataPath>ТаблицаМенеджер.Менеджер</DataPath>
+													<Visible>false</Visible>
+													<ContextMenu name="ТаблицаМенеджерМенеджерКонтекстноеМеню" id="39"/>
+													<ExtendedTooltip name="ТаблицаМенеджерМенеджерРасширеннаяПодсказка" id="40"/>
+												</LabelField>
+												<LabelField name="ТаблицаМенеджерСтрахователь" id="41">
+													<DataPath>ТаблицаМенеджер.Страхователь</DataPath>
+													<ContextMenu name="ТаблицаМенеджерСтраховательКонтекстноеМеню" id="42"/>
+													<ExtendedTooltip name="ТаблицаМенеджерСтраховательРасширеннаяПодсказка" id="43"/>
+												</LabelField>
+												<LabelField name="ТаблицаМенеджерОператор" id="44">
+													<DataPath>ТаблицаМенеджер.Оператор</DataPath>
+													<ContextMenu name="ТаблицаМенеджерОператорКонтекстноеМеню" id="45"/>
+													<ExtendedTooltip name="ТаблицаМенеджерОператорРасширеннаяПодсказка" id="46"/>
+												</LabelField>
+												<LabelField name="ТаблицаМенеджерСтатусЗаявки" id="47">
+													<DataPath>ТаблицаМенеджер.СтатусЗаявки</DataPath>
+													<ContextMenu name="ТаблицаМенеджерСтатусЗаявкиКонтекстноеМеню" id="48"/>
+													<ExtendedTooltip name="ТаблицаМенеджерСтатусЗаявкиРасширеннаяПодсказка" id="49"/>
+												</LabelField>
+												<LabelField name="ТаблицаМенеджерЗаявка" id="35">
+													<DataPath>ТаблицаМенеджер.Заявка</DataPath>
+													<Width>1</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ТаблицаМенеджерЗаявкаКонтекстноеМеню" id="36"/>
+													<ExtendedTooltip name="ТаблицаМенеджерЗаявкаРасширеннаяПодсказка" id="37"/>
+												</LabelField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа4" id="81">
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="82"/>
+									<ChildItems>
+										<Button name="Документуб_ЗаявкаНаЗаказВыездногоСпециалистаСоздать" id="79">
+											<Type>UsualButton</Type>
+											<Representation>PictureAndText</Representation>
+											<CommandName>Document.уб_ЗаявкаНаЗаказВыездногоСпециалиста.StandardCommand.Create</CommandName>
+											<Picture>
+												<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Создать новую заявку</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="Документуб_ЗаявкаНаЗаказВыездногоСпециалистаСоздатьРасширеннаяПодсказка" id="80"/>
+										</Button>
+										<HTMLDocumentField name="ИнфоМенеджер" id="55">
+											<DataPath>ИнфоМенеджер</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Output>Disable</Output>
+											<ContextMenu name="ИнфоМенеджерКонтекстноеМеню" id="56"/>
+											<ExtendedTooltip name="ИнфоМенеджерРасширеннаяПодсказка" id="57"/>
+										</HTMLDocumentField>
+										<SpreadSheetDocumentField name="ПолеСтатистики" id="83">
+											<DataPath>ПолеСтатистики</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Статистика кассы</v8:content>
+												</v8:item>
+											</Title>
+											<Height>6</Height>
+											<VerticalStretch>false</VerticalStretch>
+											<ShowGrid>true</ShowGrid>
+											<ContextMenu name="ПолеСтатистикиКонтекстноеМеню" id="84"/>
+											<ExtendedTooltip name="ПолеСтатистикиРасширеннаяПодсказка" id="85"/>
+										</SpreadSheetDocumentField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="Отборы" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОтборыРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<InputField name="НомерЗаявки" id="70">
+					<DataPath>НомерЗаявки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№ заявки</v8:content>
+						</v8:item>
+					</Title>
+					<ClearButton>true</ClearButton>
+					<BackColor>style:ToolTipBackColor</BackColor>
+					<ContextMenu name="НомерЗаявкиКонтекстноеМеню" id="71"/>
+					<ExtendedTooltip name="НомерЗаявкиРасширеннаяПодсказка" id="72"/>
+					<Events>
+						<Event name="OnChange">НомерЗаявкиПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="Группа1" id="73">
+					<Width>30</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="74"/>
+					<ChildItems>
+						<InputField name="Менеджер" id="58">
+							<DataPath>Менеджер</DataPath>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<BackColor>style:ToolTipBackColor</BackColor>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="МенеджерКонтекстноеМеню" id="59"/>
+							<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="60"/>
+							<Events>
+								<Event name="OnChange">МенеджерПриИзменении</Event>
+								<Event name="StartChoice">МенеджерНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="Курьер" id="64">
+							<DataPath>Курьер</DataPath>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<BackColor>style:ToolTipBackColor</BackColor>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="КурьерКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="КурьерРасширеннаяПодсказка" id="66"/>
+							<Events>
+								<Event name="OnChange">КурьерПриИзменении</Event>
+								<Event name="StartChoice">КурьерНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа2" id="75">
+					<Width>30</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="76"/>
+					<ChildItems>
+						<InputField name="Оператор" id="61">
+							<DataPath>Оператор</DataPath>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<BackColor>style:ToolTipBackColor</BackColor>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="ОператорКонтекстноеМеню" id="62"/>
+							<ExtendedTooltip name="ОператорРасширеннаяПодсказка" id="63"/>
+							<Events>
+								<Event name="OnChange">ОператорПриИзменении</Event>
+								<Event name="StartChoice">ОператорНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="СтатусЗаявки" id="67">
+							<DataPath>СтатусЗаявки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус</v8:content>
+								</v8:item>
+							</Title>
+							<DropListButton>true</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<BackColor>style:ToolTipBackColor</BackColor>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="СтатусЗаявкиКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="СтатусЗаявкиРасширеннаяПодсказка" id="69"/>
+							<Events>
+								<Event name="OnChange">СтатусЗаявкиПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Период" id="32">
+					<DataPath>Период</DataPath>
+					<Width>13</Width>
+					<BackColor>style:ToolTipBackColor</BackColor>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">ПериодПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.уб_СтатусыЗаявок</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТаблицаМенеджер" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица менеджер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	Заявки.Ссылка КАК Ссылка,
+	Заявки.Менеджер КАК Менеджер,
+	ВЫБОР
+		КОГДА Заявки.Самовыезд
+			ТОГДА " &lt;Самовыезд&gt; "
+		ИНАЧЕ Заявки.Курьер
+	КОНЕЦ КАК Курьер,
+	Заявки.Проведен КАК Проведен,
+	Заявки.Утверждено КАК Подтверждена,
+	Заявки.Утверждено КАК Утверждено,
+	Заявки.Дата КАК ДатаСтатуса,
+	Заявки.Статус КАК Статус,
+	Заявки.Самовыезд КАК Самовыезд,
+	Заявки.ПометкаУдаления КАК ПометкаУдаления,
+	Заявки.НомерЗаявки КАК НомерЗаявки,
+	Заявки.Номер КАК Номер,
+	Заявки.Дата КАК Дата,
+	Заявки.ВремяВстречиКлиент КАК ВремяВстречиКлиент,
+	Заявки.Тип КАК Тип,
+	Заявки.Страхователь КАК Страхователь,
+	Заявки.Оператор КАК Оператор,
+	Заявки.СтаршийОператор КАК СтаршийОператор,
+	Заявки.Тип КАК Тип1,
+	Заявки.Срочная КАК Срочная,
+	Заявки.ПредставлениеЗаявки КАК ПредставлениеЗаявки,
+	Заявки.ТребуетсяУтверждениеАндеррайтера КАК ТребуетсяУтверждениеАндеррайтера,
+	Заявки.УтвердилАндеррайтер КАК УтвердилАндеррайтер,
+	Заявки.Оператор КАК Оператор1,
+	Заявки.РезультатПроверки КАК РезультатПроверки,
+	ВЫБОР
+		КОГДА уб_ПеремещениеБСО.Ссылка ЕСТЬ NULL
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ КАК ЕстьПеремещение
+ПОМЕСТИТЬ заявки0
+ИЗ
+	Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста КАК Заявки
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.уб_ПеремещениеБСО КАК уб_ПеремещениеБСО
+		ПО Заявки.Ссылка = уб_ПеремещениеБСО.СозданНаОсновании
+ГДЕ
+	Заявки.Тип &lt;&gt; ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Административный)
+	И Заявки.Дата &gt;= &amp;ДатаС
+	И Заявки.Дата &lt;= &amp;ДатаПо
+	И 4 = 4
+	И Заявки.Менеджер = &amp;Менеджер
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Срез.Заявка КАК Заявка,
+	Срез.Статус КАК СтатусЗаявки,
+	Срез.Доработка КАК Доработка,
+	Заявки.Ссылка КАК Ссылка,
+	Заявки.Менеджер КАК Менеджер,
+	Заявки.Курьер КАК Курьер,
+	Заявки.Проведен КАК Проведен,
+	Заявки.Подтверждена КАК Подтверждена,
+	Заявки.Утверждено КАК Утверждено,
+	Заявки.ДатаСтатуса КАК ДатаСтатуса,
+	Заявки.Статус КАК Статус,
+	Заявки.Самовыезд КАК Самовыезд,
+	Заявки.ПометкаУдаления КАК ПометкаУдаления,
+	Заявки.НомерЗаявки КАК НомерЗаявки,
+	Заявки.Номер КАК Номер,
+	Заявки.Дата КАК Дата,
+	Заявки.ВремяВстречиКлиент КАК ВремяВстречиКлиент,
+	Заявки.Тип КАК Тип,
+	Заявки.Страхователь КАК Страхователь,
+	Заявки.Оператор КАК Оператор,
+	Заявки.СтаршийОператор КАК СтаршийОператор,
+	Заявки.Тип1 КАК Тип1,
+	Заявки.Срочная КАК Срочная,
+	Заявки.ПредставлениеЗаявки КАК ПредставлениеЗаявки,
+	Заявки.ТребуетсяУтверждениеАндеррайтера КАК ТребуетсяУтверждениеАндеррайтера,
+	Заявки.УтвердилАндеррайтер КАК УтвердилАндеррайтер,
+	Заявки.Оператор1 КАК Оператор1,
+	Заявки.РезультатПроверки КАК РезультатПроверки,
+	Заявки.ЕстьПеремещение КАК ЕстьПеремещение,
+	"" КАК ПоложениеБСО,
+	"" КАК Представление,
+	"" КАК ТаблицаБСО,
+	Срез.ТребуетсяВозвратБСО КАК ТребуетсяВозвратБСОВСрезе,
+	ВЫБОР
+		КОГДА Срез.ТребуетсяВозвратБСО = ИСТИНА
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ТребуетсяВозвратБСО,
+	ВЫРАЗИТЬ(Срез.Комментарий КАК СТРОКА(100)) КАК Комментарий,
+	Срез.Статус.Порядок КАК Сортировка,
+	Срез.Период КАК Период
+ПОМЕСТИТЬ СтатусыЗаявок
+ИЗ
+	РегистрСведений.уб_ИсторияСтатусовЗаявок.СрезПоследних(
+			,
+			Заявка В
+					(ВЫБРАТЬ
+						Заявки0.Ссылка
+					ИЗ
+						Заявки0)
+				И 0 = 0) КАК Срез
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ заявки0 КАК Заявки
+		ПО Срез.Заявка = Заявки.Ссылка
+ГДЕ
+	1 = 1
+	И 2 = 2
+	И 3 = 3
+	И ВЫБОР
+			КОГДА Срез.ТребуетсяВозвратБСО = ИСТИНА
+				ТОГДА ИСТИНА
+			КОГДА Заявки.ПометкаУдаления
+				ТОГДА ЛОЖЬ
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СтатусыЗаявок.Заявка КАК Заявка,
+	СтатусыЗаявок.СтатусЗаявки КАК СтатусЗаявки,
+	СтатусыЗаявок.Доработка КАК Доработка,
+	СтатусыЗаявок.Ссылка КАК Ссылка,
+	СтатусыЗаявок.Менеджер КАК Менеджер,
+	СтатусыЗаявок.Курьер КАК Курьер,
+	СтатусыЗаявок.Проведен КАК Проведен,
+	СтатусыЗаявок.Подтверждена КАК Подтверждена,
+	СтатусыЗаявок.Утверждено КАК Утверждено,
+	СтатусыЗаявок.ДатаСтатуса КАК ДатаСтатуса,
+	СтатусыЗаявок.Статус КАК Статус,
+	СтатусыЗаявок.Самовыезд КАК Самовыезд,
+	СтатусыЗаявок.ПометкаУдаления КАК ПометкаУдаления,
+	СтатусыЗаявок.НомерЗаявки КАК НомерЗаявки,
+	СтатусыЗаявок.Номер КАК Номер,
+	СтатусыЗаявок.Дата КАК Дата,
+	СтатусыЗаявок.ВремяВстречиКлиент КАК ВремяВстречиКлиент,
+	СтатусыЗаявок.Тип КАК Тип,
+	СтатусыЗаявок.Страхователь КАК Страхователь,
+	СтатусыЗаявок.Оператор КАК Оператор,
+	СтатусыЗаявок.СтаршийОператор КАК СтаршийОператор,
+	СтатусыЗаявок.Тип1 КАК Тип1,
+	СтатусыЗаявок.Срочная КАК Срочная,
+	СтатусыЗаявок.ПредставлениеЗаявки КАК ПредставлениеЗаявки,
+	СтатусыЗаявок.ТребуетсяУтверждениеАндеррайтера КАК ТребуетсяУтверждениеАндеррайтера,
+	СтатусыЗаявок.УтвердилАндеррайтер КАК УтвердилАндеррайтер,
+	СтатусыЗаявок.Оператор1 КАК Оператор1,
+	СтатусыЗаявок.РезультатПроверки КАК РезультатПроверки,
+	СтатусыЗаявок.ЕстьПеремещение КАК ЕстьПеремещение,
+	СтатусыЗаявок.ПоложениеБСО КАК ПоложениеБСО,
+	СтатусыЗаявок.Представление КАК Представление,
+	СтатусыЗаявок.ТаблицаБСО КАК ТаблицаБСО,
+	СтатусыЗаявок.ТребуетсяВозвратБСОВСрезе КАК ТребуетсяВозвратБСОВСрезе,
+	СтатусыЗаявок.ТребуетсяВозвратБСО КАК ТребуетсяВозвратБСО,
+	СтатусыЗаявок.Комментарий КАК Комментарий,
+	СтатусыЗаявок.Сортировка КАК Сортировка,
+	СтатусыЗаявок.Период КАК Период,
+	ВЫБОР
+		КОГДА СтатусыЗаявок.Самовыезд = ИСТИНА
+			ТОГДА 0
+		КОГДА СтатусыЗаявок.Дата &lt;= &amp;ДатаНачалаДня
+			ТОГДА 2
+		КОГДА СтатусыЗаявок.ВремяВстречиКлиент &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+				И СтатусыЗаявок.ВремяВстречиКлиент &lt;= &amp;ДатаСрочность
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК Горящая
+ИЗ
+	СтатусыЗаявок КАК СтатусыЗаявок</QueryText>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Период" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИнфоМенеджер" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация по заявке</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Менеджер" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Курьер" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Курьер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Оператор" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оператор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатусЗаявки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус заявки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.уб_СтатусыЗаявок</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерЗаявки" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер заявки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>7</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолеСтатистики" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле статистики</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

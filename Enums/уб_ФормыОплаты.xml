@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="11cc4891-d543-4abf-84b6-02eedfed1c1b">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_ФормыОплаты" category="Ref">
+				<xr:TypeId>3e8d40e2-e7c0-4f5e-b386-597d5e9693f1</xr:TypeId>
+				<xr:ValueId>7f863cd5-d5f9-4932-b262-16d10e8e6fca</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_ФормыОплаты" category="Manager">
+				<xr:TypeId>35e56c46-7991-417d-bfb3-8df8ce866798</xr:TypeId>
+				<xr:ValueId>0d943cb5-c774-45cf-b4e6-7e87e75ecb07</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_ФормыОплаты" category="List">
+				<xr:TypeId>66d42f15-3107-44e1-99a9-57a239d46827</xr:TypeId>
+				<xr:ValueId>b2e444c5-1a50-4a45-86d0-d8b2f0642194</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_ФормыОплаты</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формы оплаты</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>QuickChoice</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="c84db47f-541a-4192-8f48-2d8eece239e2">
+				<Properties>
+					<Name>Касса</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наличными (0%)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="26cf5d32-4772-4b2b-b6bd-370ed58eb349">
+				<Properties>
+					<Name>Безнал</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>На р\с в КПП</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="274f1e0a-4b50-453c-90fc-2e91265a5e19">
+				<Properties>
+					<Name>Поставщику</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В страховую -3%(потерянная сумма)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Поставщику (любым способом оплаты)</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a52b63d4-0b37-49bf-aca9-70b0d42e6f91">
+				<Properties>
+					<Name>Терминал</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Терминал (3%)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="2fb43d2b-4e7b-4bae-9cf5-4726167a3b1f">
+				<Properties>
+					<Name>ВКредит</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В кредит (0%) </v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="ca4ce7b5-8e52-47c7-9489-2bee68cb631e">
+				<Properties>
+					<Name>НаКарту</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>На карту (0%)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="f64040e5-2309-4a31-aa11-05f2e7b89b47">
+				<Properties>
+					<Name>ПоСсылкеБрокеру</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По ссылке в КПП (3%)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="cc77f026-44d7-40cf-9e1f-6c96d86801c0">
+				<Properties>
+					<Name>ПоQR</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По СБП/QR коду (0%)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

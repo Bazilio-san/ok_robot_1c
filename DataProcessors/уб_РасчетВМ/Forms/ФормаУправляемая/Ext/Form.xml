@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Расчет вознаграждений менеджерам отдела продаж</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<ScalingMode>Compact</ScalingMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаСформировать" id="1">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.Сформировать</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.Сформировать</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+					<xr:TransparentPixel x="13" y="2"/>
+				</Picture>
+				<ExtendedTooltip name="ФормаСформироватьРасширеннаяПодсказка" id="37"/>
+			</Button>
+			<Button name="ФормаНастройка" id="2">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.Настройка</CommandName>
+				<ExtendedTooltip name="ФормаНастройкаРасширеннаяПодсказка" id="38"/>
+			</Button>
+			<Button name="ФормаНадпись" id="35">
+				<Type>CommandBarButton</Type>
+				<Enabled>false</Enabled>
+				<CommandName>Form.Command.Надпись</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>В случае пустой даты берется текущая дата</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаНадписьРасширеннаяПодсказка" id="39"/>
+			</Button>
+			<Button name="Печать" id="29">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.Печать</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Print</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать...</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="40"/>
+			</Button>
+			<Button name="ПечатьСразу" id="32">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.ПечатьСразу</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.PrintImmediately</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ПечатьСразуРасширеннаяПодсказка" id="41"/>
+			</Button>
+			<Button name="ПредварительныйПросмотр" id="33">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПредварительныйПросмотр</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ПредварительныйПросмотр</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+					<xr:TransparentPixel x="14" y="1"/>
+				</Picture>
+				<ExtendedTooltip name="ПредварительныйПросмотрРасширеннаяПодсказка" id="42"/>
+			</Button>
+			<Button name="ПараметрыСтраницы" id="34">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПараметрыСтраницы</CommandName>
+				<ExtendedTooltip name="ПараметрыСтраницыРасширеннаяПодсказка" id="43"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="7">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="44"/>
+			<ChildItems>
+				<InputField name="РежимОтчета" id="3">
+					<DataPath>Объект.РежимОтчета</DataPath>
+					<Width>15</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ChoiceButton>false</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<TextEdit>false</TextEdit>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Состояние на дату</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">0</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сравнение двух дат</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ChoiceListButton>false</ChoiceListButton>
+					<ContextMenu name="РежимОтчетаКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="РежимОтчетаРасширеннаяПодсказка" id="45"/>
+					<Events>
+						<Event name="OnChange">РежимОтчетаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаСреза" id="26">
+					<DataPath>Объект.ДатаСреза</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<Width>14</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ContextMenu name="ДатаСрезаКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ДатаСрезаРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ДатаСреза1" id="9">
+					<DataPath>Объект.ДатаСреза1</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<Width>14</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ContextMenu name="ДатаСреза1КонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ДатаСреза1РасширеннаяПодсказка" id="47"/>
+				</InputField>
+				<InputField name="ДатаСреза2" id="11">
+					<DataPath>Объект.ДатаСреза2</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>и</v8:content>
+						</v8:item>
+					</Title>
+					<Width>14</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ContextMenu name="ДатаСреза2КонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="ДатаСреза2РасширеннаяПодсказка" id="48"/>
+				</InputField>
+				<Button name="ОткрытьОтчетОбИзмененияхВОплатах" id="13">
+					<Type>Hyperlink</Type>
+					<Width>28</Width>
+					<CommandName>Form.Command.ОткрытьОтчетОбИзмененияхВОплатах</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Открыть отчет об изменениях в оплатах</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОткрытьОтчетОбИзмененияхВОплатахРасширеннаяПодсказка" id="49"/>
+				</Button>
+				<CheckBoxField name="ПересчитыватьСуммыВОплатах" id="14">
+					<DataPath>Объект.ПересчитыватьСуммыВОплатах</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПересчитыватьСуммыВОплатахКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ПересчитыватьСуммыВОплатахРасширеннаяПодсказка" id="50"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="8">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="51"/>
+			<ChildItems>
+				<InputField name="рПериодЗП" id="30">
+					<DataPath>рПериодЗП</DataPath>
+					<Width>18</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ChoiceButton>false</ChoiceButton>
+					<SpinButton>true</SpinButton>
+					<TextEdit>false</TextEdit>
+					<ChoiceListButton>true</ChoiceListButton>
+					<ContextMenu name="рПериодЗПКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="рПериодЗПРасширеннаяПодсказка" id="52"/>
+					<Events>
+						<Event name="Tuning">рПериодЗПРегулирование</Event>
+						<Event name="StartListChoice">рПериодЗПНачалоВыбораИзСписка</Event>
+					</Events>
+				</InputField>
+				<InputField name="Менеджер" id="16">
+					<DataPath>Объект.Менеджер</DataPath>
+					<Width>23</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<ChoiceListButton>true</ChoiceListButton>
+					<ChoiceListHeight>25</ChoiceListHeight>
+					<ContextMenu name="МенеджерКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="53"/>
+				</InputField>
+				<InputField name="Подразделение" id="20">
+					<DataPath>Объект.Подразделение</DataPath>
+					<Width>23</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<ContextMenu name="ПодразделениеКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="55"/>
+					<Events>
+						<Event name="OnChange">ПодразделениеПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ВидСП" id="22">
+					<DataPath>Объект.ВидСП</DataPath>
+					<Width>14</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ВидСПКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ВидСПРасширеннаяПодсказка" id="56"/>
+				</InputField>
+				<CheckBoxField name="ТолькоСОтличиями" id="18">
+					<DataPath>Объект.ТолькоСОтличиями</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отображать только оплаты, где изменился СКВ</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТолькоСОтличиямиКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ТолькоСОтличиямиРасширеннаяПодсказка" id="54"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<SpreadSheetDocumentField name="ДокументРезультат" id="24">
+			<DataPath>ДокументРезультат</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<VerticalScrollBar>true</VerticalScrollBar>
+			<HorizontalScrollBar>true</HorizontalScrollBar>
+			<ContextMenu name="ДокументРезультатКонтекстноеМеню" id="25">
+				<ChildItems>
+					<Button name="ПосмотретьКС" id="36">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПосмотретьКС</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Посмотреть крупную сделку</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПосмотретьКСРасширеннаяПодсказка" id="57"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<ExtendedTooltip name="ДокументРезультатРасширеннаяПодсказка" id="58"/>
+			<Events>
+				<Event name="OnActivate">ДокументРезультатПриАктивизацииОбласти</Event>
+				<Event name="DetailProcessing">ДокументРезультатОбработкаРасшифровки</Event>
+			</Events>
+		</SpreadSheetDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.уб_РасчетВМ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДокументРезультат" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="рПериодЗП" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период ЗП</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Сформировать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьОтчетПоЗП</Action>
+		</Command>
+		<Command name="Настройка" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Настройка</Action>
+		</Command>
+		<Command name="ОткрытьОтчетОбИзмененияхВОплатах" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть отчет об изменениях в оплатах</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть отчет об изменениях в оплатах</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьОтчетОбИзмененияхВОплатах</Action>
+		</Command>
+		<Command name="Печать" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Печать</Action>
+		</Command>
+		<Command name="ПечатьСразу" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать сразу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать сразу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПечатьСразу</Action>
+		</Command>
+		<Command name="ПредварительныйПросмотр" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предварительный просмотр</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предварительный просмотр</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПредварительныйПросмотр</Action>
+		</Command>
+		<Command name="ПараметрыСтраницы" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПараметрыСтраницы</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:TransparentPixel x="13" y="5"/>
+			</Picture>
+			<Action>ПараметрыСтраницы</Action>
+		</Command>
+		<Command name="Надпись" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Надпись</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Надпись</v8:content>
+				</v8:item>
+			</ToolTip>
+		</Command>
+		<Command name="ПосмотретьКС" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Посмотреть КС</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Посмотреть КС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПосмотретьКС</Action>
+		</Command>
+	</Commands>
+</Form>

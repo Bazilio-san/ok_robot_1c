@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Subsystem uuid="9f378521-8807-4995-98cd-c2f8b97ad3d4">
+		<Properties>
+			<Name>цб_УчетУправленческойЗП</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет управленческой ЗП</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.уб_ЗП_ПолныйДоступ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.уб_ШтрафныеСанкции</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВыплатаЗП</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_НачислениеЗП</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ТабельУчетаРабочегоВремени</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.уб_ВидОперацииВыплатыЗП</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.уб_ВидыРасчетовСАгентом</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.уб_СпособРасчетаНачисления</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.уб_ЗПКурьера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.уб_ОтчетПоПравкамОплатДляЗП</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.уб_ДеревоУправленияНачислениями</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.уб_ДеревоУправленияШтрафами</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.уб_ЗадолженностьОрганизацииПоЗПнаЗаданнуюДату</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.уб_ПланыПоСКВ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.уб_РасчетВМ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.уб_РасчетныеЛистки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_АктуальностьРасчетаПериодовЗП</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_ДатыРасчетовССотрудниками</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_ДействующиеНачисленияСотрудников</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_ЗП_СтавкиВознагражденияКурьеров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_ЗП_Схема_ПланПоСКВ_Планы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_ЗП_Схема_ПланПоСКВ_ПроцентныеСтавки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_ЗП_Схема_ПланПоСКВ_СуперПланы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_ЗП_Схема_Процент_ПроцентныеСтавки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_ЗП_СхемыВознагражденияРуководителейОП</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_ЗП_СхемыРасчетовСМенеджерами</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_КВ_Агентов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_КВ_ДельтыАгентовИМенеджеров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.уб_Штрафы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.уб_РасчетыСФЛПоЗП</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfCalculationTypes.уб_ОсновныеНачисленияОрганизаций</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>

@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Настройка сетки КВ и клуба 30%</v8:content>
+		</v8:item>
+	</Title>
+	<SaveDataInSettings>UseList</SaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="1">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="ПериодЗП" id="32">
+					<DataPath>ПериодЗП</DataPath>
+					<Width>22</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ПериодЗПКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ПериодЗПРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">ПериодЗППриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="7"/>
+			<Events>
+				<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="СтраницаСеткаКВ" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сетка КВ</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница сетка КВ</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаСеткаКВРасширеннаяПодсказка" id="9"/>
+					<ChildItems>
+						<InputField name="Подразделение" id="35">
+							<DataPath>Подразделение</DataPath>
+							<Width>22</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ChoiceForm>Catalog.ПодразделенияОрганизаций.Form.ФормаСпискаУправляемая</ChoiceForm>
+							<ContextMenu name="ПодразделениеКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="37"/>
+							<Events>
+								<Event name="OnChange">ПодразделениеПриИзменении1</Event>
+							</Events>
+						</InputField>
+						<Table name="Сетка" id="10">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Сетка</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СеткаКонтекстноеМеню" id="11"/>
+							<AutoCommandBar name="СеткаКоманднаяПанель" id="12">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СеткаРасширеннаяПодсказка" id="13"/>
+							<SearchStringAddition name="СеткаСтрокаПоиска" id="14">
+								<AdditionSource>
+									<Item>Сетка</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СеткаСтрокаПоискаКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="СеткаСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СеткаСостояниеПросмотра" id="17">
+								<AdditionSource>
+									<Item>Сетка</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СеткаСостояниеПросмотраКонтекстноеМеню" id="18"/>
+								<ExtendedTooltip name="СеткаСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СеткаУправлениеПоиском" id="20">
+								<AdditionSource>
+									<Item>Сетка</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СеткаУправлениеПоискомКонтекстноеМеню" id="21"/>
+								<ExtendedTooltip name="СеткаУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">СеткаПередНачаломДобавления</Event>
+								<Event name="BeforeDeleteRow">СеткаПередУдалением</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="СеткаПроцентОт" id="23">
+									<DataPath>Сетка.ПроцентОт</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СеткаПроцентОтКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="СеткаПроцентОтРасширеннаяПодсказка" id="25"/>
+								</InputField>
+								<InputField name="СеткаСтавкаПролонгация" id="26">
+									<DataPath>Сетка.СтавкаПролонгация</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СеткаСтавкаПролонгацияКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="СеткаСтавкаПролонгацияРасширеннаяПодсказка" id="28"/>
+									<Events>
+										<Event name="OnChange">СеткаСтавкаПролонгацияПриИзменении1</Event>
+									</Events>
+								</InputField>
+								<InputField name="СеткаСтавкаНБ" id="29">
+									<DataPath>Сетка.СтавкаНБ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СеткаСтавкаНБКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="СеткаСтавкаНБРасширеннаяПодсказка" id="31"/>
+									<Events>
+										<Event name="OnChange">СеткаСтавкаПролонгацияПриИзменении1</Event>
+									</Events>
+								</InputField>
+								<InputField name="СеткаПустышка" id="38">
+									<DataPath>Сетка.Пустышка</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СеткаПустышкаКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="СеткаПустышкаРасширеннаяПодсказка" id="40"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<UsualGroup name="Группа2" id="43">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="44"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация1" id="45">
+									<HorizontalStretch>true</HorizontalStretch>
+									<TextColor>style:AccentColor</TextColor>
+									<Font height="10" kind="AutoFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значения сохраняются сразу после изменения</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="47"/>
+								</LabelDecoration>
+								<Button name="ОбновитьСетку" id="41">
+									<Type>UsualButton</Type>
+									<DefaultButton>true</DefaultButton>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.Command.ОбновитьСетку</CommandName>
+									<Font bold="true" kind="AutoFont"/>
+									<ExtendedTooltip name="ОбновитьСеткуРасширеннаяПодсказка" id="42"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПремированияПроцентаКВ" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клуб 30% (Премирование высокого КВ)</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница премирования процента КВ</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПремированияПроцентаКВРасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<UsualGroup name="УсловияСрабатывания" id="50">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Условия срабатывания</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Условия срабатывания</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="УсловияСрабатыванияРасширеннаяПодсказка" id="51"/>
+							<ChildItems>
+								<UsualGroup name="Группа4" id="103">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="104"/>
+									<ChildItems>
+										<InputField name="ЦелевойПроцентКВ" id="52">
+											<DataPath>ЦелевойПроцентКВ</DataPath>
+											<Width>8</Width>
+											<SpinButton>true</SpinButton>
+											<ContextMenu name="ЦелевойПроцентКВКонтекстноеМеню" id="53"/>
+											<ExtendedTooltip name="ЦелевойПроцентКВРасширеннаяПодсказка" id="54"/>
+										</InputField>
+										<LabelDecoration name="Декорация2" id="98">
+											<TextColor>style:AccentColor</TextColor>
+											<Font height="10" kind="AutoFont"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Исключаются лички и оплаты со скидкой, настройки для всех подразделений</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Декорация2КонтекстноеМеню" id="99"/>
+											<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="100"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="КолонкиСК" id="80">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Колонки СК</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Колонки СК</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="КолонкиСКРасширеннаяПодсказка" id="81"/>
+									<ChildItems>
+										<UsualGroup name="КнопкиСК" id="82">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Кнопки СК</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Кнопки СК</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="КнопкиСКРасширеннаяПодсказка" id="83"/>
+											<ChildItems>
+												<Button name="Добавить" id="86">
+													<Type>UsualButton</Type>
+													<Representation>Picture</Representation>
+													<CommandName>Form.Item.СтраховыеКомпании.StandardCommand.Add</CommandName>
+													<ExtendedTooltip name="ДобавитьРасширеннаяПодсказка" id="87"/>
+												</Button>
+												<Button name="Удалить" id="88">
+													<Type>UsualButton</Type>
+													<Representation>Picture</Representation>
+													<CommandName>Form.Item.СтраховыеКомпании.StandardCommand.Delete</CommandName>
+													<ExtendedTooltip name="УдалитьРасширеннаяПодсказка" id="89"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="СКСписок" id="84">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>СКСписок</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>СКСписок</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="СКСписокРасширеннаяПодсказка" id="85"/>
+											<ChildItems>
+												<Table name="СтраховыеКомпании" id="55">
+													<Representation>List</Representation>
+													<AutoInsertNewRow>true</AutoInsertNewRow>
+													<EnableStartDrag>true</EnableStartDrag>
+													<EnableDrag>true</EnableDrag>
+													<DataPath>СтраховыеКомпании</DataPath>
+													<RowFilter xsi:nil="true"/>
+													<ContextMenu name="СтраховыеКомпанииКонтекстноеМеню" id="56"/>
+													<AutoCommandBar name="СтраховыеКомпанииКоманднаяПанель" id="57">
+														<Autofill>false</Autofill>
+													</AutoCommandBar>
+													<ExtendedTooltip name="СтраховыеКомпанииРасширеннаяПодсказка" id="58"/>
+													<SearchStringAddition name="СтраховыеКомпанииСтрокаПоиска" id="59">
+														<AdditionSource>
+															<Item>СтраховыеКомпании</Item>
+															<Type>SearchStringRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="СтраховыеКомпанииСтрокаПоискаКонтекстноеМеню" id="60"/>
+														<ExtendedTooltip name="СтраховыеКомпанииСтрокаПоискаРасширеннаяПодсказка" id="61"/>
+													</SearchStringAddition>
+													<ViewStatusAddition name="СтраховыеКомпанииСостояниеПросмотра" id="62">
+														<AdditionSource>
+															<Item>СтраховыеКомпании</Item>
+															<Type>ViewStatusRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="СтраховыеКомпанииСостояниеПросмотраКонтекстноеМеню" id="63"/>
+														<ExtendedTooltip name="СтраховыеКомпанииСостояниеПросмотраРасширеннаяПодсказка" id="64"/>
+													</ViewStatusAddition>
+													<SearchControlAddition name="СтраховыеКомпанииУправлениеПоиском" id="65">
+														<AdditionSource>
+															<Item>СтраховыеКомпании</Item>
+															<Type>SearchControl</Type>
+														</AdditionSource>
+														<ContextMenu name="СтраховыеКомпанииУправлениеПоискомКонтекстноеМеню" id="66"/>
+														<ExtendedTooltip name="СтраховыеКомпанииУправлениеПоискомРасширеннаяПодсказка" id="67"/>
+													</SearchControlAddition>
+													<Events>
+														<Event name="OnChange">СтраховыеКомпанииПриИзменении</Event>
+													</Events>
+													<ChildItems>
+														<InputField name="СтраховыеКомпанииСтраховаяКомпания" id="68">
+															<DataPath>СтраховыеКомпании.СтраховаяКомпания</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>20</Width>
+															<HorizontalStretch>false</HorizontalStretch>
+															<OpenButton>false</OpenButton>
+															<ContextMenu name="СтраховыеКомпанииСтраховаяКомпанияКонтекстноеМеню" id="69"/>
+															<ExtendedTooltip name="СтраховыеКомпанииСтраховаяКомпанияРасширеннаяПодсказка" id="70"/>
+															<Events>
+																<Event name="OnChange">СтраховыеКомпанииСтраховаяКомпанияПриИзменении</Event>
+																<Event name="StartChoice">СтраховыеКомпанииСтраховаяКомпанияНачалоВыбора</Event>
+															</Events>
+														</InputField>
+														<InputField name="СтраховыеКомпанииПоставщик" id="71">
+															<DataPath>СтраховыеКомпании.Поставщик</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>20</Width>
+															<HorizontalStretch>false</HorizontalStretch>
+															<ClearButton>true</ClearButton>
+															<OpenButton>true</OpenButton>
+															<ContextMenu name="СтраховыеКомпанииПоставщикКонтекстноеМеню" id="72"/>
+															<ExtendedTooltip name="СтраховыеКомпанииПоставщикРасширеннаяПодсказка" id="73"/>
+															<Events>
+																<Event name="StartChoice">СтраховыеКомпанииСтраховаяКомпанияНачалоВыбора</Event>
+															</Events>
+														</InputField>
+														<InputField name="СтраховыеКомпанииОрганизацияАгент" id="74">
+															<DataPath>СтраховыеКомпании.ОрганизацияАгент</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="СтраховыеКомпанииОрганизацияАгентКонтекстноеМеню" id="75"/>
+															<ExtendedTooltip name="СтраховыеКомпанииОрганизацияАгентРасширеннаяПодсказка" id="76"/>
+															<Events>
+																<Event name="StartChoice">СтраховыеКомпанииОрганизацияАгентНачалоВыбора</Event>
+															</Events>
+														</InputField>
+														<InputField name="СтраховыеКомпанииВидыСП" id="77">
+															<DataPath>СтраховыеКомпании.ВидыСП</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="СтраховыеКомпанииВидыСПКонтекстноеМеню" id="78"/>
+															<ExtendedTooltip name="СтраховыеКомпанииВидыСПРасширеннаяПодсказка" id="79"/>
+															<Events>
+																<Event name="StartChoice">СтраховыеКомпанииВидыСПНачалоВыбора</Event>
+															</Events>
+														</InputField>
+														<InputField name="СтраховыеКомпанииНаименование" id="116">
+															<DataPath>СтраховыеКомпании.Наименование</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="СтраховыеКомпанииНаименованиеКонтекстноеМеню" id="117"/>
+															<ExtendedTooltip name="СтраховыеКомпанииНаименованиеРасширеннаяПодсказка" id="118"/>
+														</InputField>
+														<InputField name="СтраховыеКомпанииПремия" id="122">
+															<DataPath>СтраховыеКомпании.Премия</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="СтраховыеКомпанииПремияКонтекстноеМеню" id="123"/>
+															<ExtendedTooltip name="СтраховыеКомпанииПремияРасширеннаяПодсказка" id="124"/>
+														</InputField>
+														<InputField name="СтраховыеКомпанииБонус" id="119">
+															<DataPath>СтраховыеКомпании.Бонус</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="СтраховыеКомпанииБонусКонтекстноеМеню" id="120"/>
+															<ExtendedTooltip name="СтраховыеКомпанииБонусРасширеннаяПодсказка" id="121"/>
+														</InputField>
+													</ChildItems>
+												</Table>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Премирование" id="90">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Премирование</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Премирование</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ПремированиеРасширеннаяПодсказка" id="91"/>
+							<ChildItems>
+								<UsualGroup name="Группа3" id="101">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="102"/>
+									<ChildItems>
+										<InputField name="СуммаЗаНБ" id="92">
+											<DataPath>СуммаЗаНБ</DataPath>
+											<ContextMenu name="СуммаЗаНБКонтекстноеМеню" id="93"/>
+											<ExtendedTooltip name="СуммаЗаНБРасширеннаяПодсказка" id="94"/>
+										</InputField>
+										<InputField name="СуммаЗаПеревод" id="95">
+											<DataPath>СуммаЗаПеревод</DataPath>
+											<ContextMenu name="СуммаЗаПереводКонтекстноеМеню" id="96"/>
+											<ExtendedTooltip name="СуммаЗаПереводРасширеннаяПодсказка" id="97"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа5" id="105">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="106"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация3" id="107">
+									<HorizontalStretch>true</HorizontalStretch>
+									<TextColor>style:AccentColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значения сохраняются только по кнопке</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация3КонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="109"/>
+								</LabelDecoration>
+								<Button name="ПеречитатьНастройкиКлуба" id="112">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПеречитатьНастройкиКлуба</CommandName>
+									<ExtendedTooltip name="ПеречитатьНастройкиКлубаРасширеннаяПодсказка" id="113"/>
+								</Button>
+								<Button name="СохранитьИзменения" id="114">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.СохранитьИзменения</CommandName>
+									<Font bold="true" kind="AutoFont"/>
+									<Picture>
+										<xr:Ref>StdPicture.SaveValues</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="СохранитьИзмененияРасширеннаяПодсказка" id="115"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Уб_СеткаВознагражденияРОП</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПериодЗП" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период ЗП</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РасчетныйПериод" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчетный период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Сетка" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сетка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПроцентОт" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент от</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>5</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтавкаПролонгация" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пролонгация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтавкаНБ" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>НБ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пустышка" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Подразделение" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+			</Type>
+			<Save>
+				<Field>Подразделение</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ЦелевойПроцентКВ" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Целевой процент КВ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтраховыеКомпании" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страховые компании</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СтраховаяКомпания" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страховая компания</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Поставщик" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поставщик</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОрганизацияАгент" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Брокер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueListType</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВидыСП" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Виды СП</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueListType</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Бонус" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бонус</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>6</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Премия" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Премия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СуммаЗаНБ" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма за НБ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СуммаЗаПеревод" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма за перевод в клуб</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОбновитьСетку" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить сетку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить сетку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьСетку</Action>
+		</Command>
+		<Command name="ПеречитатьНастройкиКлуба" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перечитать настройки клуба</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перечитать настройки клуба</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеречитатьНастройкиКлуба</Action>
+		</Command>
+		<Command name="СохранитьИзменения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить изменения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить изменения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьИзменения</Action>
+		</Command>
+	</Commands>
+</Form>

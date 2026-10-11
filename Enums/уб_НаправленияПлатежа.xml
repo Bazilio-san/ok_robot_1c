@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="fadb28de-1656-48b9-850b-ab0b83287965">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_НаправленияПлатежа" category="Ref">
+				<xr:TypeId>1dded3e1-677d-4007-a530-bc3cd5fde520</xr:TypeId>
+				<xr:ValueId>17222c56-fb3d-4626-8da0-ae7165ac9219</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_НаправленияПлатежа" category="Manager">
+				<xr:TypeId>40136ab3-9dd3-4977-bd82-92f27c2400a7</xr:TypeId>
+				<xr:ValueId>e8b5d169-832f-4901-9447-b5705ebb80db</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_НаправленияПлатежа" category="List">
+				<xr:TypeId>9d7b57a6-ed87-41b5-8099-f0da6dbcb800</xr:TypeId>
+				<xr:ValueId>bc1d3dd1-c1e2-4008-8e78-0162dbc6296a</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_НаправленияПлатежа</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Направления платежа</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Направления платежа - нам или от нас</Comment>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="2a4c5ddc-13a8-4b4c-b1c0-5859d389188f">
+				<Properties>
+					<Name>ВБрокер</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В брокер</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="7b1108c9-68f8-414d-954f-730c7c44017e">
+				<Properties>
+					<Name>Поставщику</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поставщику</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

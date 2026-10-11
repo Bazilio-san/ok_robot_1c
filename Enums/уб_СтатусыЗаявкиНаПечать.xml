@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="d6a19618-4dbd-412f-a520-f22e5756c735">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_СтатусыЗаявкиНаПечать" category="Ref">
+				<xr:TypeId>4425c230-53d2-4349-9b3d-f606d0a65139</xr:TypeId>
+				<xr:ValueId>38ae0aa8-57e3-4042-a877-79405fdbf56b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_СтатусыЗаявкиНаПечать" category="Manager">
+				<xr:TypeId>bb26882c-991f-4d1e-ba24-5aec0f76774e</xr:TypeId>
+				<xr:ValueId>89401b48-1aa7-4dd5-b80f-697118364bc0</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_СтатусыЗаявкиНаПечать" category="List">
+				<xr:TypeId>eeb19c57-cb9c-47de-9eb4-a0258f178aeb</xr:TypeId>
+				<xr:ValueId>3932fc08-0600-487d-b616-b3d03d7396ad</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_СтатусыЗаявкиНаПечать</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уб статусы заявки на печать</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="3e27e8cf-7099-49e2-bc03-75c9604bd198">
+				<Properties>
+					<Name>ВведенаМенеджером</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Введена менеджером</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Внесены данные, либо  приложены скан-копии документов страхователя</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="e3c19727-ef09-4275-8c1f-a37c3d12e25a">
+				<Properties>
+					<Name>Заполняется</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заполняется</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Данные заполняются на основании приложенных документов</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="9902efee-e1b8-43b7-9710-01c2ce89680a">
+				<Properties>
+					<Name>НаДоработкеМенеджера</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>На доработке менеджера</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="89e4ce1c-093d-4a97-a869-5bc15968556f">
+				<Properties>
+					<Name>Проверена</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проверена внутренней проверкой</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Проверяется заполненность обязательных реквизитов</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="d1af1581-a4cd-4631-9d74-2b2c6bcfc17c">
+				<Properties>
+					<Name>ВыполненаКалькуляция</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполнена калькуляция в СК/РСА</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="3a8390a4-14fe-4510-8ad2-34851e00ee95">
+				<Properties>
+					<Name>ОтправленаВСК</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отправлена в страховую компанию/РСА</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Документ зарегистрирован в качестве проекта на сайте СК</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="42ac375d-f7e6-42c7-a673-14f1cf33061e">
+				<Properties>
+					<Name>ПринятаСК</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Принята страховой компанией/РСА</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Документ принят в СК, передан в РСА</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="4106a5fe-a4d1-4f85-9ce0-825ff5747c61">
+				<Properties>
+					<Name>КомплектДокументовПодготовлен</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комплект документов подготовлен</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Документы готовый к выдаче клиенту</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="da9e360c-75a3-4f52-9fc6-4e037637b09a">
+				<Properties>
+					<Name>КомплектДокументовОтдан</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комплект документов отдан менеджеру</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Документы переданы курьеру/менеджеру</Comment>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

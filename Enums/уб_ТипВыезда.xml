@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="724b6517-6d6d-4779-b3d8-b9f8f8c25b8a">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_ТипВыезда" category="Ref">
+				<xr:TypeId>94a4a8d1-4b14-41ae-994f-e0dd1728e8d0</xr:TypeId>
+				<xr:ValueId>bdbb8764-5120-4e4d-a453-b97448cb0187</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_ТипВыезда" category="Manager">
+				<xr:TypeId>5c0840d5-86b2-4936-88ee-6dc5ecd29f70</xr:TypeId>
+				<xr:ValueId>9ebd9f5c-bfbd-4501-8b00-65da664be89a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_ТипВыезда" category="List">
+				<xr:TypeId>78d7b7c0-ed4b-4b51-8684-496120be3c19</xr:TypeId>
+				<xr:ValueId>4b52373e-4bb4-46aa-b677-514c37b93962</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_ТипВыезда</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип выезда</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Тип выезда курьера</Comment>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="20fb527a-3af5-4fec-bea9-58758b23a423">
+				<Properties>
+					<Name>Страховка</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страховка</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Выезд для заключение страхового полиса</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="6fbcf9e9-4733-4513-b096-e077cc1129c3">
+				<Properties>
+					<Name>Аддендум</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аддендум</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Аддендум КАСКО</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="f618644f-6b4c-4f1a-8d1d-f25d5c9f35a4">
+				<Properties>
+					<Name>Административный</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Административный</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Задание БСО, Бухгалтерии, Руководства</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="c8880517-ea6c-409d-b553-a64eca37a01f">
+				<Properties>
+					<Name>ОчереднойВзнос</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Очередной взнос</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="f8e62676-2558-49ec-ad7f-bde580d6473d">
+				<Properties>
+					<Name>ПервичныйОсмотр</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Осмотр</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="0ec4ebc4-aab1-41c3-a4a9-627630096fe3">
+				<Properties>
+					<Name>Переосмотр</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Переосмотр</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="d59d7c33-58d5-4ae8-9eae-ec3ecb678421">
+				<Properties>
+					<Name>Перепись</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Перепись</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Перепись КАСКО</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="40def47e-e6c7-4341-acf7-77a6d181bb5a">
+				<Properties>
+					<Name>Пролонгация</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пролонгация</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

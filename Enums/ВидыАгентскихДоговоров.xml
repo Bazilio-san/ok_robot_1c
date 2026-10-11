@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="9235a616-7522-46b5-a735-a395fdc80d7c">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.ВидыАгентскихДоговоров" category="Ref">
+				<xr:TypeId>ee3c8cf6-d43d-4614-a7b9-77578a363a37</xr:TypeId>
+				<xr:ValueId>666a1e18-cd23-41d1-b4d8-9520ef26a19a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.ВидыАгентскихДоговоров" category="Manager">
+				<xr:TypeId>44eb99db-239d-4326-9287-4e9f7bbf0b26</xr:TypeId>
+				<xr:ValueId>0795bd0e-b383-4ea7-b9c0-56496235c053</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.ВидыАгентскихДоговоров" category="List">
+				<xr:TypeId>9aa2a148-0be5-4273-b2ae-47b71b153635</xr:TypeId>
+				<xr:ValueId>399d47f2-0801-4604-a674-838927b8478d</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ВидыАгентскихДоговоров</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды агентских договоров</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Виды договоров, согласно которым организация выступает в качестве налогового агента</Comment>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="15a723cc-1eb4-4746-a155-3770f5f3f50d">
+				<Properties>
+					<Name>Аренда</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аренда</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Договор аренды муниципального имущества</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="732c97ad-be07-42bd-9eb3-0a3a275096fe">
+				<Properties>
+					<Name>Нерезидент</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нерезидент</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Договор с контрагентом (иностранной компанией) не являющимся плательщиком НДС</Comment>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

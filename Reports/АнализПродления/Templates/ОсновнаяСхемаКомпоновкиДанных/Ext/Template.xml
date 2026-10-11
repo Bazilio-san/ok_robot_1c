@@ -1,0 +1,785 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Агент</dataPath>
+			<field>Агент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГодВыпуска</dataPath>
+			<field>ГодВыпуска</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Год вып.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МаркаТС</dataPath>
+			<field>МаркаТС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МодельТС</dataPath>
+			<field>МодельТС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НовыйПолисЗаменаВида</dataPath>
+			<field>НовыйПолисЗаменаВида</field>
+			<presentationExpression>НовыйПолисЗаменаВида.Номер</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НовыйПолисЗаменаСКиВида</dataPath>
+			<field>НовыйПолисЗаменаСКиВида</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новый полис замена СК и вида</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>НовыйПолисЗаменаСКиВида.Номер</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НовыйПолисПереход</dataPath>
+			<field>НовыйПолисПереход</field>
+			<presentationExpression>НовыйПолисПереход.Номер </presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НовыйПолисПродление</dataPath>
+			<field>НовыйПолисПродление</field>
+			<presentationExpression>НовыйПолисПродление.Номер</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерЗаявки</dataPath>
+			<field>НомерЗаявки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отечественный</dataPath>
+			<field>Отечественный</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отеч.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеОП</dataPath>
+			<field>ПодразделениеОП</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Полис</dataPath>
+			<field>Полис</field>
+			<presentationExpression>Полис.Номер</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Рассрочка</dataPath>
+			<field>Рассрочка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СК</dataPath>
+			<field>СК</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Страхователь</dataPath>
+			<field>Страхователь</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтраховаяПремия</dataPath>
+			<field>СтраховаяПремия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтраховаяСумма</dataPath>
+			<field>СтраховаяСумма</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтраховойПродуктВид</dataPath>
+			<field>СтраховойПродуктВид</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид СП</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипТС</dataPath>
+			<field>ТипТС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Продлен</dataPath>
+			<field>Продлен</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Счетчик</dataPath>
+			<field>Счетчик</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НовыйКлиент</dataPath>
+			<field>НовыйКлиент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Источник</dataPath>
+			<field>Источник</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	полис.СтраховойПолис.Страхователь КАК Страхователь,
+	МИНИМУМ(НАЧАЛОПЕРИОДА(полис.ЗарплатныйПериод, МЕСЯЦ)) КАК ДатаНачала
+ПОМЕСТИТЬ ДатыПервыхПолисов
+ИЗ
+	Документ.уб_ОплатаПолисов КАК полис
+ГДЕ
+	полис.ПометкаУдаления = ЛОЖЬ
+	И НЕ полис.СтраховойПолис.СостояниеПолиса В (ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированПолностью), ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированЗаменаБланка), ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированВыписанНовый))
+	И полис.СтраховойПолис.СтраховаяПремия &gt; 0
+
+СГРУППИРОВАТЬ ПО
+	полис.СтраховойПолис.Страхователь
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОП.СтраховойПолис,
+	МАКСИМУМ(ВЫБОР
+			КОГДА ОП.Направление = ЗНАЧЕНИЕ(Перечисление.Уб_Направления.НовыйКлиент)
+				ТОГДА 1
+			КОГДА ОП.Направление = ЗНАЧЕНИЕ(Перечисление.Уб_Направления.Пролонгация)
+				ТОГДА 0
+			КОГДА ОП.НомерВзноса = 1
+					И НАЧАЛОПЕРИОДА(ОП.ЗарплатныйПериод, МЕСЯЦ) = ДатыПервыхПолисов.ДатаНачала
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК НовыйКлиент
+ПОМЕСТИТЬ ДанныеПоНовым
+ИЗ
+	Документ.уб_ОплатаПолисов КАК ОП
+		ЛЕВОЕ СОЕДИНЕНИЕ ДатыПервыхПолисов КАК ДатыПервыхПолисов
+		ПО ОП.СтраховойПолис.Страхователь = ДатыПервыхПолисов.Страхователь
+Где ОП.СтраховойПолис.ДатаОкончания МЕЖДУ &amp;Дата1 И &amp;Дата2
+СГРУППИРОВАТЬ ПО
+	ОП.СтраховойПолис
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	уб_СтраховойПолис.Ссылка КАК Полис,
+	уб_СтраховойПолис.НомерЗаявки КАК НомерЗаявки,
+	уб_СтраховойПолис.Дата,
+	уб_СтраховойПолис.Страхователь,
+	уб_СтраховойПолис.СК,
+	уб_СтраховойПолис.ВидС как СтраховойПродуктВид,
+	уб_ТранспортныеСредства.МаркаТС,
+	ВЫБОР
+		КОГДА уб_ТранспортныеСредства.МаркаТС.Наименование В ("LADA", "GAZ", "ВАЗ", "VAZ", "КАМАЗ", "ГАЗ", "ГАЗЕЛЬ", "ЗИЛ", "ИЖ", "ПАЗ", "УРАЛ", "ZAZ", "ZIL", "VOLGA", "UAZ", "УАЗ", "TAGAZ", "ТАГАЗ")
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Отечественный,
+	уб_ТранспортныеСредства.МодельТС,
+	уб_ТранспортныеСредства.ТипТС,
+	уб_ТранспортныеСредства.ГодВыпуска,
+	уб_СтраховойПолис.Агент,
+	уб_СтраховойПолис.ПодразделениеОП,
+	уб_СтраховойПолис.СтраховаяПремия,
+	уб_СтраховойПолис.СтраховаяСумма,
+	ВЫБОР
+		КОГДА уб_СтраховойПолис.РассрочкаПлатежа
+				ИЛИ уб_СтраховойПолис.СостояниеОплаченности = 1
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Рассрочка,
+	ВЫБОР
+		КОГДА ЭтотВид.СК = уб_СтраховойПолис.СК
+			ТОГДА ЭтотВид.Ссылка
+		ИНАЧЕ ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+	КОНЕЦ КАК НовыйПолисПродление,
+	ВЫБОР
+		КОГДА ЭтотВид.СК = уб_СтраховойПолис.СК
+			ТОГДА ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+		ИНАЧЕ ЭтотВид.Ссылка
+	КОНЕЦ КАК НовыйПолисПереход,
+	ВЫБОР
+		КОГДА ДругойВид.СК = уб_СтраховойПолис.СК
+			ТОГДА ДругойВид.Ссылка
+		ИНАЧЕ ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+	КОНЕЦ КАК НовыйПолисЗаменаВида,
+	ВЫБОР
+		КОГДА ДругойВид.СК = уб_СтраховойПолис.СК
+			ТОГДА ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+		ИНАЧЕ ДругойВид.Ссылка
+	КОНЕЦ КАК НовыйПолисЗаменаСКиВида,
+	ВЫБОР
+		КОГДА ЭтотВид.Ссылка ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ КАК Продлен,
+	ДанныеПоНовым.НовыйКлиент,
+	1 КАК Счетчик,
+	уб_СтраховойПолис.Заявка.Источник как Источник 
+ИЗ
+	Документ.уб_СтраховойПолис КАК уб_СтраховойПолис
+		ЛЕВОЕ СОЕДИНЕНИЕ ДанныеПоНовым КАК ДанныеПоНовым
+		ПО (ДанныеПоНовым.СтраховойПолис = уб_СтраховойПолис.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.уб_СтраховойПолис КАК ЭтотВид
+		ПО (ЭтотВид.Дата &gt;= ДОБАВИТЬКДАТЕ(уб_СтраховойПолис.ДатаОкончания, МЕСЯЦ, -1))
+			И (ЭтотВид.Дата &lt;= ДОБАВИТЬКДАТЕ(уб_СтраховойПолис.ДатаОкончания, МЕСЯЦ, 2))
+			И (ЭтотВид.Страхователь = уб_СтраховойПолис.Страхователь)
+			И (ЭтотВид.Ссылка &lt;&gt; уб_СтраховойПолис.Ссылка)
+			И (ЭтотВид.ВидС = уб_СтраховойПолис.ВидС)
+			И (ВЫБОР
+				КОГДА уб_СтраховойПолис.ВидС = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтрахования.Каско)
+						ИЛИ уб_СтраховойПолис.ВидС = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтрахования.ОСАГО)
+						ИЛИ уб_СтраховойПолис.ВидС = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтрахования.ДСАГО)
+					ТОГДА ЭтотВид.ОбъектСтрахования = уб_СтраховойПолис.ОбъектСтрахования
+				ИНАЧЕ ЭтотВид.Страхователь = уб_СтраховойПолис.Страхователь
+			КОНЕЦ)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.уб_СтраховойПолис КАК ДругойВид
+		ПО (ДругойВид.Дата &gt;= ДОБАВИТЬКДАТЕ(уб_СтраховойПолис.ДатаОкончания, МЕСЯЦ, -1))
+			И (ДругойВид.Дата &lt;= ДОБАВИТЬКДАТЕ(уб_СтраховойПолис.ДатаОкончания, МЕСЯЦ, 2))
+			И (ДругойВид.Страхователь = уб_СтраховойПолис.Страхователь)
+			И (ДругойВид.Ссылка &lt;&gt; уб_СтраховойПолис.Ссылка)
+			И (ДругойВид.ВидС &lt;&gt; уб_СтраховойПолис.ВидС)
+			И (ВЫБОР
+				//КОГДА уб_СтраховойПолис.СтраховойПродукт.Вид = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Каско)
+				//		ИЛИ уб_СтраховойПолис.СтраховойПродукт.Вид = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ОСАГО)
+				//		ИЛИ уб_СтраховойПолис.СтраховойПродукт.Вид = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ДСАГО)
+				КОГДА уб_СтраховойПолис.ВидС = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтрахования.Каско)
+						ИЛИ уб_СтраховойПолис.ВидС = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтрахования.ОСАГО)
+						ИЛИ уб_СтраховойПолис.ВидС = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтрахования.ДСАГО)
+					ТОГДА ДругойВид.ОбъектСтрахования = уб_СтраховойПолис.ОбъектСтрахования
+				ИНАЧЕ ДругойВид.Страхователь = уб_СтраховойПолис.Страхователь
+			КОНЕЦ)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ТранспортныеСредства КАК уб_ТранспортныеСредства
+		ПО (уб_ТранспортныеСредства.Объект = уб_СтраховойПолис.ОбъектСтрахования)
+ГДЕ
+	уб_СтраховойПолис.ДатаОкончания МЕЖДУ &amp;Дата1 И &amp;Дата2
+	И уб_СтраховойПолис.ПометкаУдаления = ЛОЖЬ
+	И (уб_СтраховойПолис.Агент = &amp;Агент
+			ИЛИ &amp;Агент = ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустаяСсылка))
+	И (уб_СтраховойПолис.ПодразделениеОП = &amp;Подразделение
+			ИЛИ &amp;Подразделение = ЗНАЧЕНИЕ(Справочник.ПодразделенияОрганизаций.ПустаяСсылка))
+	И уб_СтраховойПолис.ДатаАннулирования = ДАТАВРЕМЯ(1, 1, 1)
+	И (уб_СтраховойПолис.СК = &amp;Поставщик
+			ИЛИ &amp;Поставщик = ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка))
+	И уб_СтраховойПолис.ВидС В(&amp;ВидСП)
+	И ВЫБОР
+			КОГДА &amp;Режим = "Продленные"
+				ТОГДА ЭтотВид.Ссылка &lt;&gt; ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+						ИЛИ ДругойВид.Ссылка &lt;&gt; ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+			КОГДА &amp;Режим = "Продленные тамже и тоже"
+				ТОГДА ЭтотВид.Ссылка &lt;&gt; ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+						И ЭтотВид.СК = уб_СтраховойПолис.СК
+			КОГДА &amp;Режим = "Продленные тамже, но не то"
+				ТОГДА ДругойВид.Ссылка &lt;&gt; ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+						И ДругойВид.СК = уб_СтраховойПолис.СК
+						И ЭтотВид.Ссылка ЕСТЬ NULL 
+			КОГДА &amp;Режим = "Продленные не там и тоже"
+				ТОГДА ЭтотВид.Ссылка &lt;&gt; ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+						И ЭтотВид.СК &lt;&gt; уб_СтраховойПолис.СК
+			КОГДА &amp;Режим = "Продленные не там и не то"
+				ТОГДА ЭтотВид.Ссылка ЕСТЬ NULL 
+						И ДругойВид.СК &lt;&gt; уб_СтраховойПолис.СК
+			КОГДА &amp;Режим = "Непродленные"
+				ТОГДА ЭтотВид.Ссылка ЕСТЬ NULL 
+						И ДругойВид.Ссылка ЕСТЬ NULL 
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Конверсия</dataPath>
+		<expression>0</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конверсия</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>Конверсия</dataPath>
+		<expression>Сумма(Продлен)*100/Сумма(счетчик)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Продлен</dataPath>
+		<expression>Сумма(Продлен)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Счетчик</dataPath>
+		<expression>Сумма(Счетчик)</expression>
+	</totalField>
+	<parameter>
+		<name>Дата1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Дата2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Поставщик</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Поставщик</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Режим</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Режим</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>26</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидСП</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид СП</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.уб_ВидыСтрахования</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Агент</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Агент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ФизическиеЛица</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Подразделение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Подразделение</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерЗаявки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Дата</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Страхователь</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СК</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтраховойПродуктВид</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГодВыпуска</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МаркаТС</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МодельТС</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ТипТС</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Отечественный</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Агент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Агент.Преемник</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПодразделениеОП</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтраховаяПремия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтраховаяСумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Рассрочка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Полис</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Полис.ДатаНачала</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Полис.ДатаОкончания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>НовыйПолисПродление</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>НовыйПолисЗаменаВида</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>НовыйПолисПереход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>НовыйПолисЗаменаСКиВида</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Источник</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Конверсия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Счетчик</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Продлен</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НовыйКлиент</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ГодВыпуска</dcsset:left>
+					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">2012</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ГодВыпуска</dcsset:left>
+					<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">2017</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">СтраховаяСумма</dcsset:left>
+					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">700000</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Отечественный</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Рассрочка</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">НовыйКлиент</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Дата1</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Дата2</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Поставщик</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Режим</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидСП</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Агент</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Подразделение</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Полис</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ПодразделениеОП</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Агент</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>НовыйПолисЗаменаВида</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>НовыйПолисЗаменаСКиВида</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>НовыйПолисПереход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>НовыйПолисПродление</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Cut</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">18</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Рассрочка</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Отечественный</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>БЛ=; БИ=Да</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:use>false</dcsset:use>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СтраховойПродуктВид</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Агент</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:use>false</dcsset:use>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СтраховойПродуктВид</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:use>false</dcsset:use>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Агент</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:row>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

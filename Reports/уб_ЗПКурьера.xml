@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Report uuid="f1387f83-81b2-420c-b67a-2d07c0887c4d">
+		<InternalInfo>
+			<xr:GeneratedType name="ReportObject.уб_ЗПКурьера" category="Object">
+				<xr:TypeId>b92f170a-44fd-41f5-a5ff-07b7d5906f2a</xr:TypeId>
+				<xr:ValueId>23ba74fe-7e73-466e-85e4-99f80a5989cd</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ReportManager.уб_ЗПКурьера" category="Manager">
+				<xr:TypeId>59699a2f-f176-4498-8871-de3e5aab1af1</xr:TypeId>
+				<xr:ValueId>d8584490-8483-40f9-b0ca-ff14baeb86a0</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_ЗПКурьера</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет ЗП курьерам</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<DefaultForm>Report.уб_ЗПКурьера.Form.ФормаОтчета</DefaultForm>
+			<AuxiliaryForm/>
+			<MainDataCompositionSchema>Report.уб_ЗПКурьера.Template.ПоКурьерам</MainDataCompositionSchema>
+			<DefaultSettingsForm/>
+			<AuxiliarySettingsForm/>
+			<DefaultVariantForm/>
+			<VariantsStorage/>
+			<SettingsStorage/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ExtendedPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects>
+			<Form>ФормаОтчета</Form>
+			<Template>ПоМенеджерам</Template>
+			<Template>ПоКурьерам</Template>
+			<Template>ПоОператорам</Template>
+			<Template>ПоМенеджерамЕОСАГО</Template>
+			<Template>ПоКурьерам1</Template>
+			<Template>ПоКурьерам2</Template>
+			<Template>ПоКурьерам3</Template>
+		</ChildObjects>
+	</Report>
+</MetaDataObject>

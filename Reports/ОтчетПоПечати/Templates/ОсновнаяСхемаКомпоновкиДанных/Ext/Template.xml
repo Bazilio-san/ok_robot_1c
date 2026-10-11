@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Автор</dataPath>
+			<field>Автор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВПечать</dataPath>
+			<field>ДатаВПечать</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заявка</dataPath>
+			<field>Заявка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КАСКО</dataPath>
+			<field>КАСКО</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОСАГО</dataPath>
+			<field>ОСАГО</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	уб_ИсторияСтатусовЗаявок.Заявка,
+	МАКСИМУМ(уб_ИсторияСтатусовЗаявок.Период) КАК Период,
+	уб_ИсторияСтатусовЗаявок.Статус
+ПОМЕСТИТЬ впечати
+ИЗ
+	РегистрСведений.уб_ИсторияСтатусовЗаявок КАК уб_ИсторияСтатусовЗаявок
+ГДЕ
+	уб_ИсторияСтатусовЗаявок.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗаявкаВПечати)
+
+СГРУППИРОВАТЬ ПО
+	уб_ИсторияСтатусовЗаявок.Заявка,
+	уб_ИсторияСтатусовЗаявок.Статус
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	уб_ИсторияСтатусовЗаявок.Заявка,
+	уб_ИсторияСтатусовЗаявок.Период КАК Период,
+	уб_ИсторияСтатусовЗаявок.Статус,
+	уб_ИсторияСтатусовЗаявок.Статус.Порядок
+ПОМЕСТИТЬ НазначениеКурьера0
+ИЗ
+	РегистрСведений.уб_ИсторияСтатусовЗаявок КАК уб_ИсторияСтатусовЗаявок
+ГДЕ
+	//уб_ИсторияСтатусовЗаявок.Период &gt;= &amp;Дата1
+	//И уб_ИсторияСтатусовЗаявок.Период &lt;= КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+	уб_ИсторияСтатусовЗаявок.Статус.Порядок &gt; 3
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НазначениеКурьера0.Заявка,
+	МИНИМУМ(НазначениеКурьера0.Период) КАК Период
+ПОМЕСТИТЬ НазначениеКурьера1
+ИЗ
+	НазначениеКурьера0 КАК НазначениеКурьера0
+
+СГРУППИРОВАТЬ ПО
+	НазначениеКурьера0.Заявка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НазначениеКурьера0.Заявка,
+	НазначениеКурьера0.Период,
+	НазначениеКурьера0.Статус,
+	НазначениеКурьера0.СтатусПорядок
+ПОМЕСТИТЬ НазначениеКурьера
+ИЗ
+	НазначениеКурьера0 КАК НазначениеКурьера0
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ НазначениеКурьера1 КАК НазначениеКурьера1
+		ПО НазначениеКурьера0.Период = НазначениеКурьера1.Период
+			И НазначениеКурьера0.Заявка = НазначениеКурьера1.Заявка
+	Где		
+	НазначениеКурьера0.Период &gt;= &amp;Дата1
+	и НазначениеКурьера0.Период &lt;= КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)		
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	уб_ИсторияСтатусовЗаявок.Заявка КАК Заявка,
+	уб_ИсторияСтатусовЗаявок.Период,
+	уб_ИсторияСтатусовЗаявок.Статус,
+	уб_ИсторияСтатусовЗаявок.Модификатор КАК Автор,
+	впечати.Период КАК ДатаВПечать,
+	уб_ИсторияСтатусовЗаявок.Заявка.Осаго КАК ОСАГО,
+	уб_ИсторияСтатусовЗаявок.Заявка.Каско КАК КАСКО
+ИЗ
+	РегистрСведений.уб_ИсторияСтатусовЗаявок КАК уб_ИсторияСтатусовЗаявок
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ НазначениеКурьера КАК НазначениеКурьера
+		ПО уб_ИсторияСтатусовЗаявок.Период = НазначениеКурьера.Период
+			И уб_ИсторияСтатусовЗаявок.Заявка = НазначениеКурьера.Заявка
+			И уб_ИсторияСтатусовЗаявок.Статус = НазначениеКурьера.Статус
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ впечати КАК впечати
+		ПО уб_ИсторияСтатусовЗаявок.Период &gt; впечати.Период
+			И уб_ИсторияСтатусовЗаявок.Заявка = впечати.Заявка
+
+УПОРЯДОЧИТЬ ПО
+	Заявка</query>
+	</dataSet>
+	<totalField>
+		<dataPath>КАСКО</dataPath>
+		<expression>Сумма(КАСКО)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОСАГО</dataPath>
+		<expression>Сумма(ОСАГО)</expression>
+	</totalField>
+	<parameter>
+		<name>Дата1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Дата2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Автор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КАСКО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОСАГО</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Дата1</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisMonth</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Дата2</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Автор.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Автор</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="f20895d8-7a0c-43e5-b411-8803cd8820d8">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_РежимОкругления" category="Ref">
+				<xr:TypeId>99fc842a-9b81-42db-867d-13dbfa924389</xr:TypeId>
+				<xr:ValueId>73ff6dbf-0ada-4b01-8949-bf7a72af9203</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_РежимОкругления" category="Manager">
+				<xr:TypeId>840b61a1-f72b-41f0-8b9e-3eb6723e70df</xr:TypeId>
+				<xr:ValueId>9013f351-23f1-44fd-8517-c242196362a8</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_РежимОкругления" category="List">
+				<xr:TypeId>5d4839d1-44c0-48c2-b9e5-8521e1bbeac0</xr:TypeId>
+				<xr:ValueId>d3dfc247-eac5-4bfb-a24b-ffa98387da0b</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_РежимОкругления</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим округления</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="25d672ae-5e22-4495-9d7a-987eca9fdd04">
+				<Properties>
+					<Name>Окр15как10</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Окр15как10</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="2127b66f-cb76-4559-9e0a-cccc39e354b9">
+				<Properties>
+					<Name>Окр15как20</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Окр15как20</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a12c17b6-f94b-4960-9fd1-1eec4310cd92">
+				<Properties>
+					<Name>Отсечение</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отсечение</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>3037.599 =&gt; 3 037.59</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="98f51207-433c-4267-9b4a-5b7b47971bc3">
+				<Properties>
+					<Name>Вбольшую</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вбольшую</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>0,351 =&gt; 0,36</Comment>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

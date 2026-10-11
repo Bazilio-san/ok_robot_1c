@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enabled>false</Enabled>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="Колонки" id="86">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Колонки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Колонки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="КолонкиРасширеннаяПодсказка" id="87"/>
+			<ChildItems>
+				<UsualGroup name="ЛеваяКолонка" id="88">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ЛеваяКолонкаРасширеннаяПодсказка" id="89"/>
+					<ChildItems>
+						<UsualGroup name="Группа1" id="90">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="91"/>
+							<ChildItems>
+								<InputField name="Дата" id="4">
+									<DataPath>Объект.Date</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+								</InputField>
+								<InputField name="Номер" id="1">
+									<DataPath>Объект.Number</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Агент" id="7">
+							<DataPath>Объект.Агент</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="АгентКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="АгентРасширеннаяПодсказка" id="9"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа2" id="92">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="93"/>
+					<ChildItems>
+						<InputField name="Выдал" id="13">
+							<DataPath>Объект.Выдал</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ВыдалКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ВыдалРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="АгентКуда" id="10">
+							<DataPath>Объект.АгентКуда</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="АгентКудаКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="АгентКудаРасширеннаяПодсказка" id="12"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="БСО" id="40">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.БСО</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="БСОКонтекстноеМеню" id="41"/>
+			<AutoCommandBar name="БСОКоманднаяПанель" id="42">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="БСОРасширеннаяПодсказка" id="43"/>
+			<SearchStringAddition name="БСОСтрокаПоиска" id="44">
+				<AdditionSource>
+					<Item>БСО</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БСОСтрокаПоискаКонтекстноеМеню" id="45"/>
+				<ExtendedTooltip name="БСОСтрокаПоискаРасширеннаяПодсказка" id="46"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="БСОСостояниеПросмотра" id="47">
+				<AdditionSource>
+					<Item>БСО</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БСОСостояниеПросмотраКонтекстноеМеню" id="48"/>
+				<ExtendedTooltip name="БСОСостояниеПросмотраРасширеннаяПодсказка" id="49"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="БСОУправлениеПоиском" id="50">
+				<AdditionSource>
+					<Item>БСО</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="БСОУправлениеПоискомКонтекстноеМеню" id="51"/>
+				<ExtendedTooltip name="БСОУправлениеПоискомРасширеннаяПодсказка" id="52"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="БСОНомерСтроки" id="53">
+					<DataPath>Объект.БСО.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСОНомерСтрокиКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="БСОНомерСтрокиРасширеннаяПодсказка" id="55"/>
+				</LabelField>
+				<CheckBoxField name="БСОПодтверждено" id="56">
+					<DataPath>Объект.БСО.Подтверждено</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.CheckAll</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="БСОПодтвержденоКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="БСОПодтвержденоРасширеннаяПодсказка" id="58"/>
+				</CheckBoxField>
+				<InputField name="БСОСК" id="65">
+					<DataPath>Объект.БСО.СК</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСОСККонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="БСОСКРасширеннаяПодсказка" id="67"/>
+				</InputField>
+				<InputField name="БСОВидБСО" id="68">
+					<DataPath>Объект.БСО.ВидБСО</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСОВидБСОКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="БСОВидБСОРасширеннаяПодсказка" id="70"/>
+				</InputField>
+				<InputField name="БСОНомерБСО" id="71">
+					<DataPath>Объект.БСО.НомерБСО</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСОНомерБСОКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="БСОНомерБСОРасширеннаяПодсказка" id="73"/>
+				</InputField>
+				<InputField name="БСОПоставщик" id="59">
+					<DataPath>Объект.БСО.Поставщик</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСОПоставщикКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="БСОПоставщикРасширеннаяПодсказка" id="61"/>
+				</InputField>
+				<InputField name="БСООрганизацияАгент" id="62">
+					<DataPath>Объект.БСО.ОрганизацияАгент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСООрганизацияАгентКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="БСООрганизацияАгентРасширеннаяПодсказка" id="64"/>
+				</InputField>
+				<InputField name="БСОКоличество" id="74">
+					<DataPath>Объект.БСО.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСОКоличествоКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="БСОКоличествоРасширеннаяПодсказка" id="76"/>
+				</InputField>
+				<InputField name="БСОСостояниеБСО" id="77">
+					<DataPath>Объект.БСО.СостояниеБСО</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСОСостояниеБСОКонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="БСОСостояниеБСОРасширеннаяПодсказка" id="79"/>
+				</InputField>
+				<InputField name="БСОЗаявкаОт" id="80">
+					<DataPath>Объект.БСО.ЗаявкаОт</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСОЗаявкаОтКонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="БСОЗаявкаОтРасширеннаяПодсказка" id="82"/>
+				</InputField>
+				<InputField name="БСОЗаявкаКуда" id="83">
+					<DataPath>Объект.БСО.ЗаявкаКуда</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БСОЗаявкаКудаКонтекстноеМеню" id="84"/>
+					<ExtendedTooltip name="БСОЗаявкаКудаРасширеннаяПодсказка" id="85"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="Группа3" id="94">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="95"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="16">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="18"/>
+				</InputField>
+				<InputField name="СозданНаОсновании" id="19">
+					<DataPath>Объект.СозданНаОсновании</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СозданНаОснованииКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="СозданНаОснованииРасширеннаяПодсказка" id="21"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ПоложениеБСО" id="22">
+			<DataPath>Объект.ПоложениеБСО</DataPath>
+			<Visible>false</Visible>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПоложениеБСОКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ПоложениеБСОРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="Направление" id="25">
+			<DataPath>Объект.Направление</DataPath>
+			<Visible>false</Visible>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаправлениеКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="НаправлениеРасширеннаяПодсказка" id="27"/>
+		</InputField>
+		<UsualGroup name="Группа4" id="96">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="97"/>
+			<ChildItems>
+				<LabelField name="Автор" id="28">
+					<DataPath>Объект.Автор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="АвторКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<LabelField name="ДатаСоздания" id="31">
+					<DataPath>Объект.ДатаСоздания</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаСозданияКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ДатаСозданияРасширеннаяПодсказка" id="33"/>
+				</LabelField>
+				<LabelField name="Модификатор" id="34">
+					<DataPath>Объект.Модификатор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="МодификаторКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="МодификаторРасширеннаяПодсказка" id="36"/>
+				</LabelField>
+				<LabelField name="ДатаИзменения" id="37">
+					<DataPath>Объект.ДатаИзменения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаИзмененияКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ДатаИзмененияРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.уб_ПеремещениеБСО</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>

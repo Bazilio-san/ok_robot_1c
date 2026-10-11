@@ -1,0 +1,221 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.sample-package.org">
+	<objectType name="beginData">
+		<property name="error" type="xs:string" form="Attribute"/>
+		<property name="msg" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="period" type="d3p1:period" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="activeTask" type="d3p1:taskBlock" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="messageList" type="d3p1:messageList" lowerBound="0"/>
+	</objectType>
+	<objectType name="day">
+		<property xmlns:d3p1="http://www.sample-package.org" name="worker" type="d3p1:worker" lowerBound="0" upperBound="-1"/>
+		<property name="date" type="xs:date" form="Attribute"/>
+		<property name="dow" type="xs:string" form="Attribute"/>
+		<property name="isHoliday" type="xs:boolean" form="Attribute"/>
+	</objectType>
+	<objectType name="worker">
+		<property name="workerId" type="xs:string" form="Attribute"/>
+		<property name="name" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="task" type="d3p1:task" lowerBound="0" upperBound="-1" form="Element"/>
+		<property name="deleted" type="xs:boolean" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="employment" type="d3p1:employment" lowerBound="0" upperBound="-1" form="Element"/>
+	</objectType>
+	<objectType name="task">
+		<property name="taskId" type="xs:integer" form="Attribute"/>
+		<property name="deleted" type="xs:boolean" form="Attribute"/>
+		<property name="workerID" type="xs:string" form="Attribute"/>
+		<property name="timeBegin" type="xs:dateTime" form="Attribute"/>
+		<property name="timeMeet" type="xs:dateTime" form="Attribute"/>
+		<property name="timeEnd" type="xs:dateTime" form="Attribute"/>
+		<property name="isAvailable" type="xs:boolean" form="Attribute"/>
+		<property name="isConfirmed" type="xs:boolean" form="Attribute"/>
+		<property name="isOnDuty" type="xs:boolean" form="Attribute"/>
+		<property name="isAdministrative" type="xs:boolean" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="autor" type="d3p1:managerType"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="manager" type="d3p1:managerType"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="priority" type="d3p1:priority"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="detail" type="d3p1:detail"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="task_block" type="d3p1:task-block"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="task_action" type="d3p1:task_action"/>
+		<property name="isPerformed" type="xs:integer" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="state" type="d3p1:taskstate" nillable="true"/>
+		<property name="color" type="xs:string"/>
+		<property name="background" type="xs:string"/>
+	</objectType>
+	<objectType name="managerType">
+		<property name="id" type="xs:string" form="Attribute"/>
+		<property name="name" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="priority">
+		<property name="id" type="xs:integer" form="Attribute"/>
+		<property name="name" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="detail">
+		<property name="requestNum" type="xs:integer" form="Attribute"/>
+		<property name="placeMeet" type="xs:string" form="Attribute"/>
+		<property name="mkad" type="xs:boolean" form="Attribute"/>
+		<property name="isPrint" type="xs:boolean" form="Attribute"/>
+		<property name="isCredit" type="xs:boolean" form="Attribute"/>
+		<property name="contactName" type="xs:string" form="Attribute"/>
+		<property name="comment" type="xs:string"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="taskType" type="d3p1:taskType"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="taskSubType" type="d3p1:taskSubType"/>
+		<property name="color" type="xs:string"/>
+		<property name="background" type="xs:string"/>
+		<property name="metro" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="taskType">
+		<property name="id" type="xs:integer" form="Attribute"/>
+		<property name="name" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="taskSubType">
+		<property name="id" type="xs:integer" form="Attribute"/>
+		<property name="name" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="task-block">
+		<property name="session_id" type="xs:string" form="Attribute"/>
+		<property name="computer_name" type="xs:string" form="Attribute"/>
+		<property name="blocked_till" type="xs:dateTime" form="Attribute"/>
+		<property name="message" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="manager" type="d3p1:managerType"/>
+	</objectType>
+	<objectType name="Data">
+		<property xmlns:d3p1="http://www.sample-package.org" name="beginData" type="d3p1:beginData" lowerBound="0"/>
+	</objectType>
+	<objectType name="comm">
+		<property name="dir" type="xs:string" form="Attribute"/>
+		<property name="id" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="datainc" type="d3p1:datainc" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="datainc">
+		<property xmlns:d3p1="http://www.sample-package.org" name="requestedPeriod" type="d3p1:requestedPeriod" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="currentPeriod" type="d3p1:currentPeriod" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="cachedDay" type="d3p1:cachedDay" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="task" type="d3p1:taskInc" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="activeTask" type="d3p1:activeTask" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="setStatus" type="d3p1:setStatus" lowerBound="0"/>
+		<property name="sessionId" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="msgStatus" type="d3p1:msgStatus" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="workerStatus" type="d3p1:workerStatus" lowerBound="0"/>
+	</objectType>
+	<objectType name="otvet">
+		<property xmlns:d3p1="http://www.sample-package.org" name="comm" type="d3p1:comm"/>
+	</objectType>
+	<objectType name="taskInc">
+		<property name="taskId" type="xs:integer" form="Attribute"/>
+		<property name="workerId" type="xs:string" form="Attribute"/>
+		<property name="date" type="xs:date" form="Attribute"/>
+		<property name="beginTime" type="xs:dateTime" form="Attribute"/>
+		<property name="meetTime" type="xs:dateTime" form="Attribute"/>
+		<property name="endTime" type="xs:dateTime" form="Attribute"/>
+	</objectType>
+	<objectType name="requestedPeriod">
+		<property name="startDate" type="xs:dateTime" form="Attribute"/>
+		<property name="dayAdd" type="xs:integer" form="Attribute"/>
+	</objectType>
+	<objectType name="currentPeriod">
+		<property name="startDate" type="xs:dateTime" form="Attribute"/>
+		<property name="endDate" type="xs:dateTime" form="Attribute"/>
+		<property name="lastTimeUpdate" type="xs:dateTime" form="Attribute"/>
+	</objectType>
+	<objectType name="cachedDay">
+		<property name="date" type="xs:dateTime" form="Attribute"/>
+		<property name="lastTimeUpdate" type="xs:dateTime" form="Attribute"/>
+	</objectType>
+	<objectType name="period">
+		<property name="startDate" type="xs:dateTime" form="Attribute"/>
+		<property name="endDate" type="xs:dateTime" form="Attribute"/>
+		<property name="lastTimeUpdate" type="xs:dateTime" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="day" type="d3p1:day" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="activeTask">
+		<property name="taskId" type="xs:integer" form="Attribute"/>
+		<property name="isGraphicChange" type="xs:boolean" form="Attribute"/>
+		<property name="setBlock" type="xs:boolean" form="Attribute"/>
+	</objectType>
+	<objectType name="taskBlock">
+		<property name="taskId" type="xs:integer" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="taskBlock" type="d3p1:task-block"/>
+	</objectType>
+	<objectType name="messageList">
+		<property xmlns:d3p1="http://www.sample-package.org" name="message" type="d3p1:message" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="message">
+		<property name="id" type="xs:string" form="Attribute"/>
+		<property name="date" type="xs:dateTime" form="Attribute"/>
+		<property name="isRead" type="xs:boolean" form="Attribute"/>
+		<property name="deleted" type="xs:boolean" form="Attribute"/>
+		<property name="title" type="xs:string" form="Element"/>
+		<property name="text" type="xs:string" form="Element"/>
+	</objectType>
+	<objectType name="task_action">
+		<property name="actionId" type="xs:integer" form="Attribute"/>
+		<property name="actionTime" type="xs:dateTime" form="Attribute"/>
+		<property name="comment" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="manager" type="d3p1:managerType"/>
+	</objectType>
+	<objectType name="setStatus">
+		<property name="taskId" type="xs:integer" form="Attribute"/>
+		<property name="actionId" type="xs:integer" form="Attribute"/>
+		<property name="allow" type="xs:boolean" lowerBound="0" nillable="true" form="Attribute"/>
+		<property name="text" lowerBound="0" nillable="true" form="Text"/>
+	</objectType>
+	<objectType name="msgStatus">
+		<property name="msgId" type="xs:string" form="Attribute"/>
+		<property name="isRead" type="xs:boolean" form="Attribute"/>
+		<property name="delete" type="xs:boolean" form="Attribute"/>
+	</objectType>
+	<objectType name="workerStatus">
+		<property name="workerId" type="xs:string" form="Attribute"/>
+		<property name="setOnDuty" type="xs:boolean" form="Attribute"/>
+		<property name="setAdmin" type="xs:boolean" form="Attribute"/>
+		<property name="date" type="xs:date" form="Attribute"/>
+	</objectType>
+	<objectType name="employment">
+		<property name="id" type="xs:string" form="Attribute"/>
+		<property name="timeBegin" type="xs:dateTime" form="Attribute"/>
+		<property name="timeEnd" type="xs:dateTime" form="Attribute"/>
+		<property name="name" type="xs:string" form="Attribute"/>
+		<property name="color" type="xs:string" form="Attribute"/>
+		<property name="deleted" type="xs:boolean" form="Attribute"/>
+		<property name="comment" type="xs:string"/>
+		<property name="type" type="xs:integer" form="Attribute"/>
+	</objectType>
+	<objectType name="tasks">
+		<property name="error" type="xs:string" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.sample-package.org" name="task" type="d3p1:taskDetail" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="structure">
+		<property xmlns:d3p1="http://www.sample-package.org" name="items" type="d3p1:struct_item" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="struct_item">
+		<property name="key" type="xs:string" form="Attribute"/>
+		<property name="value" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="taskDetail">
+		<property name="taskId" type="xs:integer" form="Attribute"/>
+		<property name="meetTime" type="xs:dateTime" form="Attribute"/>
+		<property name="requestNum" type="xs:integer" form="Attribute"/>
+		<property name="placeMeet" type="xs:string" form="Attribute"/>
+		<property name="contactName" type="xs:string" form="Attribute"/>
+		<property name="comment" type="xs:string"/>
+	</objectType>
+	<objectType name="findResult">
+		<property xmlns:d3p1="http://www.sample-package.org" name="result" type="d3p1:tasks"/>
+	</objectType>
+	<objectType name="taskstate">
+		<property name="id" type="xs:integer" form="Attribute"/>
+		<property name="descr" type="xs:string" form="Attribute"/>
+		<property name="color" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="action">
+		<property name="name" type="xs:string" form="Attribute"/>
+		<property name="descr" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="actions">
+		<property xmlns:d3p1="http://www.sample-package.org" name="actions" type="d3p1:action" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="response">
+		<property name="id" type="xs:string" form="Attribute"/>
+		<property name="descr" type="xs:string" form="Attribute"/>
+	</objectType>
+</package>

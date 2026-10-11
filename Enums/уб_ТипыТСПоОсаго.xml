@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="d85facaa-50aa-4fe7-90a1-57a0993f2361">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_ТипыТСПоОсаго" category="Ref">
+				<xr:TypeId>692843ee-f277-4663-af73-fced19260085</xr:TypeId>
+				<xr:ValueId>9b6fc786-5f77-4984-b146-6e7a87f4dbcd</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_ТипыТСПоОсаго" category="Manager">
+				<xr:TypeId>7d270898-6f30-4a6f-9c73-d4dd7a5b3519</xr:TypeId>
+				<xr:ValueId>443b69c0-a9ce-4850-90a8-e293904e37c3</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_ТипыТСПоОсаго" category="List">
+				<xr:TypeId>f109c397-11cb-48bf-8793-a9759cfdfef4</xr:TypeId>
+				<xr:ValueId>21de13a8-aad8-4963-8bbe-5fefa1b1e224</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_ТипыТСПоОсаго</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Типы ТС для осаго</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Тип транспортного средства по ОСАГО</Comment>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="7f26d6b2-e982-4748-93de-43e54ebb802a">
+				<Properties>
+					<Name>ЛегковойАвтомобильЮр</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Легковой автомобиль юр.лиц</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="f82fc7a2-6470-4ce0-b24a-b197f76485dc">
+				<Properties>
+					<Name>ЛегковойАвтомобильФиз</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Легковой автомобиль физ.лиц</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="de85785b-e3fb-47df-9509-1c9aa52624df">
+				<Properties>
+					<Name>ПрицепЛегковогоАвтомобиля</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прицеп к легковому автомобилю</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="4de682e6-f5cf-4a77-bacf-fd4efc012d2a">
+				<Properties>
+					<Name>Такси</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Такси</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="7ae60c7a-e50a-47ef-92d3-fb659cf4eb8e">
+				<Properties>
+					<Name>ГрузовойАвтомобильДо_10т</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Грузовой автомобиль до 10 т</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="f3276d39-dd68-4c20-9f34-fa4c71ee29eb">
+				<Properties>
+					<Name>ГрузовойАвтомобильСвыше_10т</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Грузовой автомобиль свыше 10 т</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="b45b4761-04d4-4ade-afe5-7cbe4d5ec4b5">
+				<Properties>
+					<Name>ПрицепГрузовогоАвтомобиля</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прицеп к грузовому автомобилю</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="447afc76-a385-47db-a376-3c5edaebf4b5">
+				<Properties>
+					<Name>АвтобусДо_20мест</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автобус число мест до 20</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="795ef7c3-e025-48de-ba47-49d8b3612676">
+				<Properties>
+					<Name>АвтобусСвыше_20мест</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автобус число мест свыше 20</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="5d43e8cd-e0f0-4443-b2a0-362e6c3bd5c9">
+				<Properties>
+					<Name>Троллейбус</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Троллейбусы</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="7fb6faae-18b9-4c58-9863-a23415f7af4d">
+				<Properties>
+					<Name>Трамвай</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Трамваи</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="11ec9209-89f5-4674-90e5-513e71de890d">
+				<Properties>
+					<Name>Трактор</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тракторы, СДС и иные машины</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="152c88b2-3143-4a8b-ab60-deb3c7eebd39">
+				<Properties>
+					<Name>ПрицепТрактора</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прицепы к тракторам, СДС и иным машинам</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a59dd094-dd3f-41ba-832e-c6ba607fcae6">
+				<Properties>
+					<Name>Мотоцикл</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Мотоциклы и мотороллеры</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="9fe209af-11b8-46e5-8ce6-cc11e1062a15">
+				<Properties>
+					<Name>ГрузовойАвтомобильДо_16т</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Грузовой автомобиль до 16 т</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="aaa7c405-4d04-4028-8a59-77e59b0fbdfa">
+				<Properties>
+					<Name>ГрузовойАвтомобильСвыше_16т</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Грузовой автомобиль свыше 16 т</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

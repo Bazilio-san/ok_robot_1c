@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтчетПоставщику</dataPath>
+			<field>ОтчетПоставщику</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КВПоВзносам</dataPath>
+			<field>КВПоВзносам</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КВПоВзносамОплаченнымПоставщику</dataPath>
+			<field>КВПоВзносамОплаченнымПоставщику</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПеречисленоПоставщику</dataPath>
+			<field>ПеречисленоПоставщику</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоступилоОтПоставщика</dataPath>
+			<field>ПоступилоОтПоставщика</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПоВзносам</dataPath>
+			<field>СуммаПоВзносам</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма оплат в пользу СК</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	уб_РасчетыСПоставщиками.Контрагент,
+	уб_РасчетыСПоставщиками.Регистратор.ОтчетПоставщику КАК ОтчетПоставщику,
+	СУММА(уб_РасчетыСПоставщиками.Сумма) КАК СуммаПоВзносам,
+	СУММА(ВЫБОР
+			КОГДА уб_РасчетыСПоставщиками.СуммаКВ &gt; 0
+					И уб_РасчетыСПоставщиками.Сумма &gt; 0
+				ТОГДА уб_РасчетыСПоставщиками.СуммаКВ
+			ИНАЧЕ 0
+		КОНЕЦ) КАК КВПоВзносам,
+	СУММА(ВЫБОР
+			КОГДА уб_РасчетыСПоставщиками.СуммаКВ &gt; 0
+					И уб_РасчетыСПоставщиками.Сумма = 0
+				ТОГДА уб_РасчетыСПоставщиками.СуммаКВ
+			ИНАЧЕ 0
+		КОНЕЦ) КАК КВПоВзносамОплаченнымПоставщику,
+	СУММА(0) КАК ПеречисленоПоставщику,
+	СУММА(0) КАК ПоступилоОтПоставщика,
+	ВЫБОР
+		КОГДА уб_РасчетыСПоставщиками.Регистратор.ОтчетПоставщику = ЗНАЧЕНИЕ(Документ.уб_ОтчетПоставщику.ПустаяСсылка)
+			ТОГДА уб_РасчетыСПоставщиками.Регистратор
+		ИНАЧЕ уб_РасчетыСПоставщиками.Регистратор.ОтчетПоставщику
+	КОНЕЦ КАК Регистратор
+ИЗ
+	РегистрНакопления.уб_РасчетыСПоставщиками КАК уб_РасчетыСПоставщиками
+ГДЕ
+	уб_РасчетыСПоставщиками.Активность
+	И уб_РасчетыСПоставщиками.Контрагент = &amp;Контрагент
+	И уб_РасчетыСПоставщиками.Регистратор ССЫЛКА Документ.уб_ОплатаПолисов
+	И ВЫБОР
+			КОГДА уб_РасчетыСПоставщиками.Регистратор.ОтчетПоставщику = ЗНАЧЕНИЕ(Документ.уб_ОтчетПоставщику.ПустаяСсылка)
+				ТОГДА уб_РасчетыСПоставщиками.Период &lt;= &amp;ДоДаты
+			ИНАЧЕ уб_РасчетыСПоставщиками.Регистратор.ОтчетПоставщику.Дата &lt;= &amp;ДоДаты
+		КОНЕЦ
+
+СГРУППИРОВАТЬ ПО
+	уб_РасчетыСПоставщиками.Контрагент,
+	уб_РасчетыСПоставщиками.Регистратор.ОтчетПоставщику,
+	ВЫБОР
+		КОГДА уб_РасчетыСПоставщиками.Регистратор.ОтчетПоставщику = ЗНАЧЕНИЕ(Документ.уб_ОтчетПоставщику.ПустаяСсылка)
+			ТОГДА уб_РасчетыСПоставщиками.Регистратор
+		ИНАЧЕ уб_РасчетыСПоставщиками.Регистратор.ОтчетПоставщику
+	КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	уб_РасчетыСПоставщиками.Контрагент,
+	ЕСТЬNULL(ЕСТЬNULL(уб_ОтчетПоставщикуПлатежныйДокумент.Ссылка, уб_ОтчетПоставщику.Ссылка), ЗНАЧЕНИЕ(Документ.уб_ОтчетПоставщику.ПустаяСсылка)),
+	СУММА(0),
+	СУММА(0),
+	СУММА(0),
+	СУММА(ВЫБОР
+			КОГДА уб_РасчетыСПоставщиками.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА уб_РасчетыСПоставщиками.Сумма
+			ИНАЧЕ -уб_РасчетыСПоставщиками.Сумма
+		КОНЕЦ),
+	СУММА(ВЫБОР
+			КОГДА уб_РасчетыСПоставщиками.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА уб_РасчетыСПоставщиками.СуммаКВ
+			ИНАЧЕ -уб_РасчетыСПоставщиками.СуммаКВ
+		КОНЕЦ),
+	уб_РасчетыСПоставщиками.Регистратор
+ИЗ
+	РегистрНакопления.уб_РасчетыСПоставщиками КАК уб_РасчетыСПоставщиками
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.уб_ОтчетПоставщику.ПлатежныйДокумент КАК уб_ОтчетПоставщикуПлатежныйДокумент
+		ПО уб_РасчетыСПоставщиками.Регистратор = уб_ОтчетПоставщикуПлатежныйДокумент.ПлатежныйДокумент
+			И (уб_ОтчетПоставщикуПлатежныйДокумент.Ссылка.Проведен)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.уб_ОтчетПоставщику КАК уб_ОтчетПоставщику
+		ПО (уб_РасчетыСПоставщиками.Регистратор.СуммаКВ - уб_ОтчетПоставщику.ИтогОС_КВ &lt;= 0.05)
+			И (уб_РасчетыСПоставщиками.Регистратор.СуммаКВ - уб_ОтчетПоставщику.ИтогОС_КВ &gt;= -0.05)
+			И (уб_РасчетыСПоставщиками.Регистратор.СуммаКВ &gt; 0)
+			И (уб_ОтчетПоставщику.ИтогОС_КВ &gt; 0)
+			И (уб_ОтчетПоставщику.Проведен)
+ГДЕ
+	уб_РасчетыСПоставщиками.Активность
+	И уб_РасчетыСПоставщиками.Контрагент = &amp;Контрагент
+	И уб_РасчетыСПоставщиками.Регистратор ССЫЛКА Документ.уб_ПлатежнаяВедомость
+	И уб_РасчетыСПоставщиками.Период &lt;= &amp;ДоДаты
+
+СГРУППИРОВАТЬ ПО
+	уб_РасчетыСПоставщиками.Контрагент,
+	ЕСТЬNULL(ЕСТЬNULL(уб_ОтчетПоставщикуПлатежныйДокумент.Ссылка, уб_ОтчетПоставщику.Ссылка), ЗНАЧЕНИЕ(Документ.уб_ОтчетПоставщику.ПустаяСсылка)),
+	уб_РасчетыСПоставщиками.Регистратор</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet/>
+		<destinationDataSet/>
+		<sourceExpression/>
+		<destinationExpression/>
+	</dataSetLink>
+	<calculatedField>
+		<dataPath>Задолженность</dataPath>
+		<expression>СуммаПоВзносам-КВПоВзносам-КВПоВзносамОплаченнымПоставщику-ПеречисленоПоставщику+ПоступилоОтПоставщика</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Задолженность в пользу СК</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КВ</dataPath>
+		<expression>КВПоВзносам+КВПоВзносамОплаченнымПоставщику</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сумма КВ по оплатам</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>Задолженность</dataPath>
+		<expression>Сумма(Задолженность)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПоВзносам</dataPath>
+		<expression>Сумма(СуммаПоВзносам)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КВПоВзносам</dataPath>
+		<expression>Сумма(КВПоВзносам)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КВПоВзносамОплаченнымПоставщику</dataPath>
+		<expression>Сумма(КВПоВзносамОплаченнымПоставщику)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПеречисленоПоставщику</dataPath>
+		<expression>Сумма(ПеречисленоПоставщику)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПоступилоОтПоставщика</dataPath>
+		<expression>Сумма(ПоступилоОтПоставщика)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КВ</dataPath>
+		<expression>Сумма(КВ)</expression>
+	</totalField>
+	<parameter>
+		<name>Контрагент</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контрагент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДоДаты</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>До даты</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПоВзносам</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КВ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПеречисленоПоставщику</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПоступилоОтПоставщика</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Задолженность</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Контрагент</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДоДаты</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisYear</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ОтчетПоставщику.Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Взаиморасчеты с поставщиком в разрезе ОП</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Контрагент</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ОтчетПоставщику</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

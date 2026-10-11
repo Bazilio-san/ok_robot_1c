@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Колонки" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Колонки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Колонки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="КолонкиРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<UsualGroup name="Левая" id="43">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ЛеваяРасширеннаяПодсказка" id="44"/>
+					<ChildItems>
+						<UsualGroup name="Группа1" id="37">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="38"/>
+							<ChildItems>
+								<InputField name="Период" id="1">
+									<DataPath>Запись.Period</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата сообщения</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПериодКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="3"/>
+								</InputField>
+								<InputField name="ИмяКанала" id="10">
+									<DataPath>Запись.ИмяКанала</DataPath>
+									<ContextMenu name="ИмяКаналаКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="ИмяКаналаРасширеннаяПодсказка" id="12"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Отправитель" id="4">
+							<DataPath>Запись.Отправитель</DataPath>
+							<ContextMenu name="ОтправительКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ОтправительРасширеннаяПодсказка" id="6"/>
+						</InputField>
+						<InputField name="Заголовок" id="16">
+							<DataPath>Запись.Заголовок</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тема</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ЗаголовокКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ЗаголовокРасширеннаяПодсказка" id="18"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Правая" id="45">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПраваяРасширеннаяПодсказка" id="46"/>
+					<ChildItems>
+						<InputField name="ИДСообщения" id="13">
+							<DataPath>Запись.ИДСообщения</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="ИДСообщенияКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ИДСообщенияРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="Получатель" id="7">
+							<DataPath>Запись.Получатель</DataPath>
+							<ContextMenu name="ПолучательКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ПолучательРасширеннаяПодсказка" id="9"/>
+						</InputField>
+						<CheckBoxField name="Руководителю" id="34">
+							<DataPath>Запись.Руководителю</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="РуководителюКонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="РуководителюРасширеннаяПодсказка" id="36"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="39">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="40"/>
+		</UsualGroup>
+		<InputField name="Сообщение" id="19">
+			<DataPath>Запись.Сообщение</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="СообщениеКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="СообщениеРасширеннаяПодсказка" id="21"/>
+		</InputField>
+		<InputField name="ДатаОбновления" id="22">
+			<DataPath>Запись.ДатаОбновления</DataPath>
+			<Visible>false</Visible>
+			<ContextMenu name="ДатаОбновленияКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ДатаОбновленияРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="ИмяИконки" id="25">
+			<DataPath>Запись.ИмяИконки</DataPath>
+			<Visible>false</Visible>
+			<ContextMenu name="ИмяИконкиКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ИмяИконкиРасширеннаяПодсказка" id="27"/>
+		</InputField>
+		<CheckBoxField name="ВОтчет" id="28">
+			<DataPath>Запись.ВОтчет</DataPath>
+			<Visible>false</Visible>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ВОтчетКонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="ВОтчетРасширеннаяПодсказка" id="30"/>
+		</CheckBoxField>
+		<CheckBoxField name="SMS" id="31">
+			<DataPath>Запись.SMS</DataPath>
+			<Visible>false</Visible>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="SMSКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="SMSРасширеннаяПодсказка" id="33"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.уб_Чат_Сообщения</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,1009 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заявка</dataPath>
+			<field>Заявка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявка</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>Заявка.Номер</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОСАГОНомер</dataPath>
+			<field>ОСАГОНомер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОСАГО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РекомендацияОсаго</dataPath>
+			<field>РекомендацияОсаго</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОСАГО</dataPath>
+			<field>ОСАГО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОСАГО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РекомендацияКаско</dataPath>
+			<field>РекомендацияКаско</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Каско</dataPath>
+			<field>Каско</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каско</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КаскоНомер</dataPath>
+			<field>КаскоНомер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КАСКО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Вознаграждение</dataPath>
+			<field>Вознаграждение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>За реком.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РекомендацияКаскоПлюсОсаго</dataPath>
+			<field>РекомендацияКаскоПлюсОсаго</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаКлуб30</dataPath>
+			<field>ЗаКлуб30</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>За клуб30</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КВСумма</dataPath>
+			<field>КВСумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КВСумма</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентКлуб</dataPath>
+			<field>ПроцентКлуб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>% в клубе</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СреднийПроцент</dataPath>
+			<field>СреднийПроцент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Средний %</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Вид</dataPath>
+			<field>Вид</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Бонус</dataPath>
+			<field>Бонус</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бонус</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ Разрешенные
+	полис.Страхователь,
+	МИНИМУМ(полис.ДатаНачала) КАК ДатаНачала,
+	уб_ЗаменаПолисовСрезПоследних.АннулированныйПолис
+ПОМЕСТИТЬ ДатыПервыхПолисов
+ИЗ
+	Документ.уб_СтраховойПолис КАК полис
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ЗаменаПолисов.СрезПоследних КАК уб_ЗаменаПолисовСрезПоследних
+		ПО (уб_ЗаменаПолисовСрезПоследних.НовыйПолис = полис.Ссылка)
+ГДЕ
+	НЕ полис.СостояниеПолиса В (ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированПолностью), ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированЗаменаБланка), ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированВыписанНовый))
+	И полис.СтраховаяПремия &gt; 0
+	И уб_ЗаменаПолисовСрезПоследних.АннулированныйПолис ЕСТЬ NULL
+
+СГРУППИРОВАТЬ ПО
+	полис.Страхователь,
+	уб_ЗаменаПолисовСрезПоследних.АннулированныйПолис
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОП.Ссылка КАК Оплата,
+	ОП.СтраховойПолис.Заявка КАК Заявка,
+	ОП.СтраховойПолис.Заявка.Менеджер КАК Менеджер,
+	ОП.СтраховойПолис.Заявка.Страхователь КАК Страхователь,
+	ОП.СтраховойПолис.Заявка,
+	ОП.СтраховойПолис.Заявка.Источник КАК Источник,
+	ОП.СтраховойПолис.Заявка.ДатаСоздания КАК ДатаСоздания,
+	ОП.СтраховойПолис.Номер КАК НомерПолиса,
+	СУММА(ОП.НачисленнаяСуммаВзноса) КАК НачисленнаяСуммаВзноса,
+	СУММА(ВЫБОР
+			КОГДА ОП.ОплаченоФакт &gt; 0
+					И ОП.КВСуммаДляАгента &gt;= ОП.АВилиСкидкаСумма
+				ТОГДА ОП.КВСуммаДляАгента - ОП.АВилиСкидкаСумма
+			ИНАЧЕ 0
+		КОНЕЦ * (100 - ОП.ПроцентСКВ) / 100) КАК СКВ,
+	СУММА(ОП.КВСуммаДляАгента) КАК КВСумма,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА СУММА(ОП.НачисленнаяСуммаВзноса) = 0
+				ТОГДА 0
+			ИНАЧЕ СУММА(ОП.КВСуммаДляАгента) * 100 / СУММА(ОП.НачисленнаяСуммаВзноса)
+		КОНЕЦ КАК ЧИСЛО(15, 2)) КАК КВПроцент,
+	ВЫБОР
+		КОГДА ОП.НомерВзноса = 1
+				И РАЗНОСТЬДАТ(ДатыПервыхПолисов.ДатаНачала, ОП.СтраховойПолис.Заявка.ДатаСоздания, МЕСЯЦ) &lt; 3
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК НовыйКлиент,
+	ОП.ВидСП
+ПОМЕСТИТЬ Оплаты
+ИЗ
+	Документ.уб_ОплатаПолисов КАК ОП
+		ЛЕВОЕ СОЕДИНЕНИЕ ДатыПервыхПолисов КАК ДатыПервыхПолисов
+		ПО ОП.СтраховойПолис.Страхователь = ДатыПервыхПолисов.Страхователь
+ГДЕ
+	ОП.ИсключитьИзРасчетаЗП = ЛОЖЬ
+	И НЕ ОП.СтраховойПолис.Ссылка = ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+	И ОП.СтраховойПолис.ПометкаУдаления = ЛОЖЬ
+	И ОП.ПометкаУдаления = ЛОЖЬ
+	И ОП.НеВключатьВОтчетыПоставщикам = ЛОЖЬ
+	И ОП.СхемаРасчетаСМенеджером = ЗНАЧЕНИЕ(ПланВидовРасчета.уб_РасчетЗарплатыМенеджерамОП.ПланПоСКВ)
+	И ОП.СтраховойПолис.Заявка.Дата &gt;= &amp;ДатаНачала
+	И ОП.СтраховойПолис.Заявка.Дата &lt;= &amp;ДатаОкончания
+	И ОП.СтраховойПолис.Заявка.Источник = "Рекомендация"
+	И ОП.СтраховойПолис.Заявка.Тип = ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Страховка)
+	И ОП.СК.Наименование &lt;&gt; "-- КупиПолис --"
+	И ОП.НомерВзноса = 1
+	И ОП.НачисленнаяСуммаВзноса &gt;= 1000
+	//И ОП.СтраховойПолис.Заявка.Номер = 278792
+
+СГРУППИРОВАТЬ ПО
+	ОП.Ссылка,
+	ОП.СтраховойПолис.Заявка.Менеджер,
+	ОП.СтраховойПолис.Заявка.Страхователь,
+	ОП.СтраховойПолис.Заявка,
+	ОП.СтраховойПолис.Номер,
+	ОП.СтраховойПолис.Заявка.Источник,
+	ОП.СтраховойПолис.Заявка.ДатаСоздания,
+	ВЫБОР
+		КОГДА ОП.НомерВзноса = 1
+				И РАЗНОСТЬДАТ(ДатыПервыхПолисов.ДатаНачала, ОП.СтраховойПолис.Заявка.ДатаСоздания, МЕСЯЦ) &lt; 3
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ,
+	ОП.ВидСП,
+	ОП.СтраховойПолис.Заявка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОП.Заявка,
+	ОП.Менеджер,
+	СУММА(ВЫБОР
+			КОГДА ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Осаго)
+					ИЛИ ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕОсаго)
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК ОСАГО,
+	МАКСИМУМ(ВЫБОР
+			КОГДА ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Осаго)
+					ИЛИ ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕОсаго)
+				ТОГДА ОП.НомерПолиса
+			ИНАЧЕ ""
+		КОНЕЦ) КАК ОСАГОНомер,
+	СУММА(ВЫБОР
+			КОГДА ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Каско)
+					ИЛИ ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕКаско)
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Каско,
+	МАКСИМУМ(ВЫБОР
+			КОГДА ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Каско)
+					ИЛИ ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕКаско)
+				ТОГДА ОП.НомерПолиса
+			ИНАЧЕ ""
+		КОНЕЦ) КАК КаскоНомер,
+	СУММА(ОП.КВСумма) КАК КВСумма,
+	уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Подразделение,
+	СУММА(ОП.НачисленнаяСуммаВзноса) как НачисленнаяСуммаВзноса
+ПОМЕСТИТЬ Данные
+ИЗ
+	Оплаты КАК ОП
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ДвижениеФизлицПоПодразделениям.СрезПоследних КАК уб_ДвижениеФизлицПоПодразделениямСрезПоследних
+		ПО ОП.Менеджер = уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Агент
+ГДЕ
+	ОП.ВидСП В (ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Каско), ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕКаско), ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Осаго), ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕОсаго))
+	И ВЫБОР
+			КОГДА ОП.Заявка.Дата &gt;= ДАТАВРЕМЯ(2024, 5, 1)
+				ТОГДА ВЫБОР
+						КОГДА ОП.НовыйКлиент = 1
+							ТОГДА ИСТИНА
+						ИНАЧЕ ЛОЖЬ
+					КОНЕЦ
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ
+
+СГРУППИРОВАТЬ ПО
+	ОП.Заявка,
+	ОП.Менеджер,
+	уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Подразделение
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Данные.Заявка,
+	1 КАК Количество,
+	Данные.Менеджер,
+	Данные.ОСАГО,
+	Данные.ОСАГОНомер,
+	Данные.Каско,
+	Данные.КаскоНомер,
+	Данные.Подразделение,
+	уб_ЗП_ПоказателиРасчетаЗП.РекомендацияКаско,
+	уб_ЗП_ПоказателиРасчетаЗП.РекомендацияОсаго,
+	уб_ЗП_ПоказателиРасчетаЗП.РекомендацияКаскоПлюсОсаго,
+	ВЫБОР
+		КОГДА Данные.ОСАГО &gt; 0
+				И Данные.Каско &gt; 0
+			ТОГДА уб_ЗП_ПоказателиРасчетаЗП.РекомендацияКаскоПлюсОсаго
+		КОГДА Данные.Каско &gt; 0
+			ТОГДА уб_ЗП_ПоказателиРасчетаЗП.РекомендацияКаско
+		КОГДА Данные.ОСАГО &gt; 0
+			ТОГДА уб_ЗП_ПоказателиРасчетаЗП.РекомендацияОсаго
+		ИНАЧЕ 0
+	КОНЕЦ КАК Вознаграждение,
+	Данные.КВСумма,
+	Данные.НачисленнаяСуммаВзноса
+ПОМЕСТИТЬ Рекомендации
+ИЗ
+	Данные КАК Данные
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ЗП_ПоказателиРасчетаЗП.СрезПоследних(&amp;ДатаОкончания, ) КАК уб_ЗП_ПоказателиРасчетаЗП
+		ПО (ИСТИНА)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Ставки.Период,
+	Ставки.СуммаЗаПовышенныйКВ_НБ,
+	Ставки.СуммаЗаПовышенныйКВ_Пролонгация,
+	Ставки.СтавкаПроцентаПовышенныйКВ,
+	Ставки.РекомендацияКаско,
+	Ставки.РекомендацияОсаго,
+	Ставки.РекомендацияКаскоПлюсОсаго
+ПОМЕСТИТЬ Ставки
+ИЗ
+	РегистрСведений.уб_ЗП_ПоказателиРасчетаЗП.СрезПоследних(&amp;ДатаОкончания, ) КАК Ставки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	АналитикаСрез.Сотрудник КАК Аналитика,
+	АналитикаУчетаБСО.ВидСП,
+	АналитикаУчетаБСО.Личная,
+	АналитикаУчетаБСО.ОрганизацияАгент,
+	АналитикаУчетаБСО.Подразделение,
+	АналитикаУчетаБСО.Поставщик,
+	АналитикаУчетаБСО.СК,
+	АналитикаУчетаБСО.ФормаОплаты,
+	АналитикаУчетаБСО.Наименование,
+	АналитикаСрез.ЗначениеПараметра как Бонус
+ПОМЕСТИТЬ АналитикаКлуба
+ИЗ
+	РегистрСведений.уб_ПараметрыРасчетаЗарплатыСотрудников.СрезПоследних(&amp;ДатаОкончания, ТипПараметра = "Клуб30") КАК АналитикаСрез
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.АналитикаУчетаБСО КАК АналитикаУчетаБСО
+		ПО АналитикаСрез.Сотрудник = АналитикаУчетаБСО.Ссылка
+ГДЕ
+	АналитикаСрез.ЗначениеПараметра &gt; 0
+	И АналитикаУчетаБСО.Личная = ЛОЖЬ
+	И АналитикаУчетаБСО.Подразделение = ЗНАЧЕНИЕ(Справочник.ПодразделенияОрганизаций.ПустаяСсылка)
+	И АналитикаУчетаБСО.ФормаОплаты = ЗНАЧЕНИЕ(Перечисление.уб_ФормыОплаты.ПустаяСсылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОП.Ссылка КАК Оплата,
+	ОПСтарые.Ссылка КАК СтараяОплата,
+	ВЫБОР
+		КОГДА ОПСтарые.Ссылка ЕСТЬ NULL
+			ТОГДА 1
+		КОГДА ОП.КВПроцентДляАгента &gt; ОПСтарые.КВПроцентДляАгента
+			ТОГДА 2
+		ИНАЧЕ 0
+	КОНЕЦ КАК РежимКлуба,
+	уб_ЗаданияНаПролонгацию.СтраховойПолис КАК СтарыйПолис,
+	ОП.СтраховойПолис.Заявка КАК Заявка,
+	ОП.СтраховойПолис.Заявка.Менеджер КАК Менеджер,
+	ОП.СтраховойПолис.Заявка.Страхователь КАК Страхователь,
+	ОП.СтраховойПолис.Заявка,
+	ОП.СтраховойПолис.Заявка.Источник КАК Источник,
+	ОП.СтраховойПолис.Заявка.ДатаСоздания КАК ДатаСоздания,
+	ОП.СтраховойПолис.Номер КАК НомерПолиса,
+	СУММА(ОП.НачисленнаяСуммаВзноса) КАК НачисленнаяСуммаВзноса,
+	СУММА(ВЫБОР
+			КОГДА ОП.ОплаченоФакт &gt; 0
+					И ОП.КВСуммаДляАгента &gt;= ОП.АВилиСкидкаСумма
+				ТОГДА ОП.КВСуммаДляАгента - ОП.АВилиСкидкаСумма
+			ИНАЧЕ 0
+		КОНЕЦ * (100 - ОП.ПроцентСКВ) / 100) КАК СКВ,
+	СУММА(ОП.КВСуммаДляАгента) КАК КВСумма,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА СУММА(ОП.НачисленнаяСуммаВзноса) = 0
+				ТОГДА 0
+			ИНАЧЕ СУММА(ОП.КВСуммаДляАгента) * 100 / СУММА(ОП.НачисленнаяСуммаВзноса)
+		КОНЕЦ КАК ЧИСЛО(15, 2)) КАК КВПроцент,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА СУММА(ОПСтарые.НачисленнаяСуммаВзноса) = 0
+				ТОГДА 0
+			ИНАЧЕ СУММА(ОПСтарые.КВСуммаДляАгента) * 100 / СУММА(ОПСтарые.НачисленнаяСуммаВзноса)
+		КОНЕЦ КАК ЧИСЛО(15, 2)) КАК КВПроцентСтарые,
+	ВЫБОР
+		КОГДА ОП.НомерВзноса = 1
+				И РАЗНОСТЬДАТ(ДатыПервыхПолисов.ДатаНачала, ОП.СтраховойПолис.Заявка.ДатаСоздания, МЕСЯЦ) &lt; 3
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК НовыйКлиент,
+	ОП.ВидСП,
+	АналитикаКлуба.Наименование,
+	Ставки.СуммаЗаПовышенныйКВ_НБ,
+	Ставки.СуммаЗаПовышенныйКВ_Пролонгация,
+	Ставки.РекомендацияКаско,
+	Ставки.РекомендацияОсаго,
+	Ставки.РекомендацияКаскоПлюсОсаго
+ПОМЕСТИТЬ КлубПредварительные
+ИЗ
+	Документ.уб_ОплатаПолисов КАК ОП
+		ЛЕВОЕ СОЕДИНЕНИЕ ДатыПервыхПолисов КАК ДатыПервыхПолисов
+		ПО ОП.СтраховойПолис.Страхователь = ДатыПервыхПолисов.Страхователь
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Ставки КАК Ставки
+		ПО ОП.КВПроцентДляАгента &gt;= Ставки.СтавкаПроцентаПовышенныйКВ
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ АналитикаКлуба КАК АналитикаКлуба
+		ПО (АналитикаКлуба.СК = ОП.СК или АналитикаКлуба.СК = Значение(Справочник.Контрагенты.ПустаяСсылка))
+			И (АналитикаКлуба.Поставщик = ОП.Поставщик или АналитикаКлуба.Поставщик = Значение(Справочник.Контрагенты.ПустаяСсылка))
+			И (АналитикаКлуба.ОрганизацияАгент = ОП.ОрганизацияАгент или АналитикаКлуба.ОрганизацияАгент = Значение(Справочник.Организации.ПустаяСсылка))
+			И (АналитикаКлуба.ВидСП = ОП.ВидСП)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ЗаданияНаПролонгацию КАК уб_ЗаданияНаПролонгацию
+		ПО ОП.СтраховойПолис = уб_ЗаданияНаПролонгацию.НовыйПолис
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.уб_ОплатаПолисов КАК ОПСтарые
+		ПО (ОПСтарые.СтраховойПолис = уб_ЗаданияНаПролонгацию.СтраховойПолис)
+			И (ОПСтарые.ИсключитьИзРасчетаЗП = ЛОЖЬ)
+			И (НЕ ОПСтарые.СтраховойПолис.Ссылка = ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка))
+			И (ОПСтарые.СтраховойПолис.ПометкаУдаления = ЛОЖЬ)
+			И (ОПСтарые.ПометкаУдаления = ЛОЖЬ)
+			И (ОПСтарые.НеВключатьВОтчетыПоставщикам = ЛОЖЬ)
+			И (ОПСтарые.НомерВзноса = 1)
+ГДЕ
+	ОП.ИсключитьИзРасчетаЗП = ЛОЖЬ
+	И НЕ ОП.СтраховойПолис.Ссылка = ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+	И ОП.СтраховойПолис.ПометкаУдаления = ЛОЖЬ
+	И ОП.ПометкаУдаления = ЛОЖЬ
+	И ОП.НеВключатьВОтчетыПоставщикам = ЛОЖЬ
+	И ОП.СхемаРасчетаСМенеджером = ЗНАЧЕНИЕ(ПланВидовРасчета.уб_РасчетЗарплатыМенеджерамОП.ПланПоСКВ)
+	И ОП.СтраховойПолис.Заявка.Дата &gt;= &amp;ДатаНачала
+	И ОП.СтраховойПолис.Заявка.Дата &lt;= &amp;ДатаОкончания
+	И ОП.СК.Наименование &lt;&gt; "-- КупиПолис --"
+	И ОП.НомерВзноса = 1
+	И ОП.АВилиСкидкаСумма = 0
+	И ОП.СкидкаВыплаченаяКлиенту = 0
+	И ОП.СтраховойПолис.Заявка.Дата &gt;= ДАТАВРЕМЯ(2024, 11, 15)
+	//И ОП.СтраховойПолис.ДатаНачала &gt;= ОП.СтраховойПолис.Заявка.Дата
+	//И ОП.СтраховойПолис.Заявка.Номер = 278792
+
+СГРУППИРОВАТЬ ПО
+	ОП.Ссылка,
+	ОП.СтраховойПолис.Заявка.Менеджер,
+	ОП.СтраховойПолис.Заявка.Страхователь,
+	ОП.СтраховойПолис.Заявка,
+	ОП.СтраховойПолис.Номер,
+	ОП.СтраховойПолис.Заявка.Источник,
+	ОП.СтраховойПолис.Заявка.ДатаСоздания,
+	ВЫБОР
+		КОГДА ОП.НомерВзноса = 1
+				И РАЗНОСТЬДАТ(ДатыПервыхПолисов.ДатаНачала, ОП.СтраховойПолис.Заявка.ДатаСоздания, МЕСЯЦ) &lt; 3
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ,
+	ОП.ВидСП,
+	АналитикаКлуба.Наименование,
+	Ставки.СуммаЗаПовышенныйКВ_НБ,
+	Ставки.СуммаЗаПовышенныйКВ_Пролонгация,
+	уб_ЗаданияНаПролонгацию.СтраховойПолис,
+	ОПСтарые.Ссылка,
+	ВЫБОР
+		КОГДА ОПСтарые.Ссылка ЕСТЬ NULL
+			ТОГДА 1
+		КОГДА ОПСтарые.КВПроцентДляАгента &gt; ОП.КВПроцентДляАгента
+			ТОГДА 2
+		ИНАЧЕ 0
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА ОПСтарые.Ссылка ЕСТЬ NULL
+			ТОГДА 1
+		КОГДА ОП.КВПроцентДляАгента &gt; ОПСтарые.КВПроцентДляАгента
+			ТОГДА 2
+		ИНАЧЕ 0
+	КОНЕЦ,
+	Ставки.РекомендацияКаско,
+	Ставки.РекомендацияОсаго,
+	Ставки.РекомендацияКаскоПлюсОсаго,
+	ОП.СтраховойПолис.Заявка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КлубПредварительные.Заявка,
+	1 КАК Количество,
+	КлубПредварительные.Менеджер,
+	СУММА(ВЫБОР
+			КОГДА КлубПредварительные.Оплата.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Осаго)
+					ИЛИ КлубПредварительные.Оплата.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕОсаго)
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК ОСАГО,
+	МАКСИМУМ(ВЫБОР
+			КОГДА КлубПредварительные.Оплата.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Осаго)
+					ИЛИ КлубПредварительные.Оплата.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕОсаго)
+				ТОГДА КлубПредварительные.НомерПолиса
+			ИНАЧЕ ""
+		КОНЕЦ) КАК ОСАГОНомер,
+	СУММА(ВЫБОР
+			КОГДА КлубПредварительные.Оплата.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Каско)
+					ИЛИ КлубПредварительные.Оплата.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕКаско)
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Каско,
+	МАКСИМУМ(ВЫБОР
+			КОГДА КлубПредварительные.Оплата.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Каско)
+					ИЛИ КлубПредварительные.Оплата.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕКаско)
+				ТОГДА КлубПредварительные.НомерПолиса
+			ИНАЧЕ ""
+		КОНЕЦ) КАК КаскоНомер,
+	уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Подразделение КАК Подразделение,
+	КлубПредварительные.РекомендацияКаско,
+	КлубПредварительные.РекомендацияОсаго,
+	КлубПредварительные.РекомендацияКаскоПлюсОсаго,
+	0 КАК Поле1,
+	СУММА(ВЫБОР
+			КОГДА КлубПредварительные.РежимКлуба = 1
+				ТОГДА КлубПредварительные.СуммаЗаПовышенныйКВ_НБ
+			КОГДА КлубПредварительные.РежимКлуба = 2
+				ТОГДА КлубПредварительные.СуммаЗаПовышенныйКВ_Пролонгация
+			ИНАЧЕ 0
+		КОНЕЦ) КАК ПремияЗаКлуб,
+	КлубПредварительные.КВСумма,
+	КлубПредварительные.КВПроцент,
+	КлубПредварительные.Наименование
+ПОМЕСТИТЬ Клуб
+ИЗ
+	КлубПредварительные КАК КлубПредварительные
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ДвижениеФизлицПоПодразделениям.СрезПоследних КАК уб_ДвижениеФизлицПоПодразделениямСрезПоследних
+		ПО КлубПредварительные.Менеджер = уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Агент
+ГДЕ
+	КлубПредварительные.РежимКлуба &gt; 0
+
+СГРУППИРОВАТЬ ПО
+	КлубПредварительные.Заявка,
+	КлубПредварительные.Менеджер,
+	КлубПредварительные.Страхователь,
+	КлубПредварительные.Источник,
+	КлубПредварительные.НомерПолиса,
+	КлубПредварительные.РекомендацияКаско,
+	КлубПредварительные.РекомендацияОсаго,
+	КлубПредварительные.РекомендацияКаскоПлюсОсаго,
+	уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Подразделение,
+	КлубПредварительные.КВСумма,
+	КлубПредварительные.КВПроцент,
+	КлубПредварительные.Наименование
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Влож.Заявка,
+	Влож.Вид,
+	МАКСИМУМ(Влож.Количество) КАК Количество,
+	Влож.Менеджер,
+	МАКСИМУМ(Влож.ОСАГО) КАК ОСАГО,
+	МАКСИМУМ(Влож.ОСАГОНомер) КАК ОСАГОНомер,
+	МАКСИМУМ(Влож.Каско) КАК Каско,
+	МАКСИМУМ(Влож.КаскоНомер) КАК КаскоНомер,
+	Влож.Подразделение,
+	МАКСИМУМ(Влож.РекомендацияКаско) КАК РекомендацияКаско,
+	МАКСИМУМ(Влож.РекомендацияОсаго) КАК РекомендацияОсаго,
+	МАКСИМУМ(Влож.РекомендацияКаскоПлюсОсаго) КАК РекомендацияКаскоПлюсОсаго,
+	МАКСИМУМ(Влож.КВСумма) КАК КВСумма,
+	Максимум(Влож.СреднийПроцент) КАК СреднийПроцент,
+	Максимум(Влож.ПроцентКлуб) КАК ПроцентКлуб,
+	СУММА(Влож.Вознаграждение) КАК Вознаграждение,
+	СУММА(Влож.ЗаКлуб30) КАК ЗаКлуб30,
+	СУММА(Влож.Вознаграждение+Влож.ЗаКлуб30) как Бонус
+ИЗ
+	(ВЫБРАТЬ
+		Рекомендации.Заявка КАК Заявка,
+		Рекомендации.Количество КАК Количество,
+		Рекомендации.Менеджер КАК Менеджер,
+		Рекомендации.ОСАГО КАК ОСАГО,
+		Рекомендации.ОСАГОНомер КАК ОСАГОНомер,
+		Рекомендации.Каско КАК Каско,
+		Рекомендации.КаскоНомер КАК КаскоНомер,
+		Рекомендации.Подразделение КАК Подразделение,
+		Рекомендации.РекомендацияКаско КАК РекомендацияКаско,
+		Рекомендации.РекомендацияОсаго КАК РекомендацияОсаго,
+		Рекомендации.РекомендацияКаскоПлюсОсаго КАК РекомендацияКаскоПлюсОсаго,
+		Рекомендации.Вознаграждение КАК Вознаграждение,
+		0 КАК ЗаКлуб30,
+		Рекомендации.КВСумма КАК КВСумма,
+		Выразить (Рекомендации.КВСумма*100/Выбор Когда Рекомендации.НачисленнаяСуммаВзноса = 0  тогда 1 иначе Рекомендации.НачисленнаяСуммаВзноса Конец  как число(10,0))КАК СреднийПроцент,
+		0 как ПроцентКлуб,
+		"Рекомендация" как Вид
+	ИЗ
+		Рекомендации КАК Рекомендации
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		Клуб.Заявка,
+		Клуб.Количество,
+		Клуб.Менеджер,
+		Клуб.ОСАГО,
+		Клуб.ОСАГОНомер,
+		Клуб.Каско,
+		Клуб.КаскоНомер,
+		Клуб.Подразделение,
+		Клуб.РекомендацияКаско,
+		Клуб.РекомендацияОсаго,
+		Клуб.РекомендацияКаскоПлюсОсаго,
+		0,
+		Клуб.ПремияЗаКлуб,
+		Клуб.КВСумма,
+		0,
+		Клуб.КВПроцент,
+		Выбор Когда &amp;ДатаНачала&gt;=ДатаВремя(2025,3,1) Тогда Клуб.Наименование Иначе "Клуб+коробка" Конец
+	ИЗ
+		Клуб КАК Клуб ) КАК Влож
+		
+
+СГРУППИРОВАТЬ ПО
+	Влож.Заявка,
+	Влож.Менеджер,
+	Влож.Подразделение,
+	Влож.Вид</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Вознаграждение</dataPath>
+		<expression>Сумма(Вознаграждение)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Количество(Различные Заявка)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаКлуб30</dataPath>
+		<expression>Сумма(ЗаКлуб30)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КВСумма</dataPath>
+		<expression>Сумма(КВСумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднийПроцент</dataPath>
+		<expression>Максимум(СреднийПроцент)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентКлуб</dataPath>
+		<expression>Максимум(ПроцентКлуб)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Бонус</dataPath>
+		<expression>Сумма(Бонус)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной3</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной 3</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подразделение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заявка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заявка.Страхователь</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страхователь</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заявка.НомерЗаявки</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>НомерЗаявки</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КаскоНомер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОСАГОНомер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Бонус</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>СреднийПроцент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Вознаграждение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>КВСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ПроцентКлуб</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ЗаКлуб30</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisMonth</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisMonth</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Подразделение.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Менеджер.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Заявка.Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Заявка</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">45</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Заявка.Страхователь</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ОСАГОНомер</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>КаскоНомер</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по рекомендациям и клубу 30%</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Вид</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Подразделение</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Менеджер</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

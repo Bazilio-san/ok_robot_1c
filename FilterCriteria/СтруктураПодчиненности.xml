@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<FilterCriterion uuid="338885fd-1bb6-4abf-a0ed-f5eac10a0dd8">
+		<InternalInfo>
+			<xr:GeneratedType name="FilterCriterionManager.СтруктураПодчиненности" category="Manager">
+				<xr:TypeId>57eb8de1-0cf3-4c08-9af5-757cd0724e88</xr:TypeId>
+				<xr:ValueId>2387a5d9-ee6b-4d44-8b91-aa9eea700f31</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="FilterCriterionList.СтруктураПодчиненности" category="List">
+				<xr:TypeId>b9fc9224-6273-4aba-b4e3-1033f3a5b7b3</xr:TypeId>
+				<xr:ValueId>ba092127-99ad-4499-a735-c903e7c8b39a</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>СтруктураПодчиненности</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подчиненные документы</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВводНачальныхОстатковБСО.TabularSection.БСО.Attribute.СтраховойПолис</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком.TabularSection.Распределение.Attribute.ОтчетПоставщику</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДокументДляВыгрузкиВУП.TabularSection.ОплатыСписок.Attribute.СтраховойПолис</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.TabularSection.ДополнительнаяТЧ.Attribute.ЛюбаяСсылка</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ЗаявкаНаЗаказВыездногоСпециалиста.Attribute.СозданНаОсновании</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ЗаявлениеВПолицию.Attribute.СозданНаОсновании</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ЗаявлениеОбУтрате.Attribute.СозданНаОсновании</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОбъявлениеВСМИобУтратеБСО.Attribute.СозданНаОсновании</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОплатаПолисов.Attribute.ОтчетАгента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОплатаПолисов.Attribute.ОтчетПоставщику</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОплатаПолисов.Attribute.СтраховойПолис</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ПередачаБСОПоставщику.Attribute.СозданНаОсновании</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ПеремещениеБСО.Attribute.СозданНаОсновании</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ПриемкаОплат.Attribute.ОтчетКассира</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ПриемкаОплат.Attribute.СозданНаОсновании</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ПриемкаОплат.TabularSection.Полисы.Attribute.ОплатаПолисаДляОтчетаАгента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_УведомлениеОДосрочномПрекращенииДействияДоговора.Attribute.СозданНаОсновании</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_УведомлениеПоставщикаОбУтратеБСО.Attribute.СозданНаОсновании</xr:Item>
+			</Content>
+			<DefaultForm/>
+			<AuxiliaryForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects/>
+	</FilterCriterion>
+</MetaDataObject>

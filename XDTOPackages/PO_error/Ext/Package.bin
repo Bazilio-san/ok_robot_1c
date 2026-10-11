@@ -1,0 +1,9 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://error.ie.lois.ru/">
+	<objectType name="Error">
+		<property name="message" type="xs:string" lowerBound="0"/>
+		<property name="type" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ErrorList">
+		<property xmlns:d3p1="http://error.ie.lois.ru/" name="error" type="d3p1:Error" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

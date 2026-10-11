@@ -1,0 +1,389 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://policy.ie.lois.ru/">
+	<property xmlns:d2p1="http://policy.ie.lois.ru/" name="AgentConract" type="d2p1:AgentConract"/>
+	<property xmlns:d2p1="http://policy.ie.lois.ru/" name="AgentSubject" type="d2p1:AgentSubject"/>
+	<property xmlns:d2p1="http://policy.ie.lois.ru/" name="DealerConractInfo" type="d2p1:DealerConractInfo"/>
+	<property xmlns:d2p1="http://policy.ie.lois.ru/" name="GeneralConract" type="d2p1:GeneralConract"/>
+	<property xmlns:d2p1="http://policy.ie.lois.ru/" name="PointOfSale" type="d2p1:PointOfSale"/>
+	<property xmlns:d2p1="http://policy.ie.lois.ru/" name="Policy" type="d2p1:Policy"/>
+	<property xmlns:d2p1="http://policy.ie.lois.ru/" name="payment" type="d2p1:Payment"/>
+	<valueType name="BlankRole" base="xs:string" variety="Atomic">
+		<enumeration>БЛАНК_ДОГОВОРА</enumeration>
+		<enumeration>КВИТАНЦИЯ_А7</enumeration>
+		<enumeration>ЛИСТ_ОСМОТРА</enumeration>
+	</valueType>
+	<valueType name="DealerConractType" base="xs:string" variety="Atomic">
+		<enumeration>АГЕНТСКИЙ_ДОГОВОР</enumeration>
+		<enumeration>ГЕНЕРАЛЬНЫЙ_ДОГОВОР</enumeration>
+	</valueType>
+	<valueType name="DocumentType" base="xs:string" variety="Atomic">
+		<enumeration>Паспорт гражданина РФ</enumeration>
+		<enumeration>Загранпаспорт гражданина РФ</enumeration>
+		<enumeration>Свидетельство о рождении</enumeration>
+		<enumeration>Удостоверение личности офицера</enumeration>
+		<enumeration>Справка об освобождении из мест лишения свободы</enumeration>
+		<enumeration>Паспорт Минморфлота</enumeration>
+		<enumeration>Военный билет солдата (матроса, сержанта, старшины)</enumeration>
+		<enumeration>Дипломатический паспорт гражданина РФ</enumeration>
+		<enumeration>Иностранный паспорт</enumeration>
+		<enumeration>Свидетельство о регистрации ходатайства иммигранта о признании его беженцем</enumeration>
+		<enumeration>Вид на жительство</enumeration>
+		<enumeration>Удостоверение беженца в РФ</enumeration>
+		<enumeration>Временное удостоверение личности гражданина РФ</enumeration>
+		<enumeration>Свидетельство о рождении, выданное уполномоченным органом иностранного государства</enumeration>
+		<enumeration>Паспорт моряка</enumeration>
+		<enumeration>Военный билет офицера запаса</enumeration>
+		<enumeration>Иные документы, выдаваемые органами МВД</enumeration>
+		<enumeration>Паспорт гражданина СССР</enumeration>
+		<enumeration>Загранпаспорт гражданина СССР</enumeration>
+		<enumeration>Водительское удостоверение РФ</enumeration>
+		<enumeration>Свидетельство о смерти</enumeration>
+		<enumeration>Водительское удостоверение иностранного государства</enumeration>
+		<enumeration>Другие документы</enumeration>
+		<enumeration>Свидетельство о регистрации ЮЛ</enumeration>
+		<enumeration>Свидетельство о государственной регистрации физического лица в качестве индивидуального предпринимателя</enumeration>
+	</valueType>
+	<valueType name="PaymentDocumentType" base="xs:string" variety="Atomic">
+		<enumeration>Квитанция А7</enumeration>
+		<enumeration>Платёжное поручение</enumeration>
+	</valueType>
+	<valueType name="PaymentRecepient" base="xs:string" variety="Atomic">
+		<enumeration>ПАРТНЕР</enumeration>
+		<enumeration>СК</enumeration>
+	</valueType>
+	<valueType name="SequenceElementType" base="xs:string" variety="Atomic">
+		<enumeration>ЗАМЕНА</enumeration>
+		<enumeration>ИСПРАВЛЕНИЕ</enumeration>
+		<enumeration>ПРОЛОНГАЦИЯ</enumeration>
+	</valueType>
+	<valueType name="SubjectType" base="xs:string" variety="Atomic">
+		<enumeration>ФЛ</enumeration>
+		<enumeration>ЮЛ</enumeration>
+	</valueType>
+	<objectType name="AddressInfo">
+		<property name="country" type="xs:string" lowerBound="0"/>
+		<property name="countryCodeOKSM" type="xs:string" lowerBound="0"/>
+		<property name="postIndex" type="xs:string" lowerBound="0"/>
+		<property name="region" type="xs:string" lowerBound="0"/>
+		<property name="district" type="xs:string" lowerBound="0"/>
+		<property name="locality" type="xs:string" lowerBound="0"/>
+		<property name="localityCodeKLADR" type="xs:string" lowerBound="0"/>
+		<property name="street" type="xs:string" lowerBound="0"/>
+		<property name="houseNumber" type="xs:string" lowerBound="0"/>
+		<property name="houseCorps" type="xs:string" lowerBound="0"/>
+		<property name="houseBuilding" type="xs:long" lowerBound="0"/>
+		<property name="flat" type="xs:string" lowerBound="0"/>
+		<property name="addressText" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="AgentConract">
+		<property name="number" type="xs:string" lowerBound="0"/>
+		<property name="date" type="xs:dateTime" lowerBound="0"/>
+		<property name="departmentCode" type="xs:string" lowerBound="0"/>
+		<property name="ikp" type="xs:string" lowerBound="0"/>
+		<property name="ikpCurator" type="xs:string" lowerBound="0"/>
+		<property name="salesChannel" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="agent" type="d3p1:SubjectInfo" lowerBound="0"/>
+		<property name="agentProxy" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="AgentSubject">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="subject" type="d3p1:SubjectInfo" lowerBound="0"/>
+	</objectType>
+	<objectType name="BlankEntry">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="rol" type="d3p1:BlankRole" lowerBound="0"/>
+		<property name="number" type="xs:string" lowerBound="0"/>
+		<property name="seria" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="BlankList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="blanks" type="d3p1:BlankEntry" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="ContactPerson">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="person" type="d3p1:PhysicalSubject" lowerBound="0"/>
+		<property name="officialCapacity" type="xs:string" lowerBound="0"/>
+		<property name="notes" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ContactPersontList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="contact" type="d3p1:ContactPerson" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="CurrencyExch">
+		<property name="currCode" type="xs:string" lowerBound="0"/>
+		<property name="currExchValue" type="xs:decimal" lowerBound="0"/>
+	</objectType>
+	<objectType name="CurrencyExchList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="currExch" type="d3p1:CurrencyExch" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="DealerConractInfo">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="type" type="d3p1:DealerConractType" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="agentConract" type="d3p1:AgentConract" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="generalConract" type="d3p1:GeneralConract" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="dealer" type="d3p1:SubjectInfo" lowerBound="0"/>
+	</objectType>
+	<objectType name="DocumentInfo">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="type" type="d3p1:DocumentType" lowerBound="0"/>
+		<property name="series" type="xs:string" lowerBound="0"/>
+		<property name="number" type="xs:string" lowerBound="0"/>
+		<property name="placeOfIssue" type="xs:string" lowerBound="0"/>
+		<property name="dateOfIssue" type="xs:dateTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="DocumentList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="document" type="d3p1:DocumentInfo" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="GeneralConract">
+		<property name="number" type="xs:string" lowerBound="0"/>
+		<property name="date" type="xs:dateTime" lowerBound="0"/>
+		<property name="departmentCode" type="xs:string" lowerBound="0"/>
+		<property name="ikp" type="xs:string" lowerBound="0"/>
+		<property name="ikpCurator" type="xs:string" lowerBound="0"/>
+		<property name="salesChannel" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="InsCompInfo">
+		<property name="name" type="xs:string" lowerBound="0"/>
+		<property name="code" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="InsuranceByPeriod">
+		<property name="dateStart" type="xs:dateTime" lowerBound="0"/>
+		<property name="dateEnd" type="xs:dateTime" lowerBound="0"/>
+		<property name="insSum" type="xs:decimal" lowerBound="0"/>
+		<property name="insPrem" type="xs:decimal" lowerBound="0"/>
+		<property name="insTarif" type="xs:decimal" lowerBound="0"/>
+		<property name="risk" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="InsuranceByPeriodList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="insByPeriod" type="d3p1:InsuranceByPeriod" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="InsuranceObject">
+		<property name="name" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="parameters" type="d3p1:ParametrList" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="riskInfo" type="d3p1:RiskInfoList" lowerBound="0"/>
+	</objectType>
+	<objectType name="InsuranceObjectList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="object" type="d3p1:InsuranceObject" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="JuridicalSubject">
+		<property name="internalID" type="xs:long" lowerBound="0"/>
+		<property name="fullName" type="xs:string" lowerBound="0"/>
+		<property name="shortName" type="xs:string" lowerBound="0"/>
+		<property name="superShortName" type="xs:string" lowerBound="0"/>
+		<property name="orgType" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="regCertificate" type="d3p1:DocumentInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="postAddress" type="d3p1:AddressInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="factAddress" type="d3p1:AddressInfo" lowerBound="0"/>
+		<property name="inn" type="xs:string" lowerBound="0"/>
+		<property name="okpo" type="xs:string" lowerBound="0"/>
+		<property name="okved" type="xs:string" lowerBound="0"/>
+		<property name="kpp" type="xs:string" lowerBound="0"/>
+		<property name="ogrn" type="xs:string" lowerBound="0"/>
+		<property name="bik" type="xs:string" lowerBound="0"/>
+		<property name="ks" type="xs:string" lowerBound="0"/>
+		<property name="phone" type="xs:string" lowerBound="0"/>
+		<property name="mobilePhone" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="contactPersons" type="d3p1:ContactPersontList" lowerBound="0"/>
+		<property name="bankName" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="KoeffInfo">
+		<property name="name" type="xs:string" lowerBound="0"/>
+		<property name="value" type="xs:decimal" lowerBound="0"/>
+	</objectType>
+	<objectType name="KoeffInfoList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="koefficient" type="d3p1:KoeffInfo" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="MarketProgrList">
+		<property name="marketProgr" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ParametrInfo">
+		<property name="name" type="xs:string" lowerBound="0"/>
+		<property name="code" type="xs:string" lowerBound="0"/>
+		<property name="type" type="xs:string" lowerBound="0"/>
+		<property name="stringValue" type="xs:string" lowerBound="0"/>
+		<property name="intValue" type="xs:int" lowerBound="0"/>
+		<property name="decimalValue" type="xs:decimal" lowerBound="0"/>
+		<property name="dateValue" type="xs:dateTime" lowerBound="0"/>
+		<property name="boolValue" type="xs:boolean" lowerBound="0"/>
+	</objectType>
+	<objectType name="ParametrList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="parameter" type="d3p1:ParametrInfo" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Payment">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="payer" type="d3p1:SubjectInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="owner" type="d3p1:SubjectInfo" lowerBound="0"/>
+		<property name="number" type="xs:int"/>
+		<property name="date" type="xs:dateTime" lowerBound="0"/>
+		<property name="invoiceNumber" type="xs:string" lowerBound="0"/>
+		<property name="invoiceDate" type="xs:dateTime" lowerBound="0"/>
+		<property name="sum" type="xs:decimal" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="paymentDocument" type="d3p1:PaymentDocument" lowerBound="0"/>
+		<property name="sumRur" type="xs:decimal" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="paymentRecepient" type="d3p1:PaymentRecepient" lowerBound="0"/>
+		<property name="paymentMethod" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="pointOfSale" type="d3p1:PointOfSale" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="parameters" type="d3p1:ParametrList" lowerBound="0"/>
+		<property name="paymentDate" type="xs:dateTime" lowerBound="0"/>
+		<property name="dateConfirmed" type="xs:dateTime" lowerBound="0"/>
+		<property name="dateChanged" type="xs:dateTime" lowerBound="0"/>
+		<property name="financial" type="xs:boolean" lowerBound="0"/>
+		<property name="cancelled" type="xs:boolean" lowerBound="0"/>
+		<property name="dateCancelled" type="xs:dateTime" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="agent" type="d3p1:AgentSubject" lowerBound="0"/>
+		<property name="currency" type="xs:string" lowerBound="0"/>
+		<property name="exchangeRate" type="xs:double" lowerBound="0"/>
+		<property name="type" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="PaymentDocument">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="type" type="d3p1:PaymentDocumentType" lowerBound="0"/>
+		<property name="number" type="xs:string" lowerBound="0"/>
+		<property name="date" type="xs:dateTime" lowerBound="0"/>
+		<property name="noncashPayment" type="xs:boolean" lowerBound="0"/>
+		<property name="serial" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="PaymentList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" ref="d3p1:payment" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="PhysicalSubject">
+		<property name="internalID" type="xs:long" lowerBound="0"/>
+		<property name="lastName" type="xs:string" lowerBound="0"/>
+		<property name="firstName" type="xs:string" lowerBound="0"/>
+		<property name="middleName" type="xs:string" lowerBound="0"/>
+		<property name="lastNameLat" type="xs:string" lowerBound="0"/>
+		<property name="firstNameLat" type="xs:string" lowerBound="0"/>
+		<property name="middleNameLat" type="xs:string" lowerBound="0"/>
+		<property name="inn" type="xs:string" lowerBound="0"/>
+		<property name="birthDate" type="xs:dateTime" lowerBound="0"/>
+		<property name="email" type="xs:string" lowerBound="0"/>
+		<property name="phone" type="xs:string" lowerBound="0"/>
+		<property name="mobilePhone" type="xs:string" lowerBound="0"/>
+		<property name="sex" type="xs:string" lowerBound="0"/>
+		<property name="citizenship" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="passport" type="d3p1:DocumentInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="document" type="d3p1:DocumentInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="documents" type="d3p1:DocumentList" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="postAddress" type="d3p1:AddressInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="factAddress" type="d3p1:AddressInfo" lowerBound="0"/>
+		<property name="isIP" type="xs:boolean" lowerBound="0"/>
+		<property name="dolgnost" type="xs:string" lowerBound="0"/>
+		<property name="birthplace" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="PointOfSale">
+		<property name="name" type="xs:string" lowerBound="0"/>
+		<property name="code" type="xs:string" lowerBound="0"/>
+		<property name="phone" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="address" type="d3p1:AddressInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="parameters" type="d3p1:ParametrList" lowerBound="0"/>
+	</objectType>
+	<objectType name="Policy">
+		<property name="insCompanyName" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="product" type="d3p1:ProductInfo" lowerBound="0"/>
+		<property name="number" type="xs:string" lowerBound="0"/>
+		<property name="date" type="xs:dateTime" lowerBound="0"/>
+		<property name="dateBeg" type="xs:dateTime" lowerBound="0"/>
+		<property name="dateEnd" type="xs:dateTime" lowerBound="0"/>
+		<property name="state" type="xs:string" lowerBound="0"/>
+		<property name="paymentType" type="xs:string" lowerBound="0"/>
+		<property name="prolongation" type="xs:boolean" lowerBound="0"/>
+		<property name="prolongationPolicySeries" type="xs:string" lowerBound="0"/>
+		<property name="prolongationPolicyNumber" type="xs:string" lowerBound="0"/>
+		<property name="previousInsurer" type="xs:string" lowerBound="0"/>
+		<property name="previousNumber" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="previousInsComp" type="d3p1:InsCompInfo" lowerBound="0"/>
+		<property name="prolongationPolicyDate" type="xs:dateTime" lowerBound="0"/>
+		<property name="policyReplacement" type="xs:boolean" lowerBound="0"/>
+		<property name="replacedPolicySeries" type="xs:string" lowerBound="0"/>
+		<property name="replacedPolicyNumber" type="xs:string" lowerBound="0"/>
+		<property name="replacedPolicyDate" type="xs:dateTime" lowerBound="0"/>
+		<property name="replacementDateConclusion" type="xs:dateTime" lowerBound="0"/>
+		<property name="replacedPolicyInsurant" type="xs:string" lowerBound="0"/>
+		<property name="replacementDate" type="xs:dateTime" lowerBound="0"/>
+		<property name="durationDays" type="xs:long" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="insurant" type="d3p1:SubjectInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="beneficiary" type="d3p1:SubjectInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="insuranceObjects" type="d3p1:InsuranceObjectList" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="riskInfo" type="d3p1:RiskInfoList" lowerBound="0"/>
+		<property name="insPremTotal" type="xs:decimal" lowerBound="0"/>
+		<property name="comment" type="xs:string" lowerBound="0"/>
+		<property name="specialNotes" type="xs:string" lowerBound="0"/>
+		<property name="departmentCode" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="representative" type="d3p1:RepresentativeInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="currExchList" type="d3p1:CurrencyExchList" lowerBound="0"/>
+		<property name="ID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="dealerConractInfo" type="d3p1:DealerConractInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="pointOfSale" type="d3p1:PointOfSale" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="userInfo" type="d3p1:UserInfo" lowerBound="0"/>
+		<property name="currCode" type="xs:string" lowerBound="0"/>
+		<property name="calcID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="paymentsPlan" type="d3p1:PaymentList" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="paymentsFact" type="d3p1:PaymentList" lowerBound="0"/>
+		<property name="discountAV" type="xs:double" lowerBound="0"/>
+		<property name="clientWithoutLoss" type="xs:boolean" lowerBound="0"/>
+		<property name="discountUnderwriter" type="xs:double" lowerBound="0"/>
+		<property name="foulOfInsurance" type="xs:boolean" lowerBound="0"/>
+		<property name="dateCalc" type="xs:dateTime" lowerBound="0"/>
+		<property name="internalID" type="xs:long" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="insByPeriods" type="d3p1:InsuranceByPeriodList" lowerBound="0"/>
+		<property name="manualRegistration" type="xs:boolean" lowerBound="0"/>
+		<property name="manualProlongation" type="xs:boolean" lowerBound="0"/>
+		<property name="procentAV" type="xs:decimal" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="sellerSK" type="d3p1:UserInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="sozdatelDogovora" type="d3p1:UserInfo" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="marketProgrList" type="d3p1:MarketProgrList" lowerBound="0"/>
+		<property name="additionPayment" type="xs:decimal" lowerBound="0"/>
+		<property name="pechatNaBlanke" type="xs:boolean" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="reasonsForReplacement" type="d3p1:ReasonsForReplacementList" lowerBound="0"/>
+		<property name="blankPolicaNomer" type="xs:string" lowerBound="0"/>
+		<property name="blankPolicaSeria" type="xs:string" lowerBound="0"/>
+		<property name="kvitanciaNomer" type="xs:string" lowerBound="0"/>
+		<property name="kvitanciaSeria" type="xs:string" lowerBound="0"/>
+		<property name="prevWasInAnotherInsurer" type="xs:boolean" lowerBound="0"/>
+		<property name="prevLossCount" type="xs:long" lowerBound="0"/>
+		<property name="prevLossCount3dPartFault" type="xs:long" lowerBound="0"/>
+		<property name="skidkaAvVProc" type="xs:boolean" lowerBound="0"/>
+		<property name="skidkaKV" type="xs:decimal" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="insurantDocType" type="d3p1:DocumentType" lowerBound="0"/>
+		<property name="storeAvProc" type="xs:decimal" lowerBound="0"/>
+		<property name="additionalStoreAvProc" type="xs:decimal" lowerBound="0"/>
+		<property name="locality" type="xs:string" lowerBound="0"/>
+		<property name="region" type="xs:string" lowerBound="0"/>
+		<property name="localityCodeKLADR" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="sequence" type="d3p1:PolicySequence" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="blanks" type="d3p1:BlankList" lowerBound="0"/>
+	</objectType>
+	<objectType name="PolicySequence">
+		<property name="prevId" type="xs:long" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="type" type="d3p1:SequenceElementType" lowerBound="0"/>
+	</objectType>
+	<objectType name="ProductInfo">
+		<property name="name" type="xs:string" lowerBound="0"/>
+		<property name="code" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ReasonsForReplacementList">
+		<property name="reason" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="RepresentativeInfo">
+		<property name="lastName" type="xs:string" lowerBound="0"/>
+		<property name="name" type="xs:string" lowerBound="0"/>
+		<property name="middleName" type="xs:string" lowerBound="0"/>
+		<property name="procuracyNumber" type="xs:string" lowerBound="0"/>
+		<property name="procuracyDate" type="xs:dateTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="RiskInfo">
+		<property name="name" type="xs:string" lowerBound="0"/>
+		<property name="insured" type="xs:boolean" lowerBound="0"/>
+		<property name="insSum" type="xs:decimal" lowerBound="0"/>
+		<property name="insSumCurrCode" type="xs:string" lowerBound="0"/>
+		<property name="insPrem" type="xs:decimal" lowerBound="0"/>
+		<property name="insPremCurrCode" type="xs:string" lowerBound="0"/>
+		<property name="fransiza" type="xs:decimal" lowerBound="0"/>
+		<property name="fransizaCurrCode" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="koefficients" type="d3p1:KoeffInfoList" lowerBound="0"/>
+	</objectType>
+	<objectType name="RiskInfoList">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="risk" type="d3p1:RiskInfo" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="SubjectInfo">
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="type" type="d3p1:SubjectType" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="physical" type="d3p1:PhysicalSubject" lowerBound="0"/>
+		<property xmlns:d3p1="http://policy.ie.lois.ru/" name="juridical" type="d3p1:JuridicalSubject" lowerBound="0"/>
+	</objectType>
+	<objectType name="UserInfo">
+		<property name="lastName" type="xs:string" lowerBound="0"/>
+		<property name="name" type="xs:string" lowerBound="0"/>
+		<property name="middleName" type="xs:string" lowerBound="0"/>
+		<property name="userName" type="xs:string" lowerBound="0"/>
+	</objectType>
+</package>

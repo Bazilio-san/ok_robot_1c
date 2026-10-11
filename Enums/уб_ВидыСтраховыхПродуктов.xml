@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="035b5c60-1d08-44b2-a0a6-2e87feb86cec">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_ВидыСтраховыхПродуктов" category="Ref">
+				<xr:TypeId>24dc0a61-b79f-46ac-ab16-e9785419df1e</xr:TypeId>
+				<xr:ValueId>22aa5068-8e9f-4707-b1fc-d546b12806da</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_ВидыСтраховыхПродуктов" category="Manager">
+				<xr:TypeId>b99d84d2-b702-4569-898a-b7798a5942a2</xr:TypeId>
+				<xr:ValueId>c7aee9b1-a020-4b22-95ad-4f65fa663519</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_ВидыСтраховыхПродуктов" category="List">
+				<xr:TypeId>5a3963dd-4fb9-4722-a78d-9ab6d802ac0c</xr:TypeId>
+				<xr:ValueId>b83f51a7-4950-4d50-a533-4e7e1d944b56</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_ВидыСтраховыхПродуктов</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды страховых продуктов</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="4e668a73-e8e6-4aba-9844-bbc201bee1e6">
+				<Properties>
+					<Name>ВЗР</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Взр</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Страхование выезжающих за рубеж</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="5118b37f-e839-451a-8a9f-b845d48c3aa6">
+				<Properties>
+					<Name>ГК</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ГринКарта</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="54fb81a6-1709-4b49-8822-7b119c3b089a">
+				<Properties>
+					<Name>ДМС</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дмс</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="69f69beb-822f-4c6c-a0b0-aaaf5db9e255">
+				<Properties>
+					<Name>ДСАГО</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дсаго</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="111f5a21-9483-451c-ba5b-96c52e480624">
+				<Properties>
+					<Name>Имущество</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ИФЛ</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="ed763a1b-4770-4554-b26f-c31d51a9f499">
+				<Properties>
+					<Name>Ипотека</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ипотека</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="af5c0984-a480-49d4-8559-4245c0d9da17">
+				<Properties>
+					<Name>КАСКО</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Каско</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="8a74db3c-bfbd-4402-aae3-9d15fa799655">
+				<Properties>
+					<Name>ЕКАСКО</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Каско-Е</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="7b908c17-9c83-4831-867f-b5cf99adad33">
+				<Properties>
+					<Name>КаскоПП</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Каско ПРОСТЫЕ ПРАВИЛА</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="d7323853-02c7-4690-9461-511a237d91e6">
+				<Properties>
+					<Name>НС</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нс</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Несчастный случай</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="5e13cb32-f891-47bf-a634-ca3e803a8ede">
+				<Properties>
+					<Name>ОСАГО</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Осаго-ТТТ</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="5562f487-a74b-4348-b385-54be44d399e2">
+				<Properties>
+					<Name>ЕОСАГО</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Осаго-Е</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="4f7207e4-a8e6-46e9-9f7c-98f1f51a9407">
+				<Properties>
+					<Name>Произвольный</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прочее</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="773f9bb4-08ab-4bc2-ad99-9765f84083bf">
+				<Properties>
+					<Name>Бесполисные</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бесполисные</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="460639e2-1aa4-46d0-974b-e9d06ec77752">
+				<Properties>
+					<Name>Онкокоробка</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Онкокоробка</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="d12eb7a0-6d55-472f-998b-ae9e35155024">
+				<Properties>
+					<Name>КоробкаОтБПЛА</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коробка от БПЛА</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="fb825559-8e7d-4242-872b-f403fd0c925e">
+				<Properties>
+					<Name>АнтиКлещ</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анти клещ</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

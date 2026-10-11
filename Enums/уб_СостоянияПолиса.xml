@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="ada2e6ef-c5e6-4815-a11c-598d3f3e4789">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_СостоянияПолиса" category="Ref">
+				<xr:TypeId>a677b3c1-1116-4fbf-991a-abba9c48c922</xr:TypeId>
+				<xr:ValueId>581f76c1-c8f3-40d7-9b26-d2566e07e8d2</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_СостоянияПолиса" category="Manager">
+				<xr:TypeId>bcd9776c-c83b-4b74-b20c-ac9707fc2835</xr:TypeId>
+				<xr:ValueId>534eded0-f492-460c-801c-10621ae93e3a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_СостоянияПолиса" category="List">
+				<xr:TypeId>6d6ff93a-0272-4301-b1a7-5f48beb64f46</xr:TypeId>
+				<xr:ValueId>f00b2657-60ef-4228-81d4-cdd983b57120</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_СостоянияПолиса</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояния полиса</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="6ace9611-4209-4f8b-b086-eca509ab5ab5">
+				<Properties>
+					<Name>Действует</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действует</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Полис действует в пределах действия договора страхования</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a5813883-1cef-42b3-ba66-dee76249a6ce">
+				<Properties>
+					<Name>АннулированПолностью</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аннулирован полностью</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Полис аннулирован досрочно. Другой полис взамен не оформлен.</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="50885655-e5a4-433e-af73-d4dbe6142b26">
+				<Properties>
+					<Name>АннулированЗаменаБланка</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аннулирован. Замена бланка</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Взамен выписан другой полис той же СК.</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="54aa144f-af60-4c8d-a724-2b674f589615">
+				<Properties>
+					<Name>АннулированВыписанНовый</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аннулирован. Выписан новый</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Взамен выписан полис другой СК.</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="1573b000-17a0-4832-8c4e-58d92b4c8292">
+				<Properties>
+					<Name>ПрекращенДосрочно</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прекращен досрочно</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Действие полиса прекращено досрочно</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="5f4e2f8a-54d2-45dc-b2b7-e86a424b8890">
+				<Properties>
+					<Name>ДействиеОкончено</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действие окончено</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Полис окончил действие по истечении срока страхования</Comment>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

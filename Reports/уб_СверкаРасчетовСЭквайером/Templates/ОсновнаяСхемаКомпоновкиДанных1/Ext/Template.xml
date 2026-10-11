@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаВзаиморасчет</dataPath>
+			<field>СуммаВзаиморасчет</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оплачено</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПриемка</dataPath>
+			<field>СуммаПриемка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По приемкам</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Группировка</dataPath>
+			<field>Группировка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Поставщик</dataPath>
+			<field>Поставщик</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поставщик</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерБСО</dataPath>
+			<field>НомерБСО</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	уб_ПриемкаОплатПолисы.Ссылка КАК Документ,
+	уб_ПриемкаОплатПолисы.Ссылка КАК Группировка,
+	уб_ПриемкаОплатПолисы.Сумма КАК СуммаПриемка,
+	0 КАК СуммаВзаиморасчет,
+	уб_ПриемкаОплатПолисы.Ссылка.Дата,
+	уб_ПриемкаОплатПолисы.Ссылка.ПринятоОТ КАК Поставщик,
+	уб_ПриемкаОплатПолисы.НомерБСО
+ПОМЕСТИТЬ ВТ_ПриемкаОплат
+ИЗ
+	Документ.уб_ПриемкаОплат.Полисы КАК уб_ПриемкаОплатПолисы
+ГДЕ
+	уб_ПриемкаОплатПолисы.Ссылка.ПометкаУдаления = ЛОЖЬ
+	И ВЫБОР
+			КОГДА &amp;Поставщик = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ уб_ПриемкаОплатПолисы.Ссылка.ПринятоОТ = &amp;Поставщик
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	уб_ВзаиморасчетСПоставщикомРаспределение.Ссылка КАК Документ,
+	ВЫБОР
+		КОГДА уб_ВзаиморасчетСПоставщикомРаспределение.ОтчетПоставщику ССЫЛКА Документ.уб_ПриемкаОплат
+			ТОГДА ВЫРАЗИТЬ(уб_ВзаиморасчетСПоставщикомРаспределение.ОтчетПоставщику КАК Документ.уб_ПриемкаОплат)
+		ИНАЧЕ уб_ВзаиморасчетСПоставщикомРаспределение.Ссылка
+	КОНЕЦ КАК Группировка,
+	0 КАК СуммаПриемка,
+	уб_ВзаиморасчетСПоставщикомРаспределение.Сумма КАК СуммаВзаиморасчет,
+	уб_ВзаиморасчетСПоставщикомРаспределение.Ссылка.Дата,
+	уб_ВзаиморасчетСПоставщикомРаспределение.Ссылка.Поставщик
+ПОМЕСТИТЬ ВТ_Взаиморасчет
+ИЗ
+	Документ.уб_ВзаиморасчетСПоставщиком.Распределение КАК уб_ВзаиморасчетСПоставщикомРаспределение
+ГДЕ
+	(уб_ВзаиморасчетСПоставщикомРаспределение.ОтчетПоставщику ССЫЛКА Документ.уб_ПриемкаОплат
+			ИЛИ уб_ВзаиморасчетСПоставщикомРаспределение.ОтчетПоставщику = ЗНАЧЕНИЕ(Документ.уб_ОплатаПолисов.ПустаяСсылка)
+			ИЛИ уб_ВзаиморасчетСПоставщикомРаспределение.ОтчетПоставщику = ЗНАЧЕНИЕ(Документ.уб_ВзаиморасчетСПоставщиком.ПустаяСсылка)
+			ИЛИ уб_ВзаиморасчетСПоставщикомРаспределение.ОтчетПоставщику = ЗНАЧЕНИЕ(Документ.уб_ОтчетПоставщику.ПустаяСсылка)
+			ИЛИ уб_ВзаиморасчетСПоставщикомРаспределение.ОтчетПоставщику = ЗНАЧЕНИЕ(Документ.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.ПустаяСсылка)
+			ИЛИ уб_ВзаиморасчетСПоставщикомРаспределение.ОтчетПоставщику = НЕОПРЕДЕЛЕНО)
+	И ВЫБОР
+			КОГДА &amp;Поставщик = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ уб_ВзаиморасчетСПоставщикомРаспределение.Ссылка.Поставщик = &amp;Поставщик
+		КОНЕЦ
+	И НЕ уб_ВзаиморасчетСПоставщикомРаспределение.Ссылка.ПометкаУдаления
+	И НЕ уб_ВзаиморасчетСПоставщикомРаспределение.Ссылка.ИсключитьИзВзаиморасчетов
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	уб_ПриемкаОплат.Ссылка КАК Документ,
+	уб_ПриемкаОплат.Ссылка КАК Группировка,
+	уб_ПриемкаОплат.ИтогСуммаПлатежи КАК СуммаПриемка,
+	0 КАК СуммаВзаиморасчет,
+	уб_ПриемкаОплат.Дата,
+	ВТ_Взаиморасчет.Поставщик
+ПОМЕСТИТЬ ВТ_ПриемкиСОплатамиОтДругихПоставщиков
+ИЗ
+	ВТ_Взаиморасчет КАК ВТ_Взаиморасчет
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.уб_ПриемкаОплат КАК уб_ПриемкаОплат
+		ПО ВТ_Взаиморасчет.Группировка = уб_ПриемкаОплат.Ссылка
+			И ВТ_Взаиморасчет.Поставщик &lt;&gt; уб_ПриемкаОплат.ПринятоОТ
+			И (НЕ уб_ПриемкаОплат.ПометкаУдаления)
+			И (&amp;Поставщик &lt;&gt; НЕОПРЕДЕЛЕНО)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Р.Ссылка КАК Документ,
+	ВЫБОР
+		КОГДА КО.ОплатаПолиса ЕСТЬ NULL 
+			ТОГДА Р.Ссылка
+		ИНАЧЕ КО.ПриемОплаты
+	КОНЕЦ КАК Группировка,
+	0 КАК СуммаПриемка,
+	СУММА(Р.Сумма) КАК СуммаВзаиморасчет,
+	Р.Ссылка.Дата КАК Дата,
+	Р.Ссылка.Поставщик КАК Поставщик
+ПОМЕСТИТЬ ВТ_Оплаты
+ИЗ
+	Документ.уб_ВзаиморасчетСПоставщиком.Распределение КАК Р
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_КвитовкаОплат КАК КО
+		ПО Р.ОтчетПоставщику = КО.ОплатаПолиса
+ГДЕ
+	Р.ОтчетПоставщику ССЫЛКА Документ.уб_ОплатаПолисов
+	И ВЫБОР
+			КОГДА &amp;Поставщик = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Р.Ссылка.Поставщик = &amp;Поставщик
+		КОНЕЦ
+	И НЕ Р.Ссылка.ИсключитьИзВзаиморасчетов
+	И Р.Ссылка.Проведен
+	И Р.Ссылка.НаправлениеРасчетов &lt;&gt; ЗНАЧЕНИЕ(Перечисление.уб_ВидОперацииВзаиморасчетов.СкидкаКлиенту)
+
+СГРУППИРОВАТЬ ПО
+	Р.Ссылка,
+	КО.ОплатаПолиса,
+	КО.ПриемОплаты,
+	Р.Ссылка.Дата,
+	Р.Ссылка.Поставщик
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ПриемкаОплат.Группировка КАК Группировка,
+	ВТ_ПриемкаОплат.Документ КАК Документ,
+	СУММА(ВТ_ПриемкаОплат.СуммаПриемка) КАК СуммаПриемка,
+	СУММА(ВТ_ПриемкаОплат.СуммаВзаиморасчет) КАК СуммаВзаиморасчет,
+	ВТ_ПриемкаОплат.Дата КАК Дата,
+	ВТ_ПриемкаОплат.Поставщик,
+	ВТ_ПриемкаОплат.НомерБСО
+ИЗ
+	ВТ_ПриемкаОплат КАК ВТ_ПриемкаОплат
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ПриемкаОплат.НомерБСО,
+	ВТ_ПриемкаОплат.Дата,
+	ВТ_ПриемкаОплат.Документ,
+	ВТ_ПриемкаОплат.Группировка,
+	ВТ_ПриемкаОплат.Поставщик
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Взаиморасчет.Группировка,
+	ВТ_Взаиморасчет.Документ,
+	СУММА(ВТ_Взаиморасчет.СуммаПриемка),
+	СУММА(ВТ_Взаиморасчет.СуммаВзаиморасчет),
+	ВТ_Взаиморасчет.Дата,
+	ВТ_Взаиморасчет.Поставщик,
+	NULL
+ИЗ
+	ВТ_Взаиморасчет КАК ВТ_Взаиморасчет
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Взаиморасчет.Поставщик,
+	ВТ_Взаиморасчет.Документ,
+	ВТ_Взаиморасчет.Дата,
+	ВТ_Взаиморасчет.Группировка
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ПриемкиСОплатамиОтДругихПоставщиков.Группировка,
+	ВТ_ПриемкиСОплатамиОтДругихПоставщиков.Документ,
+	СУММА(ВТ_ПриемкиСОплатамиОтДругихПоставщиков.СуммаПриемка),
+	СУММА(ВТ_ПриемкиСОплатамиОтДругихПоставщиков.СуммаВзаиморасчет),
+	ВТ_ПриемкиСОплатамиОтДругихПоставщиков.Дата,
+	ВТ_ПриемкиСОплатамиОтДругихПоставщиков.Поставщик,
+	NULL
+ИЗ
+	ВТ_ПриемкиСОплатамиОтДругихПоставщиков КАК ВТ_ПриемкиСОплатамиОтДругихПоставщиков
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ПриемкиСОплатамиОтДругихПоставщиков.Документ,
+	ВТ_ПриемкиСОплатамиОтДругихПоставщиков.Поставщик,
+	ВТ_ПриемкиСОплатамиОтДругихПоставщиков.Группировка,
+	ВТ_ПриемкиСОплатамиОтДругихПоставщиков.Дата
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Оплаты.Группировка,
+	ВТ_Оплаты.Документ,
+	СУММА(ВТ_Оплаты.СуммаПриемка),
+	СУММА(ВТ_Оплаты.СуммаВзаиморасчет),
+	ВТ_Оплаты.Дата,
+	ВТ_Оплаты.Поставщик,
+	NULL
+ИЗ
+	ВТ_Оплаты КАК ВТ_Оплаты
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Оплаты.Группировка,
+	ВТ_Оплаты.Документ,
+	ВТ_Оплаты.Дата,
+	ВТ_Оплаты.Поставщик
+
+УПОРЯДОЧИТЬ ПО
+	Группировка,
+	Документ</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Остаток</dataPath>
+		<expression>СуммаПриемка-СуммаВзаиморасчет</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Остаток</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>СуммаВзаиморасчет</dataPath>
+		<expression>Сумма(СуммаВзаиморасчет)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПриемка</dataPath>
+		<expression>Сумма(СуммаПриемка)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Остаток</dataPath>
+		<expression>Сумма(Остаток)</expression>
+	</totalField>
+	<parameter>
+		<name>Поставщик</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Поставщик</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ФизическиеЛица</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Документ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерБСО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПриемка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаВзаиморасчет</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Остаток</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Документ</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Поставщик</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Группировка</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:use>false</dcsset:use>
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Поставщик</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСоздания</dataPath>
+			<field>ДатаСоздания</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заявка</dataPath>
+			<field>Заявка</field>
+			<presentationExpression>Заявка.Номер</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаявкаИндексРекомендации</dataPath>
+			<field>ЗаявкаИндексРекомендации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаявкаИндексЦепочкиРекомендаций</dataPath>
+			<field>ЗаявкаИндексЦепочкиРекомендаций</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цепочка</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧН=</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Источник</dataPath>
+			<field>Источник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КВПроцент</dataPath>
+			<field>КВПроцент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НачисленнаяСуммаВзноса</dataPath>
+			<field>НачисленнаяСуммаВзноса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НеИспользоватьПремированиеРекомендаций</dataPath>
+			<field>НеИспользоватьПремированиеРекомендаций</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НовыйКлиент</dataPath>
+			<field>НовыйКлиент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Страхователь</dataPath>
+			<field>Страхователь</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтраховойПолисЗаявка</dataPath>
+			<field>СтраховойПолисЗаявка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтраховойПолис</dataPath>
+			<field>СтраховойПолис</field>
+			<presentationExpression>СтраховойПолис.Номер</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Вид</dataPath>
+			<field>Вид</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОплатаСреднийКВРекомендаций</dataPath>
+			<field>ОплатаСреднийКВРекомендаций</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОплатаСредняяПремияРекомендаций</dataPath>
+			<field>ОплатаСредняяПремияРекомендаций</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КВПроцентСредний</dataPath>
+			<field>КВПроцентСредний</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НачисленнаяСуммаВзносаСредний</dataPath>
+			<field>НачисленнаяСуммаВзносаСредний</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	полис.Страхователь,
+	МИНИМУМ(полис.ДатаНачала) КАК ДатаНачала
+ПОМЕСТИТЬ ДатыПервыхПолисов
+ИЗ
+	Документ.уб_СтраховойПолис КАК полис
+ГДЕ
+	НЕ полис.СостояниеПолиса В (ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированПолностью), ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированЗаменаБланка), ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированВыписанНовый))
+	И полис.СтраховаяПремия &gt; 0
+
+СГРУППИРОВАТЬ ПО
+	полис.Страхователь
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОП.СтраховойПолис.Заявка КАК Заявка,
+	ОП.СтраховойПолис.Заявка.Менеджер КАК Менеджер,
+	ОП.СтраховойПолис.Заявка.Страхователь КАК Страхователь,
+	ОП.СтраховойПолис.Заявка,
+	ОП.СтраховойПолис.Заявка.Источник КАК Источник,
+	ОП.СтраховойПолис.Заявка.ДатаСоздания КАК ДатаСоздания,
+	ОП.Ссылка КАК Оплата,
+	СУММА(ОП.НачисленнаяСуммаВзноса) КАК НачисленнаяСуммаВзноса,
+	СУММА(ВЫБОР
+			КОГДА ОП.ОплаченоФакт &gt; 0
+					И ОП.КВСумма &gt;= ОП.АВилиСкидкаСумма
+				ТОГДА ОП.КВСумма - ОП.АВилиСкидкаСумма
+			ИНАЧЕ 0
+		КОНЕЦ * (100 - ОП.ПроцентСКВ) / 100) КАК СКВ,
+	СУММА(ОП.КВСумма) КАК КВСумма,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА СУММА(ОП.НачисленнаяСуммаВзноса) = 0
+				ТОГДА 0
+			ИНАЧЕ СУММА(ОП.КВСумма) * 100 / СУММА(ОП.НачисленнаяСуммаВзноса)
+		КОНЕЦ КАК ЧИСЛО(15, 2)) КАК КВПроцент,
+	ВЫБОР
+		КОГДА ОП.ВидСП В (ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ВЗР), ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.НС))
+			ТОГДА 0
+		КОГДА ОП.ВидСП В (ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Имущество), ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Произвольный))
+				И ОП.НачисленнаяСуммаВзноса &lt; 1500
+			ТОГДА 0
+		КОГДА ОП.НомерВзноса = 1
+				И РАЗНОСТЬДАТ(ДатыПервыхПолисов.ДатаНачала, ОП.СтраховойПолис.Заявка.ДатаСоздания, МЕСЯЦ) &lt; 3
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК НовыйКлиент,
+	ОП.Подразделение,
+	ЕСТЬNULL(ОП.Подразделение.НеИспользоватьПремированиеРекомендаций, ЛОЖЬ) КАК НеИспользоватьПремированиеРекомендаций,
+	ОП.СтраховойПолис
+ПОМЕСТИТЬ Оплаты
+ИЗ
+	Документ.уб_ОплатаПолисов КАК ОП
+		ЛЕВОЕ СОЕДИНЕНИЕ ДатыПервыхПолисов КАК ДатыПервыхПолисов
+		ПО ОП.СтраховойПолис.Страхователь = ДатыПервыхПолисов.Страхователь
+ГДЕ
+	ОП.ИсключитьИзРасчетаЗП = ЛОЖЬ
+	И НЕ ОП.СтраховойПолис.Ссылка = ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+	И ОП.СтраховойПолис.ПометкаУдаления = ЛОЖЬ
+	И ОП.ПометкаУдаления = ЛОЖЬ
+	И ОП.НеВключатьВОтчетыПоставщикам = ЛОЖЬ
+	И ОП.СхемаРасчетаСМенеджером = ЗНАЧЕНИЕ(ПланВидовРасчета.уб_РасчетЗарплатыМенеджерамОП.ПланПоСКВ)
+	И ОП.СтраховойПолис.Заявка.ДатаСоздания &gt;= &amp;ДатаНачала
+	И ОП.СтраховойПолис.Заявка.Источник = "Рекомендация"
+	И ОП.СК.Наименование &lt;&gt; "-- КупиПолис --"
+	И ОП.НомерВзноса = 1
+	И ОП.НачисленнаяСуммаВзноса &gt; 100
+
+СГРУППИРОВАТЬ ПО
+	ОП.СтраховойПолис.Заявка.Менеджер,
+	ОП.СтраховойПолис.Заявка.Страхователь,
+	ОП.СтраховойПолис.Заявка,
+	ОП.СтраховойПолис.Заявка.Источник,
+	ОП.СтраховойПолис.Заявка.ДатаСоздания,
+	ВЫБОР
+		КОГДА ОП.ВидСП В (ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ВЗР),  ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.НС))
+			ТОГДА 0
+		КОГДА ОП.ВидСП В (ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Имущество), ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.Произвольный))
+				И ОП.НачисленнаяСуммаВзноса &lt; 1500
+			ТОГДА 0
+		КОГДА ОП.НомерВзноса = 1
+				И РАЗНОСТЬДАТ(ДатыПервыхПолисов.ДатаНачала, ОП.СтраховойПолис.Заявка.ДатаСоздания, МЕСЯЦ) &lt; 3
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ,
+	ОП.Подразделение,
+	ЕСТЬNULL(ОП.Подразделение.НеИспользоватьПремированиеРекомендаций, ЛОЖЬ),
+	ОП.Ссылка,
+	ОП.СтраховойПолис,
+	ОП.СтраховойПолис.Заявка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ ПЕРВЫЕ 2000000
+	оплаты.Заявка КАК Заявка,
+	оплаты.Менеджер КАК Менеджер,
+	оплаты.Заявка.ИндексРекомендации КАК ИндексРекомендации,
+	оплаты.Заявка.ИндексЦепочкиРекомендаций,
+	МАКСИМУМ(оплаты.НовыйКлиент) КАК НовыйКлиент,
+	оплаты.НеИспользоватьПремированиеРекомендаций
+ПОМЕСТИТЬ оценкаОплат
+ИЗ
+	Оплаты КАК оплаты
+
+СГРУППИРОВАТЬ ПО
+	оплаты.Заявка,
+	оплаты.Менеджер,
+	оплаты.Заявка.ИндексРекомендации,
+	оплаты.Заявка.ИндексЦепочкиРекомендаций,
+	оплаты.НеИспользоватьПремированиеРекомендаций
+
+УПОРЯДОЧИТЬ ПО
+	оплаты.Заявка.ДатаСоздания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Оплаты.Заявка,
+	СРЕДНЕЕ(Оплаты.КВПроцент) КАК КВПроцент,
+	СРЕДНЕЕ(Оплаты.НачисленнаяСуммаВзноса) КАК НачисленнаяСуммаВзноса,
+	МАКСИМУМ(Оплаты.Оплата.Подразделение) КАК Подразделение
+ПОМЕСТИТЬ СреднееПоОплатам
+ИЗ
+	Оплаты КАК Оплаты
+ГДЕ
+	Оплаты.Заявка.ИндексРекомендации &lt;&gt; 0
+	И Оплаты.НеИспользоватьПремированиеРекомендаций = ЛОЖЬ
+
+СГРУППИРОВАТЬ ПО
+	Оплаты.Заявка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ Различные
+	Оплаты.Заявка,
+	Оплаты.Менеджер,
+	Оплаты.Страхователь,
+	Оплаты.СтраховойПолисЗаявка,
+	Оплаты.Источник,
+	Оплаты.ДатаСоздания,
+	ВЫБОР
+		КОГДА Оплаты.ДатаСоздания &gt;= ДАТАВРЕМЯ(2019, 5, 1)
+			ТОГДА СреднееПоОплатам.НачисленнаяСуммаВзноса
+		ИНАЧЕ Оплаты.НачисленнаяСуммаВзноса
+	КОНЕЦ КАК НачисленнаяСуммаВзноса,
+	ВЫБОР
+		КОГДА Оплаты.ДатаСоздания &gt;= ДАТАВРЕМЯ(2019, 5, 1)
+			ТОГДА СреднееПоОплатам.КВПроцент
+		ИНАЧЕ Оплаты.КВПроцент
+	КОНЕЦ КАК КВПроцент,
+	Оплаты.НовыйКлиент,
+	Оплаты.Заявка.ИндексЦепочкиРекомендаций,
+	Оплаты.Заявка.ИндексРекомендации,
+	Оплаты.НеИспользоватьПремированиеРекомендаций,
+	ВЫБОР
+		КОГДА Оплаты.ДатаСоздания &gt;= ДАТАВРЕМЯ(2019, 5, 1)
+			ТОГДА ""
+		ИНАЧЕ Оплаты.СтраховойПолис
+	КОНЕЦ КАК СтраховойПолис,
+	ВЫБОР
+		КОГДА Оплаты.Заявка.ИндексРекомендации = 16
+			ТОГДА "Премируемая"
+		ИНАЧЕ "База"
+	КОНЕЦ КАК Вид,
+	Оплаты.Оплата.СреднийКВРекомендаций КАК ОплатаСреднийКВРекомендаций,
+	Оплаты.Оплата.СредняяПремияРекомендаций КАК ОплатаСредняяПремияРекомендаций,
+	СреднееПоОплатам.КВПроцент КАК КВПроцентСредний,
+	СреднееПоОплатам.НачисленнаяСуммаВзноса КАК НачисленнаяСуммаВзносаСредний,
+	СреднееПоОплатам.Подразделение
+ИЗ
+	Оплаты КАК Оплаты
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ СреднееПоОплатам КАК СреднееПоОплатам
+		ПО Оплаты.Заявка = СреднееПоОплатам.Заявка
+ГДЕ
+	Оплаты.Заявка.ИндексРекомендации &lt;&gt; 0
+	И Оплаты.НеИспользоватьПремированиеРекомендаций = ЛОЖЬ
+	И (&amp;Менеджер = ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустойАгент)
+			ИЛИ Оплаты.Менеджер = &amp;Менеджер)
+	И (&amp;ЭтоПолныеПрава = ИСТИНА
+			ИЛИ Оплаты.Менеджер В (&amp;СписокСотрудников))
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ Различные
+	Оплаты.Заявка,
+	Оплаты.Менеджер,
+	Оплаты.Страхователь,
+	Оплаты.СтраховойПолисЗаявка,
+	Оплаты.Источник,
+	Оплаты.ДатаСоздания,
+	ВЫБОР
+		КОГДА Оплаты.ДатаСоздания &gt;= ДАТАВРЕМЯ(2019, 5, 1)
+			ТОГДА СреднееПоОплатам.НачисленнаяСуммаВзноса
+		ИНАЧЕ Оплаты.НачисленнаяСуммаВзноса
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Оплаты.ДатаСоздания &gt;= ДАТАВРЕМЯ(2019, 5, 1)
+			ТОГДА СреднееПоОплатам.КВПроцент
+		ИНАЧЕ Оплаты.КВПроцент
+	КОНЕЦ,
+	Оплаты.НовыйКлиент,
+	Оплаты.Заявка.ИндексЦепочкиРекомендаций + 1,
+	1,
+	Оплаты.НеИспользоватьПремированиеРекомендаций,
+	ВЫБОР
+		КОГДА Оплаты.ДатаСоздания &gt;= ДАТАВРЕМЯ(2019, 5, 1)
+			ТОГДА ""
+		ИНАЧЕ Оплаты.СтраховойПолис
+	КОНЕЦ,
+	"База",
+	ВЫБОР
+		КОГДА Оплаты.ДатаСоздания &gt;= ДАТАВРЕМЯ(2019, 5, 1)
+			ТОГДА СреднееПоОплатам.НачисленнаяСуммаВзноса
+		ИНАЧЕ Оплаты.НачисленнаяСуммаВзноса
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Оплаты.ДатаСоздания &gt;= ДАТАВРЕМЯ(2019, 5, 1)
+			ТОГДА СреднееПоОплатам.КВПроцент
+		ИНАЧЕ Оплаты.КВПроцент
+	КОНЕЦ,
+	СреднееПоОплатам.КВПроцент,
+	СреднееПоОплатам.НачисленнаяСуммаВзноса,
+	СреднееПоОплатам.Подразделение
+	
+ИЗ
+	Оплаты КАК Оплаты
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ СреднееПоОплатам КАК СреднееПоОплатам
+		ПО Оплаты.Заявка = СреднееПоОплатам.Заявка
+ГДЕ
+	Оплаты.Заявка.ИндексРекомендации = 16
+	И Оплаты.ДатаСоздания &gt;= ДАТАВРЕМЯ(2019, 5, 1)
+	И Оплаты.НеИспользоватьПремированиеРекомендаций = ЛОЖЬ
+	И (&amp;Менеджер = ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустойАгент)
+			ИЛИ Оплаты.Менеджер = &amp;Менеджер)
+	И (&amp;ЭтоПолныеПрава = ИСТИНА
+			ИЛИ Оплаты.Менеджер В (&amp;СписокСотрудников))</query>
+	</dataSet>
+	<totalField>
+		<dataPath>КВПроцент</dataPath>
+		<expression>Выбор когда вид="база" тогда Выразить (Среднее(КВПроцент),"Число(15,2)")   иначе Максимум(ОплатаСреднийКВРекомендаций)-6 конец)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НачисленнаяСуммаВзноса</dataPath>
+		<expression>Выразить (Выбор когда вид ="База" тогда Среднее(НачисленнаяСуммаВзноса)  иначе Максимум(ОплатаСредняяПремияРекомендаций)*(Максимум(ОплатаСреднийКВРекомендаций)-6)/100 конец ,"Число(15,2)")</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Менеджер</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Менеджер</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ФизическиеЛица</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>СписокСотрудников</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Список сотрудников</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ФизическиеЛица</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ЭтоПолныеПрава</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Это полные права</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаявкаИндексРекомендации</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Страхователь</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заявка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ЗаявкаИндексЦепочкиРекомендаций</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КВПроцент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтраховойПолис</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НачисленнаяСуммаВзноса</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КВПроцентСредний</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НачисленнаяСуммаВзносаСредний</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подразделение</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Подразделение.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Менеджер.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ЗаявкаИндексЦепочкиРекомендаций</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ЗаявкаИндексРекомендации</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Оплата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СтраховойПолис</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Заявка</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>КВПроцент</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>НачисленнаяСуммаВзноса</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Страхователь</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ЗаявкаИндексРекомендации</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Вид</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string">Премируемая</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">СистемныеПоля.Уровень</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">4</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#008000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Подразделение</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Менеджер</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>ЗаявкаИндексЦепочкиРекомендаций</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>вид</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+							<dcsset:item>
+								<dcsset:use>false</dcsset:use>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>ЗаявкаИндексРекомендации</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>Страхователь</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>СтраховойПолис</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>Заявка</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>Заявка.НомерЗаявки</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

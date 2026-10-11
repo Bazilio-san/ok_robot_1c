@@ -1,0 +1,1442 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявка</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">52</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВознаграждениеКурьера</dataPath>
+			<field>ВознаграждениеКурьера</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начислено курьеру</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=14; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">13</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Курьер</dataPath>
+			<field>Курьер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Курьер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">13</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОплатитьВКассуЗаВыездКурьера</dataPath>
+			<field>ОплатитьВКассуЗаВыездКурьера</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удержано с менеджера</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=14; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">13</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подтверждена</dataPath>
+			<field>Подтверждена</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подтв.</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">8</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Проведена</dataPath>
+			<field>Проведена</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прове- дена</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">8</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БезДенежныхВыездов</dataPath>
+			<field>БезДенежныхВыездов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВК</dataPath>
+			<field>ВК</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВКБезДенег</dataPath>
+			<field>ВКБезДенег</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДенежныйВыезд</dataPath>
+			<field>ДенежныйВыезд</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДенежныхВыездов</dataPath>
+			<field>ДенежныхВыездов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникФинансирования</dataPath>
+			<field>ИсточникФинансирования</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрочихВыездов</dataPath>
+			<field>ПрочихВыездов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КолДенежных</dataPath>
+			<field>КолДенежных</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Общая</dataPath>
+			<field>Общая</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФайловБланкиПлан</dataPath>
+			<field>ФайловБланкиПлан</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФайловБланкиФакт</dataPath>
+			<field>ФайловБланкиФакт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Бонус</dataPath>
+			<field>Бонус</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	Полисы.Заявка,
+	СУММА(уб_ПриемкаОплатПлатежи.Сумма) КАК Сумма,
+	Полисы.Заявка.ИтогСуммаВзноса
+	Поместить ЗаявкиНаличные
+ИЗ
+	Документ.уб_ПриемкаОплат.Полисы КАК Полисы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.уб_ПриемкаОплат.Платежи КАК уб_ПриемкаОплатПлатежи
+		ПО Полисы.Ссылка = уб_ПриемкаОплатПлатежи.Ссылка
+			И (Полисы.НомерСтроки = 1)
+			И (уб_ПриемкаОплатПлатежи.Ссылка.ОтчетКассира.Подтверждено)
+			И (уб_ПриемкаОплатПлатежи.ФормаОплаты = ЗНАЧЕНИЕ(Перечисление.уб_ФормыОплаты.Касса))
+ГДЕ
+	Полисы.Заявка.Дата &gt; &amp;ДатаНач
+	И Полисы.Заявка.ФормаОплаты = ЗНАЧЕНИЕ(Перечисление.уб_ФормыОплаты.Терминал)
+
+СГРУППИРОВАТЬ ПО
+	Полисы.Заявка
+	
+Имеющие СУММА(уб_ПриемкаОплатПлатежи.Сумма)&gt; Полисы.Заявка.ИтогСуммаВзноса*0.8	
+;
+ВЫБРАТЬ
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Ссылка,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Курьер,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Проведен,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Утверждено,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Оператор КАК Оператор,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Менеджер КАК Менеджер,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.ОплатитьВКассуЗаВыездКурьера,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.ВознаграждениеКурьера,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Дата,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.ЗаблокироватьАвторасчет,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Самовыезд,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Тип,
+	ВЫБОР
+		КОГДА уб_ЗаявкаНаЗаказВыездногоСпециалиста.Каско &gt; 0
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Каско,
+	ВЫБОР
+		КОГДА уб_ЗаявкаНаЗаказВыездногоСпециалиста.Осаго &gt; 0
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Осаго,
+	ВЫБОР
+		КОГДА уб_ЗаявкаНаЗаказВыездногоСпециалиста.ДМС &gt; 0
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ДМС,
+	ВЫБОР
+		КОГДА уб_ЗаявкаНаЗаказВыездногоСпециалиста.НС &gt; 0
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК НС,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.ОплачиваемыйОсмотр,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.СВС,
+	ЕСТЬNULL(ПодразделенияОрганизаций.ТипПодразделения, ЗНАЧЕНИЕ(Перечисление.уб_ТипПодразделения.СлужбаВС)) КАК ТипПодразделения
+ПОМЕСТИТЬ Заявки
+ИЗ
+	Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста КАК уб_ЗаявкаНаЗаказВыездногоСпециалиста
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ПодразделенияОрганизаций КАК ПодразделенияОрганизаций
+		ПО уб_ЗаявкаНаЗаказВыездногоСпециалиста.СВС = ПодразделенияОрганизаций.Ссылка
+ГДЕ
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Дата &gt;= &amp;ДатаНач
+	И уб_ЗаявкаНаЗаказВыездногоСпециалиста.Дата &lt;= &amp;ДатаКон
+	И уб_ЗаявкаНаЗаказВыездногоСпециалиста.ПометкаУдаления = ЛОЖЬ
+	И (уб_ЗаявкаНаЗаказВыездногоСпециалиста.Утверждено
+			ИЛИ &amp;ПросчитыватьСУчетомНеподтвержденных = ИСТИНА)
+	И ВЫБОР
+			КОГДА &amp;Заявка = ЗНАЧЕНИЕ(Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста.ПустаяСсылка)
+				ТОГДА ИСТИНА
+			ИНАЧЕ уб_ЗаявкаНаЗаказВыездногоСпециалиста.Курьер &lt;&gt; ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустаяСсылка)
+					И уб_ЗаявкаНаЗаказВыездногоСпециалиста.Курьер &lt;&gt; ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустойАгент)
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	БСОЗаявок.Ссылка КАК Ссылка,
+	БСОЗаявок.Ссылка.ФайловБланкиПлан КАК ФайловБланкиПлан,
+	БСОЗаявок.Ссылка.ФайловБланкиФакт КАК ФайловБланкиФакт,
+	0 КАК ЗаполнениеОператором,
+	ЗНАЧЕНИЕ(Справочник.ФИзическиеЛица.ПустаяСсылка) КАК Оператор,
+	0 КАК ВознаграждениеОператора,
+	"Общее" КАК УИД
+ПОМЕСТИТЬ СтрокиЗаявок
+ИЗ
+	Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста КАК БСОЗаявок
+ГДЕ
+	БСОЗаявок.Ссылка В
+			(ВЫБРАТЬ
+				Заявки.Ссылка
+			ИЗ
+				Заявки)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	БСОЗаявок.Ссылка,
+	0,
+	0,
+	ВЫБОР
+		КОГДА БСОЗаявок.Оператор = ЗНАЧЕНИЕ(Справочник.ФИзическиеЛица.ПустаяСсылка)
+			ТОГДА 0
+		ИНАЧЕ БСОЗаявок.Количество
+	КОНЕЦ,
+	БСОЗаявок.Оператор,
+	ВЫБОР
+		КОГДА БСОЗаявок.Оператор = ЗНАЧЕНИЕ(Справочник.ФИзическиеЛица.ПустаяСсылка)
+			ТОГДА 0
+		КОГДА БСОЗаявок.Оператор = БСОЗаявок.Ссылка.Курьер
+			ТОГДА 100
+		ИНАЧЕ 0
+	КОНЕЦ,
+	БСОЗаявок.УидСтроки
+ИЗ
+	Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста.БСО КАК БСОЗаявок
+ГДЕ
+	БСОЗаявок.Ссылка В
+			(ВЫБРАТЬ
+				Заявки.Ссылка
+			ИЗ
+				Заявки)
+	И НЕ БСОЗаявок.Оператор = ЗНАЧЕНИЕ(Справочник.ФИзическиеЛица.ПустаяСсылка)
+	И БСОЗаявок.ВидБСО.Тип В (ЗНАЧЕНИЕ(Перечисление.уб_ТипыБСО.Полис), ЗНАЧЕНИЕ(Перечисление.уб_ТипыБСО.ПолисОсаго))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	уб_ИсторияСтатусовЗаявокСрезПоследних.Статус,
+	уб_ИсторияСтатусовЗаявокСрезПоследних.Заявка
+ПОМЕСТИТЬ Статусы
+ИЗ
+	РегистрСведений.уб_ИсторияСтатусовЗаявок.СрезПоследних(
+			,
+			Заявка В
+				(ВЫБРАТЬ
+					Заявки.Ссылка
+				ИЗ
+					Заявки)) КАК уб_ИсторияСтатусовЗаявокСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Заявки.Ссылка КАК Ссылка,
+	Статусы.Статус,
+	ВЫБОР
+		КОГДА Статусы.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании)
+			ТОГДА ВЫБОР
+					КОГДА &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+						ТОГДА ВЫБОР
+								КОГДА (Заявки.Тип = ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Страховка)
+										ИЛИ Заявки.Тип = ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Пролонгация))
+										И (Заявки.Каско
+											ИЛИ Заявки.Осаго)
+									ТОГДА ИСТИНА
+								ИНАЧЕ ЛОЖЬ
+							КОНЕЦ
+					ИНАЧЕ ИСТИНА
+				КОНЕЦ
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ДенежныйВыезд,
+	ВЫБОР
+		КОГДА Заявки.Тип = ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Административный)
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Административный,
+	Заявки.Курьер,
+	Заявки.Менеджер,
+	Заявки.Оператор,
+	Заявки.Утверждено,
+	Заявки.Проведен,
+	Заявки.ОплатитьВКассуЗаВыездКурьера,
+	Заявки.ВознаграждениеКурьера,
+	Заявки.Дата,
+	Заявки.ЗаблокироватьАвторасчет,
+	Заявки.Самовыезд,
+	Заявки.Тип,
+	Заявки.Каско КАК Каско,
+	Заявки.Осаго КАК Осаго,
+	Заявки.ДМС КАК ДМС,
+	Заявки.НС КАК НС,
+	Заявки.ОплачиваемыйОсмотр,
+	Заявки.СВС,
+	Заявки.ТипПодразделения
+ПОМЕСТИТЬ ЗаявкиСоСтатусами
+ИЗ
+	Заявки КАК Заявки
+		ЛЕВОЕ СОЕДИНЕНИЕ Статусы КАК Статусы
+		ПО Заявки.Ссылка = Статусы.Заявка
+ГДЕ
+	НЕ ЕСТЬNULL(Статусы.Статус, ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ПустаяСсылка)) В (ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.СтраховкаНеСостоялась), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗапросНаУдаление), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.Удалена))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаявкиСоСтатусами.Курьер,
+	ЗаявкиСоСтатусами.Ссылка,
+	ВЫБОР
+		КОГДА ЗаявкиСоСтатусами.ТипПодразделения = ЗНАЧЕНИЕ(Перечисление.уб_ТипПодразделения.СлужбаВСВнешняя)
+				И НЕ &amp;СчитатьВнешних
+			ТОГДА 0
+		КОГДА ЗаявкиСоСтатусами.ДенежныйВыезд
+			ТОГДА ВЫБОР
+					КОГДА ЗаявкиСоСтатусами.Самовыезд
+						ТОГДА 0
+					КОГДА &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+						ТОГДА ВЫБОР
+								КОГДА КоличествоНеАдминистративныхВыездов.НеАдминистративныхВыездов &gt;= 0
+										И (&amp;ДатаНач = ДАТАВРЕМЯ(2020, 4, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 5, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 6, 1))
+									ТОГДА 300
+								КОГДА КоличествоНеАдминистративныхВыездов.НеАдминистративныхВыездов &gt;= ВЫБОР
+										КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2017, 1, 1)
+											ТОГДА 75
+										КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2018, 1, 1)
+												ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2019, 1, 1)
+												ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2019, 5, 1)
+												ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2021, 1, 1)
+												или &amp;ДатаНач = ДАТАВРЕМЯ(2021, 5, 1) 
+											ТОГДА 85
+										КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2018, 5, 1)
+												ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2020, 1, 1)  ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2021, 1, 1)
+											ТОГДА 90
+										ИНАЧЕ 100
+									КОНЕЦ
+									ТОГДА 250
+								КОГДА КоличествоНеАдминистративныхВыездов.НеАдминистративныхВыездов &gt;= ВЫБОР
+										КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2017, 1, 1)
+											ТОГДА 49
+										КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2018, 1, 1)
+												ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2018, 5, 1)
+												ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2019, 1, 1)
+												ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2019, 5, 1)
+												ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2020, 1, 1)  
+												ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2021, 1, 1)
+												или &amp;ДатаНач = ДАТАВРЕМЯ(2021, 5, 1) 
+											ТОГДА 55
+										ИНАЧЕ 65
+									КОНЕЦ
+									ТОГДА 200
+								ИНАЧЕ 150
+							КОНЕЦ
+					ИНАЧЕ ВЫБОР
+							КОГДА КоличествоВыездов.ДенежныхВыездов &gt;= ВЫБОР
+									КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2017, 1, 1)
+										ТОГДА 75
+									КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2018, 1, 1)
+											ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2019, 1, 1)
+											ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2019, 5, 1)
+											ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2020, 1, 1)  
+											ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2021, 1, 1)
+											или &amp;ДатаНач = ДАТАВРЕМЯ(2021, 5, 1) 
+										ТОГДА 85
+									КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2018, 5, 1)
+										ТОГДА 90
+									ИНАЧЕ 100
+								КОНЕЦ
+								ТОГДА 250
+							КОГДА КоличествоВыездов.ДенежныхВыездов &gt;= ВЫБОР
+									КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2017, 1, 1)
+										ТОГДА 49
+									КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2018, 1, 1)
+											ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2019, 1, 1)
+											ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2019, 5, 1)
+											или &amp;ДатаНач = ДАТАВРЕМЯ(2021, 5, 1) 
+										ТОГДА 55
+									КОГДА &amp;ДатаНач = ДАТАВРЕМЯ(2018, 5, 1)
+											ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2020, 1, 1)  
+											ИЛИ &amp;ДатаНач = ДАТАВРЕМЯ(2021, 1, 1)
+										ТОГДА 55
+									ИНАЧЕ 65
+								КОНЕЦ
+								ТОГДА 200
+							ИНАЧЕ 150
+						КОНЕЦ
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВК,
+	ВЫБОР
+		КОГДА ЗаявкиСоСтатусами.ТипПодразделения = ЗНАЧЕНИЕ(Перечисление.уб_ТипПодразделения.СлужбаВСВнешняя)
+				И НЕ &amp;СчитатьВнешних
+			ТОГДА 0
+		КОГДА ЗаявкиСоСтатусами.ДенежныйВыезд
+			ТОГДА 0
+		КОГДА ЗаявкиСоСтатусами.Самовыезд
+			ТОГДА 0
+		КОГДА ЗаявкиСоСтатусами.Административный
+				И &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+			ТОГДА 0
+		КОГДА ЗаявкиСоСтатусами.Тип В (ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Переосмотр), ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.ПервичныйОсмотр))
+				И ЗаявкиСоСтатусами.ОплачиваемыйОсмотр
+				И (&amp;ДатаНач = ДАТАВРЕМЯ(2020, 4, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 5, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 6, 1))
+			ТОГДА 300
+		КОГДА ЗаявкиСоСтатусами.Тип В (ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Переосмотр), ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.ПервичныйОсмотр))
+				И ЗаявкиСоСтатусами.ОплачиваемыйОсмотр
+				И &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+			ТОГДА 100
+		КОГДА ЗаявкиСоСтатусами.Тип В (ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Переосмотр), ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Аддендум), ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Перепись), ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Перепись))
+				И (&amp;ДатаНач = ДАТАВРЕМЯ(2020, 4, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 5, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 6, 1))
+			ТОГДА 300
+		     КОГДА ЗаявкиСоСтатусами.Тип В (ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Аддендум))  и &amp;ДатаНач &gt; ДАТАВРЕМЯ(2020, 6, 1)
+			 ТОГДА 100
+	         	
+		КОГДА ЗаявкиСоСтатусами.Тип В (ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Переосмотр), ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Аддендум), ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Перепись), ЗНАЧЕНИЕ(Перечисление.уб_ТипВыезда.Перепись))
+				И &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+			ТОГДА 0
+		КОГДА ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании)
+				И (&amp;ДатаНач = ДАТАВРЕМЯ(2020, 4, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 5, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 6, 1))
+				И (ЗаявкиСоСтатусами.Каско
+					ИЛИ ЗаявкиСоСтатусами.Осаго)
+			ТОГДА 300
+		КОГДА ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании)
+				И &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+				И (ЗаявкиСоСтатусами.Каско
+					ИЛИ ЗаявкиСоСтатусами.Осаго)
+			ТОГДА 100
+		КОГДА ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании)
+				И &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+				И (ЗаявкиСоСтатусами.НС = ЛОЖЬ
+					И ЗаявкиСоСтатусами.ДМС = ЛОЖЬ)
+			ТОГДА 300
+		КОГДА ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании)
+				И &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+				И (ЗаявкиСоСтатусами.НС = ЛОЖЬ
+					И ЗаявкиСоСтатусами.ДМС = ЛОЖЬ)
+			ТОГДА 100
+		КОГДА ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании)
+				И &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2021, 1, 1)
+				И (ЗаявкиСоСтатусами.НС = Истина
+					ИЛИ ЗаявкиСоСтатусами.ДМС = Истина)
+			ТОГДА 100		
+		КОГДА ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗаявкаОтработана)
+				И (&amp;ДатаНач = ДАТАВРЕМЯ(2020, 4, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 5, 1) или &amp;ДатаНач = ДАТАВРЕМЯ(2020, 6, 1))
+			ТОГДА 300
+		КОГДА ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗаявкаОтработана)
+			ТОГДА 100
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВКБезДенег,
+	ВЫБОР
+		КОГДА &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+			ТОГДА ВЫБОР
+					КОГДА ЗаявкиСоСтатусами.Административный = ЛОЖЬ
+							И (ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании)
+								ИЛИ ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗаявкаОтработана))
+						ТОГДА ИСТИНА
+					ИНАЧЕ ЛОЖЬ
+				КОНЕЦ
+		ИНАЧЕ ЗаявкиСоСтатусами.ДенежныйВыезд
+	КОНЕЦ КАК ДенежныйВыезд,
+	ВЫБОР
+		КОГДА &amp;ДатаНач &gt;= ДАТАВРЕМЯ(2017, 4, 1)
+			ТОГДА КоличествоНеАдминистративныхВыездов.НеАдминистративныхВыездов
+		ИНАЧЕ КоличествоВыездов.ДенежныхВыездов
+	КОНЕЦ КАК ДенежныхВыездов,
+	ВЫБОР
+		КОГДА ЗаявкиСоСтатусами.ДенежныйВыезд
+			ТОГДА 0
+		КОГДА ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.СтраховкаСостоялась)
+				ИЛИ ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗаявкаОтработана)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК БезДенежныхВыездов,
+	ВЫБОР
+		КОГДА ЗаявкиСоСтатусами.ДенежныйВыезд
+			ТОГДА 0
+		КОГДА ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.СтраховкаСостоялась)
+				ИЛИ ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗаявкаОтработана)
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ КАК ПрочихВыездов,
+	ЗаявкиСоСтатусами.Статус,
+	ЗаявкиСоСтатусами.Менеджер,
+	ЗаявкиСоСтатусами.Оператор,
+	ЗаявкиСоСтатусами.Утверждено,
+	ЗаявкиСоСтатусами.Проведен,
+	ЗаявкиСоСтатусами.ОплатитьВКассуЗаВыездКурьера,
+	ЗаявкиСоСтатусами.ВознаграждениеКурьера,
+	ЗаявкиСоСтатусами.Дата,
+	ЗаявкиСоСтатусами.ЗаблокироватьАвторасчет
+ПОМЕСТИТЬ РасчетВКПоЗаявке
+ИЗ
+	ЗаявкиСоСтатусами КАК ЗаявкиСоСтатусами
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаявкиСоСтатусами.Ссылка) КАК ДенежныхВыездов,
+			ЗаявкиСоСтатусами.Курьер КАК Курьер
+		ИЗ
+			ЗаявкиСоСтатусами КАК ЗаявкиСоСтатусами
+		ГДЕ
+			ЗаявкиСоСтатусами.ДенежныйВыезд = ИСТИНА
+		
+		СГРУППИРОВАТЬ ПО
+			ЗаявкиСоСтатусами.Курьер) КАК КоличествоВыездов
+		ПО ЗаявкиСоСтатусами.Курьер = КоличествоВыездов.Курьер
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаявкиСоСтатусами.Ссылка) КАК НеАдминистративныхВыездов,
+			ЗаявкиСоСтатусами.Курьер КАК Курьер
+		ИЗ
+			ЗаявкиСоСтатусами КАК ЗаявкиСоСтатусами
+		ГДЕ
+			ЗаявкиСоСтатусами.Административный = ЛОЖЬ
+			И (ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании)
+					ИЛИ ЗаявкиСоСтатусами.Статус = ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗаявкаОтработана))
+		
+		СГРУППИРОВАТЬ ПО
+			ЗаявкиСоСтатусами.Курьер) КАК КоличествоНеАдминистративныхВыездов
+		ПО ЗаявкиСоСтатусами.Курьер = КоличествоНеАдминистративныхВыездов.Курьер
+ГДЕ
+	(&amp;Заявка = ЗНАЧЕНИЕ(Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста.ПустаяСсылка)
+			ИЛИ ЗаявкиСоСтатусами.Ссылка = &amp;Заявка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РасчетВКПоЗаявке.Курьер,
+	РасчетВКПоЗаявке.Менеджер,
+	РасчетВКПоЗаявке.Оператор,
+	ВЫБОР
+		КОГДА РасчетВКПоЗаявке.Менеджер = ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустаяСсылка)
+			ТОГДА ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустойАгент)
+		ИНАЧЕ РасчетВКПоЗаявке.Менеджер
+	КОНЕЦ КАК ИсточникФинансирования,
+	ВЫБОР
+		КОГДА РасчетВКПоЗаявке.Курьер = ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустаяСсылка)
+			ТОГДА ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустойАгент)
+		ИНАЧЕ РасчетВКПоЗаявке.Курьер
+	КОНЕЦ КАК Сотрудник,
+	РасчетВКПоЗаявке.Ссылка,
+	РасчетВКПоЗаявке.Дата,
+	НАЧАЛОПЕРИОДА(РасчетВКПоЗаявке.Дата, МЕСЯЦ) КАК Период,
+	РасчетВКПоЗаявке.ВК,
+	РасчетВКПоЗаявке.ВКБезДенег,
+	РасчетВКПоЗаявке.ДенежныйВыезд,
+	РасчетВКПоЗаявке.ДенежныхВыездов,
+	РасчетВКПоЗаявке.БезДенежныхВыездов,
+	РасчетВКПоЗаявке.ПрочихВыездов,
+	РасчетВКПоЗаявке.Статус,
+	РасчетВКПоЗаявке.Утверждено КАК Подтверждена,
+	РасчетВКПоЗаявке.Проведен КАК Проведена,
+	ВЫБОР
+		КОГДА (&amp;ПросчитыватьСУчетомНепроведенных
+				ИЛИ РасчетВКПоЗаявке.Проведен)
+				И (&amp;ПросчитыватьСУчетомНеподтвержденных
+					ИЛИ РасчетВКПоЗаявке.Утверждено)
+			ТОГДА ВЫБОР
+					КОГДА РасчетВКПоЗаявке.Дата &lt; ДАТАВРЕМЯ(2016, 8, 1)
+							ИЛИ РасчетВКПоЗаявке.ЗаблокироватьАвторасчет = ИСТИНА
+						ТОГДА РасчетВКПоЗаявке.ВознаграждениеКурьера
+					ИНАЧЕ РасчетВКПоЗаявке.ВК + РасчетВКПоЗаявке.ВКБезДенег
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВознаграждениеКурьера,
+	ВЫБОР
+		КОГДА (&amp;ПросчитыватьСУчетомНепроведенных
+				ИЛИ РасчетВКПоЗаявке.Проведен)
+				И (&amp;ПросчитыватьСУчетомНеподтвержденных
+					ИЛИ РасчетВКПоЗаявке.Утверждено)
+			ТОГДА РасчетВКПоЗаявке.ОплатитьВКассуЗаВыездКурьера
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОплатитьВКассуЗаВыездКурьера
+ПОМЕСТИТЬ ПредРасчет
+ИЗ
+	РасчетВКПоЗаявке КАК РасчетВКПоЗаявке
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Предрасчет.Курьер,
+	Предрасчет.Менеджер,
+	СтрокиЗаявок.Оператор,
+	Предрасчет.ИсточникФинансирования,
+	Предрасчет.Сотрудник,
+	Предрасчет.Ссылка КАК Ссылка,
+	Предрасчет.Дата,
+	Предрасчет.Период,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА Предрасчет.ВК
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВК,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА Предрасчет.ВКБезДенег
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВКБезДенег,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА Предрасчет.ДенежныйВыезд
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДенежныйВыезд,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА Предрасчет.ДенежныхВыездов
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДенежныхВыездов,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА Предрасчет.БезДенежныхВыездов
+		ИНАЧЕ 0
+	КОНЕЦ КАК БезДенежныхВыездов,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА Предрасчет.ПрочихВыездов
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПрочихВыездов,
+	Предрасчет.Статус,
+	Предрасчет.Подтверждена,
+	Предрасчет.Проведена,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА Предрасчет.ВознаграждениеКурьера
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВознаграждениеКурьера,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА Предрасчет.ОплатитьВКассуЗаВыездКурьера
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОплатитьВКассуЗаВыездКурьера,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК Заявок,
+	ВЫБОР
+		КОГДА Предрасчет.Статус В (ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании))
+			ТОГДА СтрокиЗаявок.ВознаграждениеОператора
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВознаграждениеОператора,
+	СтрокиЗаявок.ЗаполнениеОператором КАК ЗаполнениеОператором,
+	уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Подразделение,
+	уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Подразделение.Наименование,
+	ВЫБОР
+		КОГДА уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Подразделение.Наименование = "Операторы БД"
+			ТОГДА 0
+		ИНАЧЕ СтрокиЗаявок.Оператор.Наименование
+	КОНЕЦ КАК Сортировка,
+	ВЫБОР
+		КОГДА СтрокиЗаявок.УИД = "Общее"
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Общая,
+	СтрокиЗаявок.ФайловБланкиПлан,
+	СтрокиЗаявок.ФайловБланкиФакт
+ПОМЕСТИТЬ ПредРасчет2
+ИЗ
+	ПредРасчет КАК Предрасчет
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ СтрокиЗаявок КАК СтрокиЗаявок
+		ПО Предрасчет.Ссылка = СтрокиЗаявок.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ДвижениеФизлицПоПодразделениям.СрезПоследних КАК уб_ДвижениеФизлицПоПодразделениямСрезПоследних
+		ПО (СтрокиЗаявок.Оператор = уб_ДвижениеФизлицПоПодразделениямСрезПоследних.Агент)
+		
+		
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Предрасчет.Курьер,
+	Предрасчет.Менеджер,
+	Предрасчет.ИсточникФинансирования,
+	Предрасчет.Сотрудник,
+	Предрасчет.Ссылка,
+	Предрасчет.Дата,
+	Предрасчет.Период,
+	Предрасчет.ВК,
+	Предрасчет.ВКБезДенег,
+	Предрасчет.ДенежныйВыезд,
+	ВЫБОР
+		КОГДА Предрасчет.ДенежныйВыезд = ИСТИНА
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК КолДенежных,
+	Предрасчет.ДенежныхВыездов,
+	Предрасчет.БезДенежныхВыездов,
+	Предрасчет.ПрочихВыездов,
+	Предрасчет.Статус,
+	Предрасчет.Подтверждена,
+	Предрасчет.Проведена,
+	Предрасчет.ВознаграждениеКурьера,
+	Предрасчет.ОплатитьВКассуЗаВыездКурьера,
+	Предрасчет.Общая,
+	Предрасчет.ФайловБланкиПлан,
+	Предрасчет.ФайловБланкиФакт,
+	Выбор когда  ЗаявкиНаличные.Заявка есть Null или Предрасчет.Дата&lt; ДатаВремя(2021,1,1) Тогда
+	0
+	Иначе
+		50
+	Конец как Бонус
+ИЗ
+	ПредРасчет2 КАК Предрасчет
+	Левое Соединение ЗаявкиНаличные по ЗаявкиНаличные.Заявка = ПредРасчет.Ссылка
+	 и ПредРасчет.Общая = Истина</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ЕОСАГО</dataPath>
+		<expression>Выбор когда Ссылка.ЕОСАГО=истина и Общая Тогда 1 иначе 0 Конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЕОСАГО</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>НеВерныйАдрес</dataPath>
+		<expression>Выбор когда Ссылка.НеВерный=истина  и Общая Тогда 1 иначе 0 Конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Не верный адрес</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ФайловБланкиПлан</dataPath>
+		<expression>ФайловБланкиПлан</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ОжидаетсяБланков</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ФайловБланкиФакт</dataPath>
+		<expression>ФайловБланкиФакт</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Прикреплено бланков</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>ВознаграждениеКурьера</dataPath>
+		<expression>Сумма(ВознаграждениеКурьера)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОплатитьВКассуЗаВыездКурьера</dataPath>
+		<expression>Сумма(ОплатитьВКассуЗаВыездКурьера)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КолДенежных</dataPath>
+		<expression>Сумма(КолДенежных)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЕОСАГО</dataPath>
+		<expression>Сумма(ЕОСАГО)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НеВерныйАдрес</dataPath>
+		<expression>Сумма(НеВерныйАдрес)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ФайловБланкиПлан</dataPath>
+		<expression>Сумма(ФайловБланкиПлан)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ФайловБланкиФакт</dataPath>
+		<expression>Сумма(ФайловБланкиФакт)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Бонус</dataPath>
+		<expression>Сумма(Бонус)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаНач</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаКон</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПросчитыватьСУчетомНепроведенных</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Просчитывать с учетом непроведенных</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПросчитыватьСУчетомНеподтвержденных</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Просчитывать с учетом неподтвержденных</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Заявка</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заявка</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.уб_ЗаявкаНаЗаказВыездногоСпециалиста</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СчитатьВнешних</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Считать внешних</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Курьер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВознаграждениеКурьера</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Бонус</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОплатитьВКассуЗаВыездКурьера</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КолДенежных</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЕОСАГО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НеВерныйАдрес</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ФайловБланкиПлан</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ФайловБланкиФакт</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаНач</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаКон</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПросчитыватьСУчетомНепроведенных</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПросчитыватьСУчетомНеподтвержденных</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СчитатьВнешних</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>КолДенежных</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Курьер</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Подтверждена</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Ссылка</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Проведена</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ВознаграждениеКурьера</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ОплатитьВКассуЗаВыездКурьера</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Подтверждена</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+							<dcsset:presentation xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет</v8:content>
+								</v8:item>
+							</dcsset:presentation>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFE6B7</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нет</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Подтверждена</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Ссылка</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Проведена</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ВознаграждениеКурьера</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ОплатитьВКассуЗаВыездКурьера</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Подтверждена</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+							<dcsset:presentation xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет</v8:content>
+								</v8:item>
+							</dcsset:presentation>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFE6B7</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нет</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Подтверждена</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Подтверждена</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+							<dcsset:presentation xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Да</v8:content>
+								</v8:item>
+							</dcsset:presentation>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Да</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Да</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Подтверждена</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Ссылка</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Проведена</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ВознаграждениеКурьера</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ОплатитьВКассуЗаВыездКурьера</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Проведена</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+							<dcsset:presentation xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет</v8:content>
+								</v8:item>
+							</dcsset:presentation>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFE6B7</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нет</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Подтверждена</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Ссылка</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Проведена</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ВознаграждениеКурьера</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ОплатитьВКассуЗаВыездКурьера</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Проведена</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+							<dcsset:presentation xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет</v8:content>
+								</v8:item>
+							</dcsset:presentation>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFE6B7</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нет</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Проведена</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Проведена</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+							<dcsset:presentation xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Да</v8:content>
+								</v8:item>
+							</dcsset:presentation>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Да</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Да</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Green</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Взаиморасчеты с менеджерами за период</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Курьер</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Менеджер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Дата</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Ссылка</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Подтверждена</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Проведена</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

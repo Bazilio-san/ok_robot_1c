@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер выезда</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>Номер</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидБСО</dataPath>
+			<field>ВидБСО</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерЗаявки</dataPath>
+			<field>НомерЗаявки</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СК</dataPath>
+			<field>СК</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СданаВБухгалтерию</dataPath>
+			<field>СданаВБухгалтерию</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидБСОНаименование</dataPath>
+			<field>ВидБСОНаименование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СданаПоСтатусу</dataPath>
+			<field>СданаПоСтатусу</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПриемка</dataPath>
+			<field>СуммаПриемка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Поставщик</dataPath>
+			<field>Поставщик</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Состояние</dataPath>
+			<field>Состояние</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КВБрокераПлан</dataPath>
+			<field>КВБрокераПлан</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.Ссылка,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Номер,
+	уб_ИсторияСтатусовЗаявокСрезПоследних.Статус,
+	уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.СК,
+	ЕСТЬNULL(уб_ПриемкаОплатПолисы.Поставщик, уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.Поставщик) КАК Поставщик,
+	уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО,
+	уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование КАК ВидБСОНаименование,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Дата,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.Менеджер,
+	уб_ЗаявкаНаЗаказВыездногоСпециалиста.НомерЗаявки,
+	ВЫБОР
+		КОГДА уб_ИсторияСтатусовЗаявокСрезПоследних.Статус В (ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗаявкаОтработана), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.КурьерПриехалВОфис), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.КомплектНаХраненииВБухгалтерии), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.КомплектИДеньгиУКассира), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ДеньгиВКомпании))
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК СданаПоСтатусу,
+	ЕСТЬNULL(уб_ПриемкаОплатПолисы.Сумма, 0) КАК СуммаПриемка,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(уб_ПриемкаОплатПолисы.Сумма, 0) &gt; 0
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК СданаВБухгалтерию,
+	ЕСТЬNULL(уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.Состояние, ЗНАЧЕНИЕ(Перечисление.уб_СостояниеОформления.ПустаяСсылка)) КАК Состояние,
+	уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.КВБрокераПлан
+ИЗ
+	Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста.БСО КАК уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.уб_ЗаявкаНаЗаказВыездногоСпециалиста КАК уб_ЗаявкаНаЗаказВыездногоСпециалиста
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ИсторияСтатусовЗаявок.СрезПоследних КАК уб_ИсторияСтатусовЗаявокСрезПоследних
+			ПО (уб_ИсторияСтатусовЗаявокСрезПоследних.Заявка = уб_ЗаявкаНаЗаказВыездногоСпециалиста.Ссылка)
+		ПО уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.Ссылка = уб_ЗаявкаНаЗаказВыездногоСпециалиста.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.уб_ПриемкаОплат.Полисы КАК уб_ПриемкаОплатПолисы
+		ПО уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.Ссылка = уб_ПриемкаОплатПолисы.Заявка
+			И (уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО = уб_ПриемкаОплатПолисы.ВидБСО
+				ИЛИ уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.УидСтроки = уб_ПриемкаОплатПолисы.УИДСтрокиЗаявки
+				или Выразить(уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.СуммаВзноса как Число(15,0))= Выразить(уб_ПриемкаОплатПолисы.Сумма как Число(15,0)))
+ГДЕ
+	НЕ уб_ИсторияСтатусовЗаявокСрезПоследних.Статус В (ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.СогласованиеСКлиентом), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ФормированиеКомплектаБСО), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.СтраховкаНеСостоялась), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.ЗапросНаУдаление), ЗНАЧЕНИЕ(Перечисление.уб_СтатусыЗаявок.Удалена))
+	И ВЫБОР
+			КОГДА &amp;Режим = "ЕОСАГО"
+					И (уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование В ("Полис Е-ОСАГО")
+						ИЛИ уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%ЕОСАГО%"
+						ИЛИ уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%Е-ОСАГО%"
+						ИЛИ уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%СРАВНИ%"
+						ИЛИ уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%ЕДСАГО%")
+				ТОГДА ИСТИНА
+			КОГДА &amp;Режим = "ЕКАСКО"
+					И (уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%Е-КАСКО%"
+						ИЛИ уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%ЕКАСКО%"
+						ИЛИ уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%КАСКО по ссылке%")
+				ТОГДА ИСТИНА
+			КОГДА &amp;Режим = "ТТТ"
+					И (уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%ТТТ%"
+						ИЛИ уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%TTT%")
+				ТОГДА ИСТИНА
+			КОГДА &amp;Режим = "Клещ"
+					И (уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%клещ%"
+						)
+				ТОГДА ИСТИНА
+	
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+	И НЕ уб_ЗаявкаНаЗаказВыездногоСпециалистаБСО.ВидБСО.Наименование ПОДОБНО "%квит%"
+	И уб_ЗаявкаНаЗаказВыездногоСпециалиста.Дата &gt; ДАТАВРЕМЯ(2018, 10, 1)
+	И уб_ЗаявкаНаЗаказВыездногоСпециалиста.Дата &gt;= НАЧАЛОПЕРИОДА(&amp;Дата1, ДЕНЬ)
+	И уб_ЗаявкаНаЗаказВыездногоСпециалиста.Дата &lt;= КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Дата1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Дата2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Режим</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Режим</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>6</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Дата</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерЗаявки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СК</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Поставщик</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка.Страхователь</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страхователь</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КВБрокераПлан</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Статус</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидБСО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПриемка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СданаПоСтатусу</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">СданаВБухгалтерию</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Состояние</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.уб_СостояниеОформления.Отказ</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Ссылка.Самовыезд</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Режим</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЕОСАГО</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВидБСОНаименование</dcsset:left>
+							<dcsset:comparisonType>Contains</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string">КАСКО</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#0000FF</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">СданаВБухгалтерию</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field/>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Менеджер</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Статус</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemGroup">
+							<dcsset:groupType>AndGroup</dcsset:groupType>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">СданаВБухгалтерию</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">СданаПоСтатусу</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FF6600</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:row>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="dfb393df-1b4c-4672-b963-e69e02816558">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_НазначенияБСО" category="Ref">
+				<xr:TypeId>da8c8fe2-9f70-41fb-97b3-f7b15b6d23d0</xr:TypeId>
+				<xr:ValueId>1cb376b8-f1b4-40b5-a032-fa58a83da9ef</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_НазначенияБСО" category="Manager">
+				<xr:TypeId>ab419468-580a-4a0c-900a-46e7e8390cba</xr:TypeId>
+				<xr:ValueId>e479f41a-db39-4c7a-9135-29f2d26fe5ea</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_НазначенияБСО" category="List">
+				<xr:TypeId>317f4e99-0dc7-4d39-b568-b80de9f175b2</xr:TypeId>
+				<xr:ValueId>f1af9a8b-5e2e-4d7e-bf17-f1369d58baa8</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_НазначенияБСО</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назначения БСО</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="1c3c0f63-0f5c-482f-824d-c331b2ac9de4">
+				<Properties>
+					<Name>Остается</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Остается (копия/часть)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>бланк остается у агента (он сам или его часть/копия)</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a5aa63dd-933b-4d62-b3a3-9ca327301a11">
+				<Properties>
+					<Name>ДляКлиента</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Для клиента</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>бланк передается клиенту</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="b800d7cf-ec96-41fd-b9cd-1d6d21f5b1f6">
+				<Properties>
+					<Name>ДляБанка</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Для банка</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>бланк передается в банк</Comment>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

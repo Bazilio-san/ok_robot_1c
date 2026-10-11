@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>NPS</dataPath>
+			<field>NPS</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>всего</dataPath>
+			<field>всего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего клиентов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Критики</dataPath>
+			<field>Критики</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КритикиПроцент</dataPath>
+			<field>КритикиПроцент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Критики, %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Лояльны</dataPath>
+			<field>Лояльны</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЛояльныПроцент</dataPath>
+			<field>ЛояльныПроцент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Лояльны, %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Нейтральны</dataPath>
+			<field>Нейтральны</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НейтральныПроцент</dataPath>
+			<field>НейтральныПроцент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нейтральны, %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоКлиентов</dataPath>
+			<field>КоличествоКлиентов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиентов (прошлый)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПолисов</dataPath>
+			<field>КоличествоПолисов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полисов (прошлый)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МесяцОпроса</dataPath>
+			<field>МесяцОпроса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрошлыйМесяц</dataPath>
+			<field>ПрошлыйМесяц</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Сп.Агент,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Сп.Ссылка) КАК КоличествоПолисов,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Сп.Страхователь) КАК КоличествоКлиентов,
+	НАЧАЛОПЕРИОДА(Сп.ДатаНачала, МЕСЯЦ) КАК Месяц
+ПОМЕСТИТЬ СтатистикаЗаключения
+ИЗ
+	Документ.уб_СтраховойПолис КАК Сп
+ГДЕ
+	Сп.Дата &gt;= ДОБАВИТЬКДАТЕ(&amp;Дата1, МЕСЯЦ, -12)
+	И НЕ Сп.СостояниеПолиса В (ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированВыписанНовый), ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированЗаменаБланка), ЗНАЧЕНИЕ(Перечисление.уб_СостоянияПолиса.АннулированПолностью))
+	И Сп.ПометкаУдаления = ЛОЖЬ
+	И Сп.НомерЗаявки &lt;&gt; ЗНАЧЕНИЕ(Перечисление.уб_ВидыЗаявок.Личная)
+
+СГРУППИРОВАТЬ ПО
+	Сп.Агент,
+	НАЧАЛОПЕРИОДА(Сп.ДатаНачала, МЕСЯЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(уб_ОпросникДоговоров.ДатаСоздания, МЕСЯЦ) КАК МесяцОпроса,
+	НАЧАЛОПЕРИОДА(уб_ОпросникДоговоров.Заявка.Дата, МЕСЯЦ) КАК МесяцДокумента,
+	уб_ОпросникДоговоров.Заявка КАК Документ,
+	ВЫБОР
+		КОГДА уб_ОпросникДоговоров.ДатаИзменения &gt; ДАТАВРЕМЯ(2016, 3, 25)
+			ТОГДА уб_ОпросникДоговоров.ОценкаКомпании
+		ИНАЧЕ уб_ОпросникДоговоров.ОценкаКомпании * 2
+	КОНЕЦ КАК ОцКомпании,
+	уб_ОпросникДоговоров.Рекомендация КАК Рекомендации,
+	уб_ОпросникДоговоров.ПричинаКомпания,
+	ВЫБОР
+		КОГДА уб_ОпросникДоговоров.ОценкаКомпании = 0
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК мОтказОпрос,
+	уб_ОпросникДоговоров.ПричинаОтказаРекомендации,
+	уб_ОпросникДоговоров.ДатаИзменения,
+	уб_ОпросникДоговоров.ДатаСоздания,
+	уб_ОпросникДоговоров.Заявка.Менеджер КАК Менеджер
+ПОМЕСТИТЬ Опросы
+ИЗ
+	РегистрСведений.уб_ОпросникДоговоров КАК уб_ОпросникДоговоров
+ГДЕ
+	(&amp;Режим2 = 1
+				И уб_ОпросникДоговоров.ДатаСоздания &gt;= &amp;Дата1
+				И уб_ОпросникДоговоров.ДатаСоздания &lt;= КОНЕЦПЕРИОДА(&amp;Дата2, МЕСЯЦ)
+			ИЛИ &amp;Режим2 = 2
+				И уб_ОпросникДоговоров.Заявка.Дата &gt;= &amp;Дата1
+				И уб_ОпросникДоговоров.Заявка.Дата &lt;= КОНЕЦПЕРИОДА(&amp;Дата2, МЕСЯЦ))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ ПЕРВЫЕ 10000
+	опросы.Менеджер КАК Менеджер,
+	СУММА(1) КАК всего,
+	СУММА(ВЫБОР
+			КОГДА опросы.ОцКомпании &gt;= 9
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Лояльны,
+	СУММА(ВЫБОР
+			КОГДА опросы.ОцКомпании = 7
+					ИЛИ опросы.ОцКомпании = 8
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Нейтральны,
+	СУММА(ВЫБОР
+			КОГДА опросы.ОцКомпании &lt;= 6
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Критики,
+	опросы.МесяцОпроса
+ПОМЕСТИТЬ Обработка
+ИЗ
+	Опросы КАК опросы
+
+СГРУППИРОВАТЬ ПО
+	опросы.Менеджер,
+	опросы.МесяцОпроса
+
+УПОРЯДОЧИТЬ ПО
+	опросы.Менеджер.Наименование
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(ДФ.Агент,Обработка.Менеджер) КАК Менеджер,
+	ЕСТЬNULL(Обработка.всего,0) как всего,
+	ЕСТЬNULL(Обработка.Лояльны,0) как Лояльны,
+	ЕСТЬNULL(ВЫБОР
+		КОГДА Обработка.всего = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(100 * Обработка.Лояльны / Обработка.всего КАК ЧИСЛО(10, 0))
+	КОНЕЦ ,0) как ЛояльныПроцент,
+	ЕСТЬNULL(Обработка.Нейтральны,0) как Нейтральны,
+	ЕСТЬNULL(ВЫБОР
+		КОГДА Обработка.всего = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(100 * Обработка.Нейтральны / Обработка.всего КАК ЧИСЛО(10, 0))
+	КОНЕЦ ,0) как  НейтральныПроцент,
+	ЕСТЬNULL(Обработка.Критики,0) как Критики,
+	ЕСТЬNULL(ВЫБОР
+		КОГДА Обработка.всего = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(100 * Обработка.Критики / Обработка.всего КАК ЧИСЛО(10, 0))
+	КОНЕЦ,0) как КритикиПроцент,
+	ЕСТЬNULL(ВЫБОР
+		КОГДА Обработка.всего = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(100 * Обработка.Лояльны / Обработка.всего КАК ЧИСЛО(10, 0))
+	КОНЕЦ - ВЫБОР
+		КОГДА Обработка.всего = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(100 * Обработка.Критики / Обработка.всего КАК ЧИСЛО(10, 0))
+	КОНЕЦ ,0) как  NPS,
+	ЕСТЬNULL(Обработка.МесяцОпроса,НачалоПЕРИОДА(&amp;Дата2, МЕСЯЦ)) КАК МесяцОпроса,
+	ДОБАВИТЬКДАТЕ(ЕСТЬNULL(Обработка.МесяцОпроса,НачалоПЕРИОДА(&amp;Дата2, МЕСЯЦ)), МЕСЯЦ, -1) КАК ПрошлыйМесяц,
+	ДФ.Подразделение КАК Подразделение,
+	ЕСТЬNULL(СтатистикаЗаключения.КоличествоПолисов, 0) КАК КоличествоПолисов,
+	ЕСТЬNULL(СтатистикаЗаключения.КоличествоКлиентов, 0) КАК КоличествоКлиентов
+ИЗ
+	РегистрСведений.уб_ДвижениеФизлицПоПодразделениям.СрезПоследних({(КОНЕЦПЕРИОДА(&amp;Дата2, МЕСЯЦ)) КАК Поле2}, ) КАК ДФ
+		ЛЕВОЕ СОЕДИНЕНИЕ Обработка КАК Обработка
+		ПО (Обработка.Менеджер = ДФ.Агент)
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатистикаЗаключения КАК СтатистикаЗаключения
+		ПО (Обработка.Менеджер = СтатистикаЗаключения.Агент)
+			И (ДОБАВИТЬКДАТЕ(Обработка.МесяцОпроса, МЕСЯЦ, -1) = СтатистикаЗаключения.Месяц)
+	ГДЕ дФ.Выбытие = ложь и дФ.Подразделение.ТипПодразделения = Значение(Перечисление.уб_ТипПодразделения.ТочкаПродаж) 		
+	и (&amp;Менеджеры = 0 или ДФ.Агент В (&amp;Менеджеры))
+
+УПОРЯДОЧИТЬ ПО
+	Подразделение,
+	Менеджер,
+	МесяцОпроса</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Проверено</dataPath>
+		<expression>Выбор когда КоличествоКлиентов = 0 тогда 0 иначе всего*100/КоличествоКлиентов конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>% опроса</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=1</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>10</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<parameter>
+		<name>Дата1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Дата2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Режим2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Режим2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Поле2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Поле2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Менеджеры</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Менеджеры</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ФизическиеЛица</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статистика</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоКлиентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПолисов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Проверено</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>всего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>NPS</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Лояльность</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Лояльны</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЛояльныПроцент</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нейтральность</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Нейтральны</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НейтральныПроцент</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Критичность</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Критики</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КритикиПроцент</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Подразделение</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Подразделение.Наименование</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">СВС</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Подразделение.Наименование</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">ОП-Мастер</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Подразделение.Наименование</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">Агентская сеть</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Подразделение.Наименование</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">Дирекция</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Режим2</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Подразделение</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Менеджер.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>КоличествоПолисов</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>всего</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>КоличествоКлиентов</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Проверено</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Менеджер</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Проверено</dcsset:left>
+							<dcsset:comparisonType>Less</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">50</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по лояльности клиентов (NPS)</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>МесяцОпроса</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Подразделение</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

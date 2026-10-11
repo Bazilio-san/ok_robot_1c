@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Период" id="1">
+			<DataPath>Запись.Period</DataPath>
+			<ContextMenu name="ПериодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="РазмерКрупнойСделки" id="4">
+			<DataPath>Запись.РазмерКрупнойСделки</DataPath>
+			<ContextMenu name="РазмерКрупнойСделкиКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="РазмерКрупнойСделкиРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="СтавкаКурьер" id="62">
+			<DataPath>Запись.СтавкаКурьер</DataPath>
+			<ContextMenu name="СтавкаКурьерКонтекстноеМеню" id="63"/>
+			<ExtendedTooltip name="СтавкаКурьерРасширеннаяПодсказка" id="64"/>
+		</InputField>
+		<UsualGroup name="Группа1" id="65">
+			<HorizontalStretch>true</HorizontalStretch>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="66"/>
+			<ChildItems>
+				<InputField name="РекомендацияКаско" id="34">
+					<DataPath>Запись.РекомендацияКаско</DataPath>
+					<ContextMenu name="РекомендацияКаскоКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="РекомендацияКаскоРасширеннаяПодсказка" id="36"/>
+				</InputField>
+				<InputField name="РекомендацияОсаго" id="37">
+					<DataPath>Запись.РекомендацияОсаго</DataPath>
+					<ContextMenu name="РекомендацияОсагоКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="РекомендацияОсагоРасширеннаяПодсказка" id="39"/>
+				</InputField>
+				<InputField name="РекомендацияКаскоПлюсОсаго" id="40">
+					<DataPath>Запись.РекомендацияКаскоПлюсОсаго</DataPath>
+					<ContextMenu name="РекомендацияКаскоПлюсОсагоКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="РекомендацияКаскоПлюсОсагоРасширеннаяПодсказка" id="42"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СтавкаЛички" id="43">
+			<DataPath>Запись.СтавкаЛички</DataPath>
+			<Visible>false</Visible>
+			<ContextMenu name="СтавкаЛичкиКонтекстноеМеню" id="44"/>
+			<ExtendedTooltip name="СтавкаЛичкиРасширеннаяПодсказка" id="45"/>
+		</InputField>
+		<UsualGroup name="_ПремированиеПовышеннойСтавки" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Премирование повышенной ставки (Клуб 30)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Премирование повышенной ставки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ExtendedTooltip name="_ПремированиеПовышеннойСтавкиРасширеннаяПодсказка" id="53"/>
+			<ChildItems>
+				<UsualGroup name="КолонкиКлуб" id="54">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Колонки клуб</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Колонки клуб</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="КолонкиКлубРасширеннаяПодсказка" id="55"/>
+					<ChildItems>
+						<UsualGroup name="КлубЛеваяКолонка" id="56">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Клуб левая колонка</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Клуб левая колонка</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="КлубЛеваяКолонкаРасширеннаяПодсказка" id="57"/>
+							<ChildItems>
+								<InputField name="СтавкаПроцентаЗаПовышенныйКВ" id="67">
+									<DataPath>Запись.СтавкаПроцентаПовышенныйКВ</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="СтавкаПроцентаЗаПовышенныйКВКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="СтавкаПроцентаЗаПовышенныйКВРасширеннаяПодсказка" id="69"/>
+								</InputField>
+								<InputField name="СуммаЗаПовышенныйКВ_НБ" id="46">
+									<DataPath>Запись.СуммаЗаПовышенныйКВ_НБ</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="СуммаЗаПовышенныйКВ_НБКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="СуммаЗаПовышенныйКВ_НБРасширеннаяПодсказка" id="48"/>
+								</InputField>
+								<InputField name="СуммаЗаПовышенныйКВ_Пролонгация" id="49">
+									<DataPath>Запись.СуммаЗаПовышенныйКВ_Пролонгация</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="СуммаЗаПовышенныйКВ_ПролонгацияКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="СуммаЗаПовышенныйКВ_ПролонгацияРасширеннаяПодсказка" id="51"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="КлубПраваяКолонка" id="58">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Клуб правая колонка</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Клуб правая колонка</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="КлубПраваяКолонкаРасширеннаяПодсказка" id="59"/>
+							<ChildItems>
+								<Button name="ОткрытьФормуМотивацииОП" id="60">
+									<Type>UsualButton</Type>
+									<Height>2</Height>
+									<CommandName>Form.Command.ОткрытьФормуМотивацииОП</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Редактировать (в другом месте)</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОткрытьФормуМотивацииОПРасширеннаяПодсказка" id="61"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.уб_ЗП_ПоказателиРасчетаЗП</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьФормуМотивацииОП" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть форму мотивации ОП</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть форму мотивации ОП</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьФормуМотивацииОП</Action>
+		</Command>
+	</Commands>
+</Form>

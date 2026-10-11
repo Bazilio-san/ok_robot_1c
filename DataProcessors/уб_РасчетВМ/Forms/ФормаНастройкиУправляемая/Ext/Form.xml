@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Настройка параметров отчета по ВМ</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="5">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="32"/>
+			<ChildItems>
+				<InputField name="рПериодЗП" id="1">
+					<DataPath>рПериодЗП</DataPath>
+					<SpinButton>true</SpinButton>
+					<ChoiceListButton>true</ChoiceListButton>
+					<ContextMenu name="рПериодЗПКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="рПериодЗПРасширеннаяПодсказка" id="33"/>
+					<Events>
+						<Event name="Tuning">рПериодЗПРегулирование</Event>
+						<Event name="StartListChoice">рПериодЗПНачалоВыбораИзСписка</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаСреза" id="6">
+					<DataPath>Объект.ДатаСреза</DataPath>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ДатаСрезаКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ДатаСрезаРасширеннаяПодсказка" id="34"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Менеджер" id="3">
+			<DataPath>Объект.Менеджер</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<ChoiceListButton>true</ChoiceListButton>
+			<ChoiceListHeight>25</ChoiceListHeight>
+			<ContextMenu name="МенеджерКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="35"/>
+		</InputField>
+		<InputField name="ВидСП" id="8">
+			<DataPath>Объект.ВидСП</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид страхования</v8:content>
+				</v8:item>
+			</Title>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ВидСПКонтекстноеМеню" id="9"/>
+			<ExtendedTooltip name="ВидСПРасширеннаяПодсказка" id="36"/>
+		</InputField>
+		<InputField name="Подразделение" id="10">
+			<DataPath>Объект.Подразделение</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<ContextMenu name="ПодразделениеКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="37"/>
+		</InputField>
+		<InputField name="Страхователь" id="12">
+			<DataPath>Объект.Страхователь</DataPath>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="СтраховательКонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="СтраховательРасширеннаяПодсказка" id="38"/>
+		</InputField>
+		<InputField name="Организация" id="14">
+			<DataPath>Объект.Организация</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="39"/>
+		</InputField>
+		<CheckBoxField name="ПересчитыватьСуммыВОплатах" id="16">
+			<DataPath>Объект.ПересчитыватьСуммыВОплатах</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПересчитыватьСуммыВОплатахКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ПересчитыватьСуммыВОплатахРасширеннаяПодсказка" id="40"/>
+		</CheckBoxField>
+		<CheckBoxField name="ВыводитьПримечанияКВМВячейки" id="18">
+			<DataPath>Объект.ВыводитьПримечанияКВМВячейки</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выводить примечание к ВМ в ячейки</v8:content>
+				</v8:item>
+			</Title>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ВыводитьПримечанияКВМВячейкиКонтекстноеМеню" id="19"/>
+			<ExtendedTooltip name="ВыводитьПримечанияКВМВячейкиРасширеннаяПодсказка" id="41"/>
+		</CheckBoxField>
+		<CheckBoxField name="СкрыватьКолонкиДСП" id="20">
+			<DataPath>Объект.СкрыватьКолонкиДСП</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="СкрыватьКолонкиДСПКонтекстноеМеню" id="21"/>
+			<ExtendedTooltip name="СкрыватьКолонкиДСПРасширеннаяПодсказка" id="42"/>
+		</CheckBoxField>
+		<CheckBoxField name="ОтображатьТолькоФамилии" id="22">
+			<DataPath>Объект.ОтображатьТолькоФамилии</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтображатьТолькоФамилииКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ОтображатьТолькоФамилииРасширеннаяПодсказка" id="43"/>
+		</CheckBoxField>
+		<CheckBoxField name="ОтображатьОплатыИсключенныеИзРасчетаЗП" id="24">
+			<DataPath>Объект.ОтображатьОплатыИсключенныеИзРасчетаЗП</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать оплаты, исключенные из расчета</v8:content>
+				</v8:item>
+			</Title>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтображатьОплатыИсключенныеИзРасчетаЗПКонтекстноеМеню" id="25"/>
+			<ExtendedTooltip name="ОтображатьОплатыИсключенныеИзРасчетаЗПРасширеннаяПодсказка" id="44"/>
+		</CheckBoxField>
+		<CheckBoxField name="ОтображатьАннулированныеОплаты" id="26">
+			<DataPath>Объект.ОтображатьАннулированныеОплаты</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтображатьАннулированныеОплатыКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="ОтображатьАннулированныеОплатыРасширеннаяПодсказка" id="45"/>
+		</CheckBoxField>
+		<CheckBoxField name="ОтображатьКолонкиДляСхемыПланПоСКВ" id="28">
+			<DataPath>Объект.ОтображатьКолонкиДляСхемыПланПоСКВ</DataPath>
+			<Enabled>false</Enabled>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтображатьКолонкиДляСхемыПланПоСКВКонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="ОтображатьКолонкиДляСхемыПланПоСКВРасширеннаяПодсказка" id="46"/>
+		</CheckBoxField>
+		<CheckBoxField name="СохранитьВФайл" id="30">
+			<DataPath>Объект.СохранитьВФайл</DataPath>
+			<Enabled>false</Enabled>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="СохранитьВФайлКонтекстноеМеню" id="31"/>
+			<ExtendedTooltip name="СохранитьВФайлРасширеннаяПодсказка" id="47"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.уб_РасчетВМ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="рПериодЗП" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период ЗП</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

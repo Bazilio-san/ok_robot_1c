@@ -1,0 +1,18 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.sample-package2.org">
+	<objectType name="query">
+		<property name="id" form="Attribute"/>
+	</objectType>
+	<objectType name="resItem">
+		<property name="id" form="Attribute"/>
+		<property name="date" form="Attribute"/>
+		<property name="dateBegin" form="Attribute"/>
+		<property name="dateEnd" form="Attribute"/>
+		<property name="name" form="Attribute"/>
+		<property name="object" form="Attribute"/>
+		<property name="product" form="Attribute"/>
+		<property name="insureCompany" form="Attribute"/>
+	</objectType>
+	<objectType name="result">
+		<property xmlns:d3p1="http://www.sample-package2.org" name="items" type="d3p1:resItem" lowerBound="0" upperBound="-1" fixed="false" form="Element"/>
+	</objectType>
+</package>

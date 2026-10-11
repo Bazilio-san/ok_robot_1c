@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПередачи</dataPath>
+			<field>ДатаПередачи</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтчетПоставщику</dataPath>
+			<field>ОтчетПоставщику</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пользователь</dataPath>
+			<field>Пользователь</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Поставщик</dataPath>
+			<field>Поставщик</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаКОплатеПоставщику</dataPath>
+			<field>СуммаКОплатеПоставщику</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерВерсии</dataPath>
+			<field>НомерВерсии</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПринятия</dataPath>
+			<field>ДатаПринятия</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	уб_ИсторияРеквизит.ЗначениеРеквизита,
+	уб_ИсторияРеквизит.ОбъектИстории,
+	уб_ИсторияРеквизит.Период
+ПОМЕСТИТЬ ВТ_ИзменениеЗначенийРеквизита
+ИЗ
+	РегистрСведений.уб_ИсторияРеквизит КАК уб_ИсторияРеквизит
+ГДЕ
+	уб_ИсторияРеквизит.Период МЕЖДУ &amp;ПустаяДата И &amp;КонецПериода
+	И уб_ИсторияРеквизит.РеквизитОбъекта.Наименование = "ИтогОС_КПеречислениюПоставщику"
+	И уб_ИсторияРеквизит.РеквизитОбъекта.ИмяДокумента = "уб_ОтчетПоставщику"
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	уб_ПринятыеКОплатеОтчетыПоставщику.Период,
+	уб_ПринятыеКОплатеОтчетыПоставщику.ОтчетПоставщику,
+	уб_ПринятыеКОплатеОтчетыПоставщику.ДатаПринятия,
+	уб_ПринятыеКОплатеОтчетыПоставщику.Пользователь
+ПОМЕСТИТЬ ВТ_ПринятыеОтчеты
+ИЗ
+	РегистрСведений.уб_ПринятыеКОплатеОтчетыПоставщику КАК уб_ПринятыеКОплатеОтчетыПоставщику
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;Поставщик = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ уб_ПринятыеКОплатеОтчетыПоставщику.ОтчетПоставщику.Поставщик = &amp;Поставщик
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	уб_ПередачаОтчетаПоставщикуВБухгалтерию.ОтчетПоставщику,
+	уб_ПередачаОтчетаПоставщикуВБухгалтерию.ОтчетПоставщику.Поставщик КАК Поставщик,
+	уб_ПередачаОтчетаПоставщикуВБухгалтерию.ДатаПередачи,
+	уб_ИсторияОбъект.Пользователь,
+	уб_ПередачаОтчетаПоставщикуВБухгалтерию.ОтчетПоставщику.ИтогОС_КПеречислениюПоставщику,
+	уб_ИсторияОбъект.НомерВерсии,
+	ВТ_ПринятыеОтчеты.ДатаПринятия
+ПОМЕСТИТЬ ВТ_Передачи
+ИЗ
+	РегистрСведений.уб_ПередачаОтчетаПоставщикуВБухгалтерию КАК уб_ПередачаОтчетаПоставщикуВБухгалтерию
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.уб_ИсторияОбъект КАК уб_ИсторияОбъект
+		ПО уб_ПередачаОтчетаПоставщикуВБухгалтерию.Период = уб_ИсторияОбъект.Период
+			И уб_ПередачаОтчетаПоставщикуВБухгалтерию.ОтчетПоставщику = уб_ИсторияОбъект.ОбъектИстории
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ИзменениеЗначенийРеквизита КАК ВТ_ИзменениеЗначенийРеквизита
+		ПО уб_ПередачаОтчетаПоставщикуВБухгалтерию.Период = ВТ_ИзменениеЗначенийРеквизита.Период
+			И уб_ПередачаОтчетаПоставщикуВБухгалтерию.ОтчетПоставщику = ВТ_ИзменениеЗначенийРеквизита.ОбъектИстории
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПринятыеОтчеты КАК ВТ_ПринятыеОтчеты
+		ПО уб_ПередачаОтчетаПоставщикуВБухгалтерию.ОтчетПоставщику = ВТ_ПринятыеОтчеты.ОтчетПоставщику
+			И уб_ПередачаОтчетаПоставщикуВБухгалтерию.Период = ВТ_ПринятыеОтчеты.Период
+ГДЕ
+	уб_ПередачаОтчетаПоставщикуВБухгалтерию.ДатаПередачи МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ВЫБОР
+			КОГДА &amp;Поставщик = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ уб_ПередачаОтчетаПоставщикуВБухгалтерию.ОтчетПоставщику.Поставщик = &amp;Поставщик
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Передачи.ОтчетПоставщику,
+	МАКСИМУМ(ВТ_Передачи.ДатаПередачи) КАК ДатаПередачи
+ПОМЕСТИТЬ ВТ_ВремяПоследнихПередачВОдномДне
+ИЗ
+	ВТ_Передачи КАК ВТ_Передачи
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Передачи.ОтчетПоставщику
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ВремяПоследнихПередачВОдномДне.ОтчетПоставщику,
+	ВТ_ВремяПоследнихПередачВОдномДне.ДатаПередачи,
+	ВТ_Передачи.Поставщик,
+	ВТ_Передачи.Пользователь,
+	ВТ_Передачи.ОтчетПоставщикуИтогОС_КПеречислениюПоставщику,
+	ВТ_Передачи.НомерВерсии,
+	ВТ_Передачи.ДатаПринятия
+ПОМЕСТИТЬ ВТ_ПередачиСгруппированныеПоДню
+ИЗ
+	ВТ_ВремяПоследнихПередачВОдномДне КАК ВТ_ВремяПоследнихПередачВОдномДне
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Передачи КАК ВТ_Передачи
+		ПО ВТ_ВремяПоследнихПередачВОдномДне.ОтчетПоставщику = ВТ_Передачи.ОтчетПоставщику
+			И ВТ_ВремяПоследнихПередачВОдномДне.ДатаПередачи = ВТ_Передачи.ДатаПередачи
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ПередачиСгруппированныеПоДню.ДатаПередачи,
+	ВТ_ПередачиСгруппированныеПоДню.ОтчетПоставщику,
+	МАКСИМУМ(ВТ_ИзменениеЗначенийРеквизита.Период) КАК ПериодЗначенияРеквизита
+ПОМЕСТИТЬ ВТ_ДатыПоследнегоИзмененияРеквизита
+ИЗ
+	ВТ_ПередачиСгруппированныеПоДню КАК ВТ_ПередачиСгруппированныеПоДню
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ИзменениеЗначенийРеквизита КАК ВТ_ИзменениеЗначенийРеквизита
+		ПО ВТ_ПередачиСгруппированныеПоДню.ОтчетПоставщику = ВТ_ИзменениеЗначенийРеквизита.ОбъектИстории
+			И ВТ_ПередачиСгруппированныеПоДню.ДатаПередачи &gt;= ВТ_ИзменениеЗначенийРеквизита.Период
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ПередачиСгруппированныеПоДню.ОтчетПоставщику,
+	ВТ_ПередачиСгруппированныеПоДню.ДатаПередачи
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ДатыПоследнегоИзмененияРеквизита.ДатаПередачи,
+	ВТ_ДатыПоследнегоИзмененияРеквизита.ОтчетПоставщику,
+	ВТ_ИзменениеЗначенийРеквизита.ЗначениеРеквизита
+ПОМЕСТИТЬ ВТ_ЗначенияРеквизита
+ИЗ
+	ВТ_ДатыПоследнегоИзмененияРеквизита КАК ВТ_ДатыПоследнегоИзмененияРеквизита
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ИзменениеЗначенийРеквизита КАК ВТ_ИзменениеЗначенийРеквизита
+		ПО ВТ_ДатыПоследнегоИзмененияРеквизита.ПериодЗначенияРеквизита = ВТ_ИзменениеЗначенийРеквизита.Период
+			И ВТ_ДатыПоследнегоИзмененияРеквизита.ОтчетПоставщику = ВТ_ИзменениеЗначенийРеквизита.ОбъектИстории
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ПередачиСгруппированныеПоДню.ОтчетПоставщику,
+	ВТ_ПередачиСгруппированныеПоДню.Поставщик,
+	ВТ_ПередачиСгруппированныеПоДню.ДатаПередачи,
+	ВТ_ПередачиСгруппированныеПоДню.Пользователь,
+	ЕСТЬNULL(ВТ_ЗначенияРеквизита.ЗначениеРеквизита, ВТ_ПередачиСгруппированныеПоДню.ОтчетПоставщикуИтогОС_КПеречислениюПоставщику) КАК СуммаКОплатеПоставщику,
+	ВТ_ПередачиСгруппированныеПоДню.НомерВерсии,
+	ВТ_ПередачиСгруппированныеПоДню.ДатаПринятия
+ИЗ
+	ВТ_ПередачиСгруппированныеПоДню КАК ВТ_ПередачиСгруппированныеПоДню
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЗначенияРеквизита КАК ВТ_ЗначенияРеквизита
+		ПО ВТ_ПередачиСгруппированныеПоДню.ОтчетПоставщику = ВТ_ЗначенияРеквизита.ОтчетПоставщику
+			И ВТ_ПередачиСгруппированныеПоДню.ДатаПередачи = ВТ_ЗначенияРеквизита.ДатаПередачи
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;ПоказыватьПринятые
+					И &amp;ПоказыватьНеПринятые
+				ТОГДА ИСТИНА
+			ИНАЧЕ ВЫБОР
+					КОГДА &amp;ПоказыватьПринятые
+							И НЕ &amp;ПоказыватьНеПринятые
+						ТОГДА НЕ ВТ_ПередачиСгруппированныеПоДню.ДатаПринятия ЕСТЬ NULL 
+					ИНАЧЕ ВЫБОР
+							КОГДА НЕ &amp;ПоказыватьПринятые
+									И &amp;ПоказыватьНеПринятые
+								ТОГДА ВТ_ПередачиСгруппированныеПоДню.ДатаПринятия ЕСТЬ NULL 
+							ИНАЧЕ ЛОЖЬ
+						КОНЕЦ
+				КОНЕЦ
+		КОНЕЦ</query>
+	</dataSet>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Поставщик</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Поставщик</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПустаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Пустая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПоказыватьНеПринятые</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Показывать не принятые</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПоказыватьПринятые</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Показывать принятые</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОтчетПоставщику</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПередачи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаКОплатеПоставщику</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерВерсии</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Пользователь</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПринятия</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Поставщик</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаПередачи</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>НомерВерсии</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Пользователь</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ОтчетПоставщику</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">39</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">39</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ДатаПередачи</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">16</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">16</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СуммаКОплатеПоставщику</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Поставщик</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

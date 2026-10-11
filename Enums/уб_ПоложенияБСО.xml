@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="d93408ec-d43b-4f45-a3c0-e6075f0bf1e2">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_ПоложенияБСО" category="Ref">
+				<xr:TypeId>fe207ca4-aaa7-4469-b792-1e1a9e7fb0de</xr:TypeId>
+				<xr:ValueId>b359cefc-87a6-47ad-a467-bfd09c1d9534</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_ПоложенияБСО" category="Manager">
+				<xr:TypeId>bb153487-4ab4-4b28-a99c-f5a46109afbe</xr:TypeId>
+				<xr:ValueId>ba74c3eb-9332-4690-aab4-eeb22817e228</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_ПоложенияБСО" category="List">
+				<xr:TypeId>867cb728-4f60-4330-94c9-05364da66458</xr:TypeId>
+				<xr:ValueId>7b6651eb-9b11-4d96-b31e-66deb324578c</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_ПоложенияБСО</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Положения БСО</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Положения бланков строгой отчетности</Comment>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="aac11a11-ddb2-4251-91fc-b11e37fe499a">
+				<Properties>
+					<Name>ПолученИзСК</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получен из СК</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="35a64289-055a-4e27-a7d1-8c65c096f382">
+				<Properties>
+					<Name>ВозвращенИзСК</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Возвращен из СК</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="e377b0f5-ef75-48dc-bd50-bf760ffbaa43">
+				<Properties>
+					<Name>ПереданНаТочку</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Передан на точку продаж</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Передан на точку продаж</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="85dd382d-2e06-4d60-9dfd-1969e512cdb5">
+				<Properties>
+					<Name>ВозвращенСТочки</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Возвращен с точки</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Возвращен с точки продаж</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="8573de72-4ed6-407d-bb27-91d7ecf1d5b8">
+				<Properties>
+					<Name>ПереданВСК</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Передан в СК</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Был передан в Страховую компанию</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="189300d4-87b1-4412-a094-b8dce7eb5d4e">
+				<Properties>
+					<Name>Списан</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Списан</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Бланк списан</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="e0c5abc5-f79f-4949-99a6-fc429678e095">
+				<Properties>
+					<Name>ОтданКлиенту</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отдан клиенту</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="534539d1-3b4d-4dac-8600-3995831d0f64">
+				<Properties>
+					<Name>ОтданБанку</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отдан банку</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

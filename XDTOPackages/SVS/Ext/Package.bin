@@ -1,0 +1,64 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://svs">
+	<objectType name="detail">
+		<property name="requestNum" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property name="placeMeet" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="mkad" type="xs:boolean" lowerBound="1" form="Attribute"/>
+		<property name="isPrint" type="xs:boolean" lowerBound="1" form="Attribute"/>
+		<property name="isCredit" type="xs:boolean" lowerBound="1" form="Attribute"/>
+		<property name="contactName" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="comment" type="xs:string"/>
+		<property xmlns:d3p1="http://svs" name="taskType" type="d3p1:idName"/>
+		<property xmlns:d3p1="http://svs" name="taskSubType" type="d3p1:idName"/>
+	</objectType>
+	<objectType name="idName">
+		<property name="id" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property name="name" type="xs:string" lowerBound="1" form="Attribute"/>
+	</objectType>
+	<objectType name="response">
+		<property name="errorCode" lowerBound="1" form="Attribute"/>
+		<property name="msg" type="xs:anyType"/>
+		<property xmlns:d3p1="http://svs" name="task_res" type="d3p1:task_res" lowerBound="0"/>
+	</objectType>
+	<objectType name="taskBlock">
+		<property name="sessionId" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property name="computerName" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="blockedTill" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+		<property name="message" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://svs" name="manager" type="d3p1:idName"/>
+	</objectType>
+	<objectType name="task_req">
+		<property name="action" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="taskId" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property name="workerId" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property name="beginTime" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+		<property name="meetTime" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+		<property name="endTime" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+	</objectType>
+	<objectType name="task_res">
+		<property name="action" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="taskId" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property name="workerID" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property name="beginTime" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+		<property name="meetTime" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+		<property name="endTime" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+		<property name="isConfirmed" type="xs:boolean" lowerBound="1" form="Attribute"/>
+		<property name="isAvailable" type="xs:boolean" lowerBound="1" form="Attribute"/>
+		<property name="isOnDuty" type="xs:boolean" lowerBound="1" form="Attribute"/>
+		<property name="isAdministrative" type="xs:boolean" lowerBound="1" form="Attribute"/>
+		<property name="isPerformed" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://svs" name="autor" type="d3p1:idName"/>
+		<property xmlns:d3p1="http://svs" name="manager" type="d3p1:idName"/>
+		<property xmlns:d3p1="http://svs" name="priority" type="d3p1:idName"/>
+		<property xmlns:d3p1="http://svs" name="detail" type="d3p1:detail"/>
+		<property xmlns:d3p1="http://svs" name="taskBlock" type="d3p1:taskBlock"/>
+		<property name="background" type="xs:string"/>
+		<property name="color" type="xs:string"/>
+	</objectType>
+	<objectType name="action">
+		<property name="name" type="xs:string"/>
+		<property name="descr" type="xs:string"/>
+	</objectType>
+	<objectType name="actions">
+		<property xmlns:d3p1="http://svs" name="action" type="d3p1:action" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+</package>

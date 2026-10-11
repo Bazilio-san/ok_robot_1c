@@ -1,0 +1,1369 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Статистика</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗППериод</dataPath>
+			<field>ЗППериод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяц</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КАСКО_Лички</dataPath>
+			<field>КАСКО_Лички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КАСКО_НеЛички</dataPath>
+			<field>КАСКО_НеЛички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КВ_Вкл_в_ОП</dataPath>
+			<field>КВ_Вкл_в_ОП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КВ вкл. в ОП</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Оплат_ВСЕГО</dataPath>
+			<field>Оплат_ВСЕГО</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОСАГО_Лички</dataPath>
+			<field>ОСАГО_Лички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОСАГО_НеЛички</dataPath>
+			<field>ОСАГО_НеЛички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия</dataPath>
+			<field>Премия</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия_Вкл_в_ОП</dataPath>
+			<field>Премия_Вкл_в_ОП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Премия вкл. в ОП</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия_КАСКО_Лички</dataPath>
+			<field>Премия_КАСКО_Лички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия_КАСКО_НеЛички</dataPath>
+			<field>Премия_КАСКО_НеЛички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия_ОСАГО_Лички</dataPath>
+			<field>Премия_ОСАГО_Лички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия_ОСАГО_НеЛички</dataPath>
+			<field>Премия_ОСАГО_НеЛички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия_ПРОЧЕЕ_Лички</dataPath>
+			<field>Премия_ПРОЧЕЕ_Лички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия_ПРОЧЕЕ_НеЛички</dataPath>
+			<field>Премия_ПРОЧЕЕ_НеЛички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПРОЧЕЕ_Лички</dataPath>
+			<field>ПРОЧЕЕ_Лички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПРОЧЕЕ_НеЛички</dataPath>
+			<field>ПРОЧЕЕ_НеЛички</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_Не_вкл_в_ОП</dataPath>
+			<field>СКВ_Не_вкл_в_ОП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ не вкл. в ОП</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка</dataPath>
+			<field>Скидка</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка_КАСКО</dataPath>
+			<field>Скидка_КАСКО</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка_КАСКО_процент</dataPath>
+			<field>Скидка_КАСКО_процент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скидка КАСКО %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка_Не_вкл_в_ОП</dataPath>
+			<field>Скидка_Не_вкл_в_ОП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скидка не вкл. в ОП</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка_ОСАГО</dataPath>
+			<field>Скидка_ОСАГО</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка_ОСАГО_процент</dataPath>
+			<field>Скидка_ОСАГО_процент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скидка ОСАГО %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка_процент</dataPath>
+			<field>Скидка_процент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скидка %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка_ПРОЧЕЕ</dataPath>
+			<field>Скидка_ПРОЧЕЕ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка_ПРОЧЕЕ_процент</dataPath>
+			<field>Скидка_ПРОЧЕЕ_процент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скидка ПРОЧЕЕ %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДМС_Лички</dataPath>
+			<field>ДМС_Лички</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДМС_НеЛички</dataPath>
+			<field>ДМС_НеЛички</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КВ_Проц_Вкл_в_ОП</dataPath>
+			<field>КВ_Проц_Вкл_в_ОП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КВ % вкл. в ОП</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия_ДМС_Лички</dataPath>
+			<field>Премия_ДМС_Лички</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия_ДМС_НеЛички</dataPath>
+			<field>Премия_ДМС_НеЛички</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_аг_ДМС_Лички</dataPath>
+			<field>СКВ_аг_ДМС_Лички</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ ДМС лички (по КВ для агента)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_аг_ДМС_НеЛички</dataPath>
+			<field>СКВ_аг_ДМС_НеЛички</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ ДМС не лички  (по КВ для агента)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_аг_КАСКО_Лички</dataPath>
+			<field>СКВ_аг_КАСКО_Лички</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ КАСКО лички (по КВ для агента)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ФормаВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0</dcscor:value>
+				</dcscor:item>
+				<dcscor:item>
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_аг_КАСКО_НеЛички</dataPath>
+			<field>СКВ_аг_КАСКО_НеЛички</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ КАСКО не лички (по КВ для агента)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_аг_ОСАГО_Лички</dataPath>
+			<field>СКВ_аг_ОСАГО_Лички</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ ОСАГО лички (по КВ для агента)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_аг_ОСАГО_НеЛички</dataPath>
+			<field>СКВ_аг_ОСАГО_НеЛички</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ ОСАГО не лички (по КВ для агента)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_аг_ПРОЧЕЕ_Лички</dataPath>
+			<field>СКВ_аг_ПРОЧЕЕ_Лички</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ ПРОЧЕЕ лички (по КВ для агента)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_аг_ПРОЧЕЕ_НеЛички</dataPath>
+			<field>СКВ_аг_ПРОЧЕЕ_НеЛички</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ ПРОЧЕЕ не лички (по КВ для агента)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Шрифт</dcscor:parameter>
+					<dcscor:value xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_по_КВ_Для_Агента</dataPath>
+			<field>СКВ_по_КВ_Для_Агента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ  (по КВ для агента)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_по_КВ_Для_Брокера</dataPath>
+			<field>СКВ_по_КВ_Для_Брокера</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКВ (по КВ для брокера)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=0; ЧГ=3,0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрКВ_для_Агента</dataPath>
+			<field>СрКВ_для_Агента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КВ для агента</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=4</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрКВ_для_Агента_По_Моторам</dataPath>
+			<field>СрКВ_для_Агента_По_Моторам</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КВ для агента по моторам</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Шрифт</dcscor:parameter>
+					<dcscor:value xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=4</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрКВ_для_Агента_По_НЕ_Моторам</dataPath>
+			<field>СрКВ_для_Агента_По_НЕ_Моторам</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КВ для агента по не моторам</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=4</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрКВ_для_Брокера</dataPath>
+			<field>СрКВ_для_Брокера</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КВ для брокера</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=4</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКВ_Все_МОТОРы</dataPath>
+			<field>СКВ_Все_МОТОРы</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДБ_аг_КАСКО_НеЛички</dataPath>
+			<field>ДБ_аг_КАСКО_НеЛички</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Шрифт</dcscor:parameter>
+					<dcscor:value xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДБ_аг_ОСАГО_НеЛички</dataPath>
+			<field>ДБ_аг_ОСАГО_НеЛички</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Шрифт</dcscor:parameter>
+					<dcscor:value xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Т.ЗППериод,
+	Т.СКВ_аг_КАСКО_НеЛички + Т.СКВ_аг_ОСАГО_НеЛички
+	+Т.ДБ_аг_КАСКО_НеЛички
+	+Т.ДБ_аг_ОСАГО_НеЛички 
+	КАК СКВ_Все_МОТОРы,
+	Т.ДБ_аг_КАСКО_НеЛички,
+	Т.ДБ_аг_ОСАГО_НеЛички,
+	Т.ОСАГО_Лички,
+	Т.ОСАГО_НеЛички,
+	Т.КАСКО_Лички,
+	Т.КАСКО_НеЛички,
+	Т.ДМС_Лички,
+	Т.ДМС_НеЛички,
+	Т.ПРОЧЕЕ_Лички,
+	Т.ПРОЧЕЕ_НеЛички,
+	Т.Оплат_ВСЕГО,
+	Т.Премия_ОСАГО_Лички,
+	Т.Премия_ОСАГО_НеЛички,
+	Т.Премия_КАСКО_Лички,
+	Т.Премия_КАСКО_НеЛички,
+	Т.Премия_ДМС_Лички,
+	Т.Премия_ДМС_НеЛички,
+	Т.Премия_ПРОЧЕЕ_Лички,
+	Т.Премия_ПРОЧЕЕ_НеЛички,
+	Т.НачисленнаяСуммаВзноса КАК Премия,
+	Т.СКВ_аг_ОСАГО_Лички,
+	Т.СКВ_аг_КАСКО_Лички,
+	Т.СКВ_аг_ДМС_Лички,
+	Т.СКВ_аг_ПРОЧЕЕ_Лички,
+	Т.СКВ_аг_ОСАГО_НеЛички,
+	Т.СКВ_аг_КАСКО_НеЛички,
+	Т.СКВ_аг_ДМС_НеЛички,
+	Т.СКВ_аг_ПРОЧЕЕ_НеЛички,
+	Т.СКВ_по_КВ_Для_Агента,
+	Т.СКВ_по_КВ_Для_Брокера,
+	Т.Скидка_ОСАГО,
+	ВЫБОР
+		КОГДА Т.Премия_ОСАГО_НеЛички = 0
+			ТОГДА 0
+		ИНАЧЕ Т.Скидка_ОСАГО / Т.Премия_ОСАГО_НеЛички
+	КОНЕЦ КАК Скидка_ОСАГО_процент,
+	Т.Скидка_КАСКО,
+	ВЫБОР
+		КОГДА Т.Премия_КАСКО_НеЛички = 0
+			ТОГДА 0
+		ИНАЧЕ Т.Скидка_КАСКО / Т.Премия_КАСКО_НеЛички
+	КОНЕЦ КАК Скидка_КАСКО_процент,
+	Т.Скидка_ПРОЧЕЕ,
+	ВЫБОР
+		КОГДА Т.Премия_ПРОЧЕЕ_НеЛички = 0
+			ТОГДА 0
+		ИНАЧЕ Т.Скидка_ПРОЧЕЕ / Т.Премия_ПРОЧЕЕ_НеЛички
+	КОНЕЦ КАК Скидка_ПРОЧЕЕ_процент,
+	Т.Скидка,
+	ВЫБОР
+		КОГДА Т.Премия_ОСАГО_НеЛички + Т.Премия_КАСКО_НеЛички + Т.Премия_ПРОЧЕЕ_НеЛички = 0
+			ТОГДА 0
+		ИНАЧЕ Т.Скидка / (Т.Премия_ОСАГО_НеЛички + Т.Премия_КАСКО_НеЛички + Т.Премия_ПРОЧЕЕ_НеЛички)
+	КОНЕЦ КАК Скидка_процент,
+	Т.КВ_Вкл_в_ОП,
+	Т.Премия_Вкл_в_ОП,
+	ВЫБОР
+		КОГДА Т.Премия_Вкл_в_ОП = 0
+			ТОГДА 0
+		ИНАЧЕ Т.КВ_Вкл_в_ОП / Т.Премия_Вкл_в_ОП
+	КОНЕЦ КАК КВ_Проц_Вкл_в_ОП,
+	ВЫБОР
+		КОГДА Т.НачисленнаяСуммаВзноса_По_Моторам = 0
+			ТОГДА 0
+		ИНАЧЕ Т.КВ_для_Агента_По_Моторам / Т.НачисленнаяСуммаВзноса_По_Моторам
+	КОНЕЦ КАК СрКВ_для_Агента_По_Моторам,
+	ВЫБОР
+		КОГДА Т.НачисленнаяСуммаВзноса_По_НЕ_Моторам = 0
+			ТОГДА 0
+		ИНАЧЕ Т.КВ_для_Агента_По_НЕ_Моторам / Т.НачисленнаяСуммаВзноса_По_НЕ_Моторам
+	КОНЕЦ КАК СрКВ_для_Агента_По_НЕ_Моторам,
+	ВЫБОР
+		КОГДА Т.НачисленнаяСуммаВзноса = 0
+			ТОГДА 0
+		ИНАЧЕ Т.КВСуммаДляАгента / Т.НачисленнаяСуммаВзноса
+	КОНЕЦ КАК СрКВ_для_Агента,
+	ВЫБОР
+		КОГДА Т.НачисленнаяСуммаВзноса = 0
+			ТОГДА 0
+		ИНАЧЕ Т.КВСумма / Т.НачисленнаяСуммаВзноса
+	КОНЕЦ КАК СрКВ_для_Брокера,
+	Т.СКВ_Не_вкл_в_ОП,
+	Т.Скидка_Не_вкл_в_ОП	
+ИЗ
+	(ВЫБРАТЬ
+		О.ЗППериод КАК ЗППериод,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ОСАГО"
+						И О.ЛИЧНАЯ
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ) КАК ОСАГО_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ОСАГО"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ) КАК ОСАГО_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "КАСКО"
+						И О.ЛИЧНАЯ
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ) КАК КАСКО_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "КАСКО"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ) КАК КАСКО_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ДМС"
+						И О.ЛИЧНАЯ
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ) КАК ДМС_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ДМС"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ) КАК ДМС_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ПРОЧЕЕ"
+						И О.ЛИЧНАЯ
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ) КАК ПРОЧЕЕ_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ПРОЧЕЕ"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ) КАК ПРОЧЕЕ_НеЛички,
+		СУММА(О.Оплат) КАК Оплат_ВСЕГО,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ОСАГО"
+						И О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Премия_ОСАГО_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ОСАГО"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Премия_ОСАГО_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "КАСКО"
+						И О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Премия_КАСКО_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "КАСКО"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Премия_КАСКО_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ДМС"
+						И О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Премия_ДМС_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ДМС"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Премия_ДМС_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ПРОЧЕЕ"
+						И О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Премия_ПРОЧЕЕ_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ПРОЧЕЕ"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Премия_ПРОЧЕЕ_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ОСАГО"
+						И О.ЛИЧНАЯ
+					ТОГДА О.СКВ_по_КВ_Для_Агента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК СКВ_аг_ОСАГО_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "КАСКО"
+						И О.ЛИЧНАЯ
+					ТОГДА О.СКВ_по_КВ_Для_Агента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК СКВ_аг_КАСКО_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ПРОЧЕЕ"
+						И О.ЛИЧНАЯ
+					ТОГДА О.СКВ_по_КВ_Для_Агента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК СКВ_аг_ПРОЧЕЕ_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ДМС"
+						И О.ЛИЧНАЯ
+					ТОГДА О.СКВ_по_КВ_Для_Агента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК СКВ_аг_ДМС_Лички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ОСАГО"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.СКВ_по_КВ_Для_Агента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК СКВ_аг_ОСАГО_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "КАСКО"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.СКВ_по_КВ_Для_Агента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК СКВ_аг_КАСКО_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "КАСКО"
+						И О.Агентская
+					ТОГДА О.ДБ
+				ИНАЧЕ 0
+			КОНЕЦ) КАК ДБ_аг_КАСКО_НеЛички,	
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ОСАГО"
+						И О.Агентская
+					ТОГДА О.ДБ
+				ИНАЧЕ 0
+			КОНЕЦ) КАК ДБ_аг_ОСАГО_НеЛички,		
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ДМС"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.СКВ_по_КВ_Для_Агента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК СКВ_аг_ДМС_НеЛички,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ПРОЧЕЕ"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.СКВ_по_КВ_Для_Агента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК СКВ_аг_ПРОЧЕЕ_НеЛички,
+		СУММА(О.СКВ_по_КВ_Для_Агента) КАК СКВ_по_КВ_Для_Агента,
+		СУММА(О.СКВ_по_КВ_Для_Брокера) КАК СКВ_по_КВ_Для_Брокера,
+		СУММА(ВЫБОР
+				КОГДА О.НеВключатьВОтчетыПоставщикам = ИСТИНА
+					ТОГДА О.СКВ_по_КВ_Для_Агента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК СКВ_Не_вкл_в_ОП,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ОСАГО"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.АВилиСкидкаСумма
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Скидка_ОСАГО,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "КАСКО"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.АВилиСкидкаСумма
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Скидка_КАСКО,
+		СУММА(ВЫБОР
+				КОГДА О.ВидСп = "ПРОЧЕЕ"
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.АВилиСкидкаСумма
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Скидка_ПРОЧЕЕ,
+		СУММА(ВЫБОР
+				КОГДА НЕ О.ЛИЧНАЯ
+					ТОГДА О.АВилиСкидкаСумма
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Скидка,
+		СУММА(ВЫБОР
+				КОГДА НЕ О.ЛИЧНАЯ
+						И О.НеВключатьВОтчетыПоставщикам = ИСТИНА
+					ТОГДА О.АВилиСкидкаСумма
+				ИНАЧЕ 0
+			КОНЕЦ) КАК Скидка_Не_вкл_в_ОП,
+		СУММА(ВЫБОР
+				КОГДА О.НеВключатьВОтчетыПоставщикам = ИСТИНА
+					ТОГДА 0
+				ИНАЧЕ О.КВСумма
+			КОНЕЦ) КАК КВ_Вкл_в_ОП,
+		СУММА(ВЫБОР
+				КОГДА О.НеВключатьВОтчетыПоставщикам = ИСТИНА
+					ТОГДА 0
+				ИНАЧЕ О.НачисленнаяСуммаВзноса
+			КОНЕЦ) КАК Премия_Вкл_в_ОП,
+		СУММА(О.КВСуммаДляАгента) КАК КВСуммаДляАгента,
+		СУММА(О.КВСумма) КАК КВСумма,
+		СУММА(О.НачисленнаяСуммаВзноса) КАК НачисленнаяСуммаВзноса,
+		СУММА(ВЫБОР
+				КОГДА (О.ВидСп = "ОСАГО"
+						ИЛИ О.ВидСп = "КАСКО")
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.КВСуммаДляАгента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК КВ_для_Агента_По_Моторам,
+		СУММА(ВЫБОР
+				КОГДА (О.ВидСп = "ОСАГО"
+						ИЛИ О.ВидСп = "КАСКО")
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК НачисленнаяСуммаВзноса_По_Моторам,
+		СУММА(ВЫБОР
+				КОГДА НЕ(О.ВидСп = "ОСАГО"
+								ИЛИ О.ВидСп = "КАСКО")
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.КВСуммаДляАгента
+				ИНАЧЕ 0
+			КОНЕЦ) КАК КВ_для_Агента_По_НЕ_Моторам,
+		СУММА(ВЫБОР
+				КОГДА НЕ(О.ВидСп = "ОСАГО"
+								ИЛИ О.ВидСп = "КАСКО")
+						И НЕ О.ЛИЧНАЯ
+					ТОГДА О.НачисленнаяСуммаВзноса
+				ИНАЧЕ 0
+			КОНЕЦ) КАК НачисленнаяСуммаВзноса_По_НЕ_Моторам
+	ИЗ
+		(ВЫБРАТЬ
+			НАЧАЛОПЕРИОДА(ОП.ЗарплатныйПериод, МЕСЯЦ) КАК ЗППериод,
+			ВЫБОР
+				КОГДА ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ОСАГО)
+				или ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕОСАГО)
+					ТОГДА "ОСАГО"
+				КОГДА ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.КАСКО)
+				или ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ЕКАСКО)
+					ТОГДА "КАСКО"
+				КОГДА ОП.ВидСП = ЗНАЧЕНИЕ(Перечисление.уб_ВидыСтраховыхПродуктов.ДМС)
+					ТОГДА "ДМС"
+				ИНАЧЕ "ПРОЧЕЕ"
+			КОНЕЦ КАК ВидСп,
+			ВЫБОР
+				КОГДА ОП.СтраховойПолис.НомерЗаявки = ЗНАЧЕНИЕ(Перечисление.уб_ВидыЗаявок.Личная) или (Оп.ЗарплатныйПериод&gt;=ДатаВремя(2018,5,1) и Isnull(ОП.Подразделение.КОД,"321") В("000000017","000000037"))
+					ТОГДА ИСТИНА
+				ИНАЧЕ ЛОЖЬ
+			КОНЕЦ КАК ЛИЧНАЯ,
+			ВЫБОР
+				КОГДА Оп.ЗарплатныйПериод&gt;=ДатаВремя(2018,5,1) и Isnull(ОП.Подразделение.КОД,"321") В("000000017","000000037")
+					ТОГДА ИСТИНА
+				ИНАЧЕ ЛОЖЬ
+			КОНЕЦ КАК Агентская,
+			ВЫБОР
+				КОГДА ОП.ОплаченоФакт &gt; 0
+						И ОП.КВСуммаДляАгента &gt;= ОП.АВилиСкидкаСумма
+						И ОП.СхемаРасчетаСМенеджером &lt;&gt; ЗНАЧЕНИЕ(ПланВидовРасчета.уб_РасчетЗарплатыМенеджерамОП.БезРасчета)
+					ТОГДА ОП.КВСуммаДляАгента - ОП.АВилиСкидкаСумма
+				ИНАЧЕ 0
+			КОНЕЦ * (100 - ОП.ПроцентСКВ) / 100 КАК СКВ_по_КВ_Для_Агента,
+			ВЫБОР
+				КОГДА ОП.ОплаченоФакт &gt; 0
+						И ОП.КВСумма &gt;= ОП.АВилиСкидкаСумма
+						И ОП.СхемаРасчетаСМенеджером &lt;&gt; ЗНАЧЕНИЕ(ПланВидовРасчета.уб_РасчетЗарплатыМенеджерамОП.БезРасчета)
+					ТОГДА ОП.КВСумма - ОП.АВилиСкидкаСумма
+				ИНАЧЕ 0
+			КОНЕЦ * (100 - ОП.ПроцентСКВ) / 100 КАК СКВ_по_КВ_Для_Брокера,
+			1 КАК Оплат,
+			ОП.Ссылка КАК Ссылка,
+			ОП.АВилиСкидкаПроцент КАК АВилиСкидкаПроцент,
+			ОП.АВилиСкидкаСумма КАК АВилиСкидкаСумма,
+			ОП.Баланс_Брокер_Поставщик КАК Баланс_Брокер_Поставщик,
+			ОП.ВидРасчетаСАгентом КАК ВидРасчетаСАгентом,
+			ОП.ВидСП КАК Вид_СП,
+			ОП.ВМпоРезультатамПериодаЗП КАК ВМпоРезультатамПериодаЗП,
+			ОП.ВознаграждениеМенеджера КАК ВознаграждениеМенеджера,
+			ОП.ВычетСАгента КАК ВычетСАгента,
+			ОП.ЗарплатныйПериод КАК ЗарплатныйПериод,
+			ОП.ИсключенаИзВзаиморасчетов КАК ИсключенаИзВзаиморасчетов,
+			ОП.ИсключитьИзРасчетаЗП КАК ИсключитьИзРасчетаЗП,
+			ОП.КВПодВопросом КАК КВПодВопросом,
+			ОП.КВПроцент КАК КВПроцент,
+			ОП.КВПроцентДляАгента КАК КВПроцентДляАгента,
+			ОП.КВПроцентДляОтчета КАК КВПроцентДляОтчета,
+			ОП.КВСумма КАК КВСумма,
+			ОП.КВСуммаДляАгента КАК КВСуммаДляАгента,
+			ОП.КВСуммаДляОтчета КАК КВСуммаДляОтчета,
+			ОП.КодКВ КАК КодКВ,
+			ОП.КОплатеАгентом КАК КОплатеАгентом,
+			ОП.НачисленнаяСуммаВзноса КАК НачисленнаяСуммаВзноса,
+			ВЫБОР
+				КОГДА ОП.НачисленнаяСуммаВзноса = 0
+					ТОГДА ОП.ПолученнаяСКлиентаСуммаВзносаДляОтчетаПоставщику
+				ИНАЧЕ ОП.НачисленнаяСуммаВзноса
+			КОНЕЦ КАК СуммаВзноса,
+			ОП.НеВключатьВОтчетыПоставщикам КАК НеВключатьВОтчетыПоставщикам,
+			ОП.НомерВзноса КАК НомерВзноса,
+			ОП.ОплаченоФакт КАК ОплаченоФакт,
+			ОП.ПолисАннулирован КАК ПолисАннулирован,
+			ОП.ПолнаяСтраховаяПремия КАК ПолнаяСтраховаяПремия,
+			ОП.ПолученнаяСКлиентаСуммаВзносаДляОтчетаПоставщику КАК ПолученнаяСКлиентаСуммаВзносаДляОтчетаПоставщику,
+			ОП.Проблемная КАК Проблемная,
+			ОП.СкидкаВыплаченаяКлиенту КАК СкидкаВыплаченаяКлиенту,
+			ОП.СуммаКОплатеБрокеруДляОчетаПоставщику КАК СуммаКОплатеБрокеруДляОчетаПоставщику,
+			ОП.СхемаРасчетаСМенеджером КАК СхемаРасчетаСМенеджером,
+			ОП.ФормаОплаты КАК ФормаОплаты,
+			ОП.ДБ КАК ДБ,
+			ОП.СуммаДоп КАК СуммаДоп,
+			ОП.УдержаноСК КАК УдержаноСК,
+			ОП.ПроцентСКВ КАК ПроцентСКВ,
+			ОП.Подразделение КАК Подразделение
+		ИЗ
+			Документ.уб_ОплатаПолисов КАК ОП
+		ГДЕ
+			ОП.ЗарплатныйПериод &gt;= &amp;ДатаНачала
+			И ОП.ЗарплатныйПериод &lt;= &amp;ДатаКонца
+			И ОП.ИсключитьИзРасчетаЗП = ЛОЖЬ
+			И НЕ ОП.СтраховойПолис.Ссылка = ЗНАЧЕНИЕ(Документ.уб_СтраховойПолис.ПустаяСсылка)
+			И ОП.СтраховойПолис.ПометкаУдаления = ЛОЖЬ
+			и НЕ Isnull(ОП.Подразделение.Наименование,"")="Технопарк"
+			и НЕ Isnull(ОП.Подразделение.Наименование,"")="Особисты"
+			И (НЕ(ОП.СтраховойПолис.Страхователь.Наименование ПОДОБНО "%ЕРМОЛИНО МОЛОКО%"
+							ИЛИ ОП.СтраховойПолис.Страхователь.Наименование ПОДОБНО "%Инвест Альянс%"
+							ИЛИ ОП.СтраховойПолис.Страхователь.Наименование ПОДОБНО "%Итера%")
+					ИЛИ &amp;ВключитьЗаводы)) КАК О
+	
+	СГРУППИРОВАТЬ ПО
+		О.ЗППериод) КАК Т
+
+УПОРЯДОЧИТЬ ПО
+	Т.ЗППериод</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>СКВ_Моторы</dataPath>
+		<expression>СКВ_аг_КАСКО_НеЛички + СКВ_аг_ОСАГО_НеЛички</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>СКВ МОТОРЫ не лички (по КВ для агента)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=0</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаКонца</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата конца</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВключитьЗаводы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Включить заводы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗППериод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОСАГО_Лички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОСАГО_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КАСКО_Лички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КАСКО_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДМС_Лички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДМС_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПРОЧЕЕ_Лички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПРОЧЕЕ_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Оплат_ВСЕГО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СКВ_аг_ОСАГО_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СКВ_аг_КАСКО_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СКВ_Моторы</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДБ_аг_КАСКО_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДБ_аг_ОСАГО_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СКВ_аг_ДМС_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СКВ_аг_ПРОЧЕЕ_НеЛички</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СКВ_по_КВ_Для_Агента</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СКВ_по_КВ_Для_Брокера</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СрКВ_для_Агента_По_Моторам</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СрКВ_для_Агента_По_НЕ_Моторам</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СрКВ_для_Агента</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>2016-09-01T00:00:00</v8:date>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаКонца</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>2017-05-31T00:00:00</v8:date>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВключитьЗаводы</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЗППериод</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статистика сборов и количества</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:row>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

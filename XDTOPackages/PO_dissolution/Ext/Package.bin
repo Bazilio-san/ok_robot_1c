@@ -1,0 +1,22 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://dissolution.ie.lois.ru/">
+	<import namespace="http://error.ie.lois.ru/"/>
+	<property xmlns:d2p1="http://dissolution.ie.lois.ru/" name="Dissolution" type="d2p1:Dissolution"/>
+	<objectType name="Dissolution">
+		<property name="policyID" type="xs:string" lowerBound="0"/>
+		<property name="productType" type="xs:string" lowerBound="0"/>
+		<property name="seriaPolicy" type="xs:string" lowerBound="0"/>
+		<property name="numberPolicy" type="xs:string" lowerBound="0"/>
+		<property name="reason" type="xs:string" lowerBound="0"/>
+		<property name="date" type="xs:dateTime" lowerBound="0"/>
+		<property name="refundSum" type="xs:decimal" lowerBound="0"/>
+	</objectType>
+	<objectType name="DissolutionPolicyRequest">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://dissolution.ie.lois.ru/" name="dissolution" type="d3p1:Dissolution" lowerBound="0"/>
+	</objectType>
+	<objectType name="DissolutionPolicyResponse">
+		<property name="accID" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://error.ie.lois.ru/" name="errors" type="d3p1:ErrorList" lowerBound="0"/>
+		<property xmlns:d3p1="http://dissolution.ie.lois.ru/" name="dissolution" type="d3p1:Dissolution" lowerBound="0"/>
+	</objectType>
+</package>

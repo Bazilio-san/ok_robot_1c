@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="Report">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" name="Anketa">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="InsType">
+                <xsd:complexType>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="Supplier">
+                <xsd:complexType>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="Site">
+                <xsd:complexType>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="PoliceNumber">
+                <xsd:complexType>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="InsPeriod">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="BeginDate">
+                      <xsd:complexType>
+                        <xsd:attribute name="description" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="EndDate">
+                      <xsd:complexType>
+                        <xsd:attribute name="description" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Period">
+                      <xsd:complexType>
+                        <xsd:attribute name="description" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="Insurer">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Name">
+                      <xsd:complexType>
+                        <xsd:attribute name="description" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Email">
+                      <xsd:complexType>
+                        <xsd:attribute name="description" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="Insured">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="person">
+                      <xsd:complexType>
+                        <xsd:attribute name="name" type="xsd:string" />
+                        <xsd:attribute name="birthday" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="Beneficiary">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Name">
+                      <xsd:complexType>
+                        <xsd:attribute name="description" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Birthday">
+                      <xsd:complexType>
+                        <xsd:attribute name="description" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="InsPrem">
+                <xsd:complexType>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="InsSum">
+                <xsd:complexType>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="InsCurr">
+                <xsd:complexType>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="PayID">
+                <xsd:complexType>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="PayTime">
+                <xsd:complexType>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="AdditionalFields">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Field">
+                      <xsd:complexType>
+                        <xsd:attribute name="fieldname" type="xsd:string" />
+                        <xsd:attribute name="description" type="xsd:string" />
+                        <xsd:attribute name="value" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="description" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="date" type="xsd:dateTime" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

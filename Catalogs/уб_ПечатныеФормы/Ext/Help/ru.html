@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16437"></meta><style type="text/css">P.SimpleP {
+	LINE-HEIGHT: 115%; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt
+}
+SPAN.SecondaryRemark {
+	COLOR: #d9d9d9
+}
+P.Functions {
+	LINE-HEIGHT: 115%; MARGIN: 12pt 0cm 0pt; FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt
+}
+SPAN.FunctionName {
+	FONT-WEIGHT: bold
+}
+SPAN.ArgName {
+	COLOR: #0070c0
+}
+P.FunctionAliases {
+	LINE-HEIGHT: 115%; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt
+}
+P.MsoNormal {
+	LINE-HEIGHT: 115%; MARGIN: 0cm 0cm 0pt 1cm; FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt
+}
+P.Arguments {
+	LINE-HEIGHT: 115%; MARGIN: 0cm 0cm 0pt 14.2pt; FONT-FAMILY: "Verdana","sans-serif"; COLOR: #0070c0; FONT-SIZE: 10pt; FONT-WEIGHT: bold
+}
+P.ArgDescr {
+	LINE-HEIGHT: 115%; MARGIN: 6pt 0cm 0pt 14.2pt; FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt
+}
+SPAN.ArgValue {
+	COLOR: #76923c
+}
+SPAN.Argdefault {
+	COLOR: #76923c; FONT-WEIGHT: bold
+}
+SPAN.Example {
+	FONT-STYLE: italic
+}
+</style></head><body>
+<h1>Справочник "Печатные формы"</h1>
+<p class="Usual">Данный справочник используется для настройки дополнительных печатных форм для документов.  Для документов можно создавать неограниченное количество дполонительных печатных форм. Каждый элемент этого справочника соответствует одной печатной форме. В справочнике хранится макет печатной формы, код осуществляющий вывод этого макета на печать и настройки принадлежности формы к документу.</p>
+<ul><div>
+<li>
+<div><strong>Принадлежность -</strong> на этой закладке определяется к какому документу будет принадлежать данная печатная форма, а так же дополнительные параметры, определяющие доступность печатной формы.</div></li></div>
+<ul><li>
+<div><em>Объект конфигурации</em> - имя документа, в котором печатается данная форма.</div>
+</li><li>
+<div>
+<div><em>Можно использовать (Проверено) -</em> если <strong>НЕ</strong> помечено, то форма <strong>не будет</strong> отображаться в меню печати документов.</div></div>
+</li><li>
+<div>
+<div>
+<div><em>ПФ по умолчанию -</em> будет выбрана по умолчанию среди прочих форм в подменю печати.</div></div></div>
+</li><li>
+<div><em>
+<div>
+<div>Универсальная ПФ - отображается в подменю печати всегда.</div></div></em></div>
+</li><li>Параметры, используемые не во всех документах. Форма будет присутствовать в подменю печати только при соответсвующем значении атрибута документа: <em>Поставщик</em>, <em>Организация-Агент</em>, <em>ПараметрПринадлежности.</em> 
+</li><li>
+<div><em>Выгружать эту печатную форму при XML обмене</em> - служебный атрибут. Используется для пометки ПФ к выгрузке при при использовании универсального обмена данными в формате XML.</div></li></ul><li>
+<div><strong>Макет</strong> - макет является стандартным табличным документом используемым в платформе 1С Предприятие 8.0. Создавать макет можно как в режиме предприятия, так и в режиме конфигуратора. Для более подробного изучения принципов создания макет нужно воспользоваться книгой "1С:Предприятие 8.0. Конфигурирование и администрирование" глава "Табличный редактор".</div>
+</li><li>
+<div><strong>Код</strong> - на этой закладке пишется код, который будет выводить на печать макет. Код пишется в соответствии с правилами внутреннего языка платформы. Для более подробного изучения синтаксиса следует изучить книги "1С:Предприятие 8.0. Описание встроенного языка". Ограничением данного кода является лишь невозможность создавать дополнительные процедуры и функции, т.е. вся логика печати должна быть описана в одном блоке.<br>В коде используется структура <em><strong>Контекст</strong></em>, содержащая необходимые объекты, параметры, настройки. Например, для получения доступа к макету в коде необходимо использовать <em>Контекст</em>.<em>Макет, </em>а для получения доступа к свойствам объекта документ можно использовать <em>Контекст</em>.<em>Объект</em>.</div></li></ul><h2>Закладка "Параметры макета" </h2>
+<h3>Раскраска строк</h3>
+<p class="Usual">Белый фон - бычный параметр, который присутствует в макете. Заполняется процессором печати стандартным образом, то есть на основании своего имени.</p>
+<p class="Usual"><font style="BACKGROUND-COLOR: #ffffb4">Желтый фон</font> - параметр, который присутствует в макете, но имеет частный код заполнения. Процессор печати заполнит параметр, выполнив код заполнения (см. "<a name="FPC">Код заполнения параметра</a>" <a href="#FPC">ниже</a>)..</p>
+<p class="Usual"><font style="BACKGROUND-COLOR: #c8ffc8">Зеленый фон</font> - в этой строке указан свободный код области. Признак свободного кода области - имя параметра = "=". Этот код будет выполнен в начале обработки данной области. </p>
+<p class="Usual"><font style="BACKGROUND-COLOR: #edaa2e">Оранжевый фон</font> - строка свободного кода области (имя параметра = "=") но <u>в ней не указан</u> собственно <u>код</u>.</p>
+<p class="Usual"><font style="BACKGROUND-COLOR: #ffb4b4">Розовый фон</font> - не указано имя параметра. Такое случается, когда в макете у ячейки тип заполнения "Параметр", но ячейка пуста. Или в случае заполнения типа "Шаблон" в шаблоне есть символы квадратных скобок, между которыми пусто или нет ничего, кроме пробелов. </p>
+<p class="Usual"><font color="#c0c0c0">Серый текст</font> - указанная область или указанный параметр отстутствует в макете.</p>
+<h2>Колонки пиктограмм</h2>
+<p class="Usual">Во втором столбце появляется картинка <img border="1" src="CommonPicture.уб_Удалить"></img> в следующих случаях:</p>
+<ul><li>
+<div>Указанная область отсутствует в макете</div>
+</li><li>
+<div>Параметр не найден в указанной области макета</div></li></ul><p class="Usual">У таких параметров значение реквизита <em>НетВМакете</em> = Истина и в процессоре печати они не обрабатываются.</p>
+<p class="Usual">В четвертой колонке "КЗ" появляется картинка <img border="1" src="CommonPicture.КодПрограммы"></img> тогда, когда у параметра есть частный код заполнения. При обработке печати параметр будет заполняться результатом выполнения этого кода (см. "<a name="FPC">Код заполнения параметра</a>" <a href="#FPC">ниже</a>).</p>
+<h2>Режим отладки печатных форм</h2>
+<p class="Usual">Включает вывод дополнительной информации и отработки дополнительных отладочных действий при печати форм из справочника.</p>
+<ul><li>
+<div>вывод сообщений об ошибках при выполнении кода заполнения параметров</div>
+</li><li>
+<div>все места подстановки параметров в макете, которым в коде обработки не присваиваются значения, будут заполнены строкой ###########. Это позволяет визуально отследить проблемные места в шаблоне и коде.</div></li></ul><p class="Usual">Настрока управляет значением параметра сеанса уб_отладка_Печати.</p>
+<h2><a name="FPC">Код заполнения параметра</a></h2>
+<p class="Usual">Если заполнено поле "Код заполнения параметра", то параметр будет заполняться результатом выполнения этого кода. Обязательным является присвоение желаемого значения параметра переменной <em>ЗначениеПараметра.</em></p>
+<p class="Usual">А именно, конструкция </p><pre class="SyntaxDescription">ЗначениеПараметра = ...;</pre>
+<p> </p>
+<h1>Функции заполнения параметров шаблона ПФ</h1>
+<p class="SimpleP">Наименование параметра шаблона в справочнике печатных форм может быть как именем свойства контейнера свойств, так и функцией. В первом случае параметр шаблона будет заполнен значением свойства контейнера, во втором – результатом выполнения функции.</p>
+<p class="SimpleP">Аргументы функций (если это не вложенные функциии) указываются строкой имени свойства или зарегистрированного значения аргумента<strong> без кавычек</strong>.</p>
+<p class="SimpleP">Система автоматически распознает, является ли указанное имя именем свойства или зарегистрированным значением аргумента (в основном – на основании структуры аргументов: из положения аргумента ясно, чем он должен являться). </p>
+<p class="SimpleP">Допускается вложение функций, то есть использование результата выполнения внутренней функции как аргумента внешней функции. Это справедливо только для аргументов, которые отмечены как «<em>Имя свойства контейнера или вычисляемое значение</em>»</p>
+<p class="SimpleP"> </p>
+<p class="SimpleP"><span class="FunctionName">Док</span>(<span class="ArgName">&lt;арг&gt;</span>)</p>
+<p class="FunctionAliases"><span class="FunctionName">Итог</span>(<span class="ArgName">&lt;арг&gt;</span>)</p>
+<p class="MsoNormal">Переключет оперативный контейнер и возвращает значение свойства контейнера документа или итогов соответственно.</p>
+<p class="MsoNormal">Тип возвращаемого значения: тип свойства контейнера.</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;арг&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера. Если содержит символы, отличные от букв, цифр, и знака подчеркивания – игнорируется.</p>
+<p class="MsoNormal">Аргументом может быть только имя свойства контейнера.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если аргумент содержит недопустимые символы или пуст</p>
+<p class="MsoNormal">- если свойство не найдено в контейнере </p>
+<p class="MsoNormal"> </p>
+<p class="Functions"><span class="FunctionName">Падеж</span>(<span class="ArgName">&lt;арг&gt;</span>, <span class="ArgName">&lt;падеж&gt;</span>, <span class="ArgName">&lt;тип аргумента&gt;</span>, <span class="ArgName">&lt;представление физлица&gt;</span>)</p>
+<p class="FunctionAliases"><span class="FunctionName">П</span>(...)</p>
+<p class="MsoNormal">Склонение по падежу.</p>
+<p class="MsoNormal">Тип возвращаемого значения: строка.</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;арг&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение. Строка, которую нужно просклонять или Физлицо, ФИО которого нужно просклонять.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">Если тип свойства – ссылка из справочника ФизическиеЛица, то используется как ссылка. В остальных случаях перед применением функции преобразуется свойство в строку.</p>
+<p class="ArgDescr"><span class="ArgName">&lt;падеж&gt;</span></p>
+<p class="MsoNormal">Наименование падежа. Учитывается только первая буква наименования падежа.</p>
+<p class="MsoNormal">Поэтому допустимы следующие варианты:</p>
+<p class="MsoNormal">[<span class="ArgValue">И|Р|Д|В|Т|П</span>]</p>
+<p class="MsoNormal">[<span class="ArgValue">Им|Род|Дат|Вин|Тв|Пад</span>]</p>
+<p class="MsoNormal">[<span class="ArgValue">Именительный|Родительный|Дательный|Винительный|Творительный|Падежный</span>]</p>
+<p class="ArgDescr"><span class="ArgName">&lt;тип аргумента&gt;</span></p>
+<p class="MsoNormal">(необязательный) [<span class="ArgValue">должность|Д|фио|</span><span class="Argdefault">Ф</span>]</p>
+<p class="MsoNormal">указание на тип аргумента – фамилия или должность, в зависимости от этого применяется соответствующая функция склонения.</p>
+<p class="MsoNormal">По умолчанию <span class="Argdefault">Ф</span></p>
+<p class="ArgDescr"><span class="ArgName">&lt;представление физлица&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal"><span class="ArgValue">Полно</span> – указывается <span class="Example">Фамилия Имя Отчество</span></p>
+<p class="MsoNormal"><span class="ArgValue">Кратко</span> – указывается <span class="Example">Фамилия И. О.<br></span>По умолчанию – <span class="Argdefault">Полно</span></p>
+<p class="MsoNormal">Используется только в том случае, если <span class="ArgName">&lt;тип аргумента&gt;</span> = Ф</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если аргумент <span class="ArgName">&lt;падеж&gt;</span> указан неверно</p>
+<p class="MsoNormal">- если аргумент <span class="ArgName">&lt;тип аргумента&gt;</span> указан неверно</p>
+<p class="Functions"><span class="FunctionName">НРег</span>(<span class="ArgName">&lt;арг&gt;</span>)</p>
+<p class="Functions"><span class="FunctionName">ВРег</span>(<span class="ArgName">&lt;арг&gt;</span>)</p>
+<p class="Functions"><span class="FunctionName">ТРег</span>(<span class="ArgName">&lt;арг&gt;</span>)</p>
+<p class="Functions"><span class="FunctionName">ПРег</span>(<span class="ArgName">&lt;арг&gt;</span>)</p>
+<p class="MsoNormal">Переключают регистр строки аргумента.</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;арг&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение.</p>
+<p class="MsoNormal">НРег – нижний регистр</p>
+<p class="MsoNormal">ВРег – верхний регистр</p>
+<p class="MsoNormal">ТРег – все первые буквы слов с прописной буквы</p>
+<p class="MsoNormal">ПРег - первая буква во фразе прописная, остальные строчные.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">Перед применением аргумент преобразуется в строку.</p>
+<p class="Functions"><span class="FunctionName">СокрЛП</span>(<span class="ArgName">&lt;арг&gt;</span>)</p>
+<p class="MsoNormal">Удаление концевых пробелов из строки аргумента.</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;арг&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">Перед применением аргумент преобразуется в строку.</p>
+<p class="Functions"><span class="FunctionName">ДатаПрописью</span>(<span class="ArgName">&lt;дата&gt;</span>)</p>
+<p class="FunctionAliases"><span class="FunctionName">ДП</span>(<span class="ArgName">…</span>)</p>
+<p class="MsoNormal">Формирует дату прописью. </p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;дата&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение типа «Дата».</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если тип аргумента <span class="ArgName">&lt;дата&gt;</span> отличен от «Дата»</p>
+<p class="Functions"><span class="FunctionName">СуммаПрописью</span>(<span class="ArgName">&lt;число&gt;</span>, <span class="ArgName">&lt;валюта&gt;</span>, <span class="ArgName">&lt;форматная строка&gt;</span>)</p>
+<p class="FunctionAliases"><span class="FunctionName">СП</span>(<span class="ArgName">…</span>)</p>
+<p class="MsoNormal">Формирует сумму прописью. </p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;число&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение типа «Число».</p>
+<p class="MsoNormal">Если аргумент имеет тип «строка», то производится попытка преобразовать его в число.</p>
+<p class="ArgDescr"><span class="ArgName">&lt;валюта&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">3-значный код валюты (символьный либо числовой). Имя свойства контейнера или вычисляемое значение, которое после приведения к типу «Строка» дает буквенный код валюты.</p>
+<p class="MsoNormal">По умолчанию – <span class="Argdefault">RUR</span></p>
+<p class="ArgDescr"><span class="ArgName">&lt;форматная строка&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">Форматная строка по правилам 1С для функции ЧислоПрописью без внешних кавычек.</p>
+<p class="MsoNormal">По умолчанию – <span class="Argdefault">Л = ru_RU; НП = Истина; НД = Истина; ДП = Истина</span></p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если тип аргумента <span class="ArgName">&lt;число&gt;</span> - не «Число» и не «Строка», которая может быть преобразована в число. </p>
+<p class="MsoNormal">- если не найдена валюта по второму аргументу</p>
+<p class="MsoNormal"> </p>
+<p class="Functions"><span class="FunctionName">Окр</span>(<span class="ArgName">&lt;число&gt;</span>, <span class="ArgName">&lt;разрядность&gt;</span>, <span class="ArgName">&lt;Режим округления&gt;</span>)</p>
+<p class="MsoNormal">Округление.</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;число&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение типа «Число».</p>
+<p class="ArgDescr"><span class="ArgName">&lt;разрядность&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">Определяет число знаков дробной части, до которых производится округление. Если параметр отрицательный, то число округляется до соответствующего разряда в целой части, начиная с младших разрядов.</p>
+<p class="MsoNormal">Параметр обязательный, если указан параметр <span class="ArgName">&lt;Режим округления&gt;</span>.</p>
+<p class="MsoNormal">Значение по умолчанию: <span class="Argdefault">2</span></p>
+<p class="ArgDescr"><span class="ArgName">&lt;Режим округления&gt;</span><span class="ArgName"> </span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">Определяет режим округления. </p>
+<p class="MsoNormal"><span class="ArgValue">[Окр15как10|0|Окр15как20|1]</span></p>
+<p class="MsoNormal">Допускается использование числового параметра: <span class="ArgValue">0</span> - если при округлении 1.5 = 1; <span class="ArgValue">1</span> - если при округлении 1.5 = 2.</p>
+<p class="MsoNormal">По умолчанию: <span class="Argdefault">Окр15как20</span></p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если тип аргумента <span class="ArgName">&lt;число&gt;</span> отличен от «Число»</p>
+<p class="MsoNormal">- если разрядность -  не число </p>
+<p class="MsoNormal">- если режим округления не опознан</p>
+<p class="MsoNormal"> </p>
+<p class="Functions"><span class="FunctionName">Наименование</span>(<span class="ArgName">&lt;арг&gt;</span>, <span class="ArgName">&lt;Представление Физлица&gt;</span>, <span class="ArgName">&lt;представление юрлица&gt;</span>, <span class="ArgName">&lt;падеж&gt;</span>)</p>
+<p class="FunctionAliases"><span class="FunctionName">Н</span>(...)</p>
+<p class="MsoNormal">Вывод ФИО физлица или наименовыания организации в заданном виде: кратко, полно, как в справочнике.</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;арг&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение типа ссылки из справочников ФизическиеЛица, Контрагенты, Организации.</p>
+<p class="ArgDescr"><span class="ArgName">&lt;представление физлица&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal"><span class="ArgValue">Полно|П</span> – указывается <span class="Example">Фамилия Имя Отчество</span></p>
+<p class="MsoNormal"><span class="ArgValue">Кратко|К</span> – указывается <span class="Example">Фамилия И. О.<br></span>По умолчанию – <span class="Argdefault">Кратко</span></p>
+<p class="ArgDescr"><span class="ArgName">&lt;представление юрлица&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal"><span class="ArgValue">Полно|П</span> – полное официальное наименование юрлица.</p>
+<p class="MsoNormal"><span class="ArgValue">Кратко|К</span> - краткое официальное наименование юрлица.</p>
+<p class="MsoNormal"><span class="ArgValue">Справочник|С</span> - наименование юрлица, как оно указано в справочнике «для списков».</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">По умолчанию – <span class="Argdefault">Кратко</span></p>
+<p class="ArgDescr"><span class="ArgName">&lt;падеж&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">Наименование падежа. Учитывается только первая буква наименования падежа.</p>
+<p class="MsoNormal">Поэтому допустимы следующие варианты:</p>
+<p class="MsoNormal">[<span class="ArgValue">И|Р|Д|В|Т|П</span>]</p>
+<p class="MsoNormal">[<span class="ArgValue">Им|Род|Дат|Вин|Тв|Пад</span>]</p>
+<p class="MsoNormal">[<span class="ArgValue">Именительный|Родительный|Дательный|Винительный|Творительный|Падежный</span>]</p>
+<p class="MsoNormal">По умолчанию – <span class="Argdefault">И</span></p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если тип аргумента <span class="ArgName">&lt;арг&gt;</span> отличен от указанных типов или пустая ссылка</p>
+<p class="MsoNormal">- если представление физлица указан неверно</p>
+<p class="MsoNormal">- если представление юрлица указан неверно</p>
+<p class="MsoNormal">- если аргумент <span class="ArgName">&lt;падеж&gt;</span> указан неверно</p>
+<p class="Functions"><span class="FunctionName">ДФ</span>(<span class="ArgName">&lt;дата&gt;</span>, <span class="ArgName">&lt;форматная строка даты&gt;</span>)</p>
+<p class="MsoNormal">Форматирование даты</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;дата&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение типа «Дата».</p>
+<p class="ArgDescr"><span class="ArgName">&lt;форматная строка даты&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">Форматная строка по правилам 1С без ДФ= и без внешних кавычек.</p>
+<p class="MsoNormal">Допускаются мнемоники:</p>
+<p class="MsoNormal"><span class="ArgValue">Кратко</span> – как задано в свойстве Контекст.ДФ_Кратко (dd.MM.yy)</p>
+<p class="MsoNormal"><span class="ArgValue">Полно</span> – как задано в свойстве Контекст.ДФ_Полный (dd.MM.yyyy)</p>
+<p class="MsoNormal"><span class="ArgValue">ПолныйГод</span> – как задано в свойстве Контекст.ДФ_Полный_год ("dd.MM.yyyy'г.'")</p>
+<p class="MsoNormal"><span class="ArgValue">ПолныйМесяцГод</span> – как задано в свойстве Контекст.ДФ_Полный_месяц_год ("dd MMMM yyyy'г.'")</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">По умолчанию – <span class="Argdefault">Полный</span></p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если тип аргумента <span class="ArgName">&lt;дата&gt;</span> отличен от «Дата»</p>
+<p class="Functions"><span class="FunctionName">ЧФ</span>(<span class="ArgName">&lt;число&gt;</span>, <span class="ArgName">&lt;форматная строка&gt;</span>)</p>
+<p class="MsoNormal">Форматирование числа</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;число&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение типа «Число».</p>
+<p class="ArgDescr"><span class="ArgName">&lt;форматная строка&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">Форматная строка по правилам 1С без ДФ= и без внешних кавычек.</p>
+<p class="MsoNormal">Допускаются мнемоники:</p>
+<p class="MsoNormal"><span class="ArgValue">Стд</span> – как задано в свойстве Контекст.ЧФ  (ЧЦ=14; ЧДЦ=2; ЧН=)</p>
+<p class="MsoNormal"><span class="ArgValue">Процент</span> – число берется как строка и справа добавляется знак процента</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">По умолчанию – <span class="Argdefault">Стд</span></p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если тип аргумента <span class="ArgName">&lt;число&gt;</span> отличен от «Число».</p>
+<p class="Functions"><span class="FunctionName">СЗП</span>(<span class="ArgName">&lt;слово&gt;</span>, <span class="ArgName">&lt;физлицо&gt;</span>)</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;слово&gt;</span></p>
+<p class="MsoNormal">Слово, которое нужно изменить по роду без кавычек. Если слово указано с большой буквы, то результат так же будет с большой буквы.</p>
+<p class="ArgDescr"><span class="ArgName">&lt;физлицо&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение типа ссылки из справочника ФизическиеЛица.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если тип аргумента физлицо отличен от ссылки на справочник физлиц или пустая сылка</p>
+<p class="MsoNormal">Формирует написание слова, в зависимости от пола переданного фмзлица.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">Список слов, которые могут изменяться по ролям прописан в функции уб_ПФ.СклонениеСловаПоРоду()</p>
+<p class="Functions"><span class="FunctionName">ОтветственноеЛицо</span>(<span class="ArgName">&lt;ВидЗначения&gt;</span>, <span class="ArgName">&lt;ОтветственноеЛицо&gt;</span>, <span class="ArgName">&lt;Организация&gt;</span>, <span class="ArgName">&lt;Представление должности&gt;</span>)</p>
+<p class="MsoNormal">(Вариант 1)</p>
+<p class="FunctionAliases"><span class="FunctionName">ОтветственноеЛицо</span>(<span class="ArgName">&lt;ВидЗначения&gt;</span>, <span class="ArgName">&lt;ОтветственноеЛицо&gt;</span>, <span class="ArgName">&lt;Контрагент&gt;</span>, <span class="ArgName">&lt;Организация-партнер&gt;</span>, <span class="ArgName">&lt;Представление должности&gt;)</span></p>
+<p class="MsoNormal">(Вариант 2)</p>
+<p class="FunctionAliases"><span class="FunctionName">ОЛ</span>(...)</p>
+<p class="MsoNormal">Возвращает атрибут ответственного лица организации, действующего на дату документа.</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;ВидЗначения&gt;</span></p>
+<p class="MsoNormal"><span class="ArgValue">Физлицо|Ф</span> – функция возвратит ссылку на физлицо указанного ответственного.</p>
+<p class="MsoNormal"><span class="ArgValue">Должность|Д</span> – функция возвратит должность указанного ответственного.</p>
+<p class="MsoNormal"><span class="ArgValue">ОснованиеДействия|О</span> – функция возвратит основание действия указанного ответственного.</p>
+<p class="ArgDescr"><span class="ArgName">&lt;ОтветственноеЛицо&gt;</span></p>
+<p class="MsoNormal">Наименование перечисления ОтветственныеЛицаОрганизаций:</p>
+<p class="MsoNormal"><span class="ArgValue">Руководитель|Рук</span></p>
+<p class="MsoNormal"><span class="ArgValue">ГлавныйБухгалтер|ГБух</span></p>
+<p class="MsoNormal"><span class="ArgValue">ОтветственныйЗаБСО|БСО</span></p>
+<p class="MsoNormal"><span class="ArgValue">РуководительКадровойСлужбы|Кадровик</span></p>
+<p class="MsoNormal"><span class="ArgValue">Кассир</span></p>
+<p class="MsoNormal"><span class="ArgValue">ОтветственныйЗаНалоговыеРегистры</span></p>
+<p class="MsoNormal"><span class="ArgValue">УполномоченныйПредставитель|УП</span></p>
+<p class="MsoNormal"><span class="ArgValue">Исполнитель|Исп</span></p>
+<p class="MsoNormal"><span class="ArgValue">Соучредитель</span></p>
+<p class="MsoNormal"><span class="ArgValue">ФинОтветственный|ФО </span></p>
+<p class="MsoNormal">По умолчанию - <span class="Argdefault">Руководитель</span><span class="ArgValue"> </span></p>
+<p class="ArgDescr"><span class="ArgName">&lt;Контрагент|Организация&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера типа ссылки из справочников Контрагенты или Организации.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">Вариант 1: Указывается ссылка на Организацию. Тогда четвертый аргумент (Организация-партнер) игнорируется. Ищется действующее на дату документа ответственное лицо организации по регистру сведений ОтветственныеЛицаОрганизаций.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">Вариант 2: Указывается ссылка на контрагента. Тогда четвертый аргумент (Организация-партнер) обязателен. Ответственное лицо ищется по договору между указанными контрагентом и организацией.</p>
+<p class="ArgDescr"><span class="ArgName">&lt;Организация-партнер&gt;</span><span class="ArgName"> </span></p>
+<p class="MsoNormal">(для Варианта 2)</p>
+<p class="MsoNormal">Организация, являющаяся партнером Контрагента (для позиционирования на нужном договоре)</p>
+<p class="ArgDescr"><span class="ArgName">&lt;Представление должности&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal"><span class="ArgValue">Полно|П</span> – полное наименование должности</p>
+<p class="MsoNormal"><span class="ArgValue">Кратко|К</span> – сокращенное наименование должности<br>По умолчанию – <span class="Argdefault">Полно</span></p>
+<p class="MsoNormal"><span class="SecondaryRemark">(для Варианта 2 пока не имеет значения. Будет работать после рефакторинга структуры хранения информации об ответственных лицах контрагентов)</span></p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если ВидЗначения указан неверно</p>
+<p class="MsoNormal">- если ОтветственноеЛицо не найдено в перечислении ОтветственныеЛицаОрганизаций</p>
+<p class="MsoNormal">- если третий аргумент – тип ссылка из справочника Контрагенты, а четвертый аргумент не указан или не является ссылкой на справочник Организации</p>
+<p class="MsoNormal">   - если не найден действующий на дату документа договор между указанными контрагентом и организацией</p>
+<p class="MsoNormal">   - если не найдено требуемое ответсвенное лицо по договору, действующе на дату документа</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">- если третий аргумент - тип ссылка из справочника Организации и не найдено требуемое ответсвенное лицо, действующе на дату документа</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">- если не указано значение требуемого атрибута для найденного ответственного</p>
+<p class="Functions"><span class="FunctionName">Договор</span>(<span class="ArgName">&lt;ВидЗначения&gt;</span>, <span class="ArgName">&lt;Контрагент&gt;</span>, <span class="ArgName">&lt;Организация-партнер&gt;</span>, <span class="ArgName">&lt;форматная строка даты&gt;</span>)</p>
+<p class="MsoNormal">Возвращает атрибут договора между Контрагентом и Организацией, действующий на дату документа.</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;ВидЗначения&gt;</span></p>
+<p class="MsoNormal"><span class="ArgValue">ПолноеНаименование|ПН|П</span> – возвращает полное наименование договора (расширение, номер и дату, например: «поручения № 345 от 12.04.2010г.»)</p>
+<p class="MsoNormal"><span class="ArgValue">Расширение|Р</span> – возвращает расширение названия договора.</p>
+<p class="MsoNormal"><span class="ArgValue">Номер|Н</span> – возвращает номер договора.</p>
+<p class="MsoNormal"><span class="ArgValue">Дата|Д</span> – возвращает дату договора (если не указана, возвращает пустую строку)</p>
+<p class="ArgDescr"><span class="ArgName">&lt;Контрагент&gt;</span></p>
+<p class="MsoNormal">Имя свойства <span class="Argdefault">контейнера</span> типа ссылки из справочника Контрагенты</p>
+<p class="ArgDescr"><span class="ArgName">&lt;Организация-партнер&gt;</span></p>
+<p class="MsoNormal">Организация, являющаяся партнером Контрагента (для <span class="ArgValue">позиционирования</span> на нужном договоре)</p>
+<p class="ArgDescr"><span class="ArgName">&lt;форматная строка даты&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">Форматная строка по правилам 1С без ДФ= и без внешних кавычек.</p>
+<p class="MsoNormal">Допускаются мнемоники:</p>
+<p class="MsoNormal"><span class="ArgValue">Кратко</span> – как задано в свойстве Контекст.ДФ_Кратко (dd.MM.yy)</p>
+<p class="MsoNormal"><span class="ArgValue">Полно</span> – как задано в свойстве Контекст.ДФ_Полный (dd.MM.yyyy)</p>
+<p class="MsoNormal"><span class="ArgValue">ПолныйГод</span> – как задано в свойстве Контекст.ДФ_Полный_год ("dd.MM.yyyy'г.'")</p>
+<p class="MsoNormal"><span class="ArgValue">ПолныйМесяцГод</span> – как задано в свойстве Контекст.ДФ_Полный_месяц_год ("dd MMMM yyyy'г.'")</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">По умолчанию – <span class="Argdefault">ПолныйГод</span></p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal">ERR: </p>
+<p class="MsoNormal">- если ВидЗначения указан неверно</p>
+<p class="MsoNormal">- если не найден действующий на дату документа договор между указанными контрагентом и организацией.</p>
+<p class="MsoNormal">- если не указано значение требуемого атрибута</p>
+<p class="Functions"><span class="FunctionName">ТекущаяДата</span>()</p>
+<p class="FunctionAliases"><span class="FunctionName">ТДата</span>()</p>
+<p class="MsoNormal">Возвращает текущую дату-время.</p>
+<p class="MsoNormal">Используется как аргумент функции ДФ() </p>
+<p class="Functions"><span class="FunctionName">Заполнитель</span>(<span class="ArgName">&lt;арг&gt;</span>, <span class="ArgName">&lt;символ&gt;</span>, <span class="ArgName">&lt;количество&gt;</span>)</p>
+<p class="FunctionAliases"><span class="FunctionName">З</span>(...)</p>
+<p class="MsoNormal">Заполняет параметр строкой из символов <span class="ArgName">&lt;символ&gt;</span> повторенных <span class="ArgName">&lt;количество&gt;</span> раз в том случае, если значение аргумента, представленное строкой – пустая строка.</p>
+<p class="Arguments">Аргументы</p>
+<p class="ArgDescr"><span class="ArgName">&lt;арг&gt;</span></p>
+<p class="MsoNormal">Имя свойства контейнера или вычисляемое значение.</p>
+<p class="ArgDescr"><span class="ArgName">&lt;символ&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">Символ, которым будет заполняться результат функции, если строковое представление <span class="ArgName">&lt;арг&gt;</span> - пустая строка.</p>
+<p class="MsoNormal">По умолчанию – символ подчеркивания «<span class="Argdefault">_</span>» </p>
+<p class="ArgDescr"><span class="ArgName">&lt;количество&gt;</span></p>
+<p class="MsoNormal">(необязательный)</p>
+<p class="MsoNormal">Количество повторений <span class="ArgName">&lt;символ&gt;</span>.</p>
+<p class="MsoNormal">По умолчанию <span class="Argdefault">20</span></p>
+<p class="MsoNormal"> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p></body></html>

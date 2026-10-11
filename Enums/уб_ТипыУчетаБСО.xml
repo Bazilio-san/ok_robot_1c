@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Enum uuid="b4f2ef06-814c-4ed4-8753-f700af252ec4">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.уб_ТипыУчетаБСО" category="Ref">
+				<xr:TypeId>59e337bb-1263-4a77-97cc-8076b7913957</xr:TypeId>
+				<xr:ValueId>5c2bf3c0-39f7-4505-9d95-e70f12ded6bf</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.уб_ТипыУчетаБСО" category="Manager">
+				<xr:TypeId>fa2bfd79-63b2-448e-a8a0-2384333d80fa</xr:TypeId>
+				<xr:ValueId>b7c2b0ed-4d0b-43bf-a98c-34a61a9b8869</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.уб_ТипыУчетаБСО" category="List">
+				<xr:TypeId>1b259d25-db20-4f49-98a2-3bcd9a315907</xr:TypeId>
+				<xr:ValueId>299a5312-18ab-4fc2-af8e-46362bfae3ac</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_ТипыУчетаБСО</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Типы учета БСО</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="30e83da3-56f0-4f2c-99ef-a1c8ad603ea0">
+				<Properties>
+					<Name>НомернойЕстьПолис</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номерной учет, есть № полиса</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a2fc53c9-5c4c-4680-8a0a-edf73b645c5e">
+				<Properties>
+					<Name>НомернойПолисСоответствуетНомеруБСО</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номерной учет, полис соответствует номеру БСО</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="4617f193-a0fa-4604-ba67-fbb706c80cfe">
+				<Properties>
+					<Name>НомернойПолисИзСвободных</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номерной учет, № полиса берется из списка свободных</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="48895487-c696-4c38-9013-53b33e14bfb2">
+				<Properties>
+					<Name>НомернойПолисВручную</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номерной учет, № полиса заполняется вручную</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="58f50fbb-42ee-45ec-8e0f-cd580136664c">
+				<Properties>
+					<Name>НомернойНетПолиса</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номерной учет, нет № полиса</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="dd3cff0d-8619-4d3d-981e-3665278d430e">
+				<Properties>
+					<Name>КоличественныйПолисИзСвободных</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количественный учет, № полиса берется из списка свободных</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="9d5f4027-eccc-4a18-ab8a-b23263ab2f38">
+				<Properties>
+					<Name>КоличественныйПолисВручную</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количественный учет, № полиса заполняется вручную</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="ed765ab4-7de4-41c8-a7dc-83a8a496b814">
+				<Properties>
+					<Name>КоличественныйНетПолиса</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количественный учет, нет № полиса</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="f8400af3-a92e-462d-9734-c6e0c93c455a">
+				<Properties>
+					<Name>УчетНеВедетсяПолисИзСвободных</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет после оформления, № полиса берется из списка свободных</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="8ab33fc0-9fcf-496c-9f79-cb844eb361b0">
+				<Properties>
+					<Name>УчетНеВедетсяПолисВручную</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет после оформления, № полиса заполняется вручную</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a26bd717-2f9b-4c79-a438-da354c68e950">
+				<Properties>
+					<Name>УчетНеВедетсяНетПолиса</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет после оформления, нет № полиса</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

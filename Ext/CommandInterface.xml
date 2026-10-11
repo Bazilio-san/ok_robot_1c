@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CommandInterface xmlns="http://v8.1c.ru/8.3/xcf/extrnprops" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<SubsystemsVisibility>
+		<Subsystem name="Subsystem.Документы">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+			</Visibility>
+		</Subsystem>
+		<Subsystem name="Subsystem.Справочники">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+			</Visibility>
+		</Subsystem>
+		<Subsystem name="Subsystem.ИнтерфейсМенеджера">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+			</Visibility>
+		</Subsystem>
+		<Subsystem name="Subsystem.новый_УчетБСО">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+			</Visibility>
+		</Subsystem>
+	</SubsystemsVisibility>
+	<SubsystemsOrder>
+		<Subsystem>Subsystem.Документы</Subsystem>
+		<Subsystem>Subsystem.Справочники</Subsystem>
+		<Subsystem>Subsystem.ИнтерфейсМенеджера</Subsystem>
+		<Subsystem>Subsystem.новый_УчетБСО</Subsystem>
+	</SubsystemsOrder>
+</CommandInterface>

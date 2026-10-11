@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<DocumentJournal uuid="65abefa9-056b-4793-98b0-387acb76276c">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentJournalSelection.уб_Взаиморасчеты" category="Selection">
+				<xr:TypeId>d0aa8279-d0ff-4f5b-b387-91d7cd09e7eb</xr:TypeId>
+				<xr:ValueId>07934dd4-f4e6-438d-b411-0a044239b4e6</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentJournalList.уб_Взаиморасчеты" category="List">
+				<xr:TypeId>0bb6729c-2b54-4e74-b652-982b4b6ba022</xr:TypeId>
+				<xr:ValueId>9794dd52-8c80-4866-9ae8-245b4447b097</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentJournalManager.уб_Взаиморасчеты" category="Manager">
+				<xr:TypeId>23c6334b-808c-431c-b5cb-a95b3d07c84c</xr:TypeId>
+				<xr:ValueId>66fb284e-834c-452d-a648-874bfdb44625</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>уб_Взаиморасчеты</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Взаиморасчеты</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<DefaultForm>DocumentJournal.уб_Взаиморасчеты.Form.ФормаСписка</DefaultForm>
+			<AuxiliaryForm/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<RegisteredDocuments>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОтчетПоставщику</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком</xr:Item>
+			</RegisteredDocuments>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects>
+			<Column uuid="db6399b5-7422-4131-9cee-48caa76663fe">
+				<Properties>
+					<Name>Поставщик</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поставщик</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОтчетПоставщику.Attribute.Поставщик</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.Attribute.Поставщик</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком.Attribute.Контрагент</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="29055837-da65-4977-864c-c69b48b1e99f">
+				<Properties>
+					<Name>ОрганизацияАгент</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация агент</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОтчетПоставщику.Attribute.ОрганизацияАгент</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.Attribute.ОрганизацияАгент</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком.Attribute.ОрганизацияАгент</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="bb9d3cd8-1c90-48cf-a28e-e23e39c8dbef">
+				<Properties>
+					<Name>ВидОперации</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид операции</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОтчетПоставщику.Attribute.ВидОперации</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.Attribute.ВидОперации</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком.Attribute.НаправлениеРасчетов</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="29126ba7-bf20-4daa-a7cc-669afb3d743a">
+				<Properties>
+					<Name>ВнешнийНомер</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внешний номер</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОтчетПоставщику.Attribute.НомерОтчетаПоставщику</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.Attribute.ВнешнийНомер</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком.Attribute.НомерВходящегоДокумента</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="dbbd47bb-7af5-4f63-9160-d2840f1bddf4">
+				<Properties>
+					<Name>Сумма</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.Attribute.СуммаДокумента</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОтчетПоставщику.Attribute.ИтогОС_КПеречислениюПоставщику</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком.Attribute.НераспределенныйОстаток</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="f171442d-0090-4016-93f6-3331c3666594">
+				<Properties>
+					<Name>Ответственный</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответственный</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОтчетПоставщику.Attribute.ОтветственныйБСО</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.Attribute.ОтветственныйБСО</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком.Attribute.Ответственный</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="ee1c826d-796d-4726-a346-8a0ac4821379">
+				<Properties>
+					<Name>СуммаАльтернативная</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.Attribute.СуммаДокумента</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОтчетПоставщику.Attribute.ИтогОС_КВ</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком.Attribute.НераспределенныйОстаток</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="e2f93ada-e914-49dd-a945-905e57deee2c">
+				<Properties>
+					<Name>Комментарий</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ОтчетПоставщику.Attribute.Комментарий</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ДополнительныеРасчетыСПоставщикомДВОУШтрафы.Attribute.Комментарий</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.уб_ВзаиморасчетСПоставщиком.Attribute.Комментарий</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Form>ФормаСписка</Form>
+			<Form>ФормаПодбора</Form>
+		</ChildObjects>
+	</DocumentJournal>
+</MetaDataObject>

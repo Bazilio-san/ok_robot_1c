@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="ymaps">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Attribution" type="xsd:string" />
+        <xsd:element name="GeoObjectCollection">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="metaDataProperty">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="GeocoderResponseMetaData">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="request" type="xsd:string" />
+                          <xsd:element name="found" type="xsd:int" />
+                          <xsd:element name="results" type="xsd:int" />
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="featureMember">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="GeoObject">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="metaDataProperty">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="GeocoderMetaData">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="kind" type="xsd:string" />
+                                      <xsd:element name="text" type="xsd:string" />
+                                      <xsd:element name="precision" type="xsd:string" />
+                                      <xsd:element name="AddressDetails">
+                                        <xsd:complexType>
+                                          <xsd:sequence>
+                                            <xsd:element name="Country">
+                                              <xsd:complexType>
+                                                <xsd:sequence>
+                                                  <xsd:element name="AddressLine" type="xsd:string" />
+                                                  <xsd:element name="CountryNameCode" type="xsd:string" />
+                                                  <xsd:element name="CountryName" type="xsd:string" />
+                                                  <xsd:element name="AdministrativeArea">
+                                                    <xsd:complexType>
+                                                      <xsd:sequence>
+                                                        <xsd:element name="AdministrativeAreaName" type="xsd:string" />
+                                                        <xsd:element name="SubAdministrativeArea">
+                                                          <xsd:complexType>
+                                                            <xsd:sequence>
+                                                              <xsd:element name="SubAdministrativeAreaName" type="xsd:string" />
+                                                              <xsd:element name="Locality">
+                                                                <xsd:complexType>
+                                                                  <xsd:sequence>
+                                                                    <xsd:element name="LocalityName" type="xsd:string" />
+                                                                    <xsd:element name="Thoroughfare">
+                                                                      <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                          <xsd:element name="ThoroughfareName" type="xsd:string" />
+                                                                          <xsd:element name="Premise">
+                                                                            <xsd:complexType>
+                                                                              <xsd:sequence>
+                                                                                <xsd:element name="PremiseNumber" type="xsd:int" />
+                                                                              </xsd:sequence>
+                                                                            </xsd:complexType>
+                                                                          </xsd:element>
+                                                                        </xsd:sequence>
+                                                                      </xsd:complexType>
+                                                                    </xsd:element>
+                                                                  </xsd:sequence>
+                                                                </xsd:complexType>
+                                                              </xsd:element>
+                                                            </xsd:sequence>
+                                                          </xsd:complexType>
+                                                        </xsd:element>
+                                                      </xsd:sequence>
+                                                    </xsd:complexType>
+                                                  </xsd:element>
+                                                </xsd:sequence>
+                                              </xsd:complexType>
+                                            </xsd:element>
+                                          </xsd:sequence>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="description" type="xsd:string" />
+                          <xsd:element name="name" type="xsd:string" />
+                          <xsd:element name="boundedBy">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="Envelope">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="lowerCorner" type="xsd:string" />
+                                      <xsd:element name="upperCorner" type="xsd:string" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Point">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="pos" type="xsd:string" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="xsi:schemaLocation" type="xsd:string" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

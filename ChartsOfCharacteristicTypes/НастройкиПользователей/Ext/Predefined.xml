@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PlanOfCharacteristicKindPredefinedItems" version="2.9">
+	<Item id="9275d58a-86c5-4cd3-80f9-f35feea37649">
+		<Name>Web</Name>
+		<Code>01068 </Code>
+		<Description>Web</Description>
+		<Type/>
+		<IsFolder>true</IsFolder>
+		<ChildItems>
+			<Item id="55f1b188-f22d-4c12-9d32-8c8ebc1fb7d2">
+				<Name>MarkerUsrID</Name>
+				<Code>01067 </Code>
+				<Description>ID для шлюза</Description>
+				<Type>
+					<v8:Type>xs:string</v8:Type>
+					<v8:StringQualifiers>
+						<v8:Length>36</v8:Length>
+						<v8:AllowedLength>Fixed</v8:AllowedLength>
+					</v8:StringQualifiers>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+		</ChildItems>
+	</Item>
+	<Item id="b0ec6127-931f-40e7-95cb-13b409e4c8c8">
+		<Name>БСО</Name>
+		<Code>01059 </Code>
+		<Description>БСО</Description>
+		<Type/>
+		<IsFolder>true</IsFolder>
+		<ChildItems>
+			<Item id="d49df09f-82b6-46cb-98b9-c012b2fcc7c2">
+				<Name>Андеррайтер</Name>
+				<Code>11097 </Code>
+				<Description>Андеррайтер</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="6febb9ee-f98f-44d7-a99f-a5e83f1b342c">
+				<Name>КоличествоТОПДляСписков</Name>
+				<Code>01063 </Code>
+				<Description>Количество ТОП для списков</Description>
+				<Type>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>2</v8:Digits>
+						<v8:FractionDigits>0</v8:FractionDigits>
+						<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="8a00cfe9-f640-4f74-8068-4c4d826620f3">
+				<Name>НеПроверятьДатуНачалаДействияПолисаПриПроведении</Name>
+				<Code>11096 </Code>
+				<Description>Не проверять дату начала действия полиса при проведении</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="d6bfe1de-0517-408a-8419-ff2c97050dd9">
+				<Name>НеПроверятьНаличиеНомераПолиса</Name>
+				<Code>11093 </Code>
+				<Description>Не проверять наличие номера полиса</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="0b4d295b-e669-4a9d-b2b5-b3e3d129c168">
+				<Name>ОсновнаяВалютаВзаиморасчетов</Name>
+				<Code>00010 </Code>
+				<Description>Основная валюта взаиморасчетов</Description>
+				<Type>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Валюты</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="ff877f6a-f391-4727-acd3-49a289dd2b81">
+				<Name>ОсновнаяОрганизация</Name>
+				<Code>00022 </Code>
+				<Description>Основная организация</Description>
+				<Type>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Организации</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="1809fd1c-bbaa-4157-a5d0-f202431c495d">
+				<Name>ОсновнаяОрганизацияЗП</Name>
+				<Code>11121 </Code>
+				<Description>Основная организация учета ЗП</Description>
+				<Type>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Организации</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="b04147a9-5d78-42d7-969d-77d53323d6de">
+				<Name>ОсновнаяСВС</Name>
+				<Code>11118 </Code>
+				<Description>Основная СВС</Description>
+				<Type>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="761696d3-ec87-46f4-aa34-ee6363fb1a55">
+				<Name>ОсновноеПодразделениеОрганизации</Name>
+				<Code>00053 </Code>
+				<Description>Основное подразделение</Description>
+				<Type>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="e93229d3-b7e1-4068-aeff-669dcd47097d">
+				<Name>ОсновнойОтветственный</Name>
+				<Code>00005 </Code>
+				<Description>Основной ответственный</Description>
+				<Type>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Пользователи</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="8b2a92a6-b09b-4300-b6f7-57ed70115342">
+				<Name>ПраваНаИзменениеДатыМониторинга</Name>
+				<Code>01057 </Code>
+				<Description>Права на изменение даты мониторинга</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="8ef13719-1409-4f17-96a8-8aaeb2ff0f08">
+				<Name>ПравкаПоступленияБСО</Name>
+				<Code>11119 </Code>
+				<Description>Правка поступления БСО</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="14d16bb0-7a5b-48cf-93f1-0e8ec547f6a6">
+				<Name>УправлениеКадрами</Name>
+				<Code>11099 </Code>
+				<Description>Управление кадрами</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="9a868c4d-7cf4-449c-bd30-80aecbd4cb26">
+				<Name>УчетБСОПоВсемПодразделениям</Name>
+				<Code>01056 </Code>
+				<Description>Учет БСОПо всем подразделениям</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="b5f4976c-e62d-4d7f-af5d-430f15415260">
+				<Name>УчетПоВсемОрганизациям</Name>
+				<Code>00043 </Code>
+				<Description>Учет по всем организациям</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+		</ChildItems>
+	</Item>
+	<Item id="1f9ed718-36d5-48b3-85c4-89593a9a17d6">
+		<Name>ЗначенияПолей</Name>
+		<Code>01073 </Code>
+		<Description>Значения полей</Description>
+		<Type/>
+		<IsFolder>true</IsFolder>
+	</Item>
+	<Item id="60576abf-a640-47a9-a28d-f037a5123cb8">
+		<Name>Общее</Name>
+		<Code>01060 </Code>
+		<Description>Общее</Description>
+		<Type/>
+		<IsFolder>true</IsFolder>
+		<ChildItems>
+			<Item id="0e7f88d4-22db-4c5d-bb42-7b261ccdda85">
+				<Name>ВерсияКонфигурации</Name>
+				<Code>11078 </Code>
+				<Description>Версия конфигурации</Description>
+				<Type>
+					<v8:Type>xs:string</v8:Type>
+					<v8:StringQualifiers>
+						<v8:Length>14</v8:Length>
+						<v8:AllowedLength>Variable</v8:AllowedLength>
+					</v8:StringQualifiers>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="aea7dfba-9ea1-4c09-a3df-286e7be696d4">
+				<Name>ПоискНомераБСОЗакрыватьПриЗакрытииВладельца</Name>
+				<Code>11089 </Code>
+				<Description>Закрывать при закрытии владельца поиск номера БСО</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="c888168f-0284-476f-aca4-d45d9ccc066d">
+				<Name>ЗапрашиватьПодтверждениеПриЗакрытии</Name>
+				<Code>00046 </Code>
+				<Description>Запрашивать подтверждение при закрытии программы</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="d514155e-7d11-4055-8dd6-245ca8ffc17d">
+				<Name>НеИскатьСтатусПослеДействия</Name>
+				<Code>11092 </Code>
+				<Description>Не искать статус после выполненного действия</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="4996d761-9d76-4a38-8790-b4a4f04a8def">
+				<Name>НеИспользоватьПомощникаЗаполненияОбъектов</Name>
+				<Code>11090 </Code>
+				<Description>Не использовать помощника заполнения объектов</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="9dce035e-c2fd-47f9-befe-ad0d5eaa5713">
+				<Name>ОсновнойКаталогФайлов</Name>
+				<Code>00018 </Code>
+				<Description>Основной каталог файлов пользователя</Description>
+				<Type>
+					<v8:Type>xs:string</v8:Type>
+					<v8:StringQualifiers>
+						<v8:Length>300</v8:Length>
+						<v8:AllowedLength>Variable</v8:AllowedLength>
+					</v8:StringQualifiers>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="5128d6b9-4ded-4622-a57d-8fbcc7855359">
+				<Name>ОткрыватьПанельФункций</Name>
+				<Code>11085 </Code>
+				<Description>Открывать панель функций при запуске</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="dd5615f0-b517-452a-bec7-be35ca07ae47">
+				<Name>ОткрыватьФормуВыбораСКВВПеремещенииБСО</Name>
+				<Code>11083 </Code>
+				<Description>Открывать форму выбора СК в перемещении БСО</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="0e934dd4-8d40-4e4e-8327-832a572dd5ee">
+				<Name>ПечатьДокументовБезПредварительногоПросмотра</Name>
+				<Code>00032 </Code>
+				<Description>Печать документов без предварительного просмотра</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="7d86c014-4f9f-4443-955a-d1b7d3f2e29b">
+				<Name>ПоказыватьОбработки</Name>
+				<Code>11117 </Code>
+				<Description>Показывать меню обработки</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="c80fbf11-90bb-4da1-a718-6bfce4c72266">
+				<Name>ПоказыватьОперации</Name>
+				<Code>11124 </Code>
+				<Description>Показывать меню операции</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="1fa53ebd-beda-4419-89df-a6d6463ddfdd">
+				<Name>ПоказыватьСервис</Name>
+				<Code>11125 </Code>
+				<Description>Показывать меню сервис</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="8f2d1e1e-96a8-41c7-b6cf-6b84868431e0">
+				<Name>ПроверятьЗаполнениеНастроекКонфигурации</Name>
+				<Code>11084 </Code>
+				<Description>Проверять заполнение настроек конфигурации</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+		</ChildItems>
+	</Item>
+	<Item id="4761ecce-063c-4cca-af1b-8a93eb88db42">
+		<Name>ОбщиеПрава</Name>
+		<Code>01061 </Code>
+		<Description>Общие права</Description>
+		<Type/>
+		<IsFolder>true</IsFolder>
+		<ChildItems>
+			<Item id="de7e5f2b-8988-4d89-8d6a-b1dd3b3c0dc1">
+				<Name>Заявка</Name>
+				<Code>11109 </Code>
+				<Description>Заявка</Description>
+				<Type/>
+				<IsFolder>true</IsFolder>
+				<ChildItems>
+					<Item id="7525c49b-2f9b-4f3e-87d4-72dc6f7fe52f">
+						<Name>ЗапретПечатиЗаявокНаВС</Name>
+						<Code>11088 </Code>
+						<Description>Запрет печати заявок на выездного спецалиста</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="62495de7-21f2-499e-aac5-001e3404de10">
+						<Name>ЗапретПравкиДатыЗаявки</Name>
+						<Code>11131 </Code>
+						<Description>Запрет правки даты заявки</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="4dbc7abb-cffc-42b3-9d69-95fe0c0727fb">
+						<Name>ЗапретитьПравкуДатыОформления</Name>
+						<Code>11135 </Code>
+						<Description>Запретить правку даты оформления</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="a5825346-0601-4a45-9ebf-d732741058d1">
+						<Name>ЗапретитьПравкуКВОплаты</Name>
+						<Code>11132 </Code>
+						<Description>Запретить правку КВ оплаты</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="87de2f75-59b7-4e7a-b768-169ca13fc0dd">
+						<Name>КонтрольЗаявок</Name>
+						<Code>11123 </Code>
+						<Description>Контроль заявок</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="65c01537-7bc7-4ee0-8989-1714b3f7aee8">
+						<Name>КураторВыездных</Name>
+						<Code>11141 </Code>
+						<Description>Куратор выездных</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="810d03ea-ef00-433b-8209-833815423c97">
+						<Name>НеПоказыватьГрафик</Name>
+						<Code>11133 </Code>
+						<Description>Не показывать график</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="82282ebd-9ebf-45fd-a68c-48f25aa4e8de">
+						<Name>ОтделПечати</Name>
+						<Code>11142 </Code>
+						<Description>Отдел печати</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="23083c7e-e98a-4f4d-9486-cf0187f9e842">
+						<Name>ПодтверждениеОтправкиЧеков</Name>
+						<Code>11128 </Code>
+						<Description>Подтверждение отправки чеков</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="bba8ac2f-cc09-4c16-8faf-df024d2abfce">
+						<Name>ПравоИзмененятьЗаявкуПослеПриемки</Name>
+						<Code>11111 </Code>
+						<Description>Право измененять заявку после приемки</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="aeb6d98c-cdb3-4eef-a620-bf26e268183b">
+						<Name>ПравоРедактироватьЗаявкиПослеУтверждения</Name>
+						<Code>11100 </Code>
+						<Description>Право редактировать заявки после утверждения</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="38381a98-1c42-4287-b46c-c75af995b74d">
+						<Name>ПравоСтавитьЗаявкуВОтчет</Name>
+						<Code>11139 </Code>
+						<Description>Право ставить заявку в отчет</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="5469c04f-7a5e-4058-a4b9-6885134edf44">
+						<Name>ПравоУстанавливатьОтказВСтрокеЗаявки</Name>
+						<Code>11138 </Code>
+						<Description>Право устанавливать отказ в строке заявки</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="4fa85e92-2ae5-4766-aa22-ce355eb5f97f">
+						<Name>ПравоУстанавливатьСтраховкаНеСостоялась</Name>
+						<Code>11127 </Code>
+						<Description>Право устанавливать страховка не состоялась</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="e5f3ab28-08e3-4895-89f9-391cc3f5b6fc">
+						<Name>ПравоУтвержденияЗаявки</Name>
+						<Code>11110 </Code>
+						<Description>Право утверждения заявки</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="7deeaa56-debd-4fab-9bd3-930a8c7876fc">
+						<Name>ПринятыДеньгиВЗаявке</Name>
+						<Code>11137 </Code>
+						<Description>Приняты деньги в заявке</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="f5c2d365-2f96-4433-9a0c-1136adf00fce">
+						<Name>ПросмотрВсехПолисовИЗаявок</Name>
+						<Code>11098 </Code>
+						<Description>Просмотр всех полисов и заявок</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="53087b54-5a4d-4fe9-92cc-e21308168f00">
+						<Name>РежимПросмотраГрафикаЗаявок</Name>
+						<Code>11101 </Code>
+						<Description>Режим просмотра графика заявок</Description>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>1</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="1f3d9940-b7af-4076-900b-0e95cde6b933">
+						<Name>УправлениеМотивациейОтделаПродаж</Name>
+						<Code>11143 </Code>
+						<Description>Управление мотивацией отдела продаж</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="cd7aebbe-a8a9-4813-a936-51f6c34212f7">
+						<Name>УправлениеПечатью</Name>
+						<Code>11144 </Code>
+						<Description>Управление печатью</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="d5ab0022-c943-4d7c-80ff-ab15d24d3c75">
+						<Name>УправлениеСтатусамиЗаявок</Name>
+						<Code>11129 </Code>
+						<Description>Управление статусами заявок</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+				</ChildItems>
+			</Item>
+			<Item id="671e58cd-c65c-4601-8459-8175cbacceaf">
+				<Name>ЗП</Name>
+				<Code>11112 </Code>
+				<Description>ЗП</Description>
+				<Type/>
+				<IsFolder>true</IsFolder>
+				<ChildItems>
+					<Item id="dae5e47c-133d-4625-ab2c-051687f0e21e">
+						<Name>ВидетьВсеЛички</Name>
+						<Code>11120 </Code>
+						<Description>Видеть все лички</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="d0c0c235-ec88-461d-bc6c-6d48695f438c">
+						<Name>ВыплатаЗПНеоперативноеПроведение</Name>
+						<Code>01071 </Code>
+						<Description>Выплата ЗП неоперативное проведение</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="aa1742dc-8e9c-4835-b2ce-d0e542dc2cb5">
+						<Name>ВыставлятьШтрафы</Name>
+						<Code>11087 </Code>
+						<Description>Выставлять штрафы</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="56eefc8c-f735-47f6-9666-1d5e5defe0fa">
+						<Name>НеПоказыватьВзаиморасчетыСКурьерами</Name>
+						<Code>11130 </Code>
+						<Description>Не показывать взаиморасчеты с курьерами</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="ef18edc3-237e-4480-b77e-a44e985c64ab">
+						<Name>ПравоПравитьАВВОплате</Name>
+						<Code>11122 </Code>
+						<Description>Право править АВВОплате</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="0ab3a927-c13a-44ae-b570-d1bf13444e3e">
+						<Name>УправлениеПерсоналом</Name>
+						<Code>11126 </Code>
+						<Description>Управление персоналом</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+				</ChildItems>
+			</Item>
+			<Item id="6130c72d-9ba5-4018-8b82-6898f76fab1c">
+				<Name>ОтчетПоставщику</Name>
+				<Code>11113 </Code>
+				<Description>Отчет поставщику</Description>
+				<Type/>
+				<IsFolder>true</IsFolder>
+				<ChildItems>
+					<Item id="1961ea16-f1fc-49e3-9982-619c59d3dde1">
+						<Name>АнализРасчетовСПоставщиками</Name>
+						<Code>11140 </Code>
+						<Description>Анализ расчетов с поставщиками</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="99dac9d0-86b2-40c7-9140-a7cae26578ee">
+						<Name>ПередаватьОтчетыПоставщикуНаОплатуВБухгалтерию</Name>
+						<Code>11094 </Code>
+						<Description>Передавать отчеты поставщику на оплату в бухгалтерию</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="997eea66-2e4b-4817-b18e-6635ca96f1a5">
+						<Name>ПравоПравкиСогласованных</Name>
+						<Code>11105 </Code>
+						<Description>Право правки согласованных</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="eb9766bb-1b86-4be2-8fe3-165e4ff6473a">
+						<Name>ПравоРедактированияЗаблокированных</Name>
+						<Code>11091 </Code>
+						<Description>Право редактирования заблокированных</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="a0d00b43-09da-42a1-a7a5-2fc3bdea5e2b">
+						<Name>ПравоРедактированияРеквизитовПодписанногоЭкземпляраОтчетаПоставщика</Name>
+						<Code>11095 </Code>
+						<Description>Право редактирования реквизитов подписанного экземпляра отчета поставщика</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+					<Item id="f0e52684-735f-42cb-96fb-fe766950f886">
+						<Name>ФормированиеСубагентскихОтчетов</Name>
+						<Code>11114 </Code>
+						<Description>Формирование субагентских отчетов</Description>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<IsFolder>false</IsFolder>
+					</Item>
+				</ChildItems>
+			</Item>
+			<Item id="8ca1506c-8a12-4429-a106-120e819b9b95">
+				<Name>ВыгружатьПродление</Name>
+				<Code>11134 </Code>
+				<Description>Выгружать продление</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="aaea8fef-9b07-4851-85c1-fd6a2eef5323">
+				<Name>ПравоНаЗачетДополнительногоКВ</Name>
+				<Code>11106 </Code>
+				<Description>Зачет дополнительного КВ</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="77375e4a-d314-4d07-a2fa-83d7621b8c33">
+				<Name>ИзменениеАгентаВПолисахИОплатах</Name>
+				<Code>11104 </Code>
+				<Description>Изменение агента в полисах и оплатах</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="1659a01f-9609-4db1-b1c6-3e62f724195f">
+				<Name>НастройкаПолномочийИРолей</Name>
+				<Code>01072 </Code>
+				<Description>Настройка полномочий и ролей</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="676700a0-125f-4269-b7eb-af1100464a04">
+				<Name>НеОткрыватьСтатусыПриЗапуске</Name>
+				<Code>01070 </Code>
+				<Description>Не открывать статусы при запуске</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="2c66cf32-06b2-497c-b196-fc270aaebfd3">
+				<Name>ПравкаПлановПоСКВ</Name>
+				<Code>11103 </Code>
+				<Description>Правка планов по СКВ</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="1eb00d42-c1b6-4498-9326-90311ab8f6f1">
+				<Name>ПравоДобавленияОценокОпросныхЛистов</Name>
+				<Code>11115 </Code>
+				<Description>Право добавления оценок опросных листов</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="976333b0-ca9a-4d9d-ba07-1ed2521a4061">
+				<Name>ПравоНаB2B</Name>
+				<Code>11082 </Code>
+				<Description>Право на B2B</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="521e287a-1c18-42b6-a7f6-30f924f6e002">
+				<Name>ПравоНаПередачуПролонгации</Name>
+				<Code>11102 </Code>
+				<Description>Право на передачу пролонгации</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="911cefba-2f23-402d-82c9-e8de1d1fb83d">
+				<Name>ПравоПравитьДанныеСотрудников</Name>
+				<Code>11136 </Code>
+				<Description>Право править данные сотрудников</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="62ad7fc9-6d79-4a2d-a48e-04813836669a">
+				<Name>ПравоПросмотраСкрытыхКонтактов</Name>
+				<Code>11108 </Code>
+				<Description>Право просмотра скрытых контактов</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="4fcac714-6df9-4c84-bdbf-f3429e537f9d">
+				<Name>ПравоРедактированияОценокОпросныхЛистов</Name>
+				<Code>11116 </Code>
+				<Description>Право редактирования оценок опросных листов</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="5ab1b9f2-56f3-4b0e-ab1a-b1769dbc9d6e">
+				<Name>ПросмотрШкурных</Name>
+				<Code>11086 </Code>
+				<Description>Просмотр шкурных</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="a2578141-f3df-42c7-92a0-b0cb8b0a855a">
+				<Name>РазрешитьИзменениеВидаБСОДляИмеющихДвижения</Name>
+				<Code>01062 </Code>
+				<Description>Разрешить изменение вида БСО для имеющих движения</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="9d8db798-d335-490c-aabc-77aa4471785d">
+				<Name>УровеньОтладки</Name>
+				<Code>11107 </Code>
+				<Description>Уровень отладки</Description>
+				<Type>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>1</v8:Digits>
+						<v8:FractionDigits>0</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+		</ChildItems>
+	</Item>
+	<Item id="68e62327-f813-4ebb-a23a-2366c6a46c60">
+		<Name>ТорговоеОборудование</Name>
+		<Code>01069 </Code>
+		<Description>Торговое оборудование</Description>
+		<Type/>
+		<IsFolder>true</IsFolder>
+		<ChildItems>
+			<Item id="99b70f6c-b8a4-4046-b4ea-f7d6731c0cf4">
+				<Name>АктивизироватьСканерШтрихкодаПриЗапуске</Name>
+				<Code>01064 </Code>
+				<Description>Активизировать сканер штрихкода при запуске</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="816befd1-c728-4062-8583-1576b8df981b">
+				<Name>АктивизироватьСканерШтрихкодаПриОткрытииФорм</Name>
+				<Code>01065 </Code>
+				<Description>Активизировать сканер штрихкода при открытии форм</Description>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="56bc5590-088f-443a-a817-93338fa4e835">
+				<Name>ПарольАдминистратораФискальногоРегистратора</Name>
+				<Code>00055 </Code>
+				<Description>Пароль администратора фискального регистратора</Description>
+				<Type>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>2</v8:Digits>
+						<v8:FractionDigits>0</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+			<Item id="e95eb0ff-6b38-4bc0-8ca4-47b8943f5775">
+				<Name>ПарольКассираФискальногоРегистратора</Name>
+				<Code>00054 </Code>
+				<Description>Пароль кассира фискального регистратора</Description>
+				<Type>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>2</v8:Digits>
+						<v8:FractionDigits>0</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</Type>
+				<IsFolder>false</IsFolder>
+			</Item>
+		</ChildItems>
+	</Item>
+</PredefinedData>

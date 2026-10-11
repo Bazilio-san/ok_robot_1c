@@ -1,0 +1,134 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://dkbm.rsa.soglasie.ru/">
+	<property xmlns:d2p1="http://dkbm.rsa.soglasie.ru/" name="getKbm" type="d2p1:getKbm"/>
+	<property xmlns:d2p1="http://dkbm.rsa.soglasie.ru/" name="getKbmResponse" type="d2p1:getKbmResponse"/>
+	<objectType name="calcJurPersType">
+		<property name="OrgNameINNHash" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="OrgID" type="d3p1:orgIDType" lowerBound="0"/>
+	</objectType>
+	<objectType name="calcKBMReqType">
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="CarIdent" type="d3p1:carIdentType" lowerBound="0"/>
+		<property name="LicensePlate" type="xs:string" lowerBound="0"/>
+		<property name="DriversRestriction" type="xs:boolean"/>
+		<property name="DateKBM" type="xs:dateTime"/>
+		<property name="PhysicalPersons" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://dkbm.rsa.soglasie.ru/" name="PhysicalPerson" type="d5p1:calcPhPersType" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="JuridicalPerson" type="d3p1:calcJurPersType" lowerBound="0"/>
+	</objectType>
+	<objectType name="calcKBMResps">
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="ErrorInfo" type="d3p1:errorInfoType"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="CalcKBMResponse" type="d3p1:calcKBMType" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="calcKBMType">
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="ErrorInfo" type="d3p1:errorInfoType"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="DriverDocument" type="d3p1:driverDocumentType" lowerBound="0"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="OrgID" type="d3p1:orgIDType" lowerBound="0"/>
+		<property name="Hash" type="xs:string" lowerBound="0"/>
+		<property name="KBMFirstLevel" type="xs:string"/>
+		<property name="KBMNextLevel" type="xs:string"/>
+		<property name="KBMValue" type="xs:decimal"/>
+		<property name="Losses" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://dkbm.rsa.soglasie.ru/" name="Loss" type="d5p1:lossCRTType" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property name="LossAmount" type="xs:int"/>
+	</objectType>
+	<objectType name="calcPhPersType">
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="PersonDocument" type="d3p1:personDocumentGroupType" lowerBound="0"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="DriverDocument" type="d3p1:driverDocumentType" lowerBound="0"/>
+		<property name="PersonNameBirthHash" type="xs:string"/>
+	</objectType>
+	<objectType name="calcRequest">
+		<property name="ns" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="CalcRequestValue" type="d3p1:calcRequestType"/>
+		<property name="report" type="xs:boolean" lowerBound="0"/>
+	</objectType>
+	<objectType name="calcRequestType">
+		<property name="InsurerID" type="xs:string"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="CalcKBMRequest" type="d3p1:calcKBMReqType" lowerBound="0"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="TicketCarRequest" type="d3p1:ticketCarReqType" lowerBound="0"/>
+	</objectType>
+	<objectType name="calcResponse">
+		<property name="ns" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="CalcResponseValue" type="d3p1:calcResponseType" lowerBound="0"/>
+		<property name="ErrorList" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://dkbm.rsa.soglasie.ru/" name="ErrorInfo" type="d5p1:errorInfoType" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property name="report" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="calcResponseType">
+		<property name="IdRequestCalc" type="xs:string"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="PolicyCalc" type="d3p1:policyCalcType" lowerBound="0"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="CalcKBMResponses" type="d3p1:calcKBMResps" lowerBound="0"/>
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="TicketCarResponse" type="d3p1:ticketCarResps" lowerBound="0"/>
+	</objectType>
+	<objectType name="carIdentType">
+		<property name="LicensePlate" type="xs:string" lowerBound="0"/>
+		<property name="VIN" type="xs:string" lowerBound="0"/>
+		<property name="BodyNumber" type="xs:string" lowerBound="0"/>
+		<property name="ChassisNumber" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="driverDocumentType">
+		<property name="Serial" type="xs:string" lowerBound="0"/>
+		<property name="Number" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="errorInfoType">
+		<property name="Code" type="xs:int" lowerBound="0"/>
+		<property name="Message" type="xs:string"/>
+	</objectType>
+	<objectType name="getKbm">
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="request" type="d3p1:calcRequest" lowerBound="0"/>
+	</objectType>
+	<objectType name="getKbmResponse">
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="response" type="d3p1:calcResponse" lowerBound="0"/>
+	</objectType>
+	<objectType name="lossCRTType">
+		<property name="LossDateTime" type="xs:dateTime" lowerBound="0"/>
+		<property name="PolicySerialKey" type="xs:string" lowerBound="0"/>
+		<property name="PolicyNumberKey" type="xs:string" lowerBound="0"/>
+		<property name="InsurerName" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="orgIDType">
+		<property name="Resident" type="xs:boolean"/>
+		<property name="INN" type="xs:string" lowerBound="0"/>
+		<property name="OrgName" type="xs:string"/>
+	</objectType>
+	<objectType name="personDocumentGroupType">
+		<property name="DocPerson" type="xs:int"/>
+		<property name="Serial" type="xs:string" lowerBound="0"/>
+		<property name="Number" type="xs:string"/>
+	</objectType>
+	<objectType name="policyCalcType">
+		<property name="PolicySerialKey" type="xs:string" lowerBound="0"/>
+		<property name="PolicyNumberKey" type="xs:string" lowerBound="0"/>
+		<property name="PolicyKBM" type="xs:string"/>
+		<property name="PolicyKBMValue" type="xs:decimal"/>
+		<property name="InsurerName" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ticketCarIdentType">
+		<property name="LicensePlate" type="xs:string" lowerBound="0"/>
+		<property name="VIN" type="xs:string" lowerBound="0"/>
+		<property name="BodyNumber" type="xs:string" lowerBound="0"/>
+		<property name="ChassisNumber" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ticketCarReqType">
+		<property xmlns:d3p1="http://dkbm.rsa.soglasie.ru/" name="CarIdent" type="d3p1:ticketCarIdentType"/>
+	</objectType>
+	<objectType name="ticketCarResps">
+		<property name="TicketExisted" type="xs:boolean" lowerBound="0"/>
+		<property name="Serial" type="xs:string" lowerBound="0"/>
+		<property name="Number" type="xs:string" lowerBound="0"/>
+		<property name="DateNextTO" type="xs:string" lowerBound="0"/>
+		<property name="TicketDiagnosticDate" type="xs:dateTime" lowerBound="0"/>
+		<property name="ErrorList" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://dkbm.rsa.soglasie.ru/" name="ErrorInfo" type="d5p1:errorInfoType" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+	</objectType>
+</package>
